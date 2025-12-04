@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+# source "$DOTLY_PATH/scripts/core/_main.sh"
+
+
+curl -f https://zed.dev/install.sh | sh

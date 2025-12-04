@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Add intellij Configurations symlink (since it's not synced via JetBrains Toolbox)
+#?? 1.0.0
+##?
+##? Usage:
+##?   set_config
+docs::eval "$@"
+
+log::note "Setting Intellij Config"
+
+preferences_dir="$HOME/.config/JetBrains"
+intellij_version=$(ls "$preferences_dir" | grep 'IdeaIC' | sort -r | head -n 1)
+intellij_config_folder="$preferences_dir/$intellij_version"
+
+rm -rf "$intellij_config_folder/idea64.vmoptions"
+ln -s -i "$DOTFILES_PATH/editors/intellij/idea.vmoptions" "$intellij_config_folder/idea64.vmoptions"
+
+rm -rf "$intellij_config_folder/codestyles"
+ln -s -i "$DOTFILES_PATH/editors/intellij/codestyles/" "$intellij_config_folder/codestyles"
+
+rm -rf "$intellij_config_folder/keymaps"
+ln -s -i "$DOTFILES_PATH/editors/intellij/keymaps/" "$intellij_config_folder/keymaps"
+
+rm -rf "$intellij_config_folder/options" 
+ln -s -i "$DOTFILES_PATH/editors/intellij/options/" "$intellij_config_folder/options"
+
+echo "Applied settings to path: $intellij_config_folder"
+echo "Done for $intellij_version!"
+
+
+
+
+
+

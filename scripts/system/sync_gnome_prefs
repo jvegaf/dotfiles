@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Import and Export Gnome Prefs from/to dotfiles
+#?? 1.0.0
+##?
+##? Usage:
+##?   sync_gnome_prefs --import
+##?   sync_gnome_prefs --export
+##?
+##? Options:
+##?   --import   Import prefs.
+##?   --export   Export prefs to dotfiles
+
+settings_file="$DOTFILES_PATH/os/linux/configs/gnome/dconf-settings.ini"
+
+err_msg="need you to specify import/export 🙄"
+
+if [ $# -eq 0 ]; then
+  echo $err_msg
+  exit 1
+fi
+
+if [ $1 == "--import" ]; then
+  dconf load / < $settings_file
+  echo "Done! 👌"
+elif [ $1 == "--export" ]; then
+  dconf dump / > $settings_file
+  echo "Done! 👌"
+else
+  echo $err_msg
+fi

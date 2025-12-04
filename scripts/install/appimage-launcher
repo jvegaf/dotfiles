@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+# source "$DOTLY_PATH/scripts/core/_main.sh"
+# source "$DOTFILES_PATH/scripts/install/utils/install.sh"
+
+##? Install Node Version Manager
+#?? 1.0.0
+##?
+##? Usage:
+##?   sdkman
+
+set -e
+
+URL="https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb"
+DEB_FILE="appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb"
+
+cd /tmp
+
+echo "Descargando AppImageLauncher..."
+wget -O "$DEB_FILE" "$URL"
+
+echo "Instalando paquete .deb con dpkg..."
+sudo dpkg -i "$DEB_FILE"
+
+echo "Corrigiendo dependencias (si es necesario)..."
+sudo apt-get install -f -y
+
+echo "¡Instalación completada!"

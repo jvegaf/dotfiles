@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Setup nvidia 1660 config files to manage brightness 
+#?? 1.0.0
+##?
+##? Usage:
+##?   setup_nvidia_desktop
+docs::parse "$@"
+
+# sudo apt-get update
+
+# sudo apt-get install -y ddcutil
+
+config_path="$DOTFILES_PATH/os/linux/config/nvidia_desktop"
+
+if [ -d "/etc/X11/xorg.conf.d/" ];then
+    echo "xorg.conf.d exists "
+else
+    sudo mkdir -p "/etc/X11/xorg.conf.d"
+    echo "directory created"
+fi
+
+sudo cp "$config_path/90-nvidia_i2c.conf" "/etc/X11/xorg.conf.d/"
+sudo cp "$config_path/60-i2c-tools.rules" "/lib/udev/rules.d/"
+
+sudo modprobe i2c-dev

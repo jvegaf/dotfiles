@@ -1,0 +1,72 @@
+<application>
+  <component name="DynamicPluginEnabler">
+    <trackers>
+      <map>
+        <entry key="23QVQg5MkVqswOLZFuyD5vDl8Ru">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="23snsyRQhndh8bI2z9OzpPLilsK">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="Default (Template) Project">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="JdkInstallerHistory">
+    <option name="installedItems">
+      <installed-jdk>
+        <option name="fullText" value="BellSoft Liberica JDK 17.0.1" />
+        <option name="installDir" value="$USER_HOME$/.jdks/liberica-17.0.1" />
+        <option name="javaHomeDir" value="$USER_HOME$/.jdks/liberica-17.0.1" />
+        <option name="sha256" value="d9ac25a512db2d98e40d732e7a7d5a596a5484a4da4e1fad4e3e382c6c6891c2" />
+        <option name="url" value="https://github.com/bell-sw/Liberica/releases/download/17.0.1+12/bellsoft-jdk17.0.1+12-linux-amd64-full.tar.gz" />
+        <option name="versionText" value="17.0.1" />
+      </installed-jdk>
+    </option>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="CWM_LOGGING_VERSION" value="1" />
+    <property name="InstalledPluginsSearchHistory" value="gradle&#10;grad&#10;gr&#10;d&#10;da" />
+    <property name="KEYMAP" value="close&#10;split&#10;rearra&#10;format" />
+    <property name="MarketplacePluginsSearchHistory" value="/tag:Theme&#10;codely&#10;codel&#10;c&#10;javafx" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="SettingsSearchHistory" value="gradle" />
+    <property name="appcds.runOnSecondStart" value="IC-213.6461.79-83324e4ab16edde1d75007fc05b2f33eb0c1059e3fa9a3444405c9ca2d6c3807" />
+    <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.run.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="bundled.plugins.list.saved.version" value="IC-213.6461.79" />
+    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.0" value="300" />
+    <property name="com.intellij.history.integration.ui.views.FileHistoryDialog.1" value="800" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="eclipse.projects.detected" value="" />
+    <property name="file.gist.reindex.count" value="14" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="fileTypeDetectors" value="com.android.tools.idea.profilers.capture.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
+    <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
+    <property name="got.it.tooltip.reader.mode.got.it" value="1" />
+    <property name="gotit.previous.run" value="IC-213.6461.79" />
+    <property name="ide.updates.previous.build.number" value="IC-213.6461.79" />
+    <property name="ide.updates.whats.new.shown.for" value="213" />
+    <property name="ignoreUltimateEdition" value="true" />
+    <property name="input.method.disabler.muted" value="true" />
+    <property name="installed.kotlin.plugin.version" value="213-1.5.10-release-949-IJ6461.79" />
+    <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
+    <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
+    <property name="packagesearch.status.updated.ts" value="1642531873066" />
+    <property name="registry.to.advanced.settings.migration.build" value="IC-213.6461.79" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+</application>

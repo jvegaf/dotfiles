@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+# source "$DOTLY_PATH/scripts/core/_main.sh"
+# source "$DOTFILES_PATH/scripts/install/utils/install.sh"
+
+##? Install Node Version Manager
+#?? 1.0.0
+##?
+##? Usage:
+##?   sdkman
+
+
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+log::note("SDKMAN installed ✅")

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Export all installed packages in deb apt
+#?? 1.0.0
+##?
+##? Usage:
+##?   deb_export
+docs::eval "$@"
+
+SYSTEM_PACKAGES_FILE="$DOTFILES_PATH/os/linux/packages/xBuntu/deb/system.txt"
+EXPORT_FILE="$DOTFILES_PATH/os/linux/packages/xBuntu/deb/installed.txt"
+
+log::note "Exporting packages to $EXPORT_FILE \n"
+
+dpkg -l | grep '^ii' | awk '{print $2}' | grep -v -x -f "$SYSTEM_PACKAGES_FILE" > "$EXPORT_FILE"
+
+log::note "packages exported succesfully ✅"

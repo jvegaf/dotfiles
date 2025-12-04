@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/fonts-setup.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
+
+##? Install the linux packages needed
+#?? 1.0.0
+##?
+##? Usage:
+##?   install_custom
+
+if grep -qEi "(archlinux)" /proc/version &>/dev/null; then
+  log::note "Installing ArchLinux 🐧 packages"
+  install_arch_common_packages
+  log::note "Installing Linux 🐧 extras"
+  # install_arch_linux_extra
+  log::note "Installing fonts "
+  install_fonts
+elif grep -qEi "(manjaro)" /proc/version &>/dev/null; then
+  log::note "Installing ArchLinux 🐧 packages"
+  install_arch_common_packages
+  log::note "Installing Linux 🐧 extras"
+  # install_arch_linux_extra
+  log::note "Installing fonts "
+  install_fonts
+  log::note "Installing NVM "
+elif grep -qEi "(cachyos)" /proc/version &>/dev/null; then
+  log::note "Installing ArchLinux 🐧 packages"
+  install_arch_common_packages
+  log::note "Installing Linux 🐧 extras"
+  # install_arch_linux_extra
+  log::note "Installing fonts "
+  install_fonts
+  log::note "Installing NVM "
+elif grep -qEi "(ubuntu)" /proc/version &>/dev/null; then
+  log::note "Installing fonts "
+  log::note "Installing Linux 🐧 packages"
+  install_common_packages
+  install_fonts
+  install_flatpak
+  install_linux_extra
+  # install_nvm
+elif grep -qEi "(microsoft|WSL)" /proc/version &>/dev/null; then
+  log::note "Linux 🐧 extras are not required on WSL 😅"
+  # install_nvm
+  install_common_packages
+  install_wslu
+  log::note "WSL utils installed ✅"
+fi
+
+# log::note "Installing python packages"
+# pip3 install -r "$DOTFILES_PATH/langs/python/requirements.txt" || true
+#pip3 install -r "$DOTFILES_PATH/langs/python/requirements.txt"
+
+#log::note "Installing php packages"
+#composer global install
+
+# log::note "Installing npm packages"
+#xargs sudo npm install -g <"$DOTFILES_PATH/langs/js/global_modules.txt"
+#nvm install --lts
+#nvm use --lts
+#npm install -g neovim yarn

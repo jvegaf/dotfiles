@@ -1,0 +1,10 @@
+- clean: ["~"]
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.dotly: os/linux/.dotly
+    ~/.tmux.conf: os/linux/config/tmux.conf

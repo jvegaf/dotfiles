@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Fix time in dual boot systems
+#?? 1.0.0
+##?
+##? Usage:
+##?   python_pip_fix
+##?
+
+sudo rm /usr/lib/python3.12/EXTERNALLY-MANAGED
+
+echo "Pip Fixed 👌"

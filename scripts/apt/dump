@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+LIST_FILE="${SCRIPT_DIR}/apt_apps.txt"
+echo "# APT installation dump"
+rm -rf "$LIST_FILE"
+apt list --installed 2>/dev/null | tail -n +2 | awk -F'/' '{print $1}' > "$LIST_FILE"
+
+echo
+echo "Archivo generado: $LIST_FILE"
