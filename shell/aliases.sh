@@ -44,7 +44,6 @@ alias du="du -hd 1"
 alias logout="gnome-session-quit --logout"
 alias nvcfg="cd ~/.config/nvim"
 alias vimcfg="vim ~/.vimrc"
-alias y="yazi"
 alias paru="paru --bottomup"
 alias edalias='nvim $DOTFILES_PATH/shell/aliases.sh'
 alias uscripts='cd $HOME/.local/bin'

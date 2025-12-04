@@ -8,3 +8,22 @@
 - link:
     ~/.dotly: os/linux/.dotly
     ~/.tmux.conf: os/linux/config/tmux.conf
+    ~/.config/FreeCAD: os/linux/config/FreeCAD
+    ~/.config/OrcaSlicer: os/linux/config/OrcaSlicer
+    ~/.config/alacritty: os/linux/config/alacritty
+    ~/.config/btop: os/linux/config/btop
+    ~/.config/cava: os/linux/config/cava
+    ~/.config/fastfetch: os/linux/config/fastfetch
+    ~/.config/foot: os/linux/config/foot
+    ~/.config/ghostty: os/linux/config/ghostty
+    ~/.config/kicad: os/linux/config/kicad
+    ~/.config/kitty: os/linux/config/kitty
+    ~/.config/lazygit: os/linux/config/lazygit
+    ~/.config/mise: os/linux/config/mise
+    ~/.config/opencode: os/linux/config/opencode
+    ~/.config/qt5ct: os/linux/config/qt5ct
+    ~/.config/qt6ct: os/linux/config/qt6ct
+    ~/.config/starship: os/linux/config/starship
+    ~/.config/tealdeer: os/linux/config/tealdeer
+    ~/.config/ulauncher: os/linux/config/ulauncher
+    ~/.config/yazi: os/linux/config/yazi
