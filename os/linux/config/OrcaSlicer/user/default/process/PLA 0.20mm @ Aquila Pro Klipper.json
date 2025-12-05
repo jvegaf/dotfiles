@@ -1,5 +1,5 @@
 {
-    "brim_type": "brim_ears",
+    "brim_type": "painted",
     "default_acceleration": "1000",
     "from": "User",
     "gap_infill_speed": "40",
@@ -18,7 +18,7 @@
     "skirt_distance": "5",
     "skirt_height": "1",
     "skirt_loops": "1",
-    "slow_down_layers": "6",
+    "slow_down_layers": "15",
     "sparse_infill_pattern": "honeycomb",
     "sparse_infill_speed": "150",
     "support_style": "organic",

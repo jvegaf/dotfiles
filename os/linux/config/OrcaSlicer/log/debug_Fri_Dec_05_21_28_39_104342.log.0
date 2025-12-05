@@ -1,0 +1,25 @@
+[error]	2025-12-05 21:28:39.897521[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-05 21:28:39.900173[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-05 21:28:39.900350[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-05 21:28:39.901297[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-05 21:28:39.910563[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-05 21:28:39.918490[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-05 21:28:39.928965[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-05 21:28:39.929220[Thread 0x00007f1e927dbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-05 21:28:40.404710[Thread 0x00007f1ced1f26c0]:Unable to open connection to spacenavd
+[error]	2025-12-05 21:28:41.198439[Thread 0x00007f1e927dbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-05 21:28:41.211946[Thread 0x00007f1e927dbf00]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-05 21:28:41.212162[Thread 0x00007f1cc5bf96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-05 21:28:41.212189[Thread 0x00007f1cc5bf96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-05 21:28:41.212230[Thread 0x00007f1cc4ff66c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[error]	2025-12-05 21:28:41.212278[Thread 0x00007f1cc4ff66c0]:Unable to open the file/home/th3g3ntl3man/Downloads/handle_thirties_style.3mf
+[error]	2025-12-05 21:28:41.212475[Thread 0x00007f1cc5ffa6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/Dremel_Support_Small.3mf
+[warning]	2025-12-05 21:28:41.681343[Thread 0x00007f1e927dbf00]:09:28:41 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-05 21:28:41.689049[Thread 0x00007f1e927dbf00]:09:28:41 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-05 21:28:41.695852[Thread 0x00007f1e927dbf00]:09:28:41 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-05 21:28:41.704258[Thread 0x00007f1e927dbf00]:09:28:41 PM: Warning: Error running JavaScript: file:///opt/orca-slicer/resources/web/model/index.html?lang=en_US:1:9: ReferenceError: Can't find variable: __wxOut0
+[warning]	2025-12-05 21:28:43.475236[Thread 0x00007f1e927dbf00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-05 21:28:44.652352[Thread 0x00007f1c889366c0]:Error getting: `check_new_version_sf`: HTTP 503, 
+[error]	2025-12-05 21:28:47.452210[Thread 0x00007f1e927dbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-05 21:28:51.890293[Thread 0x00007f1e927dbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-05 21:29:44.701866[Thread 0x00007f1e927dbf00]:calc_exclude_triangles:Unable to create exclude triangles

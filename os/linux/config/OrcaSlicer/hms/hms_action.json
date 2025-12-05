@@ -2,6 +2,104 @@
     "data": [
         {
             "actions": [
+                11
+            ],
+            "device": "31B",
+            "ecode": "0500C059",
+            "image": ""
+        },
+        {
+            "actions": [
+                11
+            ],
+            "device": "094",
+            "ecode": "0500C059",
+            "image": ""
+        },
+        {
+            "actions": [
+                11
+            ],
+            "device": "093",
+            "ecode": "0500C059",
+            "image": ""
+        },
+        {
+            "actions": [
+                11
+            ],
+            "device": "22E",
+            "ecode": "0500C059",
+            "image": ""
+        },
+        {
+            "actions": [
+                11
+            ],
+            "device": "239",
+            "ecode": "0500C059",
+            "image": ""
+        },
+        {
+            "actions": [
+                11
+            ],
+            "device": "default",
+            "ecode": "0502C026",
+            "image": ""
+        },
+        {
+            "actions": [
+                28,
+                27,
+                6
+            ],
+            "device": "31B",
+            "ecode": "05008054",
+            "image": ""
+        },
+        {
+            "actions": [
+                28,
+                27,
+                6
+            ],
+            "device": "094",
+            "ecode": "05008054",
+            "image": ""
+        },
+        {
+            "actions": [
+                28,
+                27,
+                6
+            ],
+            "device": "093",
+            "ecode": "05008054",
+            "image": ""
+        },
+        {
+            "actions": [
+                28,
+                27,
+                6
+            ],
+            "device": "22E",
+            "ecode": "05008054",
+            "image": ""
+        },
+        {
+            "actions": [
+                28,
+                27,
+                6
+            ],
+            "device": "239",
+            "ecode": "05008054",
+            "image": ""
+        },
+        {
+            "actions": [
                 9,
                 6
             ],
@@ -14620,5 +14718,5 @@
             "image": ""
         }
     ],
-    "version": "202512031217"
+    "version": "202512051443"
 }

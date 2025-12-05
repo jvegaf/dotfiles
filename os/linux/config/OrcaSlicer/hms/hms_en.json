@@ -1439,7 +1439,7 @@
             },
             {
                 "ecode": "05004042",
-                "intro": "Due to power limitations, starting AMS drying will pause current operations such as nozzle heating and fan running. Do you want to proceed with drying?"
+                "intro": "Printing and calibration cannot be performed while the AMS is drying. Please stop the drying process or connect a power adapter to any AMS unit not used for the current print, then try again."
             },
             {
                 "ecode": "05004008",
@@ -1952,12 +1952,28 @@
             {
                 "ecode": "0502C026",
                 "intro": "The device is busy with the current task and cannot perform this operation for now. Please try again later."
+            },
+            {
+                "ecode": "05004057",
+                "intro": "The filament selected in the slicer requires a harder nozzle. Please replace the nozzle or adjust the filament settings before reprinting."
             }
         ],
-        "ver": 202512032218
+        "ver": 202512051434
     },
     "device_hms": {
         "en": [
+            {
+                "ecode": "1802230000020025",
+                "intro": "AMS-HT C slot 4 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
+            },
+            {
+                "ecode": "0705200000020025",
+                "intro": "AMS F slot 1 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
+            },
+            {
+                "ecode": "1805220000020025",
+                "intro": "AMS-HT F slot 3 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
+            },
             {
                 "ecode": "0701200000020025",
                 "intro": "AMS B slot 1 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
@@ -3120,7 +3136,7 @@
             },
             {
                 "ecode": "0500050000020023",
-                "intro": "A new version of the Timelapse Kit is available. Please connect to Handy to update this accessory separately."
+                "intro": "A new version of the Timelapse Kit is available. Please connect to CyberBrick App to update this accessory separately."
             },
             {
                 "ecode": "1802950000010002",
@@ -3133,6 +3149,22 @@
             {
                 "ecode": "1800940000010002",
                 "intro": "Temperature sensor 1 on the AMS-HT A heater has malfunctioned, resulting in abnormal temperature readings."
+            },
+            {
+                "ecode": "1803230000020015",
+                "intro": "AMS-HT D slot 4 filament status is abnormal, which may be due to a filament breakage inside the AMS."
+            },
+            {
+                "ecode": "1802960000010003",
+                "intro": "AMS-HT C Unable to start drying; please pull out the filament from filament hub and try again."
+            },
+            {
+                "ecode": "1802120000010001",
+                "intro": "The AMS-HT C slot 3 motor has slipped. The extrusion wheel may be malfunctioning, or the filament may be too thin."
+            },
+            {
+                "ecode": "0705200000020005",
+                "intro": "AMS F Slot 1 filament has run out, and purging the old filament went abnormally; please check whether the filament is stuck in the tool head."
             },
             {
                 "ecode": "0704310000010004",
@@ -8305,26 +8337,6 @@
             {
                 "ecode": "1806220000010083",
                 "intro": "Failed to read the filament information from AMS-HT G slot 3. The RFID tag may be damaged."
-            },
-            {
-                "ecode": "1803210000020018",
-                "intro": "AMS-HT D slot 2 assist motor is stalled，due to excessive resistance in the tube near AMS."
-            },
-            {
-                "ecode": "0706940000010001",
-                "intro": "AMS G The temperature sensor of heater 1 is offline, which may be due to poor connector contact."
-            },
-            {
-                "ecode": "0707220000020005",
-                "intro": "AMS H Slot 3 filament has run out, and purging the old filament went abnormally; please check whether the filament is stuck in the tool head."
-            },
-            {
-                "ecode": "03000B0000010001",
-                "intro": "Heatbed force sensor 2 is too sensitive. It may be stuck between the strain arm and heatbed support, or the adjusting screw may be too tight."
-            },
-            {
-                "ecode": "0701110000020002",
-                "intro": "The AMS B slot 2 motor is overloaded. The filament may be tangled or stuck."
             },
             {
                 "ecode": "1800120000010001",
@@ -14779,20 +14791,24 @@
                 "intro": "AMS D slot 1 failed to rotate the filament spool when pulling filament back to AMS."
             },
             {
-                "ecode": "1803230000020015",
-                "intro": "AMS-HT D slot 4 filament status is abnormal, which may be due to a filament breakage inside the AMS."
+                "ecode": "1803210000020018",
+                "intro": "AMS-HT D slot 2 assist motor is stalled，due to excessive resistance in the tube near AMS."
             },
             {
-                "ecode": "1802960000010003",
-                "intro": "AMS-HT C Unable to start drying; please pull out the filament from filament hub and try again."
+                "ecode": "0706940000010001",
+                "intro": "AMS G The temperature sensor of heater 1 is offline, which may be due to poor connector contact."
             },
             {
-                "ecode": "1802120000010001",
-                "intro": "The AMS-HT C slot 3 motor has slipped. The extrusion wheel may be malfunctioning, or the filament may be too thin."
+                "ecode": "0707220000020005",
+                "intro": "AMS H Slot 3 filament has run out, and purging the old filament went abnormally; please check whether the filament is stuck in the tool head."
             },
             {
-                "ecode": "0705200000020005",
-                "intro": "AMS F Slot 1 filament has run out, and purging the old filament went abnormally; please check whether the filament is stuck in the tool head."
+                "ecode": "03000B0000010001",
+                "intro": "Heatbed force sensor 2 is too sensitive. It may be stuck between the strain arm and heatbed support, or the adjusting screw may be too tight."
+            },
+            {
+                "ecode": "0701110000020002",
+                "intro": "The AMS B slot 2 motor is overloaded. The filament may be tangled or stuck."
             },
             {
                 "ecode": "1803700000020003",
@@ -17573,21 +17589,9 @@
             {
                 "ecode": "0702200000020025",
                 "intro": "AMS C slot 1 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
-            },
-            {
-                "ecode": "1802230000020025",
-                "intro": "AMS-HT C slot 4 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
-            },
-            {
-                "ecode": "0705200000020025",
-                "intro": "AMS F slot 1 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
-            },
-            {
-                "ecode": "1805220000020025",
-                "intro": "AMS-HT F slot 3 feed resistance is too high. Please reduce the feed resistance, decrease the rotation resistance of the spool, and avoid having the filament tube too long and excessively bent."
             }
         ],
-        "ver": 202512032218
+        "ver": 202512051434
     },
-    "version": "202512032218"
+    "version": "202512051434"
 }

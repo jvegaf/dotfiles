@@ -27,3 +27,4 @@
     ~/.config/tealdeer: os/linux/config/tealdeer
     ~/.config/ulauncher: os/linux/config/ulauncher
     ~/.config/yazi: os/linux/config/yazi
+    ~/.local/share/applications/org.freecad.FreeCAD.desktop: os/linux/local/share/applications/org.freecad.FreeCAD.desktop
