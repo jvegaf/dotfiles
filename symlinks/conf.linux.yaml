@@ -27,4 +27,9 @@
     ~/.config/tealdeer: os/linux/config/tealdeer
     ~/.config/ulauncher: os/linux/config/ulauncher
     ~/.config/yazi: os/linux/config/yazi
+    ~/.config/hypr/Monitor_Profiles: os/linux/config/hypr/Monitor_Profiles
+    ~/.config/hypr/UserConfigs: os/linux/config/hypr/UserConfigs
+    ~/.config/hypr/UserScripts: os/linux/config/hypr/UserScripts
+    ~/.config/hypr/monitors.conf: os/linux/config/hypr/monitors.conf
+    ~/.config/hypr/workspaces.conf: os/linux/config/hypr/workspaces.conf
     ~/.local/share/applications/org.freecad.FreeCAD.desktop: os/linux/local/share/applications/org.freecad.FreeCAD.desktop
