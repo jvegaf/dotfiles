@@ -1,0 +1,28 @@
+[error]	2025-12-09 05:43:35.933825[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-09 05:43:35.936351[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-09 05:43:35.936469[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-09 05:43:35.937136[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-09 05:43:35.944655[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-09 05:43:35.951250[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-09 05:43:35.963001[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-09 05:43:35.963316[Thread 0x00007f471eec4f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-09 05:43:36.389097[Thread 0x00007f464f7fe6c0]:Unable to open connection to spacenavd
+[error]	2025-12-09 05:43:37.046063[Thread 0x00007f471eec4f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-09 05:43:37.056934[Thread 0x00007f46787f26c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-09 05:43:37.056959[Thread 0x00007f46787f26c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-09 05:43:37.057192[Thread 0x00007f471eec4f00]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-09 05:43:37.057221[Thread 0x00007f464cff96c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-09 05:43:37.057244[Thread 0x00007f464cff96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-09 05:43:37.057325[Thread 0x00007f464cff96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-09 05:43:37.057369[Thread 0x00007f4643fff6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[warning]	2025-12-09 05:43:37.538083[Thread 0x00007f471eec4f00]:05:43:37 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-09 05:43:37.546100[Thread 0x00007f471eec4f00]:05:43:37 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-09 05:43:37.550930[Thread 0x00007f471eec4f00]:05:43:37 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-09 05:43:37.616520[Thread 0x00007f471eec4f00]:05:43:37 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-09 05:43:39.356977[Thread 0x00007f471eec4f00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-09 05:43:39.846399[Thread 0x00007f4600bc66c0]:Error getting: `check_new_version_sf`: HTTP 503, 
+[error]	2025-12-09 05:43:42.139018[Thread 0x00007f471eec4f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-09 05:43:45.476448[Thread 0x00007f471eec4f00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-09 05:47:15.407895[Thread 0x00007f467bbff6c0]:Arrange full params: {"min_obj_distance":1350000,"accuracy":1.000000,"parallel":1,"allow_rotations":0,"do_final_align":1,"allow_multi_materials_on_same_plate":0,"avoid_extrusion_cali_region":1,"is_seq_print":0,"bed_shrink_x":1.000000,"bed_shrink_y":1.000000,"brim_skirt_distance":0.000000,"clearance_height_to_rod":36.000000,"clearance_height_to_lid":140.000000,"clearance_radius":65.000000,"printable_height":250.000000,
+[warning]	2025-12-09 05:47:16.991468[Thread 0x00007f471eec4f00]:restart_background_process, Line 5502: ui jobs running, return false
+[warning]	2025-12-09 05:47:57.715717[Thread 0x00007f467bbff6c0]:Arrange full params: {"min_obj_distance":1350000,"accuracy":1.000000,"parallel":1,"allow_rotations":0,"do_final_align":1,"allow_multi_materials_on_same_plate":0,"avoid_extrusion_cali_region":0,"is_seq_print":0,"bed_shrink_x":1.000000,"bed_shrink_y":1.000000,"brim_skirt_distance":0.000000,"clearance_height_to_rod":36.000000,"clearance_height_to_lid":140.000000,"clearance_radius":65.000000,"printable_height":250.000000,

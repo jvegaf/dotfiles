@@ -19,6 +19,7 @@
     "skirt_height": "1",
     "skirt_loops": "1",
     "slow_down_layers": "15",
+    "sparse_infill_density": "10%",
     "sparse_infill_pattern": "honeycomb",
     "sparse_infill_speed": "150",
     "support_style": "organic",
@@ -27,6 +28,5 @@
     "top_surface_speed": "50",
     "travel_acceleration": "1000",
     "travel_speed": "150",
-    "version": "2.3.0.3",
-    "wall_sequence": "inner-outer-inner wall"
+    "version": "2.3.0.3"
 }

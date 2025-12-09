@@ -1,7 +1,7 @@
 ---
 description: Plans a coding plan for the given requirement using best practices and the codebase style.
-mode: primary
-model: github-copilot/gemini-2.5-pro
+mode: subagent
+model: github-copilot/gemini-3-pro-preview
 temperature: 0.6
 tools:
   write: false

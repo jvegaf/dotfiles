@@ -61,9 +61,6 @@
     ],
     "thumbnails": "300x300/PNG",
     "version": "2.3.0.3",
-    "z_hop": [
-        "0.2"
-    ],
     "z_hop_types": [
         "Slope Lift"
     ]

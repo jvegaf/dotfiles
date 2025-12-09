@@ -1,0 +1,26 @@
+[error]	2025-12-08 20:05:11.241054[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-08 20:05:11.243445[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-08 20:05:11.243572[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-08 20:05:11.244346[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-08 20:05:11.251486[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-08 20:05:11.259248[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-08 20:05:11.272114[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-08 20:05:11.272404[Thread 0x00007fb9bc8b0f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-08 20:05:11.853441[Thread 0x00007fb9037fe6c0]:Unable to open connection to spacenavd
+[error]	2025-12-08 20:05:12.851727[Thread 0x00007fb9bc8b0f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-08 20:05:12.862362[Thread 0x00007fb9107f46c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-08 20:05:12.862561[Thread 0x00007fb7f77fd6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-08 20:05:12.862576[Thread 0x00007fb9bc8b0f00]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-08 20:05:12.862584[Thread 0x00007fb7f77fd6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-08 20:05:12.862595[Thread 0x00007fb7f77fd6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[error]	2025-12-08 20:05:12.862604[Thread 0x00007fb7f77fd6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-08 20:05:12.862612[Thread 0x00007fb7f77fd6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[warning]	2025-12-08 20:05:13.341165[Thread 0x00007fb9bc8b0f00]:08:05:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 20:05:13.348241[Thread 0x00007fb9bc8b0f00]:08:05:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 20:05:13.352454[Thread 0x00007fb9bc8b0f00]:08:05:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 20:05:13.426455[Thread 0x00007fb9bc8b0f00]:08:05:13 PM: Warning: Error running JavaScript: Unsupported result type
+[error]	2025-12-08 20:05:15.065955[Thread 0x00007fb9bc8b0f00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-08 20:05:15.109873[Thread 0x00007fb9bc8b0f00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-08 20:05:15.743625[Thread 0x00007fb7a0bc66c0]:Error getting: `check_new_version_sf`: HTTP 503, 
+[error]	2025-12-08 20:06:28.214723[Thread 0x00007fb9bc8b0f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-08 20:08:11.759755[Thread 0x00007fb9bc8b0f00]:calc_exclude_triangles:Unable to create exclude triangles

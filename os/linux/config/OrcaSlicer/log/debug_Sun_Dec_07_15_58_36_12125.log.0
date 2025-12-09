@@ -1,0 +1,27 @@
+[error]	2025-12-07 15:58:37.703977[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-07 15:58:37.707432[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-07 15:58:37.707606[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-07 15:58:37.708582[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-07 15:58:37.718693[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-07 15:58:37.727759[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-07 15:58:37.741246[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-07 15:58:37.741605[Thread 0x00007ff96feeef00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-07 15:58:38.173233[Thread 0x00007ff89e7fc6c0]:Unable to open connection to spacenavd
+[error]	2025-12-07 15:58:39.620065[Thread 0x00007ff96feeef00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-07 15:58:39.633378[Thread 0x00007ff8977fe6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-07 15:58:39.633427[Thread 0x00007ff8963f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[error]	2025-12-07 15:58:39.633443[Thread 0x00007ff8963f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-07 15:58:39.633451[Thread 0x00007ff8963f96c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-07 15:58:39.633460[Thread 0x00007ff8963f96c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-07 15:58:39.633466[Thread 0x00007ff8963f96c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-07 15:58:39.633541[Thread 0x00007ff89c7f86c0]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-07 15:58:39.633993[Thread 0x00007ff896ffc6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/Dremel_Support_Small.3mf
+[warning]	2025-12-07 15:58:40.147280[Thread 0x00007ff96feeef00]:03:58:40 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-07 15:58:40.155494[Thread 0x00007ff96feeef00]:03:58:40 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-07 15:58:40.160779[Thread 0x00007ff96feeef00]:03:58:40 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-07 15:58:40.222731[Thread 0x00007ff96feeef00]:03:58:40 PM: Warning: Error running JavaScript: Unsupported result type
+[error]	2025-12-07 15:58:41.878158[Thread 0x00007ff96feeef00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-07 15:58:41.923571[Thread 0x00007ff96feeef00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-07 15:58:42.418211[Thread 0x00007ff8437ff6c0]:Error getting: `check_new_version_sf`: HTTP 503, 
+[error]	2025-12-07 15:59:01.436695[Thread 0x00007ff96feeef00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-07 16:04:23.073532[Thread 0x00007ff9385fe6c0]:Arrange full params: {"min_obj_distance":5840000,"accuracy":1.000000,"parallel":1,"allow_rotations":0,"do_final_align":1,"allow_multi_materials_on_same_plate":0,"avoid_extrusion_cali_region":0,"is_seq_print":0,"bed_shrink_x":1.000000,"bed_shrink_y":1.000000,"brim_skirt_distance":0.000000,"clearance_height_to_rod":36.000000,"clearance_height_to_lid":140.000000,"clearance_radius":65.000000,"printable_height":250.000000,

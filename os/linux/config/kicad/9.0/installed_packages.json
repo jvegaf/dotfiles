@@ -1,0 +1,817 @@
+{
+    "packages": [
+        {
+            "current_version": "1.0.15",
+            "install_timestamp": 1765249980,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/MitjaNemec"
+                    },
+                    "name": "Mitja Nemec"
+                },
+                "description": "copies 3D models to the project local subfolder",
+                "description_full": "Copies footprint models to the project local subfolder and remaps all the links within the used footprints.\n !!! Warning! If you update the footprint the link between the footprint and 3D model will be reset. You'll need to re-run the plugin in order to remap the links. You can make the layout file completely independent if you also export the footprints to project local librarary via menu File/Export/Footprints to new library and update the footprint to refer to new library.",
+                "identifier": "com.github.MitjaNemec.Archive3DModels",
+                "license": "GPL-2.0",
+                "name": "Archive 3D Models",
+                "resources": {
+                    "homepage": "https://github.com/MitjaNemec/Archive3DModels"
+                },
+                "tags": [
+                    "pcbnew",
+                    "models"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "83c0e0d25d26d6372ff0f6086a21fb83137055440e5aa7314e2e269b328631d1",
+                        "download_size": 17476,
+                        "download_url": "https://github.com/MitjaNemec/Archive3DModels/releases/download/1.0.15/Archive3DModels-1.0.15-pcm.zip",
+                        "install_size": 39898,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "9.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.0.15"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "4.0.1",
+            "install_timestamp": 1765249980,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/MitjaNemec"
+                    },
+                    "name": "Mitja Nemec"
+                },
+                "description": "Arrange footprints on a line, circle or grid.",
+                "description_full": "Arrange sequentially numbered footprints or footprints from multiple hierarchical sheets in linear, circular or matrix arrangement. This plugin works on footprints already present in the layout, so that layout and schematics stay in sync.\nThe placement of footprints from multiple hierarchical sheets works well together with ReplicateLayout plugin",
+                "identifier": "com.github.MitjaNemec.PlaceFootprints",
+                "license": "GPL-2.0",
+                "name": "Place Footprints",
+                "resources": {
+                    "homepage": "https://github.com/MitjaNemec/PlaceFootprints"
+                },
+                "tags": [
+                    "pcbnew",
+                    "footprints",
+                    "arrange"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "fcb2269394ba67da98ecda37b5050da0057065cdd0c86d1238a9fe7d34575b50",
+                        "download_size": 25080,
+                        "download_url": "https://github.com/MitjaNemec/PlaceFootprints/releases/download/4.0.1/PlaceFootprints-4.0.1-pcm.zip",
+                        "install_size": 97709,
+                        "kicad_version": "9.0",
+                        "kicad_version_max": "9.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "4.0.1"
+                    },
+                    {
+                        "download_sha256": "fc9a6c98ed8ab0a64607567c4888cafc3cd71db12aad66a52aba35b8ef17ab8c",
+                        "download_size": 24080,
+                        "download_url": "https://github.com/MitjaNemec/PlaceFootprints/releases/download/3.0.1/PlaceFootprints-3.0.1-pcm.zip",
+                        "install_size": 94597,
+                        "kicad_version": "7.99",
+                        "kicad_version_max": "8.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "3.0.1"
+                    },
+                    {
+                        "download_sha256": "9b4ab5f3b5578dfbbe0dd40dd08461b06d5f22489c1be2e1fd31447e6863f2da",
+                        "download_size": 23950,
+                        "download_url": "https://github.com/MitjaNemec/PlaceFootprints/releases/download/2.1.4/PlaceFootprints-2.1.4-pcm.zip",
+                        "install_size": 93238,
+                        "kicad_version": "7.0",
+                        "kicad_version_max": "7.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "2.1.4"
+                    },
+                    {
+                        "download_sha256": "a6a838d34fbe07fba0909c22d0bfeed27c5430250dc837f1348c0578237031a8",
+                        "download_size": 22668,
+                        "download_url": "https://github.com/MitjaNemec/PlaceFootprints/releases/download/1.2.12/PlaceFootprints-1.2.12-pcm.zip",
+                        "install_size": 78947,
+                        "kicad_version": "6.0",
+                        "kicad_version_max": "6.1",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.2.12"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "0.3",
+            "install_timestamp": 1765249981,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://adamws.github.io"
+                    },
+                    "name": "adamws"
+                },
+                "description": "KiCad plugin for git",
+                "description_full": "Git actions directly from KiCad's PCB editor window",
+                "identifier": "com.github.adamws.kicad-git",
+                "license": "GPL-3.0",
+                "name": "Git plugin",
+                "resources": {
+                    "Bug Tracker": "https://github.com/adamws/kicad-git/issues",
+                    "Homepage": "https://github.com/adamws/kicad-git",
+                    "Sponsor": "https://ko-fi.com/adamws"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "54a0a5882e5bc4c557424f352f88877303c6bc95e86d6a66cd804f2cf17cdf7d",
+                        "download_size": 8755,
+                        "download_url": "https://github.com/adamws/kicad-git/releases/download/v0.3/kicad_git-0.3.zip",
+                        "install_size": 7947,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "0.3"
+                    },
+                    {
+                        "download_sha256": "f0ac36a2cfef71f0f5756ae74011a4bc7e849fcb7f59f75172036ff93b1bc101",
+                        "download_size": 8605,
+                        "download_url": "https://github.com/adamws/kicad-git/releases/download/v0.2/kicad_git-0.2.zip",
+                        "install_size": 7797,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "0.2"
+                    },
+                    {
+                        "download_sha256": "a5e3135204c562e216cfce92cd13714a89287c5a63cc5a6f24835ceef6484061",
+                        "download_size": 16807,
+                        "download_url": "https://github.com/adamws/kicad-git/releases/download/v0.1/kicad_git-0.1.zip",
+                        "install_size": 15885,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "0.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "4.2.0",
+            "install_timestamp": 1765249990,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/Alarm-Siren/"
+                    },
+                    "name": "Nicholas Parks Young"
+                },
+                "description": "KiCad Symbol and Footprint Library for Arduino Modules",
+                "description_full": "You may need to manually update the library tables in the Library Manager to get the new symbols and footprints to show up: please refer to the GitHub link below for full documentation and installation instructions.\n\nThis is a library of KiCad schematic symbols and PCB footprints for most Arduino modules. You can use them to make your own PCB design which will effortlessly connect with your chosen Arduino module.",
+                "identifier": "com.github.alarm-siren.arduino-kicad-library",
+                "license": "CC-BY-SA-4.0",
+                "name": "KiCad Library for Arduino Modules",
+                "resources": {
+                    "github": "https://github.com/Alarm-Siren/arduino-kicad-library"
+                },
+                "tags": [
+                    "footprints",
+                    "symbols",
+                    "arduino",
+                    "modules"
+                ],
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "3e47f464d326b4c4752d4a0c725b92ec571c61d7b20d8f6d8f654e26349aff56",
+                        "download_size": 162805,
+                        "download_url": "https://github.com/Alarm-Siren/arduino-kicad-library/releases/download/v4.2.0/arduino-kicad-library-4.2.0-pcm.zip",
+                        "install_size": 931125,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "4.2.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.1",
+            "install_timestamp": 1765249991,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://alexanderbrevig.com"
+                    },
+                    "name": "Alexander Brevig"
+                },
+                "description": "A KiCAD adoptation of the Gruvbox theme",
+                "description_full": "Gruvbox is a popular theme. Gruvbox all the things!",
+                "identifier": "com.github.alexanderbrevig.kicad-gruvbox-theme",
+                "license": "MIT",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://alexanderbrevig.com"
+                    },
+                    "name": "Alexander Brevig"
+                },
+                "name": "Gruvbox",
+                "resources": {
+                    "homepage": "https://github.com/alexanderbrevig/kicad-gruvbox-theme"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "637ea8efe153cc64380c7e8bf78b92d65f80c901c234dc4d0229cf8dc55b94df",
+                        "download_size": 12915,
+                        "download_url": "https://github.com/AlexanderBrevig/kicad-gruvbox-theme/releases/download/v1.1/Gruvbox_v1.1.zip",
+                        "install_size": 21285,
+                        "kicad_version": "6",
+                        "status": "stable",
+                        "version": "1.1"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "4.0.1",
+            "install_timestamp": 1765249990,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "dawid_cislo@o2.pl"
+                    },
+                    "name": "Dawid Cisło"
+                },
+                "description": "Symbol and Footprint library focused on improving schematic and PCB readability and aesthetics, mainly intended for hobbyist use",
+                "description_full": "Current version: 4.0\n\nCheck your settings in preferences -> packages and updates.\nIf you have the default library nickname prefix 'PCM_', proceed to install version 4.0.1.\nIf you don't want that prefix, leave that field blank and choose version 4.0 from the list below.\nRefer to documentation via the links below if you have any trouble\n\nAlternate KiCad Library contains over 36700 symbols and 10400 footprints.\n Version 4.0 adds LED, Voltage regulator and crystal symbol libraries, LED footprint libraries and various improvements and bugfixes to existing symbols and footprints.\n\n",
+                "identifier": "com.github.dawidcislo.alternate-kicad-library",
+                "license": "CC-BY-SA",
+                "name": "Alternate Kicad Library",
+                "resources": {
+                    "Github": "https://github.com/DawidCislo/Alternate-KiCad-Library",
+                    "Website": "https://www.alternatekicadlibrary.com/"
+                },
+                "tags": [
+                    "footprints",
+                    "symbols"
+                ],
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "e7237b61a896384f8e54f908d598f3e3dfec83c1cbeb2a8d729e771b3512fde9",
+                        "download_size": 29004220,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v4.0n/com_github_alternate_kicad_library.zip",
+                        "install_size": 140884345,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "4.0.1"
+                    },
+                    {
+                        "download_sha256": "3b9b93dad1aca4c1df6c4042aa91fb424e96504a191870dc7546d881b1a742eb",
+                        "download_size": 29002713,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v4.0/com_github_alternate_kicad_library.zip",
+                        "install_size": 140740689,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "4.0"
+                    },
+                    {
+                        "download_sha256": "55da0f126d556400a0511b75fc1543f91e5a4de1645cafbf057c307cb51a9e46",
+                        "download_size": 24209427,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v3.0/com_github_alternate_kicad_library.zip",
+                        "install_size": 107680556,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "3.0"
+                    },
+                    {
+                        "download_sha256": "dc07a18ece7a8df203229999b13efe2f0f8e15abf1b07ea507deefe760d5de8b",
+                        "download_size": 15031216,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v2.1/com_github_alternate_kicad_library.zip",
+                        "install_size": 67073607,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "2.1"
+                    },
+                    {
+                        "download_sha256": "9263e7d394912f06baa1d33180e59bf10a75086ad683abf31d65581c8f2f16e2",
+                        "download_size": 10872186,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/raw/main/PCM_Releases/2.0/com_github_alternate_kicad_library.zip",
+                        "install_size": 59137804,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "2.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.0.7",
+            "install_timestamp": 1765249979,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "easyw@katamail.com"
+                    },
+                    "name": "easyw"
+                },
+                "description": "A suite of kicad pcbnew action plugin tools",
+                "description_full": "Annular Ring Checker, Snap Selected Footprint(s) to Grid, Fabrication Footprint Position, Move Selected Drawings to chosen Layer, Checking 3D missing models",
+                "identifier": "com.github.easyw.kicad-action-tools",
+                "license": "GPL-2.0",
+                "name": "pcb-action-tools",
+                "resources": {
+                    "Github": "https://github.com/easyw/kicad-action-tools",
+                    "Readme": "https://github.com/easyw/kicad-action-tools/blob/master/README.md"
+                },
+                "tags": [
+                    "annular",
+                    "pcbnew",
+                    "grid",
+                    "mcad"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "03410391e96befad37bc1e4f6f17ae7e8ba29bed5d46411d867a7bad1bab4724",
+                        "download_size": 1060820,
+                        "download_url": "https://github.com/easyw/kicad-action-tools/releases/download/v1.0.7/pcb-action-tools_v1.0.7_pcm.zip",
+                        "install_size": 1517628,
+                        "kicad_version": "8.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.0.7"
+                    },
+                    {
+                        "download_sha256": "28458f5d75a84662f880b772931082ceb2f96b8865f49f967f88301cf2242382",
+                        "download_size": 1035738,
+                        "download_url": "https://github.com/easyw/kicad-action-tools/releases/download/v1.0.6/pcb-action-tools_v1.0.6_pcm.zip",
+                        "install_size": 1237276,
+                        "kicad_version": "7.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.0.6"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2.0.0",
+            "install_timestamp": 1765249981,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/jacmie"
+                    },
+                    "name": "jacmie"
+                },
+                "description": "Positioning & Orientation of footprints in the PCB Editor",
+                "description_full": "Positioning & Orientation of footprints in the PCB Editor\n- get footprints position and orientation\n- work interactively, drag footprints and update data table\n- go on the list to the footprint selected in the PCB editor\n- work with footprints groups\n- set new position and orientation and update PCB editor\n- sort data in the table by the columns\n- save/open position and orientation configuration files\n- check log for changes\n- GUI highlighting and tooltips",
+                "identifier": "com.github.jacmie.PosOrient",
+                "license": "GPL-3.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://github.com/jacmie"
+                    },
+                    "name": "jacmie"
+                },
+                "name": "PosOrient",
+                "resources": {
+                    "homepage": "https://github.com/jacmie/PosOrient"
+                },
+                "tags": [
+                    "kicad",
+                    "footprint",
+                    "position",
+                    "orientation"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "5ce834fe72f557bd57357add48823d5b88012511370904c102d22afbf0e2312b",
+                        "download_size": 14300,
+                        "download_url": "https://github.com/jacmie/PosOrient/releases/download/v2.0.0/PosOrient_v2.0.0.zip",
+                        "install_size": 43547,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "2.0.0"
+                    },
+                    {
+                        "download_sha256": "ab9c2f5b5f262701301af5b47a7fd7d450eaccaa52d40c185273d86e4d5a60ce",
+                        "download_size": 9300,
+                        "download_url": "https://github.com/jacmie/PosOrient/releases/download/v1.3.1/PosOrient_v1.3.1.zip",
+                        "install_size": 27874,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "1.3.1"
+                    },
+                    {
+                        "download_sha256": "d8f0ebd5b97a2a57ab802237ab5e6f11dcf08f5998729ee1823d6a669be4c768",
+                        "download_size": 9200,
+                        "download_url": "https://github.com/jacmie/PosOrient/releases/download/v1.3.0/PosOrient_v1.3.0.zip",
+                        "install_size": 27706,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "1.3.0"
+                    },
+                    {
+                        "download_sha256": "7e9c09868630b4e033decb0870964e2dc885afcc58063ce3610fc62553accccf",
+                        "download_size": 8800,
+                        "download_url": "https://github.com/jacmie/PosOrient/releases/download/v1.1.3/PosOrient_v1.1.3.zip",
+                        "install_size": 24973,
+                        "kicad_version": "8.0",
+                        "status": "stable",
+                        "version": "1.1.3"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.2",
+            "install_timestamp": 1765249991,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "description": "Based on Solarized colorscheme from Ethan Schoonover",
+                "description_full": "Based on Solarized colorscheme from Ethan Schoonover.\nSee https://ethanschoonover.com/solarized/ for more details.",
+                "identifier": "com.github.pointhi.kicad-color-schemes.solarized-dark",
+                "license": "CC0-1.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "name": "Solarized Dark Theme",
+                "resources": {
+                    "Github": "https://github.com/pointhi/kicad-color-schemes"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "7870a3560e9ba112b3bad342d457730bc9c65e787af87d0c55f6fad544a0532c",
+                        "download_size": 4395,
+                        "download_url": "https://github.com/pointhi/kicad-color-schemes/releases/download/2021-12-05/com.github.pointhi.kicad-color-schemes.solarized-dark_v1.2_pcm.zip",
+                        "install_size": 5691,
+                        "kicad_version": "5.99",
+                        "status": "stable",
+                        "version": "1.2"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.0",
+            "install_timestamp": 1765249991,
+            "package": {
+                "author": {
+                    "contact": {
+                        "web": "https://github.com/wykys"
+                    },
+                    "name": "Jan Vykydal"
+                },
+                "description": "Designed by wykys, Inspired by One Dark",
+                "description_full": "Designed by wykys, Inspired by One Dark",
+                "identifier": "com.github.pointhi.kicad-color-schemes.wdark",
+                "license": "CC0-1.0",
+                "maintainer": {
+                    "contact": {
+                        "web": "https://github.com/pointhi/kicad-color-schemes/"
+                    },
+                    "name": "Thomas Pointhuber"
+                },
+                "name": "wDark Theme",
+                "resources": {
+                    "Github": "https://github.com/pointhi/kicad-color-schemes"
+                },
+                "type": "colortheme",
+                "versions": [
+                    {
+                        "download_sha256": "9e58f7e6032dd40221dc80817dc992f233eba1858d590104c3445d41abcc136a",
+                        "download_size": 4289,
+                        "download_url": "https://github.com/pointhi/kicad-color-schemes/releases/download/2021-12-05/com.github.pointhi.kicad-color-schemes.wdark_v1.0_pcm.zip",
+                        "install_size": 5490,
+                        "kicad_version": "5.99",
+                        "status": "stable",
+                        "version": "1.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.0.1",
+            "install_timestamp": 1765249982,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/sagarHackeD"
+                    },
+                    "name": "Sagar Naik"
+                },
+                "description": "Snap all selected footprints to the nearest grid point",
+                "description_full": "Snap all selected footprints to the nearest grid point. This is useful for quickly aligning multiple footprints to a grid.",
+                "identifier": "com.github.sagarHackeD.SnapToGridKiCAD",
+                "license": "GPL-3.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/sagarHackeD"
+                    },
+                    "name": "Sagar Naik"
+                },
+                "name": "Snap To Grid",
+                "resources": {
+                    "homepage": "https://github.com/sagarHackeD/Snap_To_Grid_KiCAD"
+                },
+                "tags": [
+                    "snap",
+                    "footprint",
+                    "grid"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "236bbeaaab77988f716dd7d467bffe30ea00eb3c5f3ad7374795fa2191e19087",
+                        "download_size": 9592,
+                        "download_url": "https://github.com/sagarHackeD/Snap_To_Grid_KiCAD/releases/download/v1.0.1/kicad-package.zip",
+                        "install_size": 11223,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "1.0.1"
+                    },
+                    {
+                        "download_sha256": "fdb60cdda0c448c43811bc34354a7e7b0d0fe36c3f92af974e4ebe2dd353f783",
+                        "download_size": 8897,
+                        "download_url": "https://github.com/sagarHackeD/Snap_To_Grid_KiCAD/releases/download/v1.0.0/kicad-package.zip",
+                        "install_size": 10130,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "1.0.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "9.0.0",
+            "install_timestamp": 1765249991,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/sparkfun",
+                        "twitter": "https://twitter.com/sparkfun",
+                        "web": "https://sparkfun.com"
+                    },
+                    "name": "SparkFun"
+                },
+                "description": "SparkFun's Libraries for KiCad 7 / 8 / 9",
+                "description_full": "This library contains SparkFun's commonly used parts.\nIt is a cultivated combination of KiCad stock parts, SparkFun-unique footprints, and open-source 3D models.\n\nCheck your settings in Preferences -> Packages and Updates.\nIf you have the default Library nickname prefix 'PCM_', you can proceed to install the libraries through the PCM.\nIf you don't want that prefix, leave that field blank and install the libraries from zip file instead.\nThe installation link below has more details.",
+                "identifier": "com.github.sparkfun.SparkFun-KiCad-Libraries",
+                "license": "CC-BY-4.0",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/sparkfun",
+                        "twitter": "https://twitter.com/sparkfun",
+                        "web": "https://sparkfun.com"
+                    },
+                    "name": "SparkFun"
+                },
+                "name": "SparkFun KiCad Libraries",
+                "resources": {
+                    "homepage": "https://github.com/sparkfun/SparkFun-KiCad-Libraries",
+                    "installation": "https://github.com/sparkfun/SparkFun-KiCad-Libraries#installing-and-using-these-libraries"
+                },
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "87119b9f2152413ebf943fe6261338483143636c3c075bee856c2d0a999d58bb",
+                        "download_size": 34532916,
+                        "download_url": "https://github.com/sparkfun/SparkFun-KiCad-Libraries/releases/download/v9.0.0/SparkFun-KiCad-Libraries-9.0.0-with-pcm.zip",
+                        "install_size": 205743035,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "9.0.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.6.0",
+            "install_timestamp": 1765249979,
+            "package": {
+                "author": {
+                    "contact": {
+                        "github": "https://github.com/yaqwsx",
+                        "twitter": "https://twitter.com/yaqwsx_cz",
+                        "web": "https://honzamrazek.cz"
+                    },
+                    "name": "Jan Mrázek"
+                },
+                "description": "Automation for KiCAD",
+                "description_full": "KiKit is a Python library, KiCAD plugin and a CLI tool to automate several tasks in a standard KiCAD workflow like:\n• panelization of both, regular and oddly shaped, boards\n• automated exporting manufacturing data based on manufacturer presets\n• multi-board project in KiCAD\n• building board presentation pages\n• making 3D-printed solder stencils\n• and more",
+                "identifier": "com.github.yaqwsx.kikit",
+                "license": "MIT",
+                "maintainer": {
+                    "contact": {
+                        "github": "https://github.com/yaqwsx",
+                        "twitter": "https://twitter.com/yaqwsx_cz",
+                        "web": "https://honzamrazek.cz"
+                    },
+                    "name": "Jan Mrázek"
+                },
+                "name": "KiKit",
+                "resources": {
+                    "homepage": "https://github.com/yaqwsx/KiKit"
+                },
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "c654f4ffb73d7687830ed94c9ba110fe6fbc6baf4011e8e4167e00b1396ae10c",
+                        "download_size": 9533,
+                        "download_url": "https://github.com/yaqwsx/KiKit/releases/download/v1.6.0/pcm-kikit.zip",
+                        "install_size": 10579,
+                        "kicad_version": "7.0",
+                        "status": "stable",
+                        "version": "1.6.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "2.10.0",
+            "install_timestamp": 1765249978,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "mail@qu1ck.org"
+                    },
+                    "name": "qu1ck"
+                },
+                "description": "Generate interactive html BOM to assist with manual pcb assembly",
+                "description_full": "This plugin generates a convenient Bill of Materials (BOM) listing with the ability to visually correlate and easily search for components and their placements on the PCB. It is particularly useful when hand-soldering a prototype, as it allows users to quickly find locations of components groups on the board. It is also possible to reverse lookup the component group by clicking on a footprint on the board drawing.\nThe plugin utilizes Pcbnew python API to read PCB data and render silkscreen, fab layer, footprint pads, text, and drawings. BOM table fields and grouping is fully configurable, additional columns, such as a manufacturer ID, can be added in Schematic editor and imported either through the netlist file, XML file generated by Eeschema's internal BOM tool, or from board file itself.\nThere is an option to include tracks/zones data as well as netlist information allowing dynamic highlight of nets on the board.",
+                "identifier": "org.openscopeproject.InteractiveHtmlBom",
+                "keep_on_update": [
+                    ".*/config\\.ini",
+                    ".*/web/user.*"
+                ],
+                "license": "MIT",
+                "name": "Interactive Html Bom",
+                "resources": {
+                    "Demos": "https://openscopeproject.org/InteractiveHtmlBomDemo/",
+                    "Forum": "https://forum.kicad.info/t/interactive-html-bom-plugin-for-kicad-5-0/11713",
+                    "Github": "https://github.com/openscopeproject/InteractiveHtmlBom",
+                    "Wiki": "https://github.com/openscopeproject/InteractiveHtmlBom/wiki"
+                },
+                "tags": [
+                    "bom",
+                    "pcbnew",
+                    "html",
+                    "assembly",
+                    "documentation"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "f40d509ba74bc2c879d1c39e3535f1551bb63dd4014ca28242632fb12a107c55",
+                        "download_size": 150310,
+                        "download_url": "https://github.com/openscopeproject/InteractiveHtmlBom/releases/download/v2.10.0/InteractiveHtmlBom_v2.10.0_pcm.zip",
+                        "install_size": 733010,
+                        "kicad_version": "6.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "2.10.0"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        },
+        {
+            "current_version": "1.2",
+            "install_timestamp": 1765249981,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "mail@qu1ck.org"
+                    },
+                    "name": "qu1ck"
+                },
+                "description": "Batch resize, scale, mirror graphics, tracks, zones, footprints and other items in the PCB editor.",
+                "description_full": "Batch resize, scale, mirror graphics, tracks, zones, footprints and other items in the PCB editor.\nInspired by free transform tool in graphics editors.\nImportant notes:\n• Mirror does not change layers, it transforms in place\n• When a singular footprint is selected it's items are scaled so the footprint itself will become larger/smaller\n• When more than one item is selected footprints are not changed or rescaled, only repositioned/rotated\n• Pads are not rescaled, only repositioned/rotated\n• Rotation center is geometrical center of combined bounding box of all selected items",
+                "identifier": "org.openscopeproject.TransformIt",
+                "license": "MIT",
+                "name": "Transform It",
+                "resources": {
+                    "Forum": "https://forum.kicad.info/t/transformit-plugin-batch-scale-mirror-rotate-all-the-things/40336",
+                    "Github": "https://github.com/openscopeproject/TransformIt"
+                },
+                "tags": [
+                    "scale",
+                    "rotate",
+                    "mirror",
+                    "graphics"
+                ],
+                "type": "plugin",
+                "versions": [
+                    {
+                        "download_sha256": "7d93db4f0444ada004861ce19ce5c6c99f00c5b8e4cd3c32e02e45a7faa3f189",
+                        "download_size": 10063,
+                        "download_url": "https://github.com/openscopeproject/TransformIt/releases/download/v1.2/TransformIt_v1.2_pcm.zip",
+                        "install_size": 24964,
+                        "kicad_version": "7.0",
+                        "platforms": [
+                            "linux",
+                            "macos",
+                            "windows"
+                        ],
+                        "status": "stable",
+                        "version": "1.2"
+                    }
+                ]
+            },
+            "pinned": false,
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        }
+    ]
+}

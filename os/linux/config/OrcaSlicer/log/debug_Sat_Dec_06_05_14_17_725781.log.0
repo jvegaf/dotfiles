@@ -1,0 +1,29 @@
+[error]	2025-12-06 05:14:18.267540[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-06 05:14:18.270962[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-06 05:14:18.271139[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-06 05:14:18.272127[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-06 05:14:18.280801[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-06 05:14:18.289655[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-06 05:14:18.300787[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-06 05:14:18.301106[Thread 0x00007f19029f7f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-06 05:14:18.778483[Thread 0x00007f1847fff6c0]:Unable to open connection to spacenavd
+[error]	2025-12-06 05:14:19.555600[Thread 0x00007f19029f7f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-06 05:14:19.567352[Thread 0x00007f19029f7f00]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-06 05:14:19.567357[Thread 0x00007f1823fff6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-06 05:14:19.567377[Thread 0x00007f19029f7f00]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-06 05:14:19.567384[Thread 0x00007f1844ff86c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-06 05:14:19.567401[Thread 0x00007f18453f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-06 05:14:19.567421[Thread 0x00007f18453f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-06 05:14:19.567432[Thread 0x00007f18453f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/Dremel_Support_Small.3mf
+[error]	2025-12-06 05:14:19.567438[Thread 0x00007f18453f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/handle_thirties_style.3mf
+[error]	2025-12-06 05:14:19.567443[Thread 0x00007f18453f96c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[warning]	2025-12-06 05:14:20.020427[Thread 0x00007f19029f7f00]:05:14:20 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-06 05:14:20.062802[Thread 0x00007f19029f7f00]:05:14:20 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-06 05:14:20.068051[Thread 0x00007f19029f7f00]:05:14:20 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-06 05:14:20.136076[Thread 0x00007f19029f7f00]:05:14:20 AM: Warning: Error running JavaScript: Unsupported result type
+[error]	2025-12-06 05:14:21.796787[Thread 0x00007f19029f7f00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-06 05:14:21.842321[Thread 0x00007f19029f7f00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-06 05:14:22.351246[Thread 0x00007f16dcfc66c0]:Error getting: `check_new_version_sf`: HTTP 503, 
+[error]	2025-12-06 05:14:31.925835[Thread 0x00007f19029f7f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-06 05:14:48.591238[Thread 0x00007f19029f7f00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-06 05:14:56.395279[Thread 0x00007f18603ff6c0]:Arrange full params: {"min_obj_distance":5840000,"accuracy":1.000000,"parallel":1,"allow_rotations":0,"do_final_align":1,"allow_multi_materials_on_same_plate":0,"avoid_extrusion_cali_region":0,"is_seq_print":0,"bed_shrink_x":1.000000,"bed_shrink_y":1.000000,"brim_skirt_distance":0.000000,"clearance_height_to_rod":36.000000,"clearance_height_to_lid":140.000000,"clearance_radius":65.000000,"printable_height":250.000000,

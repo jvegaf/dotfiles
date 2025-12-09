@@ -1,0 +1,28 @@
+[error]	2025-12-08 01:54:09.977699[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-08 01:54:09.980947[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-08 01:54:09.981131[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-08 01:54:09.982155[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-08 01:54:09.993240[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-08 01:54:10.003032[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-08 01:54:10.015922[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-08 01:54:10.016214[Thread 0x00007f9617f62f00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-08 01:54:10.515374[Thread 0x00007f95467fc6c0]:Unable to open connection to spacenavd
+[error]	2025-12-08 01:54:11.768229[Thread 0x00007f9617f62f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-08 01:54:11.781628[Thread 0x00007f953f3fd6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-08 01:54:11.781638[Thread 0x00007f953e7fa6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[error]	2025-12-08 01:54:11.781659[Thread 0x00007f953f3fd6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-08 01:54:11.781664[Thread 0x00007f953e7fa6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-08 01:54:11.781674[Thread 0x00007f953effc6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-08 01:54:11.781684[Thread 0x00007f953e7fa6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-08 01:54:11.781695[Thread 0x00007f953effc6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[warning]	2025-12-08 01:54:12.347297[Thread 0x00007f9617f62f00]:01:54:12 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 01:54:12.457320[Thread 0x00007f9617f62f00]:01:54:12 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 01:54:12.462114[Thread 0x00007f9617f62f00]:01:54:12 AM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-08 01:54:12.464379[Thread 0x00007f9617f62f00]:01:54:12 AM: Warning: Error running JavaScript: Unsupported result type
+[error]	2025-12-08 01:54:14.199268[Thread 0x00007f9617f62f00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-08 01:54:14.243984[Thread 0x00007f9617f62f00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-08 01:54:18.100956[Thread 0x00007f93e75ff6c0]:Error getting: `check_new_version_sf`: HTTP 0, curl:Timeout was reached:
+Failed to connect to check-version.orcaslicer.com port 443: Connection timed out
+[Error 28]
+[error]	2025-12-08 01:54:19.221755[Thread 0x00007f9617f62f00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-08 01:55:13.257561[Thread 0x00007f9617f62f00]:calc_exclude_triangles:Unable to create exclude triangles
