@@ -27,6 +27,7 @@
     ~/.config/tealdeer: os/linux/config/tealdeer
     ~/.config/ulauncher: os/linux/config/ulauncher
     ~/.config/yazi: os/linux/config/yazi
+    ~/.config/clangd/config.yaml: langs/cpp/clangd/config.yaml
     ~/.config/hypr/Monitor_Profiles: os/linux/config/hypr/Monitor_Profiles
     ~/.config/hypr/UserConfigs: os/linux/config/hypr/UserConfigs
     ~/.config/hypr/UserScripts: os/linux/config/hypr/UserScripts

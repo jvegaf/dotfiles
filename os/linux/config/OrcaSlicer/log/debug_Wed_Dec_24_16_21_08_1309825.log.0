@@ -1,0 +1,23 @@
+[error]	2025-12-24 16:21:09.812775[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-24 16:21:09.817861[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-24 16:21:09.818123[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-24 16:21:09.819982[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-24 16:21:09.830904[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-24 16:21:09.844148[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-24 16:21:09.863427[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-24 16:21:09.863864[Thread 0x00007f3360f83ec0]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-24 16:21:10.453141[Thread 0x00007f32955f96c0]:Unable to open connection to spacenavd
+[error]	2025-12-24 16:21:12.113126[Thread 0x00007f3360f83ec0]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-24 16:21:12.131594[Thread 0x00007f3285ffa6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-24 16:21:12.131653[Thread 0x00007f3285ffa6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-24 16:21:12.131675[Thread 0x00007f3285ffa6c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-24 16:21:12.131799[Thread 0x00007f32853f76c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[error]	2025-12-24 16:21:12.131821[Thread 0x00007f32853f76c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-24 16:21:12.131830[Thread 0x00007f32853f76c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-24 16:21:12.132687[Thread 0x00007f32853f76c0]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[warning]	2025-12-24 16:21:13.082641[Thread 0x00007f3360f83ec0]:04:21:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-24 16:21:13.226948[Thread 0x00007f3360f83ec0]:04:21:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-24 16:21:13.234186[Thread 0x00007f3360f83ec0]:04:21:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-24 16:21:13.355466[Thread 0x00007f3360f83ec0]:04:21:13 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-24 16:21:16.129698[Thread 0x00007f3360f83ec0]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-24 16:21:26.826669[Thread 0x00007f3360f83ec0]:calc_exclude_triangles:Unable to create exclude triangles

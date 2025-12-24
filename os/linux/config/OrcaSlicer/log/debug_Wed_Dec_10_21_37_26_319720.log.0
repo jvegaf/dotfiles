@@ -1,0 +1,37 @@
+[error]	2025-12-10 21:37:27.340814[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.12mm Fine @Aquila PRO.json!
+[error]	2025-12-10 21:37:27.343863[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Speed @pipper.json!
+[error]	2025-12-10 21:37:27.344023[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @AQUILA PRO.json!
+[error]	2025-12-10 21:37:27.345000[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Standard @Creality Ender3V2 - Copy.json!
+[error]	2025-12-10 21:37:27.353302[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/PLA 0.30mm Speed @ Aquila Pro Klipper.json!
+[error]	2025-12-10 21:37:27.362977[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/process/0.20mm Support @AQUILA PRO.json!
+[error]	2025-12-10 21:37:27.375487[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Aquila Pro.json!
+[error]	2025-12-10 21:37:27.375799[Thread 0x00007fa7991fbf00]:can not find parent for config /home/th3g3ntl3man/.config/OrcaSlicer/user/default/machine/Prusa MK3S pipper.json!
+[error]	2025-12-10 21:37:27.814632[Thread 0x00007fa6cdffb6c0]:Unable to open connection to spacenavd
+[error]	2025-12-10 21:37:28.960481[Thread 0x00007fa7991fbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-10 21:37:28.973657[Thread 0x00007fa6fc7f66c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket001.3mf
+[error]	2025-12-10 21:37:28.973678[Thread 0x00007fa6fc7f66c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPad.3mf
+[error]	2025-12-10 21:37:28.973815[Thread 0x00007fa6cc7f86c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/casetoppart-f.3mf
+[error]	2025-12-10 21:37:28.973841[Thread 0x00007fa6cc7f86c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/cover.3mf
+[error]	2025-12-10 21:37:28.974266[Thread 0x00007fa6fc7f66c0]:Unable to open the file/home/th3g3ntl3man/Downloads/arduino-uno-case-w-breadborad-insert-model_files/top-lid.3mf
+[error]	2025-12-10 21:37:28.974331[Thread 0x00007fa6fc7f66c0]:Unable to open the file/home/th3g3ntl3man/Code/R3M1XXX/Case/0x01-case-BodyPocket003.3mf
+[error]	2025-12-10 21:37:28.974382[Thread 0x00007fa6c2ffd6c0]:Unable to open the file/home/th3g3ntl3man/Downloads/pwnagotchi-compact-case-raspberry-pi-zero-ups-rtc-e-paper-model_files/case-bottompart-f.3mf
+[warning]	2025-12-10 21:37:29.476456[Thread 0x00007fa7991fbf00]:09:37:29 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-10 21:37:29.487457[Thread 0x00007fa7991fbf00]:09:37:29 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-10 21:37:29.491562[Thread 0x00007fa7991fbf00]:09:37:29 PM: Warning: Error running JavaScript: Unsupported result type
+[warning]	2025-12-10 21:37:29.568322[Thread 0x00007fa7991fbf00]:09:37:29 PM: Warning: Error running JavaScript: Unsupported result type
+[error]	2025-12-10 21:37:31.287136[Thread 0x00007fa7991fbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[warning]	2025-12-10 21:37:31.331096[Thread 0x00007fa7991fbf00]:get_version, get_version not supported,return 00.00.00.00!
+[error]	2025-12-10 21:37:31.334120[Thread 0x00007fa678b376c0]:[Orca Updater]: status=0, error=curl:Couldn't resolve host name:
+Could not resolve host: api.bambulab.com
+[Error 6], body=
+[error]	2025-12-10 21:37:31.425221[Thread 0x00007fa6673ff6c0]:Error getting: `check_new_version_sf`: HTTP 0, curl:Couldn't resolve host name:
+Could not resolve host: check-version.orcaslicer.com
+[Error 6]
+[error]	2025-12-10 21:37:31.438002[Thread 0x00007fa664dfb6c0]:HMSQuery: update hms info error = curl:Couldn't resolve host name:
+Could not resolve host: e.bambulab.com
+[Error 6], body = , status = 0
+[error]	2025-12-10 21:37:31.443641[Thread 0x00007fa664dfb6c0]:HMSQuery: update hms info error = curl:Couldn't resolve host name:
+Could not resolve host: e.bambulab.com
+[Error 6], body = , status = 0
+[error]	2025-12-10 21:37:37.841508[Thread 0x00007fa7991fbf00]:calc_exclude_triangles:Unable to create exclude triangles
+[error]	2025-12-10 21:38:33.338621[Thread 0x00007fa7991fbf00]:calc_exclude_triangles:Unable to create exclude triangles

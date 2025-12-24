@@ -17,7 +17,7 @@
     "edit_sheet_height": -1,
     "edit_sheet_visible_columns": "0 1 2 3 4 5 6 7",
     "edit_sheet_width": -1,
-    "edit_symbol_height": 569,
+    "edit_symbol_height": 555,
     "edit_symbol_visible_columns": "0 1 2 3 4 5 6 7",
     "edit_symbol_width": 1114,
     "erc_severities": 48,
@@ -29,7 +29,7 @@
     "show_erc_exclusions": false,
     "show_erc_warnings": true,
     "show_hidden_fields": false,
-    "show_hidden_pins": false,
+    "show_hidden_pins": true,
     "show_illegal_symbol_lib_dialog": true,
     "show_op_currents": true,
     "show_op_voltages": true,
@@ -206,18 +206,16 @@
       "Description"
     ],
     "open_libs": [
-      "-- Recently Used --",
-      "-- Already Placed --",
-      "Switch",
+      "PCM_Capacitor_AKL",
+      "PCM_Capacitor_US_AKL",
+      "Connector_Audio",
+      "Mechanical",
+      "PCM_SparkFun-Hardware",
       "Connector",
-      "Connector_Generic",
-      "Connector_Generic_MountingPin",
-      "Connector_Generic_Shielded",
-      "74xx",
-      "Analog_ADC",
-      "Driver_LED",
-      "MCU_Texas_MSP430",
-      "Transformer"
+      "PCM_Diode_AKL",
+      "PCM_SparkFun-Connector",
+      "PCM_Transistor_BJT_AKL",
+      "Relay"
     ]
   },
   "lib_view": {
@@ -478,9 +476,11 @@
   },
   "system": {
     "file_history": [
+      "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/Controller-2040/Controller-2040.kicad_sch",
+      "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x1F/EquBoard/EquBoard.kicad_sch",
+      "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/Encoders-LCD/Encoders-LCD.kicad_sch",
       "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/FX-Pots/FX-Pots.kicad_sch",
       "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/FX-Pads/FX-Pads.kicad_sch",
-      "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/Encoders-LCD/Encoders-LCD.kicad_sch",
       "/home/th3g3ntl3man/Code/bbq20kbd_hw/bbq20_keyboard.kicad_sch",
       "/home/th3g3ntl3man/Code/R3M1XXX/DemoBox/ht16k33-adapter/ht16k33-adapter.kicad_sch",
       "/home/th3g3ntl3man/Downloads/adafruit-backpack/Adafruit 7seg backpack/Adafruit 7seg backpack.kicad_sch",
@@ -553,7 +553,7 @@
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 960,
-    "size_y": 1043,
+    "size_y": 521,
     "zoom_factors": [
       0.05,
       0.07,

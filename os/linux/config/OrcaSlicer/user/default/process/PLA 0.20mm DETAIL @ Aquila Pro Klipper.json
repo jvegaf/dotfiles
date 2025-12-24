@@ -1,11 +1,11 @@
 {
-    "brim_type": "no_brim",
+    "brim_type": "brim_ears",
     "default_acceleration": "1000",
     "from": "User",
     "gap_infill_speed": "40",
     "inherits": "0.20mm Standard @MyKlipper",
     "initial_layer_acceleration": "250",
-    "initial_layer_infill_speed": "40",
+    "initial_layer_infill_speed": "30",
     "initial_layer_speed": "20",
     "inner_wall_acceleration": "1000",
     "inner_wall_speed": "50",
@@ -20,8 +20,9 @@
     "skirt_distance": "4",
     "skirt_height": "1",
     "skirt_loops": "1",
-    "sparse_infill_density": "20%",
-    "sparse_infill_pattern": "honeycomb",
+    "slow_down_layers": "18",
+    "sparse_infill_density": "10%",
+    "sparse_infill_pattern": "triangles",
     "sparse_infill_speed": "60",
     "support_interface_speed": "50",
     "support_speed": "50",
@@ -31,6 +32,5 @@
     "travel_speed": "100",
     "version": "2.3.0.3",
     "wall_loops": "4",
-    "wall_sequence": "inner-outer-inner wall",
     "xy_hole_compensation": "0.1"
 }

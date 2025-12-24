@@ -48,3 +48,10 @@ if [ -n "$(ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
     source "$bash_file"
   done
 fi
+
+python() {
+    if [ -z "$VIRTUAL_ENV" ]; then
+        source ~/venv/bin/activate
+    fi
+    command python "$@"
+}

@@ -199,7 +199,7 @@
       300.0
     ]
   },
-  "footprints_pane_width": 566,
+  "footprints_pane_width": 286,
   "graphics": {
     "canvas_type": 1,
     "highlight_factor": 0.5,
@@ -392,7 +392,7 @@
     },
     "maximized": true,
     "mru_path": "",
-    "perspective": "layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=733;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Libraries;caption=Footprint Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=256;besth=-1;minw=20;minh=-1;maxw=256;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Symbols;caption=Symbol : Footprint Assignments;state=2044;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=450;besth=190;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Filtered Footprints;state=2044;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=566;besth=-1;minw=20;minh=-1;maxw=566;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Buttons;caption=;state=139644;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=505;besth=100;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=34|dock_size(4,1,0)=258|dock_size(5,0,0)=452|dock_size(2,1,0)=568|dock_size(3,6,0)=100|",
+    "perspective": "layout2|name=MainToolbar;caption=;state=139644;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=733;besth=34;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Libraries;caption=Footprint Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=256;besth=-1;minw=20;minh=-1;maxw=256;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Symbols;caption=Symbol : Footprint Assignments;state=2044;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=450;besth=190;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Filtered Footprints;state=2044;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=286;besth=-1;minw=20;minh=-1;maxw=286;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Buttons;caption=;state=139644;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=505;besth=100;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=34|dock_size(4,1,0)=258|dock_size(5,0,0)=288|dock_size(2,1,0)=288|dock_size(3,6,0)=100|",
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 960,

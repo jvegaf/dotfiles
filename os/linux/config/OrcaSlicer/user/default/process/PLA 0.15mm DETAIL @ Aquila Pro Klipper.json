@@ -1,13 +1,12 @@
 {
     "default_acceleration": "1000",
-    "enable_support": "1",
     "from": "User",
     "gap_infill_speed": "40",
     "inherits": "0.20mm Standard @MyKlipper",
     "initial_layer_acceleration": "250",
     "initial_layer_infill_speed": "40",
     "initial_layer_print_height": "0.15",
-    "initial_layer_speed": "20",
+    "initial_layer_speed": "30",
     "inner_wall_acceleration": "1000",
     "inner_wall_speed": "50",
     "internal_solid_infill_speed": "60",
@@ -17,7 +16,8 @@
     "outer_wall_acceleration": "1000",
     "outer_wall_speed": "35",
     "print_settings_id": "PLA 0.15mm DETAIL @ Aquila Pro Klipper",
-    "sparse_infill_density": "30%",
+    "skirt_distance": "5",
+    "skirt_loops": "1",
     "sparse_infill_speed": "60",
     "support_interface_speed": "50",
     "support_speed": "50",
@@ -27,6 +27,5 @@
     "travel_speed": "100",
     "version": "2.3.0.3",
     "wall_loops": "4",
-    "wall_sequence": "outer wall/inner wall",
     "xy_hole_compensation": "0.1"
 }

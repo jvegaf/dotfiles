@@ -15,6 +15,7 @@ alias dots='cd $DOTFILES_PATH'
 
 # Git
 alias gaa="git add -A"
+alias gba="git branch --all"
 alias gc='$DOTLY_PATH/bin/dot git commit'
 alias gca="git add --all && git commit --amend --no-edit"
 alias gco="git checkout"
@@ -57,6 +58,8 @@ alias fks='flatpak search'
 alias fki='flatpak install'
 alias sns='snap search'
 alias sni='snap install'
+
+alias mx='tmux'
 
 # Security
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
