@@ -1,0 +1,43 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "🚀 Iniciando configuración de OpenCode Voice para Arch Linux..."
+
+# 1. Instalar dependencias del sistema
+echo "📦 Instalando dependencias (sox y portaudio)..."
+sudo pacman -S --needed sox portaudio alsa-utils
+
+# Instalar dependencias de compilación y drivers CUDA
+sudo pacman -S --needed cuda base-devel cmake
+
+# Clonar y compilar whisper.cpp solo si no existe whisper-cli
+if [ ! -f /usr/bin/whisper-cli ]; then
+  cd /tmp
+  git clone https://github.com/ggerganov/whisper.cpp.git
+  cd whisper.cpp
+  cmake -B build -DGGML_CUDA=OFF -DGGML_AVX2=ON -DGGML_FMA=ON -DGGML_F16C=ON
+  cmake --build build --config Release -j"$(nproc)"
+
+  echo "Whisper compilado con exito ✅"
+  sudo cp build/bin/whisper-cli /usr/bin/whisper-cli
+else
+  echo "✅ whisper-cli ya existe en /usr/bin/whisper-cli, saltando compilación"
+fi
+# 3. Crear directorio para modelos
+MODEL_DIR="$HOME/.local/share/whisper-models"
+mkdir -p "$MODEL_DIR"
+
+MODEL_URL="https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin"
+if [ ! -f "$MODEL_DIR/ggml-base.bin" ]; then
+  echo "📥 Descargando modelo Whisper (base)..."
+  curl -L "$MODEL_URL" -o "$MODEL_DIR/ggml-base.bin"
+else
+  echo "✅ El modelo ya existe en $MODEL_DIR"
+fi
+
+# 5. Permisos de audio
+echo "👤 Asegurando permisos de audio para el usuario $USER..."
+sudo usermod -aG audio "$USER"
+
+echo "✨ ¡Configuración completada! Reinicia tu sesión para aplicar los grupos de audio."
