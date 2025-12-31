@@ -16,17 +16,17 @@ The user will provide a ticket for you to read and begin researching.
    - This ensures you have full context before decomposing the research
 
 2. **Detail the steps needed to perform the research:**
-   - Break down the user's ticket into composable research areas
-   - Take time to think about the underlying patterns, connections, and architectural the ticket has provided
-   - Identify specific components, patterns, or concepts to investigate
-   - Lay out what the codebase-locator or thoughts-locator should look for
-   - Specify what patterns the codebase-pattern-finder should look for
-   - Be clear that locators and pattern-finders collect information for analyzers
-   - Typically run a single codebase-analyzer and thoughts-analyzer (in parallel if both needed)
-   - Consider which directories, files, or architectural patterns are relevant
+    - Break down the user's ticket into composable research areas
+    - Take time to think about the underlying patterns, connections, and architectural the ticket has provided
+    - Identify specific components, patterns, or concepts to investigate
+    - Lay out what the codebase-locator or thoughts-locator should look for
+    - Specify what patterns the codebase-pattern-finder should look for
+    - Be clear that locators and pattern-finders collect information for analyzers
+    - Typically run a single codebase-analyzer and thoughts-analyzer (in parallel if both needed)
+    - Consider which directories, files, or architectural patterns are relevant
 
 3. **Spawn tasks for comprehensive research (follow this sequence):**
-
+   
    **Phase 1 - Locate (Codebase & Thoughts):**
    - Identify all topics/components/areas you need to locate
    - Group related topics into coherent batches
@@ -76,7 +76,6 @@ Use the following metadata for the research document frontmatter:
    - Filename: `thoughts/research/date_topic.md`
    - Use the metadata gathered in step 5, mapping XML tags to frontmatter fields
    - Structure the document with YAML frontmatter followed by content:
-
      ```markdown
      ---
      date: [Current date and time with timezone in ISO format]
@@ -89,50 +88,40 @@ Use the following metadata for the research document frontmatter:
      ---
 
      ## Ticket Synopsis
-
      [Synopsis of the ticket information]
 
      ## Summary
-
      [High-level findings answering the user's question]
 
      ## Detailed Findings
 
      ### [Component/Area 1]
-
      - Finding with reference ([file.ext:line])
      - Connection to other components
      - Implementation details
 
      ### [Component/Area 2]
-
      - Finding with reference ([file.ext:line])
      - Connection to other components
      - Implementation details
-       ...
+     ...
 
      ## Code References
-
      - `path/to/file.py:123` - Description of what's there
      - `another/file.ts:45-67` - Description of the code block
 
      ## Architecture Insights
-
      [Patterns, conventions, and design decisions discovered]
 
      ## Historical Context (from thoughts/)
-
      [Relevant insights from thoughts/ directory with references]
-
      - `thoughts/research/something.md` - Historical decision about X
      - `thoughts/plans/build-thing.md` - Past exploration of Y
 
      ## Related Research
-
      [Links to other research documents in thoughts/shared/research/]
 
      ## Open Questions
-
      [Any areas that need further investigation]
      ```
 
@@ -147,14 +136,13 @@ Use the following metadata for the research document frontmatter:
    - Add `last_updated_note: "Added follow-up research for [brief description]"` to frontmatter
    - Add a new section: `## Follow-up Research [timestamp]`
    - Spawn new sub-agents as needed for additional investigation
-   - Continue updating the document and syncing
+    - Continue updating the document and syncing
 
 9. **Update ticket status** to 'researched' by editing the ticket file's frontmatter.
 
 Use the todowrite tool to create a structured task list for the 9 steps above, marking each as pending initially.
 
 ## Important notes:
-
 - Follow the three-phase sequence: Locate → Find Patterns → Analyze
 - Use parallel Task agents OF THE SAME TYPE ONLY within each phase to maximize efficiency and minimize context usage
 - Always run fresh codebase research - never rely solely on existing research documents
@@ -183,3 +171,4 @@ Use the todowrite tool to create a structured task list for the 9 steps above, m
 **ticket**
 
 $ARGUMENTS
+

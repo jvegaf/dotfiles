@@ -20,6 +20,7 @@ You are tasked with creating detailed implementation plans through an interactiv
 
 2. **Spawn initial research tasks to gather context**:
    Before asking the user any questions, use specialized agents to research in parallel:
+
    - Use the **codebase-locator** task to find all files related to the files given by the user
    - Use the **codebase-analyzer** task to understand how the current implementation works
    - If relevant, use the **thoughts-locator** task to find any existing thoughts documents about this feature
@@ -42,7 +43,6 @@ You are tasked with creating detailed implementation plans through an interactiv
    - Determine true scope based on codebase reality
 
 5. **Present informed understanding and focused questions**:
-
    ```
    Based on the ticket and my research of the codebase, I understand we need to [accurate summary].
 
@@ -64,10 +64,10 @@ You are tasked with creating detailed implementation plans through an interactiv
 After getting initial clarifications:
 
 1. **If the user corrects any misunderstanding**:
-   - DO NOT just accept the correction
-   - Spawn new research tasks to verify the correct information
-   - Read the specific files/directories they mention
-   - Only proceed once you've verified the facts yourself
+    - DO NOT just accept the correction
+    - Spawn new research tasks to verify the correct information
+    - Read the specific files/directories they mention
+    - Only proceed once you've verified the facts yourself
 
 2. **Determine what actually needs to change** based on the research findings. The plan should be a markdown format document that addresses specific locations needing changes, written in engineering English, with small code snippets only if required for clarity.
 
@@ -91,10 +91,9 @@ After getting initial clarifications:
    - Return specific file:line references
    - Find tests and examples
 
-4. **Wait for ALL sub-tasks to complete** before proceeding
+3. **Wait for ALL sub-tasks to complete** before proceeding
 
-5. **Present findings and design options**:
-
+4. **Present findings and design options**:
    ```
    Based on my research, here's what I found:
 
@@ -118,7 +117,6 @@ After getting initial clarifications:
 Once aligned on approach:
 
 1. **Create initial plan outline**:
-
    ```
    Here's my proposed plan structure:
 
@@ -142,7 +140,7 @@ After structure approval:
 1. **Write the plan** to `thoughts/plans/{descriptive_name}.md`
 2. **Use this template structure**:
 
-````markdown
+```markdown
 # [Feature/Task Name] Implementation Plan
 
 ## Overview
@@ -158,7 +156,6 @@ After structure approval:
 [A Specification of the desired end state after this plan is complete, and how to verify it]
 
 ### Key Discoveries:
-
 - [Important finding with file:line reference]
 - [Pattern to follow]
 - [Constraint to work within]
@@ -174,31 +171,26 @@ After structure approval:
 ## Phase 1: [Descriptive Name]
 
 ### Overview
-
 [What this phase accomplishes]
 
 ### Changes Required:
 
 #### 1. [Component/File Group]
-
 **File**: `path/to/file.ext`
 **Changes**: [Summary of changes]
 
 ```[language]
 // Specific code to add/modify
 ```
-````
 
 ### Success Criteria:
 
 #### Automated Verification:
-
 - [ ] Unit tests pass: `turbo test`
 - [ ] Type checking passes: `turbo check`
 - [ ] Integration tests pass: `turbo test-integration`
 
 #### Manual Verification:
-
 - [ ] Feature works as expected when tested via UI
 - [ ] Performance is acceptable under load
 - [ ] Edge case handling verified manually
@@ -215,16 +207,13 @@ After structure approval:
 ## Testing Strategy
 
 ### Unit Tests:
-
 - [What to test]
 - [Key edge cases]
 
 ### Integration Tests:
-
 - [End-to-end scenarios]
 
 ### Manual Testing Steps:
-
 1. [Specific step to verify feature]
 2. [Another verification step]
 3. [Edge case to test manually]
@@ -242,8 +231,7 @@ After structure approval:
 - Original ticket: `thoughts/tickets/eng_XXXX.md`
 - Related research: `thoughts/research/[relevant].md`
 - Similar implementation: `[file:line]`
-
-````
+```
 
 ### Step 5: Review
 
@@ -339,12 +327,11 @@ Use the todowrite tool to create a structured task list for the 6 steps above, m
 - [ ] Performance is acceptable with 1000+ items
 - [ ] Error messages are user-friendly
 - [ ] Feature works correctly on mobile devices
-````
+```
 
 ## Common Patterns
 
 ### For Database Changes:
-
 - Start with schema/migration
 - Add store methods
 - Update business logic
@@ -352,7 +339,6 @@ Use the todowrite tool to create a structured task list for the 6 steps above, m
 - Update clients
 
 ### For New Features:
-
 - Research existing patterns first
 - Start with data model
 - Build backend logic
@@ -360,7 +346,6 @@ Use the todowrite tool to create a structured task list for the 6 steps above, m
 - Implement UI last
 
 ### For Refactoring:
-
 - Document current behavior
 - Plan incremental changes
 - Maintain backwards compatibility
@@ -386,6 +371,7 @@ When spawning research sub-tasks:
    - If a sub-task returns unexpected results, spawn follow-up tasks
    - Cross-check findings against the actual codebase
    - Don't accept results that seem incorrect
+
 
 **files**
 

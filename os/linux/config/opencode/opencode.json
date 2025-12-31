@@ -11,5 +11,6 @@
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     }
-  }
+  },
+  "plugin": ["@tarquinen/opencode-smart-title", "opencode-sessions"]
 }
