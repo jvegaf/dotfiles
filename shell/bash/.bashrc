@@ -55,3 +55,6 @@ python() {
     fi
     command python "$@"
 }
+
+# opencode
+export PATH=/home/th3g3ntl3man/.opencode/bin:$PATH

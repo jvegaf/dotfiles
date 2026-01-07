@@ -3,10 +3,12 @@
 set -eu pipefail
 
 # Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install -y golang-go
+# sudo apt-get update
+# sudo apt-get install -y golang-go
+#
+# go install github.com/jesseduffield/lazydocker@latest
 
-go install github.com/jesseduffield/lazydocker@latest
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
 echo "lazydocker installed 👌"
 

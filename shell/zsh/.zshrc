@@ -40,3 +40,8 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code-insiders --locate-shell-integration-path zsh)"
 
+
+# opencode
+export PATH=/home/th3g3ntl3man/.opencode/bin:$PATH
+
+fastfetch -c $HOME/.config/fastfetch/config.jsonc

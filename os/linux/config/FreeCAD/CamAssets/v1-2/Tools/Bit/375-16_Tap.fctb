@@ -1,8 +1,6 @@
 {
-  "version": 2,
+  "attribute": {},
   "name": "375-16_Tap",
-  "shape": "tap.fcstd",
-  "shape-type": "tap",
   "parameter": {
     "CuttingEdgeLength": "1.063 \"",
     "Diameter": "0.375 \"",
@@ -10,7 +8,10 @@
     "Length": "2.500 \"",
     "Pitch": "0.000 in",
     "ShankDiameter": "0.250 \"",
-    "TipAngle": "90.000 \u00b0"
+    "TipAngle": "90.000 \u00b0",
+    "Units": "Imperial"
   },
-  "attribute": {}
+  "shape": "tap.fcstd",
+  "shape-type": "tap",
+  "version": 2
 }

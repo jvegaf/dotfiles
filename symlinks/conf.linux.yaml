@@ -21,6 +21,11 @@
     ~/.config/lazygit: os/linux/config/lazygit
     ~/.config/mise: os/linux/config/mise
     ~/.config/opencode: os/linux/config/opencode
+    ~/.config/ranger: os/linux/config/ranger
+    ~/.config/i3: os/linux/config/i3
+    ~/.config/picom: os/linux/config/picom
+    ~/.config/polybar: os/linux/config/polybar
+    ~/.config/rofi: os/linux/config/rofi
     ~/.config/qt5ct: os/linux/config/qt5ct
     ~/.config/qt6ct: os/linux/config/qt6ct
     ~/.config/starship: os/linux/config/starship
