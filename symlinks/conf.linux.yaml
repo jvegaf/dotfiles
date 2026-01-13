@@ -45,3 +45,4 @@
     ~/.config/wofi: os/linux/config/wofi
     ~/.config/yazi: os/linux/config/yazi
     ~/.local/share/applications/org.freecad.FreeCAD.desktop: os/linux/local/share/applications/org.freecad.FreeCAD.desktop
+    ~/.local/share/wallpapers: wallpapers

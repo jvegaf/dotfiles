@@ -22,7 +22,7 @@ exec mako
 # Autotiling
 exec autotiling
 
-exec_always swaybg -i ~/.local/share/wallpapers/bg_0.jpg
+exec_always swaybg -i ~/.config/sway/EndeavourOS_SpaceStation__3840x2160.png
 
 exec --no-startup-id ~/.config/waybar/mechabar/waybar-sway.sh
 
