@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# set -eu pipefail
+
+# source "$DOTLY_PATH/scripts/core/_main.sh"
+# source "$DOTFILES_PATH/scripts/install/utils/install.sh"
+
+##? Install Node Version Manager
+#?? 1.0.0
+##?
+##? Usage:
+##?   sdkman
+
+
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update
+sudo apt install fastfetch
+
+echo
+
+exit 0
+# log::note("pyenv installed ✅")

@@ -1,0 +1,29 @@
+#!/bin/env bash
+
+set -eu pipefail
+
+
+
+sudo apt install -y \
+  autoconf \
+  pipx \
+  build-essential \
+  git \
+  scrot \
+  tmux \
+  tree \
+  vim-nox \
+  feh \
+  i3blocks \
+  i3lock \
+  i3status \
+  sakura \
+  libnotify-bin \
+  suckless-tools
+
+pipx install autotiling
+
+
+cd /tmp
+
+echo "i3 window manager installed ✅"
