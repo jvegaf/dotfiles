@@ -165,5 +165,7 @@ alias lzd='lazydocker'
 alias yadcm='yadm commit'
 alias yadcl='yadm clone https://github.com/jvegaf/dotfiles'
 alias yadst='yadm status'
+alias yadps='yadm push origin master'
+alias yadpl='yadm pull origin master'
 
 # vim: ft=sh
