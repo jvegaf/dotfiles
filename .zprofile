@@ -8,7 +8,6 @@ export VISUAL="${EDITOR}"
 export BROWSER='firefox'
 export TERMINAL='kitty'
 export DOTFILES_DIR="$HOME/.dots"
-
 export HISTORY_IGNORE="(ls|lsd|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
 # XDG vars
