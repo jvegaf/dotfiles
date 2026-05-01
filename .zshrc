@@ -39,3 +39,11 @@ source <(fzf --zsh)
 
 # opencode
 export PATH=/home/th3g3ntl3man/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

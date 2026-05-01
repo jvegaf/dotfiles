@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+source "${HOME}"/.bashrc
+
+# log::note("Ollama installed ✅")
