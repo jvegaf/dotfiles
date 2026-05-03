@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+sudo dnf install dnf-plugins-core
+
+sudo dnf install \
+https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf install \
+  alacritty alsa-utils ark bat blueman bluez bluez-tools brightnessctl btop \
+  cmake curl eza fastfetch fd-find fzf git git-lfs gh golang kitty less \
+  luarocks meson neovim nmap ntfs-3g pavucontrol playerctl \
+  python3-neovim ripgrep sshfs stow tealdeer tmux unzip unar \
+  uv vim wget wireguard-tools yt-dlp zoxide zsh zstd nvtop mpv ImageMagick \
+  qbittorrent mpc kicad kicad-packages3d
+
+
+flatpak install flathub com.orcaslicer.OrcaSlicer
+
+curl -sS https://starship.rs/install.sh | sh
+
+curl -fsSL https://opencode.ai/install | bash
+
+
