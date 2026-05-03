@@ -168,5 +168,6 @@ alias yadcl='yadm clone https://github.com/jvegaf/dotfiles'
 alias yadst='yadm status'
 alias yadps='yadm push origin master'
 alias yadpl='yadm pull origin master'
+alias yadaa='yadm add -u :/'
 
 # vim: ft=sh
