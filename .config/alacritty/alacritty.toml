@@ -5,14 +5,15 @@
 
 ## GENERAL --------------------------------------------------------
 
+[terminal]
+shell = { program = "/bin/zsh", args = ["--login", "-c", "tmux new-session -A -s main-alacritty"] }
+
 [general]
 ## Import additional configuration files.
 import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
 ## Entries in shell.args are passed as arguments to the shell.
-#shell = { program = "/bin/zsh", args = ["--login"] }
-
 ## Directory the shell is started in. When this is unset, or "None",
 ## the working directory of the parent process will be used.
 #working_directory = "None"
@@ -36,9 +37,9 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 position = "None"
 dynamic_padding = true
 decorations = "full"
-opacity = 1.0
+opacity = 0.8
 blur = false
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 dynamic_title = true
 class = { instance = "Alacritty", general = "Alacritty" }
 decorations_theme_variant = "None"
