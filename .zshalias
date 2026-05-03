@@ -91,7 +91,8 @@ alias ns='npm start'
 alias ys='yarn start'
 
 # Utils
-alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"   # Arch
+alias grub2-update="sudo grub2-mkconfig -o /boot/grub/grub.cfg" # Arch
 alias rmd='rm -rf'
 alias sb="/bin/subl"
 alias v='nvim'
