@@ -195,6 +195,7 @@
   },
   "plugin": [
     "@plannotator/opencode@latest",
-    "@mohak34/opencode-notifier@latest"
+    "@mohak34/opencode-notifier@latest",
+    "opencode-gemini-auth@latest"
   ]
 }
