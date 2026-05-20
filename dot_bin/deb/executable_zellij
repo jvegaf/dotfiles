@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+# source "$DOTLY_PATH/scripts/core/_main.sh"
+# source "$DOTFILES_PATH/scripts/install/utils/install.sh"
+
+##? Install Zellij
+#?? 1.0.0
+##?
+##? Usage:
+##?   zellij
+
+# docs::parse "$@"
+
+# PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+rustup update && cargo install --locked zellij

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+echo "uvx installed ✅"

@@ -1,0 +1,7 @@
+nvtop
+1password
+mpv
+imagemagick
+qbittorrent
+opencode-bin
+orca-slicer-bin

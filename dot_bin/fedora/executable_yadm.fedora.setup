@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_Rawhide/home:TheLocehiliosan:yadm.repo
+sudo dnf install yadm
+
+echo "yadm installed"
+
+exit 0
