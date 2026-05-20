@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PARU_INSTALL="paru -S --needed --noconfirm"
+
+# System
+
+$PARU_INSTALL hyprland hyprlock hypridle hyprpicker swww xdg-desktop-portal-hyprland \
+  waybar waybar-updates vicinae-bin swaync wl-clipboard \
+  brightnessctl udiskie devify polkit-gnome playerctl \
+  pyprland grim slurp
+
+#CLI / TUI
+
+$PARU_INSTALL fastfetch fzf jq eza fd vivid fish starship ripgrep bat yazi git-delta
+
+#GUI APPS
+
+$PARU_INSTALL pavucontrol satty nemo zathura zathura-pdf-mupdf qimgv-light mpv
+
+#Audio Service
+
+$PARU_INSTALL pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber alsa-utils
+
+#Color Theme
+
+$PARU_INSTALL catppuccin-gtk-theme-macchiato catppuccin-cursors-macchiato \
+  qt5ct qt5-wayland qt6-wayland kvantum kvantum-qt5 nwg-look
+
+#icon Theme
+
+curl -LJO https://github.com/ljmill/catppuccin-icons/releases/download/v0.2.0/Catppuccin-SE.tar.bz2
+tar -xf Catppuccin-SE.tar.bz2
+mv Catppuccin-SE ~/.local/share/icons/
+
+#Fonts
+
+$PARU_INSTALL maplemono-nf-unhinted ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono \
+  ttf-nerd-fonts-symbols-common ttf-font-awesome noto-fonts-cjk ttf-ms-win11-auto
+
+fc-cache -fv
+
+echo "Hyprland deps installed"
+
+exit 0
