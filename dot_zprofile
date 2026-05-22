@@ -9,7 +9,7 @@ export BROWSER='firefox'
 export TERMINAL='kitty'
 export DOTFILES_DIR="$HOME/.dots"
 export HISTORY_IGNORE="(ls|lsd|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
-export FILE_MANAGER="nautilus"
+export FILE_MANAGER="thunar"
 # XDG vars
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

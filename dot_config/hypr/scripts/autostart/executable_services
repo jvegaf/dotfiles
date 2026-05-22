@@ -10,7 +10,8 @@ awww-daemon --format argb &
 udiskie &
 
 # Bar
-waybar &
+# waybar &
+"$HOME"/.config/waybar_1/waybar_hypr.sh
 
 # Notification Daemon
 swaync &
