@@ -3,7 +3,6 @@
     "default_print_profile": "0.20mm Speed @MK3S 0.4",
     "from": "User",
     "inherits": "MyKlipper 0.4 nozzle",
-    "is_custom_defined": "0",
     "machine_load_filament_time": "17",
     "machine_max_acceleration_extruding": [
         "2000",
@@ -47,13 +46,21 @@
         "0.3"
     ],
     "name": "Aquila Pro Klipper",
-    "nozzle_type": "brass",
+    "nozzle_type": [
+        "brass"
+    ],
     "print_host": "http://192.168.8.199",
     "printable_area": [
         "0x0",
         "235x0",
         "235x235",
         "0x235"
+    ],
+    "printer_extruder_id": [
+        "1"
+    ],
+    "printer_extruder_variant": [
+        "Direct Drive Standard"
     ],
     "printer_settings_id": "Aquila Pro Klipper",
     "retraction_length": [

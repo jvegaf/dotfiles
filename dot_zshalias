@@ -162,6 +162,7 @@ alias dkd='docker compose down'
 alias lzd='lazydocker'
 
 alias cmad='chezmoi add'
+alias cmra='chezmoi re-add' #agregar los cambios locales
 alias cme='chezmoi edit'
 alias cmst='chezmoi status'
 alias cmap='chezmoi apply'
