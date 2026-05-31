@@ -23,5 +23,10 @@
     ~/.config/yazi: os/linux/yazi
     ~/.config/zed: os/linux/zed
     ~/.config/tmux : os/linux/tmux
+    ~/.config/dunst : os/linux/dunst
+    ~/.config/i3: os/linux/i3
+    ~/.config/picom : os/linux/picom
+    ~/.config/polybar : os/linux/polybar
+    ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.face: os/linux/.face
     ~/.screenlayout: os/linux/.screenlayout

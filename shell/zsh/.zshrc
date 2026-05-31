@@ -32,3 +32,10 @@ source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
+[ -f ~/.keys ] && source ~/.keys
+
+fastfetch -c $HOME/.config/fastfetch/config.jsonc
