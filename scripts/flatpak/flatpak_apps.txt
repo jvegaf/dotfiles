@@ -1,0 +1,5 @@
+com.brave.Browser
+com.rtosta.zapzap
+com.usebruno.Bruno
+dev.neovide.neovide
+dev.zed.Zed

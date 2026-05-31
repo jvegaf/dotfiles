@@ -1,0 +1,6 @@
+nvtop
+mpv
+imagemagick
+qbittorrent
+opencode-bin
+orca-slicer-bin

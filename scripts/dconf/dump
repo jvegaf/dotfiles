@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/dconf/utils/changes.sh"
+
+##? Dump Cinnamon dconf
+#?? 1.0.0
+##?
+##? Usage:
+##?    dump
+docs::parse "$@"
+
+log::note "Dumping Cinnamon changes..."
+dump_changes
+
+log::note "Done!"
+

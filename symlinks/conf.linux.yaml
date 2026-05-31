@@ -1,0 +1,27 @@
+- clean: ['~']
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.dotly: os/linux/.dotly
+    ~/.config/mise: os/linux/mise
+    ~/.config/alacritty: os/linux/alacritty
+    ~/.config/starship: os/linux/starship
+    ~/.config/fastfetch: os/linux/fastfetch
+    ~/.config/ghostty: os/linux/ghostty
+    ~/.config/FreeCAD: os/linux/FreeCAD
+    ~/.config/ranger: os/linux/ranger
+    ~/.config/lazydocker: os/linux/lazydocker
+    ~/.config/lazygit: os/linux/lazygit
+    ~/.config/opencode: os/linux/opencode
+    ~/.config/kicad: os/linux/kicad
+    ~/.config/kitty: os/linux/kitty
+    ~/.config/btop: os/linux/btop
+    ~/.config/yazi: os/linux/yazi
+    ~/.config/zed: os/linux/zed
+    ~/.config/tmux : os/linux/tmux
+    ~/.face: os/linux/.face
+    ~/.screenlayout: os/linux/.screenlayout

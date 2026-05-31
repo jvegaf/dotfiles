@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if ! command -v paru &>/dev/null; then
+  echo "Installing Paru (AUR Helper)..."
+  sudo pacman -Syu --needed --noconfirm base-devel
+  git clone https://aur.archlinux.org/paru.git "$TMP_PARU"
+  cd "$TMP_PARU" || exit
+  makepkg -si --needed --noconfirm
+  cd - || exit
+  rm -rf "$TMP_PARU"
+fi
+
+echo "Paru installed"
+
+exit 0

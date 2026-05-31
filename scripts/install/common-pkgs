@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Installing common packages"
+
+paru -S --needed --noconfirm - <./utils/common.pkgs.txt
+
+echo "Common packages installed"
+
+exit 0

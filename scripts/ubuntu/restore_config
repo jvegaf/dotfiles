@@ -1,0 +1,22 @@
+# vim: filetype=bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+# source "$DOTFILES_PATH/scripts/dconf/utils/changes.sh"
+
+##? Restore Cinnamon dconf
+#?? 1.0.0
+##?
+##? Usage:
+##?    restore
+docs::parse "$@"
+
+log::note "Restoring Ubuntu personal settings..."
+
+gsettings set org.gnome.desktop.wm.keybindings show-desktop "[]"
+
+log::note "Done!"
+
+

@@ -1,0 +1,5 @@
+neovim
+yarn
+generator-eslint
+yo
+@nestjs/cli

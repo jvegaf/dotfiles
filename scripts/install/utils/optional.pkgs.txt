@@ -1,0 +1,14 @@
+nvtop
+mpd
+1password
+mpc
+mpv
+imagemagick
+qbittorrent
+rmpc
+kicad
+kicad-library
+kicad-library-3d
+opencode-bin
+orca-slicer-bin
+freecad

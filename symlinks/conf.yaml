@@ -1,0 +1,27 @@
+- clean: ['~']
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- create:
+    - $DOTFILES_PATH/shell/bash/completions
+    - $DOTFILES_PATH/shell/bash/themes
+
+- link:
+    ~/.bash_profile: shell/bash/.bash_profile
+    ~/.bashrc: shell/bash/.bashrc
+    ~/.zimrc: shell/zsh/.zimrc
+    ~/.zlogin: shell/zsh/.zlogin
+    ~/.zshenv: shell/zsh/.zshenv
+    ~/.zshrc: shell/zsh/.zshrc
+    ~/.inputrc: shell/.inputrc
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitattributes: git/.gitattributes
+    ~/.gitignore_global: git/.gitignore_global
+    ~/.config/fish: shell/fish
+    ~/.ideavimrc: editors/intellij/.ideavimrc
+    ~/.config/rustfmt: langs/rustfmt
+    ~/.npmrc: langs/js/.npmrc
+    ~/.clang-format: langs/cpp/.clang-format

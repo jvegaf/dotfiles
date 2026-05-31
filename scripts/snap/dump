@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+LIST_FILE="${SCRIPT_DIR}/snap_apps.txt"
+
+echo "# Snap installation dump"
+rm -rf $LIST_FILE
+
+snap list | awk 'NR>1 {print $1}' > $LIST_FILE
+
+echo
+echo "Archivo generado: $LIST_FILE"

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Remove Neovim Configurations
+#?? 1.0.0
+##?
+##? Usage:
+##?   remove_nvim_config
+# docs::eval "$@"
+
+log::note "Removing Neovim config"
+
+# config_dir="$HOME/.config/nvim"
+local_dir="$HOME/.local/share/nvim"
+cache_dir="$HOME/.cache/nvim"
+state_dir="$HOME/.local/state/nvim"
+
+# rm -rf "$config_dir"
+rm -rf "$local_dir"
+rm -rf "$cache_dir"
+rm -rf "$state_dir"
+
+log::note "Neovim config removed"
+
+
+log::note "Init Neovim config ..."
+
+cd ~/.config/nvim && nvim --headless +q
+log::note "Reset Neovim config successfully"
+
+exit 0

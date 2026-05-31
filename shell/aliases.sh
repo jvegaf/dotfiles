@@ -1,0 +1,143 @@
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ls="eza -lh --group-directories-first --icons=auto"
+alias l="ls"
+alias ll="ls -a"
+alias lt='eza --tree --level=2 --long --icons --git'
+alias llt='lt -a'
+alias ff='fzf --preview '\''bat --style=numbers --color=always {}'\'''
+alias ~="cd ~"
+alias cdc="cd ~/Code"
+alias doc="cd ~/Documents"
+alias dw="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias du="du -hd 1"
+alias dots='cd $DOTFILES_PATH'
+alias logout="gnome-session-quit --logout"
+alias nvcfg="cd ~/.config/nvim"
+alias vimcfg="vim ~/.vimrc"
+alias r="ranger"
+alias paru="paru --bottomup"
+alias mx="tmux"
+alias edalias='nvim $DOTFILES_PATH/shell/aliases.sh'
+alias myscripts='cd $HOME/.local/bin'
+alias dfscripts='cd $DOTFILES_PATH/scripts/install/'
+# alias alscripts="cd $DOTFILES_PATH/os/linux/packages/arch"
+alias run="./run"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias open='xdg-open'
+alias zj='zellij'
+
+# Security
+alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
+alias checkvirus="clamscan --recursive=yes --infected /home"
+alias updateantivirus="sudo freshclam"
+
+# Git
+alias g="lazygit"
+alias gaa="git add -A"
+alias gb="git branch"
+alias gba="git branch --all"
+alias gc='$DOTLY_PATH/bin/dot git commit'
+alias gcl="git clone"
+alias gca="git add --all && git commit --amend --no-edit"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gd='$DOTLY_PATH/bin/dot git pretty-diff'
+alias gs="git status -sb"
+alias gf="git fetch --all -p"
+alias gps="git push"
+alias gpsf="git push --force"
+alias gpl="git pull --rebase --autostash"
+alias gl='$DOTLY_PATH/bin/dot git pretty-log'
+alias gsw="git switch"
+
+alias grc="gh repo clone"
+
+# Copilot
+alias copl="copilot"
+
+# Arch
+alias yau="yay -Syyu"
+alias pau="sudo pacman -Syyu"
+alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
+
+# WebDev
+alias nom='npm'
+alias nim='npm'
+
+alias ns='npm start'
+alias ys='yarn start'
+
+# Utils
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
+alias rmd='rm -rf'
+alias sb="/bin/subl"
+alias v='nvim'
+alias b='bat'
+alias k='kill -9'
+alias grep='grep --color=auto'
+# alias idea='intellij-idea-ultimate-edition'
+alias idea='intellij-idea-ultimate'
+alias i.='(idea $PWD &>/dev/null &)'
+alias c.='(code $PWD &>/dev/null &)'
+alias cin='(code-insiders $PWD &>/dev/null &)'
+alias v.='(nvim $PWD &>/dev/null &)'
+alias o.='($FILE_BROWSER $PWD &>/dev/null &)'
+alias py='python'
+alias py3='python3'
+alias ffet='fastfetch'
+alias i3cfg='nvim $HOME/.config/i3/config'
+alias swcfg='nvim $HOME/.config/sway/config.d/application_defaults'
+alias hycfg='nvim $HOME/.config/hypr/UserConfigs/UserKeybinds.conf'
+alias bt='btop'
+
+alias nvdprf='nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=2"'
+alias ip='ip -color'
+alias darkmode='gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+alias pacdel='sudo pacman -Rns'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+alias perfmode='dot system cpumode performance'
+alias savemode='dot system cpumode powersave'
+alias schedmode='dot system cpumode schedutil'
+alias currmode='dot system cpumode current'
+
+alias winreb='sudo grub-reboot 4 && sudo reboot'
+alias sysd='sudo systemd-manager-tui'
+
+#VPN
+# alias vpnup='sudo wg-quick up wg0'
+# alias vpndown='sudo wg-quick down wg0'
+# alias vpnstatus='sudo systemctl status wg-quick@wg0'
+alias vpnup='dot system vpn up'
+alias vpndown='dot system vpn down'
+alias vpnstatus='sudo systemctl status wg-quick@wg0'
+# status vpn tunnel sudo wg
+
+## UV
+alias pyinst='uv python install' # list python versions to install (e.g. uv python install 3.11 3.12)
+alias ppi='uv pip install'
+alias ppir='uv pip install -r requirements.txt'
+alias ppu='uv pip uninstall'
+alias ppur='uv pip uninstall -r requirements.txt'
+alias ppf='uv pip freeze'
+alias ppfr='uv pip freeze > requirements.txt'
+alias pvc='uv venv' # Create local environment (pass '--python 3.12' for specific python version)
+alias pva='source ./.venv/bin/activate'
+alias pvd='deactivate' # Deactivate python environment
+
+alias dku='docker compose up -d'
+alias dkd='docker compose down'
+alias lzd='lazydocker'
+
+# vim: ft=sh

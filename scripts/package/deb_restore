@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Restore all installed packages from deb apt
+#?? 1.0.0
+##?
+##? Usage:
+##?   deb_restore
+docs::eval "$@"
+
+IMPORT_FILE="$DOTFILES_PATH/os/linux/packages/xBuntu/deb/installed.txt"
+
+log::header "Restoring packages from $IMPORT_FILE \n"
+
+if [[ ! -f "$IMPORT_FILE" ]]; then
+    log::error "File $IMPORT_FILE does not exist. Exiting..."
+    exit 1
+fi
+
+# Leer los paquetes desde el archivo y asegurarse de que estén instalados
+while IFS= read -r package; do
+    if dpkg -l | grep -qw "$package"; then
+        log::warning "Package '$package' is already installed, skipping."
+    else
+        log::note "\nInstalling package '$package'..."
+        sudo apt-get install -y "$package"
+    fi
+done <"$IMPORT_FILE"
+
+log::success "All packages restored successfully ✅"

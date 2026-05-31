@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
+source "$DOTFILES_PATH/scripts/self/utils/symlinks_tool.sh"
+
+##? Updates submodules, dotfiles and attempts to do some setup
+#?? 1.0.0
+##?
+##? Usage:
+##?   update
+docs::eval "$@"
+
+log::note "Updating dotfiles"
+self_update
+
+log::note "Applying common Symlinks"
+apply_common_symlinks
+
+log::note "Applying Linux Symlinks"
+apply_linux_symlinks
+
+

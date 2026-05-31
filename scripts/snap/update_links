@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Update desktop links of snap apps
+##?
+##? Usage:
+##?  update_links
+##?
+docs::eval "$@"
+
+cd "/var/lib/snapd/desktop/applications"
+cp -u *.desktop "$HOME/.local/share/applications/"
+
+log::note "snap applications links updated ✅"
+
+exit 0
