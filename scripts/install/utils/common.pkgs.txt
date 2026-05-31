@@ -34,6 +34,7 @@ pavucontrol
 platformio-core
 platformio-core-udev
 playerctl
+pnpm
 python-pynvim
 pyenv
 ripgrep
@@ -43,12 +44,16 @@ starship
 stow
 tealdeer
 tmux
+tree-sitter-cli
 unzip
 unarchiver
 uv
 vim
 wget
+wl-clipboard
 wireguard-tools
+xsel
+xclip
 yazi
 yt-dlp
 zoxide

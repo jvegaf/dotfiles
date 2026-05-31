@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+##? Setups the environment
+#?? 1.0.0
+##?
+##? Usage:
+##?    install
+
+echo "🚀 Welcome to the jvegaf/dotfiles installer!"
+echo "-------------------------------------------------"
+echo
+
+echo "Installing previuos dependencies"
+sudo pacman -S --noconfirm --needed git git-lfs git-delta base-devel rustup
+rustup default stable
+
+export PATH="$HOME/.cargo/bin:$PATH"
+cargo install docpars grip-grab
+
+export DOTFILES_PATH="$HOME/.dotfiles"
+echo "👉  Cloning into: '$DOTFILES_PATH'"
+
+git clone --recurse-submodules -j8 --depth 1 https://github.com/jvegaf/dotfiles..git "$DOTFILES_PATH"
+export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
+
+echo "Installing dotly 🌚"
+"$DOTLY_PATH/bin/dot" self install
+
+echo "Symlinks apply"
+"$DOTLY_PATH/bin/dot" symlinks apply
+
+echo "Installing Linux Packages"
+"$DOTLY_PATH/bin/dot" install paru
+"$DOTLY_PATH/bin/dot" install common-pkgs
+"$DOTLY_PATH/bin/dot" install apps-pkgs
+"$DOTLY_PATH/bin/dot" install docker
+# "$DOTLY_PATH/bin/dot" install neovim-stable
+# "$DOTLY_PATH/bin/dot" install mise
+# "$DOTLY_PATH/bin/dot" install fastfetch
+# "$DOTLY_PATH/bin/dot" install starship
+# "$DOTLY_PATH/bin/dot" install uvx
+# "$DOTLY_PATH/bin/dot" install opencode
+# "$DOTLY_PATH/bin/dot" install 1password
+# "$DOTLY_PATH/bin/dot" install github-cli
+#
+# "$DOTLY_PATH/bin/dot" self install_custom

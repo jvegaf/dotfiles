@@ -4,3 +4,4 @@ imagemagick
 qbittorrent
 opencode-bin
 orca-slicer-bin
+creality-print-bin
