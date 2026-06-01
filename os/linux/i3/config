@@ -130,6 +130,11 @@ client.urgent           #000000 #000000 #ffffff #000000   #000000
 client.placeholder      #000000 #000000 #ffffff #000000   #000000
 client.background       #ffffff
 
+# Set inner/outer gaps
+gaps inner 10
+gaps outer 6
+
+
 ########################################################################
 ########################################################################
 ####
@@ -138,7 +143,53 @@ client.background       #ffffff
 ########################################################################
 ########################################################################
 
-exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
+# exec --no-startup-id "i3-msg 'workspace 1; exec alacritty'"
+
+
+
+# bind program to workspace and focus to them on startup:
+# for know which class is which program,
+#     use    xprop | grep WM_CLASS
+
+########################################################################
+########################################################################
+####
+####                  Window Rules
+####
+########################################################################
+########################################################################
+
+
+assign [class="Xfce4-terminal"]  $ws1
+assign [class="wezterm"]         $ws1
+assign [class="(?i)firefox"]     $ws2
+assign [class="Brave-browser"]   $ws2
+assign [class="Thunar"]          $ws3
+assign [class="Nemo"]            $ws3
+assign [class="Thonny"]          $ws3
+assign [class="Code"]            $ws3
+assign [class="Code-Insiders"]   $ws3
+assign [class="Harmony"]         $ws3
+assign [class="Symphony"]        $ws3
+# assign [class="1Password""]      $ws4
+assign [class="OrcaSlicer"]      $ws4
+assign [class="TelegramDesktop"] $ws5
+assign [class="FreeCAD"]         $ws5
+assign [class="KiCAD"]           $ws5
+
+# automatic set focus new window if it opens on another workspace than the current:
+for_window [class="(?i)Xfce4-terminal"]   focus
+for_window [class="(?i)firefox"]          focus
+for_window [class="(?i)brave(-browser)?"] focus
+for_window [class="(?i)Thunar"]           focus
+for_window [class="(?i)Nemo"]             focus
+for_window [class="(?i)Thunderbird"]      focus
+for_window [class="(?i)TelegramDesktop"]  focus
+for_window [class="(?i)Symphony"]         focus
+for_window [class="(?i)Harmony"]          focus
+for_window [class="(?i)Thonny"]           focus
+for_window [class="(?i)Code"]             focus
+
 
 ########################################################################
 ########################################################################
