@@ -26,6 +26,7 @@
     ~/.config/dunst : os/linux/dunst
     ~/.config/i3: os/linux/i3
     ~/.config/picom : os/linux/picom
+    ~/.config/rofi : os/linux/rofi
     ~/.config/polybar : os/linux/polybar
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.face: os/linux/.face
