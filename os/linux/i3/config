@@ -3,7 +3,7 @@ font pango:Hack 9
 floating_modifier $mod
 
 # start a terminal
-set $term alacritty
+set $term kitty
 bindsym $mod+Return exec $term
 
 # kill focused window
@@ -161,6 +161,9 @@ gaps outer 6
 
 
 assign [class="Xfce4-terminal"]  $ws1
+assign [class="kitty"]           $ws1
+assign [class="alacritty"]       $ws1
+assign [class="ghostty"]         $ws1
 assign [class="wezterm"]         $ws1
 assign [class="(?i)firefox"]     $ws2
 assign [class="Brave-browser"]   $ws2
