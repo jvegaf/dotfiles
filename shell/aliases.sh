@@ -93,7 +93,7 @@ alias py3='python3'
 alias ffet='fastfetch'
 alias i3cfg='nvim $HOME/.config/i3/config'
 alias swcfg='nvim $HOME/.config/sway/config.d/application_defaults'
-alias hycfg='nvim $HOME/.config/hypr/UserConfigs/UserKeybinds.conf'
+alias hycfg='nvim $HOME/.config/hypr/hyprland.conf'
 alias bt='btop'
 
 alias nvdprf='nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=2"'

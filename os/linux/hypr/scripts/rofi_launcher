@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2025 Aditya Shakya <adi1090x@gmail.com>
+
+# Import Current Theme
+DIR="$HOME/.config/hypr"
+RASI="$HOME/.config/rofi/launcher.rasi"
+
+# Toggle - kill if running, otherwise start
+if pgrep -x rofi > /dev/null; then
+    pkill -x rofi
+else
+    rofi \
+        -show drun \
+        -normal-window \
+        -theme ${RASI}
+fi

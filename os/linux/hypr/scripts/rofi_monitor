@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+## External Monitor Selector - Rofi menu to select which external monitor to use.
+## Selecting a monitor enables it and disables all other external monitors.
+
+LAPTOP="eDP-1"
+STATE_FILE="$HOME/.config/hypr/theme/.monitor_state"
+RASI="$HOME/.config/rofi/monitor.rasi"
+
+prompt='External Monitor'
+notify_cmd="notify-send -h string:x-canonical-private-synchronous:sys-notify-monitor -u low"
+
+# Get all external monitors (including disabled)
+all_monitors=$(hyprctl monitors all -j | jq -r \
+	".[] | select(.name != \"$LAPTOP\") | .name" 2>/dev/null || true)
+
+if [[ -z "$all_monitors" ]]; then
+	${notify_cmd} "External Monitor" "No external monitors found"
+	exit 0
+fi
+
+# Current selection from state file
+current=$(head -n1 "$STATE_FILE" 2>/dev/null || true)
+
+# Active monitors
+active_monitors=$(hyprctl monitors -j | jq -r \
+	".[] | select(.name != \"$LAPTOP\") | .name" 2>/dev/null || true)
+
+# Build message
+if [[ -n "$current" ]] && [[ -n "$active_monitors" ]] && echo "$active_monitors" | grep -qx "$current" 2>/dev/null; then
+	mesg="Selected: $current"
+else
+	mesg="No monitor selected"
+fi
+
+# Build options list — mark the currently selected one
+options=""
+while IFS= read -r mon; do
+	if [[ "$mon" == "$current" ]] && echo "$active_monitors" | grep -qx "$mon" 2>/dev/null; then
+		options+="󰍹  $mon (selected)\n"
+	else
+		options+="󰍺  $mon\n"
+	fi
+done <<< "$all_monitors"
+options="${options%\\n}"
+
+# Rofi CMD
+chosen=$(echo -e "$options" | rofi -dmenu \
+	-p "$prompt" \
+	-mesg "$mesg" \
+	-markup-rows \
+	-normal-window \
+	-theme "${RASI}")
+
+[[ -z "$chosen" ]] && exit 0
+
+# Extract monitor name: strip icon prefix and status suffix
+monitor_name=$(echo "$chosen" | sed 's/^[^ ]* *//; s/ *(selected)$//')
+
+# Disable all other external monitors, enable the chosen one
+while IFS= read -r mon; do
+	if [[ "$mon" != "$monitor_name" ]]; then
+		is_active=$(hyprctl monitors -j | jq -r \
+			".[] | select(.name == \"$mon\") | .name" 2>/dev/null || true)
+		if [[ -n "$is_active" ]]; then
+			hyprctl keyword monitor "$mon, disable"
+		fi
+	fi
+done <<< "$all_monitors"
+
+# Enable the selected monitor
+hyprctl keyword monitor "$monitor_name, preferred, auto, 1"
+echo "$monitor_name" > "$STATE_FILE"
+sleep 0.5
+~/.config/hypr/scripts/bind_workspaces
+${notify_cmd} "External Monitor" "$monitor_name selected"

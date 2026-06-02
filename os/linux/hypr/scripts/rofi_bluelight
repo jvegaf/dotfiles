@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+## Blue Light Filter - Control hyprsunset temperature via rofi
+
+# Import Current Theme
+RASI="$HOME/.config/rofi/bluelight.rasi"
+
+# State files (shared with waybar sunset module)
+STATE_FILE="$HOME/.config/hypr/theme/.sunset_state"
+TEMP_FILE="$HOME/.config/hypr/theme/.sunset_temp"
+
+# Theme Elements
+prompt='Blue Light Filter'
+if [[ -f "$STATE_FILE" ]] && [[ "$(cat "$STATE_FILE")" == "night" ]]; then
+	mesg="Currently: $(cat "$TEMP_FILE")K"
+else
+	mesg="Currently: Off"
+fi
+
+# Options
+layout=$(cat "${RASI}" | grep 'USE_ICON' | cut -d'=' -f2)
+if [[ "$layout" == 'NO' ]]; then
+	option_1=' Off (6500K)'
+	option_2=' Low (5500K)'
+	option_3=' Medium (4500K)'
+	option_4=' High (3500K)'
+	option_5=' Max (2500K)'
+else
+	option_1='󰖚'
+	option_2='󰃝'
+	option_3='󰃟'
+	option_4='󰃠'
+	option_5='󰖙'
+fi
+
+# Notification
+iDIR="$HOME/.config/mako/icons"
+notify_cmd="notify-send -h string:x-canonical-private-synchronous:sys-notify-bluelight -u low"
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$prompt" \
+		-mesg "$mesg" \
+		-markup-rows \
+		-normal-window \
+		-theme "${RASI}"
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
+}
+
+# Apply temperature
+apply_temp() {
+	local temp="$1"
+	local label="$2"
+	if [[ "$temp" -ge 6500 ]]; then
+		hyprctl hyprsunset identity
+		echo "day" > "$STATE_FILE"
+	else
+		hyprctl hyprsunset temperature "$temp"
+		echo "night" > "$STATE_FILE"
+		echo "$temp" > "$TEMP_FILE"
+	fi
+	${notify_cmd} "Blue Light Filter" "$label"
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+	$option_1)
+		apply_temp 6500 "Off (6500K)"
+		;;
+	$option_2)
+		apply_temp 5500 "Low (5500K)"
+		;;
+	$option_3)
+		apply_temp 4500 "Medium (4500K)"
+		;;
+	$option_4)
+		apply_temp 3500 "High (3500K)"
+		;;
+	$option_5)
+		apply_temp 2500 "Max (2500K)"
+		;;
+esac

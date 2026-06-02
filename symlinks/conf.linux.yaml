@@ -7,27 +7,32 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
-    ~/.config/mise: os/linux/mise
+    ~/.fonts: fonts
+    ~/.config/FreeCAD: os/linux/FreeCAD
+    ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.config/alacritty: os/linux/alacritty
-    ~/.config/starship: os/linux/starship
+    ~/.config/btop: os/linux/btop
+    ~/.config/dunst : os/linux/dunst
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/ghostty: os/linux/ghostty
-    ~/.config/FreeCAD: os/linux/FreeCAD
-    ~/.config/ranger: os/linux/ranger
-    ~/.config/lazydocker: os/linux/lazydocker
-    ~/.config/lazygit: os/linux/lazygit
-    ~/.config/opencode: os/linux/opencode
+    ~/.config/i3: os/linux/i3
+    ~/.config/hypr: os/linux/hypr
+    ~/.config/mako: os/linux/mako
+    ~/.config/wlogout: os/linux/wlogout
     ~/.config/kicad: os/linux/kicad
     ~/.config/kitty: os/linux/kitty
-    ~/.config/btop: os/linux/btop
-    ~/.config/yazi: os/linux/yazi
-    ~/.config/zed: os/linux/zed
-    ~/.config/tmux : os/linux/tmux
-    ~/.config/dunst : os/linux/dunst
-    ~/.config/i3: os/linux/i3
+    ~/.config/lazydocker: os/linux/lazydocker
+    ~/.config/lazygit: os/linux/lazygit
+    ~/.config/mise: os/linux/mise
+    ~/.config/opencode: os/linux/opencode
     ~/.config/picom : os/linux/picom
-    ~/.config/rofi : os/linux/rofi
     ~/.config/polybar : os/linux/polybar
-    ~/.config/OrcaSlicer : os/linux/OrcaSlicer
+    ~/.config/ranger: os/linux/ranger
+    ~/.config/rofi : os/linux/rofi
+    ~/.config/starship: os/linux/starship
+    ~/.config/tmux : os/linux/tmux
+    ~/.config/yazi: os/linux/yazi
+    ~/.config/waybar: os/linux/waybar
+    ~/.config/zed: os/linux/zed
     ~/.face: os/linux/.face
     ~/.screenlayout: os/linux/.screenlayout
