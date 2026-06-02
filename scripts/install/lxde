@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Installing LXDE"
+
+paru -S --needed --noconfirm - <./utils/lxde.pkgs.txt
+
+echo "LXDE installed"
+
+exit 0

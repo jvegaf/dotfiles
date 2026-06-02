@@ -1,0 +1,11 @@
+sway
+waybar
+wl-clipboard
+egl-wayland
+wayland-protocols
+rofi
+foot
+wmenu
+xorg-xwayland
+xdg-desktop-portal
+xdg-desktop-portal-wlr

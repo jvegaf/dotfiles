@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Installing SWAY"
+
+paru -S --needed --noconfirm - <./utils/sway.pkgs.txt
+
+echo "SWAY installed"
+
+exit 0
