@@ -7,14 +7,14 @@
 # Kill already running process
 _ps=(waybar mako)
 for _prs in "${_ps[@]}"; do
-	if [[ `pidof ${_prs}` ]]; then
-		killall -9 ${_prs}
-	fi
+  if [[ $(pidof "${_prs}") ]]; then
+    killall -9 "${_prs}"
+  fi
 done
 
 # Polkit agent
-if [[ ! `pidof polkit-gnome-authentication-agent-1` ]]; then
-	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+if [[ ! $(pidof polkit-gnome-authentication-agent-1) ]]; then
+  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
 # Apply default theme (sets wallpaper and colors)
@@ -30,11 +30,11 @@ fi
 ~/.config/hypr/scripts/bind_workspaces &
 
 # Set default power profile
-powerprofilesctl set power-saver &
+# powerprofilesctl set power-saver &
+powerprofilesctl set performance &
 
 # Start battery notification daemon
 batsignal -w 30 -c 15 -d 5 -p &
 
 # Start network manager applet
 nm-applet --indicator &
-

@@ -36,29 +36,47 @@ function setcpumode() { #{{{
   echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 } #}}}
 
+function setpowerprofile() {
+  # if powerprofiulesctl exists run powerprofiulesctl set "$1"
+  if command -v powerprofilesctl &>/dev/null; then
+    sudo powerprofilesctl set "$1"
+  else
+    ee "powerprofilesctl not found"
+  fi
+}
+
+function getpowerprofile() {
+  if command -v powerprofilesctl &>/dev/null; then
+    powerprofilesctl get
+  else
+    ee "powerprofilesctl not found"
+  fi
+}
 
 # get & set actions
 case "$1" in #{{{
 performance)
   setcpumode performance
+  setpowerprofile performance
   exit 0
   ;;
 schedutil)
   setcpumode schedutil
+  setpowerprofile balanced
   exit 0
   ;;
 powersave)
   setcpumode powersave
+  setpowerprofile power-saver
   exit 0
   ;;
 current | get)
   getcpumode
+  getpowerprofile
   exit 0
   ;;
 help) show_usage ;;
 *) ee "Try: $0 help" ;;
 esac #}}}
-
-
 
 schedutil
