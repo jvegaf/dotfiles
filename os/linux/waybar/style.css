@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2020-2025 Aditya Shakya <adi1090x@gmail.com>
 */
 
@@ -7,373 +7,427 @@
 
 /** ********** Fonts ********** **/
 * {
-    font-family: "JetBrains Mono", "Symbols Nerd Font", Iosevka, archcraft, sans-serif;
-    font-size: 14px;
+  font-family: "JetBrains Mono", "Symbols Nerd Font", Iosevka, archcraft, sans-serif;
+  font-size: 14px;
 }
 
 /** ********** Waybar Window ********** **/
 window#waybar {
-    background-color: @background;
-	color: @foreground;
-    border-bottom: 2px solid @background-alt1;
-    transition-property: background-color;
-    transition-duration: .5s;
+  background-color: @background;
+  color: @foreground;
+  border-bottom: 2px solid @background-alt1;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /** ********** Custom ********** **/
 
-#custom-power, #custom-themes, #custom-lightmode {
-	color: @background;
-	border-radius: 10px;
-	margin: 6px 6px 6px 6px;
-	padding: 2px 8px 2px 8px;
+#custom-power,
+#custom-themes,
+#custom-lightmode {
+  color: @background;
+  border-radius: 10px;
+  margin: 6px 6px 6px 6px;
+  padding: 2px 8px 2px 8px;
 }
 
 #custom-lightmode {
-    background-color: @background-alt1;
-	color: @foreground;
+  background-color: @background-alt1;
+  color: @foreground;
 }
+
 #custom-lightmode.on {
-    background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 #custom-menu {
-	background-color: @background-alt1;
-	color: @foreground;
-	font-size: 18px;
-	border-radius: 0px 14px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	padding: 2px 8px 2px 8px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 18px;
+  border-radius: 0px 14px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 8px 2px 8px;
 }
 
 #custom-themes {
-    background-color: @foreground;
+  background-color: @foreground;
 }
 
 #custom-power {
-	background-color: @foreground;
-	font-size: 16px;
+  background-color: @foreground;
+  font-size: 16px;
 }
 
 /** ********** Sunset ********** **/
 
 #custom-sunset {
-    background-color: @background-alt1;
-	color: @foreground;
-	font-size: 16px;
-	border-radius: 10px;
-	margin: 6px 6px 6px 6px;
-	padding: 4px 9px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 6px 6px 6px 6px;
+  padding: 4px 9px;
 }
+
 #custom-sunset.on {
-    background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** External Monitor Toggle ********** **/
 #custom-monitor {
-	background-color: @background-alt1;
-	color: @foreground;
-	font-size: 16px;
-	border-radius: 10px;
-	margin: 6px 6px 6px 6px;
-	padding: 4px 9px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 6px 6px 6px 6px;
+  padding: 4px 9px;
 }
+
 #custom-monitor.on {
-	background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** Animations Toggle ********** **/
 #custom-animations {
-    background-color: @background-alt1;
-	color: @foreground;
-	font-size: 16px;
-	border-radius: 10px;
-	margin: 6px 6px 6px 6px;
-	padding: 4px 9px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 6px 6px 6px 6px;
+  padding: 4px 9px;
 }
+
 #custom-animations.on {
-    background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** Idle Inhibitor ********** **/
 #custom-idle {
-	background-color: @background-alt1;
-	color: @foreground;
-	font-size: 16px;
-	border-radius: 10px;
-	margin: 6px 6px 6px 6px;
-	padding: 4px 9px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 6px 6px 6px 6px;
+  padding: 4px 9px;
 }
+
 #custom-idle.on {
-	background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** Tap-to-Click Toggle ********** **/
 #custom-tap {
-	background-color: @background-alt1;
-	color: @foreground;
-	font-size: 16px;
-	border-radius: 10px;
-	margin: 6px;
-	padding: 4px 9px;
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 4px 9px;
 }
+
 #custom-tap.on {
-	background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** Tray ********** **/
 #tray {
-	background-color: @background-alt1;
-	border-radius: 10px;
-	margin: 6px 0px 6px 6px ;
-	padding: 4px 6px;
+  background-color: @background-alt1;
+  border-radius: 10px;
+  margin: 6px 0px 6px 6px;
+  padding: 4px 6px;
 }
-#tray > .passive {
-    -gtk-icon-effect: dim;
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
 }
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
 }
-#tray > .active {
-}
+
+#tray>.active {}
 
 /** ********** MPD ********** **/
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 #mpd {
-	color: @foreground;
-	font-size: 12px;
-	font-weight: bold;
-}
-#mpd.disconnected {
-	color: @foreground;
-}
-#mpd.stopped {
-	color: @foreground;
-}
-#mpd.playing {
-	color: @foreground;
-}
-#mpd.paused {
+  color: @foreground;
+  font-size: 12px;
+  font-weight: bold;
 }
 
+#mpd.disconnected {
+  color: @foreground;
+}
+
+#mpd.stopped {
+  color: @foreground;
+}
+
+#mpd.playing {
+  color: @foreground;
+}
+
+#mpd.paused {}
+
 #mpd.2 {
-	border-radius: 10px 0px 0px 10px;
-	margin: 6px 0px 6px 6px ;
-	padding: 4px 6px 4px 10px;
+  border-radius: 10px 0px 0px 10px;
+  margin: 6px 0px 6px 6px;
+  padding: 4px 6px 4px 10px;
 }
+
 #mpd.3 {
-	margin: 6px 0px 6px 0px ;
-	padding: 4px;
+  margin: 6px 0px 6px 0px;
+  padding: 4px;
 }
+
 #mpd.4 {
-	border-radius: 0px 10px 10px 0px;
-	margin: 6px 6px 6px 0px ;
-	padding: 4px 10px 4px 6px;
+  border-radius: 0px 10px 10px 0px;
+  margin: 6px 6px 6px 0px;
+  padding: 4px 10px 4px 6px;
 }
-#mpd.2,#mpd.3,#mpd.4 {
-	background-color: @background-alt1;
-	font-size: 14px;
+
+#mpd.2,
+#mpd.3,
+#mpd.4 {
+  background-color: @background-alt1;
+  font-size: 14px;
 }
 
 /** ********** Spotify ********** **/
 #custom-spotify {
-	background-color: @background-alt1;
-	color: @foreground;
-	border-radius: 10px;
-	margin: 6px 0px 6px 6px ;
-	padding: 4px 8px;
-	font-size: 12px;
-	font-weight: bold;
+  background-color: @background-alt1;
+  color: @foreground;
+  border-radius: 10px;
+  margin: 6px 0px 6px 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #custom-spotify.paused {
-	color: @foreground;
+  color: @foreground;
 }
 
 #custom-spotify.playing {
-    background-color: @foreground;
-    color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 #custom-spotify.offline {
-	color: @foreground;
+  color: @foreground;
 }
 
 /** ********** CPU ********** **/
 #cpu {
-	color: @foreground;
+  color: @foreground;
+}
+
+/** ********** Temperature ********** **/
+#temperature {
+  color: @foreground;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+/** ********** GPU Temperature ********** **/
+#custom-gpu-temp {
+  color: @foreground;
+  background-color: @background-alt2;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 4px 6px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /** ********** Memory ********** **/
 #memory {
-	color: @foreground;
+  color: @foreground;
 }
 
 /** ********** Disk ********** **/
 #disk {
-	color: @foreground;
+  color: @foreground;
 }
 
 /** ********** Pulseaudio ********** **/
 #pulseaudio {
-	color: @foreground;
-}
-#pulseaudio.bluetooth {
-	color: @foreground;
-}
-#pulseaudio.muted {
-	color: @foreground;
+  color: @foreground;
 }
 
-#pulseaudio.2 {
+#pulseaudio.bluetooth {
+  color: @foreground;
 }
-#pulseaudio.2.bluetooth {
+
+#pulseaudio.muted {
+  color: @foreground;
 }
-#pulseaudio.2.muted {
-}
+
+#pulseaudio.2 {}
+
+#pulseaudio.2.bluetooth {}
+
+#pulseaudio.2.muted {}
 
 /** ********** Backlight ********** **/
 #backlight {
-	color: @foreground;
+  color: @foreground;
 }
 
 /** ********** Battery ********** **/
 #battery {
-	color: @foreground;
+  color: @foreground;
 }
-#battery.charging {
-}
-#battery.plugged {
-}
+
+#battery.charging {}
+
+#battery.plugged {}
+
 @keyframes blink {
-    to {
-        color: @foreground;
-    }
-}
-#battery.critical:not(.charging) {
-	background-color: @background-alt2;
-}
-#battery.2.critical:not(.charging) {
-	background-color: @background-alt1;
+  to {
     color: @foreground;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: @background-alt2;
+}
+
+#battery.2.critical:not(.charging) {
+  background-color: @background-alt1;
+  color: @foreground;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 /** ********** Power Profile ********** **/
 #power-profiles-daemon {
-	color: @foreground;
-	background-color: @background-alt2;
-	border-radius: 10px;
-	margin: 6px;
-	padding: 4px 6px;
-	min-width: 16px;
+  color: @foreground;
+  background-color: @background-alt2;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 4px 6px;
+  min-width: 16px;
 }
 
 /** ********** Network ********** **/
 #network {
-	color: @foreground;
+  color: @foreground;
 }
-#network.disconnected,#network.disabled {
-	color: @foreground;
+
+#network.disconnected,
+#network.disabled {
+  color: @foreground;
 }
-#network.linked {
-}
-#network.ethernet {
-}
-#network.wifi {
-}
+
+#network.linked {}
+
+#network.ethernet {}
+
+#network.wifi {}
 
 /** ********** Bluetooth ********** **/
 #bluetooth {
-	color: @foreground;
+  color: @foreground;
 }
-#bluetooth.disabled{
-	color: @foreground;
+
+#bluetooth.disabled {
+  color: @foreground;
 }
-#bluetooth.off{
-	color: @foreground;
+
+#bluetooth.off {
+  color: @foreground;
 }
-#bluetooth.on{
-}
-#bluetooth.connected{
-}
-#bluetooth.discoverable{
-}
-#bluetooth.discovering{
-}
-#bluetooth.pairable{
-}
+
+#bluetooth.on {}
+
+#bluetooth.connected {}
+
+#bluetooth.discoverable {}
+
+#bluetooth.discovering {}
+
+#bluetooth.pairable {}
 
 /** ********** Clock ********** **/
 #clock {
-	color: @foreground;
+  color: @foreground;
 }
 
 /** ********** Submap ********** **/
 
 #submap {
-	background-color: @foreground;
-	color: @background;
-	font-size: 12px;
-	font-weight: bold;
-	border-radius: 10px;
-	margin: 6px 0px 6px 6px ;
-	padding: 4px 8px;
+  background-color: @foreground;
+  color: @background;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 6px 0px 6px 6px;
+  padding: 4px 8px;
 }
+
 #submap.resize {
-	background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
+
 #submap.move {
-	background-color: @foreground;
-	color: @background;
+  background-color: @foreground;
+  color: @background;
 }
 
 /** ********** WLR Desktop ********** **/
 #workspaces {
-	background-color: @background;
-	border-radius: 10px;
-	margin-left: 6px ;
-	margin-bottom: 2px ;
-	padding: 0px;
+  background-color: @background;
+  border-radius: 10px;
+  margin-left: 6px;
+  margin-bottom: 2px;
+  padding: 0px;
 }
-#workspaces button{
-	color: @foreground;
+
+#workspaces button {
+  color: @foreground;
 }
-#workspaces button.active{
-	color: @selected;
-	font-weight: bold;
+
+#workspaces button.active {
+  color: @selected;
+  font-weight: bold;
 }
-#workspaces button.urgent{
-	color: @foreground;
+
+#workspaces button.urgent {
+  color: @foreground;
 }
-#workspaces button.hidden{
-	color: @foreground;
+
+#workspaces button.hidden {
+  color: @foreground;
 }
 
 /** ********** Common style ********** **/
@@ -385,14 +439,16 @@ window#waybar.hidden {
 #memory,
 #pulseaudio,
 #network,
-#bluetooth {
-	background-color: @background-alt2;
-	border-radius: 10px 0px 0px 10px;
-	margin: 6px 0px 6px 0px ;
-	padding: 4px 6px;
+#bluetooth,
+#custom-gpu-temp,
+#temperature {
+  background-color: @background-alt2;
+  border-radius: 10px 0px 0px 10px;
+  margin: 6px 0px 6px 0px;
+  padding: 4px 6px;
 }
 
-#backlight.2, 
+#backlight.2,
 #battery.2,
 #clock.2,
 #cpu.2,
@@ -400,12 +456,13 @@ window#waybar.hidden {
 #memory.2,
 #pulseaudio.2,
 #network.2,
-#bluetooth.2 {
-	background-color: @background-alt1;
-	color: @foreground;
-	font-size: 12px;
-	font-weight: bold;
-	border-radius: 0px 10px 10px 0px;
-	margin: 6px 6px 6px 0px ;
-	padding: 5px 6px 4px 6px;
+#bluetooth.2,
+#temperature.2 {
+  background-color: @background-alt1;
+  color: @foreground;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 0px 10px 10px 0px;
+  margin: 6px 6px 6px 0px;
+  padding: 5px 6px 4px 6px;
 }
