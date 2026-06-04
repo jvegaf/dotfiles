@@ -1,0 +1,11 @@
+picom
+i3-wm
+i3blocks
+i3lock-color
+i3status
+rofi
+polybar
+dunst
+xorg-server
+xorg-xinit
+xorg-xrandr
