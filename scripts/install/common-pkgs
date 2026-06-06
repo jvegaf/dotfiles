@@ -2,7 +2,7 @@
 
 echo "Installing common packages"
 
-paru -S --needed --noconfirm - <./utils/common.pkgs.txt
+paru -S --needed --noconfirm - < "$DOTFILES_PATH/scripts/install/utils/common.pkgs.txt"
 
 echo "Common packages installed"
 

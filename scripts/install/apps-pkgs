@@ -2,7 +2,7 @@
 
 echo "Installing Applications"
 
-paru -S --needed --noconfirm - <./utils/apps.pkgs.txt
+paru -S --needed --noconfirm - < "$DOTFILES_PATH/scripts/install/utils/apps.pkgs.txt"
 
 echo "Applications installed"
 
