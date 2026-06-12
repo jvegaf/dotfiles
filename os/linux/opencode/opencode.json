@@ -212,6 +212,7 @@
   },
   "plugin": [
     "@plannotator/opencode@latest",
-    "@mohak34/opencode-notifier@latest"
+    "@mohak34/opencode-notifier@latest",
+    "@tarquinen/opencode-smart-title"
   ]
 }

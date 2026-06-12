@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 
-
 cd "$HOME/.config/opencode" || exit
 
 curl -fsSL https://plannotator.ai/install.sh | bash
 
 echo "Plannotator plugin installed successfully!"
+
+npm install @tarquinen/opencode-smart-title
+
+echo "Opencode Smart Title plugin installed successfully!"
 
 exit 0
