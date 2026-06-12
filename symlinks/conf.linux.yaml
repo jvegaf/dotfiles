@@ -16,6 +16,7 @@
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/ghostty: os/linux/ghostty
     ~/.config/i3: os/linux/i3
+    ~/.config/helix: os/linux/helix
     ~/.config/hypr: os/linux/hypr
     ~/.config/mako: os/linux/mako
     ~/.config/wlogout: os/linux/wlogout

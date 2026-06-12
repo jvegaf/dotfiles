@@ -1,0 +1,101 @@
+theme = "sonokai"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "underline"
+select = "bar"
+
+[editor]
+line-number = "relative"
+mouse = true
+true-color = true
+
+
+# ═══════════════════════════════════════════════════════
+# NORMAL MODE KEYMAPS
+# Migrados desde Neovim → Helix
+# ═══════════════════════════════════════════════════════
+
+[keys.normal]
+
+# ─── GENERAL ──────────────────────────────────────────
+# Q = force quit (reemplaza <leader>wq / :q! en Neovim)
+# NOTA: sobrescribe Q que en Helix reproduce macros (experimental)
+"Q" = ":q!"
+
+# W = guardar archivo (reemplaza "W" en Neovim)
+# NOTA: sobrescribe W que en Helix es move_next_long_word_start
+"W" = ":w"
+
+# q = cerrar buffer (reemplaza "q" en Neovim)
+# NOTA: sobrescribe q que en Helix es grabar macros
+"q" = ":buffer-close"
+
+# ─── BUFFER NAVIGATION ────────────────────────────────
+# H/L para navegar buffers (como tenías en Neovim con BufferLine)
+# Alternativa default en Helix: gn (next), gp (prev)
+"H" = ":buffer-previous"
+"L" = ":buffer-next"
+"Z" = { "Z" = ":wq" }
+# ═══════════════════════════════════════════════════════
+# KEYMAPS QUE YA VIENEN POR DEFECTO EN HELIX
+# No necesitan configuración — mantené la memoria muscular:
+# ═══════════════════════════════════════════════════════
+#
+# LSP / CODE NAVIGATION:
+#   gd  → goto-definition          ✅ igual que en Neovim
+#   gr  → goto-references          ✅ igual que en Neovim
+#   gi  → goto-implementation      ✅ igual que en Neovim
+#   K   → hover                    ✅ igual que en Neovim
+#   space + r  → rename            ✅ (tenías <localleader>rl)
+#   space + a  → code actions      ✅
+#   space + k  → hover (alternativo)
+#   space + d  → abrir diagnóstico
+#
+# DIAGNOSTICS:
+#   ]d → next diagnostic           ✅ (tenías gj)
+#   [d → prev diagnostic           ✅ (tenías gk)
+#   NOTA: gj/gk en Helix son move_line_up/down, no los sobrescribo
+#
+# EDITING:
+#   <  → indent-less              ✅ mantiene selección automáticamente
+#   >  → indent-more              ✅ (no necesitás >gv / <gv)
+#   x  → select current line       ✅ (reemplaza tu mapping vv)
+#   %  → select whole file         ✅ (reemplaza tu C-a)
+#   u  → undo                      ✅
+#   U  → redo                      ✅
+#   p  → paste after               ✅
+#   P  → paste before              ✅
+#
+# SPLIT NAVIGATION:
+#   Ctrl+w + h/j/k/l → move split ✅ (tenías Ctrl+h/j/k/l)
+#   Ctrl+w + H/J/K/L → swap split ✅ (tenías <localleader>h/j/k/l)
+#   Ctrl+w + v → vsplit            ✅
+#   Ctrl+w + s → hsplit            ✅
+#   Ctrl+w + q → close split       ✅
+#   Ctrl+w + w → cycle split       ✅
+#
+# GIT:
+#   space + g → git menu           ✅ (tenías <leader>g*)
+#   Abre picker con: status, diff, commit, blame, stage, etc.
+#
+# FILE PICKER:
+#   space + f → file picker        ✅ (reemplaza <leader>e)
+#   space + F → file picker (cwd)  ✅
+#   space + b → buffer picker      ✅ (reemplaza <leader>bb)
+#
+# SEARCH:
+#   / → search                     ✅
+#   n → next match                 ✅
+#   N → prev match                 ✅
+#   * → search word under cursor   ✅
+#   space + / → global search      ✅
+
+[keys.insert]
+# jk → salir de insert mode (ya viene por defecto en Helix)
+j = { k = "normal_mode" }
+
+[keys.select]
+# En Helix, select mode ya funciona como esperás.
+# p ya pega sin modificar el registro de yank.
+# No hacen falta mappings especiales.
