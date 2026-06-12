@@ -17,6 +17,11 @@ if [[ ! $(pidof polkit-gnome-authentication-agent-1) ]]; then
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 fi
 
+/usr/bin/gnome-keyring-daemon --start --components=gpg
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11
+/usr/bin/gnome-keyring-daemon --start --components=secrets
+/usr/bin/gnome-keyring-daemon --start --components=ssh
+
 # Apply default theme (sets wallpaper and colors)
 ~/.config/hypr/theme/theme.sh --default &
 

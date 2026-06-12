@@ -36,6 +36,8 @@ pulsemixer
 python-pywal
 rofi
 rofi-calc
+sddm
+sddm-sugar-candy-git
 slurp
 sof-firmware
 tailscale

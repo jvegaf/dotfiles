@@ -500,8 +500,8 @@
   },
   "system": {
     "file_history": [
-      "/home/th3g3ntl3man/Code/Otto-DIY-MUST/PCB/Otto_Project_Kicad.kicad_pcb",
       "/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/Otto.kicad_pcb",
+      "/home/th3g3ntl3man/Code/Otto-DIY-MUST/PCB/Otto_Project_Kicad.kicad_pcb",
       "/home/th3g3ntl3man/Code/Otto-Bot-PCB/idk.kicad_pcb",
       "/home/th3g3ntl3man/Documents/ssop24/ssop24.kicad_pcb",
       "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x1F/EquBoard/EquBoard.kicad_pcb"
@@ -513,7 +513,7 @@
     "last_metric_units": 1,
     "max_undo_items": 0,
     "show_import_issues": true,
-    "units": 1
+    "units": 5
   },
   "tools": {
     "pns": {
@@ -549,14 +549,14 @@
     "aui_state": null,
     "cursor": {
       "always_show_cursor": true,
-      "cross_hair_mode": 0
+      "cross_hair_mode": 1
     },
     "display": 0,
     "grid": {
       "axes_enabled": false,
       "fast_grid_1": 15,
       "fast_grid_2": 16,
-      "last_size": 6,
+      "last_size": 9,
       "line_width": 1.0,
       "min_spacing": 10.0,
       "override_connected": false,
@@ -694,7 +694,7 @@
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 950,
-    "size_y": 511,
+    "size_y": 1022,
     "zoom_factors": [
       0.13,
       0.22,

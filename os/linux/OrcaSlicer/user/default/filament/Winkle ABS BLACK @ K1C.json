@@ -1,0 +1,24 @@
+{
+    "compatible_printers": [
+        "Creality K1C 0.4 nozzle"
+    ],
+    "default_filament_colour": [
+        "#000000"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "filament_flow_ratio": [
+        "0.94"
+    ],
+    "filament_settings_id": [
+        "Winkle ABS BLACK @ K1C"
+    ],
+    "filament_vendor": [
+        "Winkle"
+    ],
+    "from": "User",
+    "inherits": "Generic ABS @System",
+    "name": "Winkle ABS BLACK @ K1C",
+    "version": "2.3.2.60"
+}

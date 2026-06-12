@@ -143,8 +143,8 @@
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxCheckBox_0": false,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxCheckBox_1": true,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxSpinCtrl_0": 2,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_0": 0,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_1": 200000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_0": 254000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_1": 0,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_10": 200000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_11": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_12": 0,
@@ -155,7 +155,7 @@
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_3": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_4": 500000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_5": 250000,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_6": 500000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_6": 127000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_7": 0,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_8": 300000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_9": 250000,
@@ -187,6 +187,11 @@
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_21": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_22": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_23": true,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_24": true,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_25": true,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_26": true,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_27": true,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_28": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_3": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_4": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_5": true,
@@ -196,10 +201,15 @@
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_9": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_0": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_1": 0,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_10": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_2": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_3": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_4": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_5": 0,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_6": 0,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_7": 0,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_8": 0,
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxChoice_9": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_0": "F.Courtyard",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_1": "F.Fab",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_10": "B.Paste",
@@ -217,6 +227,11 @@
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_21": "User.2",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_22": "User.3",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_23": "User.4",
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_24": "User.5",
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_25": "User.6",
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_26": "User.7",
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_27": "User.8",
+        "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_28": "User.9",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_3": "F.Paste",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_4": "F.Silkscreen",
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxTextCtrl_5": "F.Mask",
@@ -292,12 +307,12 @@
           "y": 0
         },
         "wxPanel_0wxCheckBox_0": false,
-        "wxPanel_0wxChoice_0": 2,
-        "wxPanel_0wxChoice_1": 1,
-        "wxPanel_0wxComboCtrl_0": "<no net>",
+        "wxPanel_0wxChoice_0": 0,
+        "wxPanel_0wxChoice_1": 0,
+        "wxPanel_0wxComboCtrl_0": "GND",
         "wxPanel_0wxComboCtrl_0wxPopupTransientWindow_0wxPanel_0wxTextCtrl_0": "",
         "wxPanel_0wxNotebook_0": "Clearances & Pad Connections",
-        "wxPanel_0wxNotebook_0wxPanel_0wxChoice_0": 0,
+        "wxPanel_0wxNotebook_0wxPanel_0wxChoice_0": 1,
         "wxPanel_0wxNotebook_0wxPanel_0wxTextCtrl_0": 500000,
         "wxPanel_0wxNotebook_0wxPanel_0wxTextCtrl_1": 250000,
         "wxPanel_0wxNotebook_0wxPanel_0wxTextCtrl_2": 500000,
@@ -333,6 +348,16 @@
         "wxTextCtrl_1": 12700,
         "wxTextCtrl_2": 1638300,
         "wxTextCtrl_3": 469899
+      },
+      "Errors": {
+        "__geometry": {
+          "h": 300,
+          "w": 540,
+          "x": 0,
+          "y": 0
+        },
+        "wxHtmlWindow_0": 0,
+        "wxPanel_0wxTextCtrl_0": ""
       },
       "Footprint Properties": {
         "__geometry": {
@@ -388,7 +413,7 @@
         },
         "wxCheckBox_0": false,
         "wxCheckBox_1": false,
-        "wxCheckBox_2": true,
+        "wxCheckBox_2": false,
         "wxCheckBox_3": false,
         "wxCheckBox_4": false,
         "wxCheckBox_5": false,
@@ -398,8 +423,8 @@
         "wxChoice_3": 0,
         "wxRadioButton_0": true,
         "wxRadioButton_1": false,
-        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Documents/ssop24/gerber/ssop24.drl'\nDone.\n",
-        "wxTextCtrl_0": "gerber/"
+        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/gerbers/Otto-PTH.drl'\nCreated file '/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/gerbers/Otto-NPTH.drl'\nDone.\n",
+        "wxTextCtrl_0": "gerbers/"
       },
       "Import Vector Graphics File": {
         "__geometry": {
@@ -488,7 +513,7 @@
         "wxStaticBox_3wxCheckBox_0": false,
         "wxStaticBox_3wxTextCtrl_0": "0,010000",
         "wxStaticBox_3wxTextCtrl_1": "0,010000",
-        "wxStaticBox_3wxTextCtrl_2": 0,
+        "wxStaticBox_3wxTextCtrl_2": 1,
         "wxStaticBox_4wxCheckBox_0": true,
         "wxStaticBox_4wxCheckBox_1": true,
         "wxStaticBox_4wxCheckBox_2": false,
@@ -501,7 +526,7 @@
         "wxStaticBox_6wxCheckBox_2": true,
         "wxStaticBox_6wxCheckBox_3": false,
         "wxStaticBox_6wxChoice_0": 1,
-        "wxTextCtrl_0": "gerber/"
+        "wxTextCtrl_0": "gerbers/"
       },
       "Plugin And Content Manager": {
         "__geometry": {
@@ -510,9 +535,9 @@
           "x": 0,
           "y": 0
         },
-        "wxNotebook_0": "Repository (110)",
+        "wxNotebook_0": "Repository (111)",
         "wxNotebook_0wxPanel_0wxChoice_0": 0,
-        "wxNotebook_0wxPanel_0wxNotebook_0": "Plugins (67)",
+        "wxNotebook_0wxPanel_0wxNotebook_0": "Color themes (18)",
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_0wxSplitterWindow_0": 438,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_0wxSplitterWindow_0wxPanel_0wxScrolledWindow_0": 0,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_0wxSplitterWindow_0wxPanel_0wxSearchCtrl_0": "",
@@ -534,7 +559,7 @@
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_2wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxCheckBox_0": false,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_2wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxGrid_0": "0 1 2 3 4",
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_2wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxHtmlWindow_0": 0,
-        "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_3wxSplitterWindow_0": 656,
+        "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_3wxSplitterWindow_0": 438,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_0wxScrolledWindow_0": 0,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_0wxSearchCtrl_0": "",
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_1wxScrolledWindow_0": 0,
@@ -548,7 +573,7 @@
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_4wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxCheckBox_0": false,
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_4wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxGrid_0": "0 1 2 3 4",
         "wxNotebook_0wxPanel_0wxNotebook_0wxPanel_4wxSplitterWindow_0wxPanel_1wxScrolledWindow_0wxHtmlWindow_0": 0,
-        "wxNotebook_0wxPanel_1wxPanel_0wxSplitterWindow_0": 446,
+        "wxNotebook_0wxPanel_1wxPanel_0wxSplitterWindow_0": 438,
         "wxNotebook_0wxPanel_1wxPanel_0wxSplitterWindow_0wxPanel_0wxScrolledWindow_0": 0,
         "wxNotebook_0wxPanel_1wxPanel_0wxSplitterWindow_0wxPanel_0wxSearchCtrl_0": "",
         "wxNotebook_0wxPanel_1wxPanel_0wxSplitterWindow_0wxPanel_1wxScrolledWindow_0": 0,
@@ -840,6 +865,6 @@
     "pdf_viewer_name": "",
     "text_editor": "",
     "use_system_pdf_viewer": true,
-    "working_dir": "/home/th3g3ntl3man/Code/Otto-DIY-MUST/PCB"
+    "working_dir": "/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1"
   }
 }
