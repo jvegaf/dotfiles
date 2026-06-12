@@ -35,5 +35,7 @@
     ~/.config/yazi: os/linux/yazi
     ~/.config/waybar: os/linux/waybar
     ~/.config/zed: os/linux/zed
+    ~/.config/hyprwhspr/config.json: os/linux/hyprwhspr/config.json
+    ~/.config/hyprwhspr/audio_level: os/linux/hyprwhspr/audio_level
     ~/.face: os/linux/.face
     ~/.screenlayout: os/linux/.screenlayout
