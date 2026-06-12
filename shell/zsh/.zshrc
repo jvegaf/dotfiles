@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 # Uncomment for debuf with `zprof`
 # zmodload zsh/zprof
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK

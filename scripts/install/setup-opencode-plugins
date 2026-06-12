@@ -1,13 +1,29 @@
 #!/usr/bin/env bash
 
+set -eu pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Install the linux packages needed
+#?? 1.0.0
+##?
+##? Usage:
+##?   install_custom
+
 cd "$HOME/.config/opencode" || exit
 
 curl -fsSL https://plannotator.ai/install.sh | bash
 
-echo "Plannotator plugin installed successfully!"
+log::note "Plannotator plugin installed successfully!"
 
 npm install @tarquinen/opencode-smart-title
 
-echo "Opencode Smart Title plugin installed successfully!"
+log::note "Opencode Smart Title plugin installed successfully!"
+
+log::note "Installing Gentle AI"
+
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+
+log::note "Gentle AI installed"
 
 exit 0
