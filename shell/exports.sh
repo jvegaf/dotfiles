@@ -1,39 +1,12 @@
-# ------------------------------------------------------------------------------
-# Codely theme config
-# ------------------------------------------------------------------------------
-export CODELY_THEME_MINIMAL=false
-export CODELY_THEME_MODE="dark"
-export CODELY_THEME_PROMPT_IN_NEW_LINE=false
-export CODELY_THEME_PWD_MODE="short" # full, short, home_relative
-export EDITOR="/usr/bin/nvim"
+export EDITOR="/bin/nvim"
 export M2_HOME="$HOME/.sdkman/candidates/maven/current"
 # export WINEPREFIX="$HOME/.fusion360/wineprefixes/default"
-# export EDITOR="$HOME/.local/bin/lvim"
-export FILE_BROWSER="nemo"
+export FILE_BROWSER="thunar"
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
 export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
-export HOMEBREW_BUNDLE_FILE="$DOTFILES_PATH/os/linux/brew/Brewfile"
-# ------------------------------------------------------------------------------
-# Apps
-# ------------------------------------------------------------------------------
-if [ "$CODELY_THEME_MODE" = "dark" ]; then
-  fzf_colors="pointer:#ebdbb2,bg+:#3c3836,fg:#ebdbb2,fg+:#fbf1c7,hl:#8ec07c,info:#928374,header:#fb4934"
-else
-  fzf_colors="pointer:#db0f35,bg+:#d6d6d6,fg:#808080,fg+:#363636,hl:#8ec07c,info:#928374,header:#fffee3"
-fi
-# ------------------------------------------------------------------------------
-# Browser
-# ------------------------------------------------------------------------------
-# if [[ $(grep microsoft /proc/version) ]]; then
-# 	# echo "Bash is running on WSL"
-# 	export BROWSER="wsl-open"
-# 	# else
-# 	# echo "Bash is running on linux"
-# fi
-
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export TMUX_POWERLINE_DIR_HOME="$HOME/.config/tmux/plugins/tmux-powerline"
 # ------------------------------------------------------------------------------
@@ -57,9 +30,5 @@ export path=(
   "/usr/bin/flutter/bin"
   "/usr/sbin"
   "/sbin"
-  "$HOME/.local/share/JetBrains/Toolbox/scripts"
-  "/snap/bin"
   "$HOME/.platformio/penv/bin"
-  "/mnt/c/Windows"
-  "$USERPROFILE/scoop/shims"
 )

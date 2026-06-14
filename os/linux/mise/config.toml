@@ -1,2 +1,4 @@
 [tools]
+gradle = "9.5"
+java = "26"
 node = "24"
