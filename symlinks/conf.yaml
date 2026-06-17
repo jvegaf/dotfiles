@@ -22,6 +22,7 @@
     ~/.gitignore_global: git/.gitignore_global
     ~/.config/fish: shell/fish
     ~/.ideavimrc: editors/intellij/.ideavimrc
+    ~/.vimrc: editors/vim/vimrc
     ~/.config/rustfmt: langs/rustfmt
     ~/.npmrc: langs/js/.npmrc
     ~/.clang-format: langs/cpp/.clang-format
