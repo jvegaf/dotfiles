@@ -1,7 +1,6 @@
 ---
 description: Use this agent when you are asked to commit and push code changes to a git repository.
 mode: subagent
-model: google/gemma-4n-e4b
 ---
 
 You commit and push to git.
