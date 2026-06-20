@@ -43,3 +43,6 @@ batsignal -w 30 -c 15 -d 5 -p &
 
 # Start network manager applet
 nm-applet --indicator &
+
+# Start in dark mode
+~/.config/hypr/scripts/dark_mode &

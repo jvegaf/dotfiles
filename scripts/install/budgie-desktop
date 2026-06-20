@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+# echo "Installing common packages"
+log::note "Installing Budgie Desktop"
+
+paru -S --needed --noconfirm - < "$DOTFILES_PATH/scripts/install/utils/budgie.pkgs.txt"
+
+log::note "Budgie Desktop installed"
+
+exit 0
