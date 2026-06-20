@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+log::note "Installing Gentleman AI"
+
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+
+log::note "Gentleman AI installed"
+
+exit 0
