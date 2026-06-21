@@ -8,6 +8,7 @@
 - link:
     ~/.dotly: os/linux/.dotly
     ~/.fonts: fonts
+    ~/.agents: os/linux/.agents
     ~/.config/FreeCAD: os/linux/FreeCAD
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.config/alacritty: os/linux/alacritty
