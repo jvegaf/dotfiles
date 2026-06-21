@@ -1,7 +1,6 @@
 ---
 description: "Documentation authoring agent"
 mode: subagent
-model: github-copilot/gpt-4.1
 temperature: 0.2
 tools:
   read: true

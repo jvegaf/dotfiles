@@ -1,7 +1,6 @@
 ---
 description: "Breaks down complex features into small, verifiable subtasks"
 mode: subagent
-model: github-copilot/gpt-5
 temperature: 0.1
 tools:
   read: true

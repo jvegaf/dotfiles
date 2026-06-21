@@ -34,7 +34,6 @@ description: >-
         </commentary>
       </example>
 mode: subagent
-model: github-copilot/claude-opus-4.5
 tools:
   write: false
   edit: false

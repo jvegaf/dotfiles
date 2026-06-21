@@ -1,7 +1,6 @@
 ---
 description: General coding and planning agent
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
 tools:
   write: true
   edit: true

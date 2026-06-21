@@ -1,6 +1,5 @@
 ---
 name: code-reviewer
-model: github-copilot/gemini-2.5-pro
 mode: subagent
 description: Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code.
 ---

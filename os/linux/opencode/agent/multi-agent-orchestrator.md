@@ -39,7 +39,6 @@ description: >-
       </commentary>
     </example>
 mode: subagent
-model: github-copilot/gemini-2.5-pro
 tools:
   bash: false
   edit: false

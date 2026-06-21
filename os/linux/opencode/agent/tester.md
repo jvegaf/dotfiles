@@ -1,7 +1,6 @@
 ---
 description: "Test authoring and TDD agent"
 mode: subagent
-model: google/gemma-4n-e4b
 temperature: 0.1
 tools:
   read: true
