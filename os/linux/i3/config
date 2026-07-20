@@ -253,6 +253,7 @@ bindsym $mod+l exec "sleep 0.1 && i3lock --blur 5"
 # exec xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --scale 1x1
 # exec --no-startup-id ~/.screenlayout/laptop.sh
 exec --no-startup-id ~/.screenlayout/sf_display.sh
+exec --no-startup-id ~/.screenlayout/sf_externo.sh
 #exec xrandr --auto --output HDMI-1 --mode 1920x1080 --above HDMI-2
 
 exec feh --bg-fill ~/.config/i3/bg_0.jpg
