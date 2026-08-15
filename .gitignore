@@ -3,3 +3,4 @@
 /os/linux/OrcaSlicer/log/*
 /os/linux/OrcaSlicer/cache
 /shell/zsh/.zim/modules/
+/os/linux/tmux/plugins/*

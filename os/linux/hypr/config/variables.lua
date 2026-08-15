@@ -1,10 +1,10 @@
 -- Hyprland default apps
 
-TERMINAL = "ghostty"
+TERMINAL = "kitty"
 FILE_MANAGER = "dolphin"
 BROWSER = "firefox"
 -- EDITOR       = "gnome-text-editor --new-window"
-EDITOR = "zeditor"
+EDITOR = "nvim"
 CALCULATOR = "gnome-calculator"
 WHISPER = "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh record"
 

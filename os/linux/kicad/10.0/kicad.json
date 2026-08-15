@@ -49,6 +49,9 @@
     "columns": [],
     "open_libs": []
   },
+  "libraries": {
+    "overrides": {}
+  },
   "meta": {
     "version": 0
   },
@@ -104,9 +107,7 @@
     "last_received_update": "",
     "last_update_check_time": "2026-03-30T22:59:00",
     "max_undo_items": 0,
-    "open_projects": [
-      "/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/Otto.kicad_pro"
-    ],
+    "open_projects": [],
     "show_import_issues": true,
     "units": 1
   },

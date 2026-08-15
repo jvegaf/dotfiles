@@ -797,6 +797,12 @@
     "update_check_prompt": true,
     "zone_fill_warning": false
   },
+  "embed_file_defaults": {
+    "datasheet": true,
+    "drawing_sheet": true,
+    "model_3d": false,
+    "sim_model": false
+  },
   "environment": {
     "vars": null
   },
@@ -865,6 +871,6 @@
     "pdf_viewer_name": "",
     "text_editor": "",
     "use_system_pdf_viewer": true,
-    "working_dir": "/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1"
+    "working_dir": "/home/th3g3ntl3man"
   }
 }

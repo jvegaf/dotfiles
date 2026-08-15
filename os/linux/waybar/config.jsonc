@@ -1,10 +1,8 @@
 {
-  "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 34, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  "spacing": 4, // Gaps between modules (4px)
-  // Choose the order of the modules
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 4,
   "modules-left": [
     "hyprland/workspaces",
     "idle_inhibitor",
@@ -22,26 +20,24 @@
     "memory",
     "battery",
     "tray",
-    "clock"
+    "clock",
+    "custom/hyprwhspr"
   ],
-  // Modules configuration
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
-    // "all-outputs": false,
-    // "format": "{name}: {icon}",
     "format": "{name}",
     "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"m-1\" })' > /dev/null",
     "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"m+1\" })' > /dev/null",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "urgent": "",
-      "focused": "",
-      "default": ""
+      "1": "\uf120",
+      "2": "\uf268",
+      "3": "\uf121",
+      "4": "\uf1bc",
+      "5": "\uf075",
+      "urgent": "\uf06a",
+      "focused": "\uf192",
+      "default": "\uf111"
     }
   },
   "keyboard-state": {
@@ -49,8 +45,8 @@
     "capslock": false,
     "format": "{name} {icon}",
     "format-icons": {
-      "locked": "",
-      "unlocked": ""
+      "locked": "\uf023",
+      "unlocked": "\uf09c"
     }
   },
   "hyprland/window": {
@@ -65,33 +61,33 @@
     "show-empty": false,
     "format-icons": [
       "",
-      ""
+      "\uf2d2"
     ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) \u2e28{songPosition}|{queueLength}\u2e29 {volume}% \uf001",
+    "format-disconnected": "Disconnected \uf001",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped \uf001",
     "unknown-tag": "N/A",
     "interval": 2,
     "consume-icons": {
-      "on": " "
+      "on": "\uf0c4 "
     },
     "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
+      "off": "<span color=\"#f53c3c\">\uf074</span> ",
+      "on": "\uf074 "
     },
     "repeat-icons": {
-      "on": " "
+      "on": "\uf01e "
     },
     "single-icons": {
-      "on": "1 "
+      "on": "\uf01e1 "
     },
     "state-icons": {
-      "paused": "",
-      "playing": ""
+      "paused": "\uf04c",
+      "playing": "\uf04b"
     },
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
@@ -102,102 +98,91 @@
     "tooltip-format-activated": "Idle_inhibitor active",
     "tooltip-format-deactivated": "Idle_inhibitor not active",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "\uf06e",
+      "deactivated": "\uf070"
     }
   },
   "tray": {
-    // "icon-size": 21,
     "spacing": 2
   },
   "clock": {
-    // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": "{usage}% \uf2db",
     "tooltip": false
   },
   "memory": {
-    "format": "{}% ",
+    "format": "{}% \uf0c9",
     "tooltip": true,
     "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
   },
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}\u00b0C {icon}",
     "format-icons": [
-      "",
-      "",
-      ""
+      "\uf2ca",
+      "\uf2c9",
+      "\uf2c7"
     ]
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\ue38d",
+      "\ue3d3",
+      "\ue3d1",
+      "\ue3cf",
+      "\ue3ce",
+      "\ue3cd",
+      "\ue3ca",
+      "\ue3c8",
+      "\ue39b"
     ]
   },
   "battery": {
     "states": {
-      // "good": 95,
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 🗲",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}% \ud83d\uddf2",
+    "format-plugged": "{capacity}% \uf1e6",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
     ]
   },
   "battery#bat2": {
     "bat": "BAT2"
   },
   "network": {
-    // "interface": "wlan0", // (Optional) To force the use of this interface
-    "format-wifi": "",
+    "format-wifi": "\uf1eb",
     "format-ethernet": "{ipaddr}/{cidr}",
     "tooltip-format": "{essid} {ifname} via {gwaddr}",
     "format-linked": "{ifname} (No IP)",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "Disconnected \u26a0",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    // "scroll-step": 10, // %, can be a float
     "format": "{volume}%{icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰝟 {icon} {format_source}",
-    "format-muted": "󰝟 {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format-bluetooth": "{volume}% {icon}\uf294 {format_source}",
+    "format-bluetooth-muted": "\udb81\udf5f {icon}\uf294 {format_source}",
+    "format-muted": "\udb81\udf5f {format_source}",
+    "format-source": "{volume}% \uf130",
+    "format-source-muted": "\uf131",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
       "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "phone": "\uf095",
+      "portable": "\uf095",
+      "car": "\uf1b9",
       "default": [
         "",
         "",
@@ -210,14 +195,14 @@
     "tooltip": false,
     "format": "{} {icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span> ",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span> ",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span> ",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span> ",
-      "dnd-inhibited-none": ""
+      "notification": "\uf0a2<span foreground='red'><sup>\uf444</sup></span> ",
+      "none": "\uf0a2",
+      "dnd-notification": "\uf1f7<span foreground='red'><sup>\uf444</sup></span> ",
+      "dnd-none": "\uf1f7",
+      "inhibited-notification": "\uf0a2<span foreground='red'><sup>\uf444</sup></span> ",
+      "inhibited-none": "\uf0a2",
+      "dnd-inhibited-notification": "\uf1f7<span foreground='red'><sup>\uf444</sup></span> ",
+      "dnd-inhibited-none": "\uf1f7"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -235,5 +220,8 @@
     "on-click": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh record",
     "on-click-right": "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh restart",
     "tooltip": true
-  }
+  },
+  "include": [
+    "/home/th3g3ntl3man/.config/waybar/hyprwhspr-module.jsonc"
+  ]
 }

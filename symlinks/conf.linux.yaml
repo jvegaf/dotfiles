@@ -26,6 +26,7 @@
     ~/.config/lazydocker: os/linux/lazydocker
     ~/.config/lazygit: os/linux/lazygit
     ~/.config/mise: os/linux/mise
+    ~/.config/noctalia: os/linux/noctalia
     ~/.config/opencode: os/linux/opencode
     ~/.config/picom : os/linux/picom
     ~/.config/polybar : os/linux/polybar
@@ -34,6 +35,7 @@
     ~/.config/starship: os/linux/starship
     ~/.config/tmux : os/linux/tmux
     ~/.config/yazi: os/linux/yazi
+    ~/.config/uwsm: os/linux/uwsm
     ~/.config/waybar: os/linux/waybar
     ~/.config/zed: os/linux/zed
     ~/.config/hyprwhspr/config.json: os/linux/hyprwhspr/config.json
