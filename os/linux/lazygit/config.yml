@@ -3,31 +3,31 @@ gui:
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-author-color
   theme:
     activeBorderColor:
-      - "#7a88cf"
+      - "#4e70c2"
       - bold
     inactiveBorderColor:
-      - "#d7729f"
+      - "#85539c"
     searchingActiveBorderColor:
-      - "#9cd58a"
+      - "#4c663b"
       - bold
     optionsTextColor:
-      - "#c0caf5"
+      - "#444b6a"
     selectedLineBgColor:
-      - "#c0caf5"
+      - "#444b6a"
     inactiveViewSelectedLineBgColor:
       - bold
     cherryPickedCommitFgColor:
-      - "#c0caf5"
+      - "#444b6a"
     cherryPickedCommitBgColor:
-      - "#9cd58a"
+      - "#4c663b"
     markedBaseCommitFgColor:
-      - "#9cd58a"
+      - "#4c663b"
     markedBaseCommitBgColor:
-      - "#f7768e"
+      - "#e55561"
     unstagedChangesColor:
-      - "#f7768e"
+      - "#e55561"
     defaultFgColor:
-      - "#a9b1d6"
+      - "#4e70c2"
   authorColors: {}
   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-branch-color
   branchColorPatterns: {}
