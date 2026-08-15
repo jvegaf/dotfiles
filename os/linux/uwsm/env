@@ -8,8 +8,8 @@ export HYPRCURSOR_SIZE=24
 export XCURSOR_THEME="Bibata-Modern-Ice"
 export XCURSOR_SIZE=24
 
-export GDK_SCALE=1.25
-export QT_SCALE_FACTOR=1.25
+export GDK_SCALE=1.50
+export QT_SCALE_FACTOR=1.50
 
 # If you have an NVIDIA GPU uncommment the following lines
 # export GBM_BACKEND=nvidia-drm # force GBM as a backend
