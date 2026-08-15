@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "Installing VirtualBox"
+
+paru -S --needed --noconfirm virtualbox virtualbox-bin-guest-iso
+
+sudo modprobe vboxdrv
+
+echo "VirtualBox installed"
+
+exit 0
