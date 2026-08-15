@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Installing Extra Packages"
+
+paru -S --needed --noconfirm - <"$DOTFILES_PATH/scripts/install/utils/optional.pkgs.txt"
+
+echo "Extra Packages installed ✅"
+
+exit 0

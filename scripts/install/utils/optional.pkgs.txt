@@ -1,6 +1,5 @@
 nvtop
 mpd
-1password
 mpc
 mpv
 imagemagick
