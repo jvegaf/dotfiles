@@ -11,7 +11,7 @@ WHISPER = "/usr/lib/hyprwhspr/config/hyprland/hyprwhspr-tray.sh record"
 
 -- Monitors
 MONITOR1 = "eDP-1"
-MONITOR2 = ""
+MONITOR2 = "HDMI-A-1"
 MONITOR3 = ""
 PRIMARY_MONITOR = MONITOR1
 

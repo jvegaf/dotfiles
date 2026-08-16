@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S --needed --noconfirm docker docker-compose docker-buildx
+sudo pacman -S --needed --noconfirm docker docker-compose docker-buildx lazydocker
 
 sudo systemctl start docker
 sudo systemctl enable docker
