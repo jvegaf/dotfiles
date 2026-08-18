@@ -6,7 +6,7 @@
 #theme = Adwaita dark
 #theme = Adventure Time
 #theme = Argonaut
-theme = Ayu Mirage
+theme = noctalia
 #theme = Borland
 #theme = Breeze
 #theme = Bright Lights
@@ -69,7 +69,7 @@ mouse-hide-while-typing = true
 # other
 copy-on-select = clipboard
 
-font-size = 13
+font-size = 11
 font-family = JetBrainsMono NF
 font-family-bold = JetBrainsMono NF Bold
 font-family-bold-italic = JetBrainsMono NF Bold Italic

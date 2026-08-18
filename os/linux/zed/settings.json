@@ -75,7 +75,7 @@
     "tool_permissions": {
       "default": "allow",
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "gpt-5",
@@ -92,10 +92,10 @@
     "use_smartcase_find": true,
   },
   "ui_font_size": 16,
-  "buffer_font_size": 20.0,
+  "buffer_font_size": 15.0,
   "agent_ui_font_size": 16,
   "ui_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_family": "FantasqueSansM Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
     "light": "One Dark",
