@@ -26,6 +26,7 @@
     ~/.config/lazydocker: os/linux/lazydocker
     ~/.config/lazygit: os/linux/lazygit
     ~/.config/mise: os/linux/mise
+    ~/.config/niri: os/linux/niri
     ~/.config/noctalia: os/linux/noctalia
     ~/.config/opencode: os/linux/opencode
     ~/.config/picom : os/linux/picom
@@ -34,6 +35,7 @@
     ~/.config/rofi : os/linux/rofi
     ~/.config/starship: os/linux/starship
     ~/.config/tmux : os/linux/tmux
+    ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
     ~/.config/yazi: os/linux/yazi
     ~/.config/uwsm: os/linux/uwsm
     ~/.config/waybar: os/linux/waybar
