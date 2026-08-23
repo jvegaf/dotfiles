@@ -32,6 +32,11 @@ require("full-border"):setup({
 	type = ui.Border.ROUNDED,
 })
 
+require("what-size"):setup({
+	priority = 400,
+	LEFT = "",
+	RIGHT = " ",
+})
 require("zoxide"):setup({
 	update_db = false,
 })
