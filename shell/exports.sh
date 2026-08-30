@@ -1,7 +1,8 @@
 export EDITOR="/bin/nvim"
-export M2_HOME="$HOME/.sdkman/candidates/maven/current"
+export VISUAL="/bin/nvim"
+export M2_HOME="$HOME/.local/share/mise/installs/maven/3.9.16/"
 # export WINEPREFIX="$HOME/.fusion360/wineprefixes/default"
-export FILE_BROWSER="thunar"
+export FILE_BROWSER="dolph"
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------

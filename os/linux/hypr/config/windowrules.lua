@@ -14,7 +14,7 @@ hl.window_rule({
 
 -- Gaming
 local gamingApps = "^(steam_app.*|gamescope)$"
-local gamingWorkspace = "name:gaming"
+local gamingWorkspace = "4"
 
 hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
 hl.window_rule({
@@ -64,7 +64,11 @@ hl.window_rule({
 	fullscreen_state = 0,
 })
 hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
-hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = PRIMARY_MONITOR })
+hl.window_rule({
+	match = { initial_class = "^(.*\\com\\.github\\.jvegaf\\.SymphonyJavaFXApplication)$" },
+	monitor = PRIMARY_MONITOR,
+	workspace = 3,
+})
 hl.window_rule({
 	match = { class = "^(.*[Cc]alc.*)$" },
 	float = true,

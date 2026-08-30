@@ -2,4 +2,5 @@
 gradle = "9.5"
 java = "25"
 kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
+maven = "latest"
 node = "24"
