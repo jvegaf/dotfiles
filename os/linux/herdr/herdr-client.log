@@ -1,0 +1,4 @@
+2026-08-30T15:20:31.268795Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=72554
+2026-08-30T15:20:31.268836Z  INFO herdr::client: connecting to server path=/home/th3g3ntl3man/.config/herdr/herdr-client.sock
+2026-08-30T15:20:31.323788Z  INFO herdr::client: handshake succeeded version=20 encoding=SemanticFrame
+2026-08-30T16:44:15.841400Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=72554

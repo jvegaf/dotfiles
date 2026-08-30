@@ -14,7 +14,7 @@ path-completion = true
 auto-info = true
 color-modes = true
 popup-border = "all"
-clipboard-provider = "wayland"
+clipboard-provider = "termcode"
 indent-heuristic = "hybrid"
 true-color = true
 

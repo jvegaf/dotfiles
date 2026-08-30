@@ -1,4 +1,30 @@
 {
+  "agent_buffer_font_size": 18.0,
+  "show_wrap_guides": false,
+  "unnecessary_code_fade": 0.4,
+  "markdown_preview_font_size": 19.0,
+  "markdown_preview_code_font_family": ".ZedMono",
+  "language_models": {
+    "opencode": {
+      "show_zen_models": false
+    }
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "effort": "medium",
+        "model": "opencode-go/gpt-5.6-luna",
+        "mode": "gentle-orchestrator"
+      },
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
   "buffer_font_weight": 500.0,
   "on_last_window_closed": "quit_app",
   "when_closing_with_no_tabs": "close_window",
@@ -6,7 +32,7 @@
     "provider": "copilot",
   },
   "telemetry": {
-    "diagnostics": true,
+    "diagnostics": false,
     "metrics": false,
   },
   "base_keymap": "VSCode",
@@ -58,7 +84,7 @@
     "blinking": "on",
     "cursor_shape": "block",
     "font_family": "'JetBrains Mono', 'Fira Code', monospace",
-    "font_size": 14.0,
+    "font_size": 16.0,
     "shell": "system",
     "env": {
       "ZED_TERMINAL": "1",
@@ -69,9 +95,11 @@
     "auto_fold_dirs": false,
     "auto_reveal_entries": true,
     "dock": "left",
-    "indent_size": 12,
+    "indent_size": 14.0,
   },
   "agent": {
+    "show_turn_stats": true,
+    "sidebar_side": "right",
     "tool_permissions": {
       "default": "allow",
     },
@@ -91,14 +119,14 @@
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 15.0,
-  "agent_ui_font_size": 16,
+  "ui_font_size": 17.0,
+  "buffer_font_size": 17.0,
+  "agent_ui_font_size": 18.0,
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "One Dark",
+    "light": "One Light",
     "dark": "One Dark",
   },
   "diagnostics": {

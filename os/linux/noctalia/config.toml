@@ -129,11 +129,11 @@ color = "error"
 type = "spacer"
 
 [widget.temp]
-show_label = false
+show_value = false
 
 [widget.sysmon_2]
 glyph = "gpu-usage"
-show_label = false
+show_value = false
 stat = "gpu_temp"
 type = "sysmon"
 

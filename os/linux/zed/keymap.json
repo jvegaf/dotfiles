@@ -63,6 +63,8 @@
       "shift-h": ["workspace::SendKeystrokes", "ctrl-shift-tab"],
       "shift-l": ["workspace::SendKeystrokes", "ctrl-tab"],
 
+      "space t n": "workspace::NewTerminal",
+
       // Jumplist: <C-m> -> <C-i>
       "ctrl-m": ["workspace::SendKeystrokes", "ctrl-i"],
       "space d b": "editor::ToggleBreakpoint",
@@ -154,7 +156,6 @@
     "bindings": {
       "ctrl_k": "workspace::ToggleBottomDock",
       "cmd-f": "workspace::ToggleZoom",
-      "alt-1": "workspace::NewTerminal",
     },
   },
   {
