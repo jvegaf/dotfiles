@@ -13,6 +13,8 @@
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.config/alacritty: os/linux/alacritty
     ~/.config/btop: os/linux/btop
+    ~/.config/herdr: os/linux/herdr
+    ~/.config/superfile: os/linux/superfile
     ~/.config/dunst : os/linux/dunst
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/ghostty: os/linux/ghostty
