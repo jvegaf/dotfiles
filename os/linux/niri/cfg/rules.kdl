@@ -1,6 +1,34 @@
     window-rule {
-        geometry-corner-radius 20 // Set every window radius to 20
+        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+        match app-id="1password"
+        match app-id="org.pulseaudio.pavucontrol"
+        match app-id="nm-connection-editor"
+        match title="^Welcome to Android Studio$" // xev
+
+        open-floating true // Always float Firefox PiP windows
+    }
+
+
+    window-rule {
+        geometry-corner-radius 10 // Set every window radius to 20
         clip-to-geometry true
+    }
+
+    // Open Firefox maximized and on the "browser" workspace
+    window-rule {
+        match app-id="firefox"
+        // match app-id="Alacritty"
+        match app-id="FreeCAD"
+        match app-id="org.QCAD.qcad-bin"
+        match app-id="code"
+        match app-id="code-insiders"
+        match app-id="thunar"
+        match app-id="jetbrains-studio"
+        match app-id="kicad"
+
+        //open-on-workspace "browser"
+        open-maximized true
+        // default-column-width {}
     }
 
     window-rule {
@@ -16,13 +44,6 @@
         open-floating true
         default-column-width { fixed 1080; }
         default-window-height { fixed 920; }
-    }
-
-    // if you use steam you will probably like these
-    window-rule {
-        match app-id="steam"
-        exclude title=r#"^[Ss]team$"#
-        open-floating true
     }
 
     window-rule {

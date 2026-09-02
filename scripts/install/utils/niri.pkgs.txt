@@ -1,0 +1,17 @@
+adw-gtk-theme
+cachyos-alacritty-config
+capitaine-cursors
+gnome-keyring
+niri
+noctalia
+noto-fonts
+noto-fonts-emoji
+wl-clipboard
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xwayland-satellite
+nautilus
+nautilus-image-converter
+sushi
+nwg-look
+

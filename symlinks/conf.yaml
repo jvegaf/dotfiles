@@ -26,3 +26,4 @@
     ~/.config/rustfmt: langs/rustfmt
     ~/.npmrc: langs/js/.npmrc
     ~/.clang-format: langs/cpp/.clang-format
+    ~/.ssh/config: git/ssh_config

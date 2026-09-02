@@ -94,6 +94,7 @@ alias ffet='fastfetch'
 alias i3cfg='nvim $HOME/.config/i3/config'
 alias swcfg='nvim $HOME/.config/sway/config.d/application_defaults'
 alias hycfg='nvim $HOME/.config/hypr/hyprland.lua'
+alias nicfg='nvim $HOME/.config/niri/config.kdl'
 alias ghstcfg='nvim $HOME/.config/ghostty/config'
 alias bt='btop'
 

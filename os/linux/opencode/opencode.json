@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "lsp": true,
   "agent": {
     "explore": {
       "description": "Freeform exploration fallback agent",
@@ -225,7 +224,7 @@
       "description": "Implement code changes from task definitions",
       "hidden": true,
       "mode": "subagent",
-      "model": "opencode-go/qwen3.8-flash",
+      "model": "opencode-go/qwen3.7-plus",
       "prompt": "{file:./prompts/sdd/sdd-apply.md}",
       "tools": {
         "bash": true,
@@ -323,7 +322,7 @@
       "description": "Write detailed specifications from proposals",
       "hidden": true,
       "mode": "subagent",
-      "model": "opencode/big-pickle",
+      "model": "opencode-go/gpt-5.6-luna",
       "prompt": "{file:./prompts/sdd/sdd-spec.md}",
       "tools": {
         "bash": true,
@@ -331,7 +330,7 @@
         "read": true,
         "write": true
       },
-      "variant": ""
+      "variant": "medium"
     },
     "sdd-tasks": {
       "description": "Break down specs and designs into implementation tasks",
@@ -363,6 +362,7 @@
     }
   },
   "default_agent": "gentle-orchestrator",
+  "lsp": true,
   "mcp": {
     "codegraph": {
       "command": [
