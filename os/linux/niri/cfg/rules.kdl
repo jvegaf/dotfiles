@@ -3,8 +3,9 @@
         match app-id="1password"
         match app-id="org.pulseaudio.pavucontrol"
         match app-id="nm-connection-editor"
+        match app-id="blueman-manager"
+        match app-id="mpv"
         match title="^Welcome to Android Studio$" // xev
-
         open-floating true // Always float Firefox PiP windows
     }
 
@@ -47,9 +48,8 @@
     }
 
     window-rule {
-       match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
-       default-floating-position x=10 y=10 relative-to="bottom-right"
-       open-focused false
+       match app-id="org.gnome.Nautilus"
+       open-floating true
     }
 
     layer-rule {

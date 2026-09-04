@@ -35,7 +35,7 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "base_keymap": "VSCode",
+  "base_keymap": "JetBrains",
   "preview_tabs": {
     "enabled": false,
     "enable_preview_from_file_finder": false,

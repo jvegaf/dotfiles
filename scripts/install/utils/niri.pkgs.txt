@@ -1,5 +1,4 @@
 adw-gtk-theme
-cachyos-alacritty-config
 capitaine-cursors
 gnome-keyring
 niri

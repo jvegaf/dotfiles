@@ -16,7 +16,7 @@
 editor = ""
 
 #-- Directory Editor
-# 
+#
 dir_editor = ""
 
 #-- Auto check for update
@@ -24,7 +24,7 @@ auto_check_update = true
 
 #-- cd on quit
 # Should we cd the shell to the last directory open in superfile when the
-# program exits? 
+# program exits?
 cd_on_quit = false
 
 #-- File Preview
@@ -164,11 +164,11 @@ metadata = false
 
 #-- MD5 Checksum Generation
 # Requires: md5sum
-enable_md5_checksum = false
+enable_md5_checksum = true
 #
 #-- Zoxide Support - Smart directory navigation!
 # Requires: zoxide
-zoxide_support = false
+zoxide_support = true
 
 #-- File opening rules
 # Map file extensions to commands used to open them.

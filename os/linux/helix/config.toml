@@ -57,7 +57,7 @@ W = ":write"
 "A-," = ":bp"
 "A-." = ":bn"
 Z = { Z = ":wbc" }
-"Q" = ":q!"
+space = { q  = ":quit" }
 
 [editor.cursor-shape]
 normal = "block"
