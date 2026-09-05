@@ -2,11 +2,11 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w2",
+      "id": "w6",
       "custom_name": null,
       "identity_cwd": "/home/th3g3ntl3man",
       "public_pane_numbers": {
-        "7": 1
+        "5": 1
       },
       "next_public_pane_number": 2,
       "public_tab_numbers": [
@@ -17,16 +17,16 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 7
+            "Pane": 5
           },
           "panes": {
-            "7": {
+            "5": {
               "cwd": "/home/th3g3ntl3man"
             }
           },
           "zoomed": false,
-          "focused": 7,
-          "root_pane": 7
+          "focused": 5,
+          "root_pane": 5
         }
       ],
       "active_tab": 0
