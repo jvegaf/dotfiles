@@ -144,8 +144,8 @@ binds {
     Mod+T                               { toggle-window-floating; }
     Mod+F                               { maximize-column; }
     Mod+Shift+F                         { fullscreen-window; }
-    Mod+W                               { toggle-column-tabbed-display; }
-    Mod+M                               { maximize-window-to-edges; }
+    Mod+N                               { toggle-column-tabbed-display; }
+    Mod+A                               { maximize-window-to-edges; }
 
     // ─── Screenshots ───
     CTRL+Shift+1                        { screenshot; }
@@ -160,5 +160,5 @@ binds {
     // ─── Exit / Power ───
     CTRL+ALT+Delete                     { quit; } // Also quits Niri
     Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
-    Mod+A                               repeat=false { toggle-overview; }
+    Mod+W                               repeat=false { toggle-overview; }
 }
