@@ -29,16 +29,16 @@ if test -d ~/.local/bin
 end
 
 # Add depot_tools to PATH
-if test -d ~/Applications/depot_tools
-    if not contains -- ~/Applications/depot_tools $PATH
-        set -p PATH ~/Applications/depot_tools
-    end
-end
+# if test -d ~/Applications/depot_tools
+#     if not contains -- ~/Applications/depot_tools $PATH
+#         set -p PATH ~/Applications/depot_tools
+#     end
+# end
 
 ## Starship prompt
-# if status --is-interactive
-#    source ("/usr/bin/starship" init fish --print-full-init | psub)
-# end
+if status --is-interactive
+    source ("/usr/bin/starship" init fish --print-full-init | psub)
+end
 
 ## Advanced command-not-found hook
 # source /usr/share/doc/find-the-command/ftc.fish
@@ -315,8 +315,9 @@ function fishfetch
 end
 
 mise activate fish | source
+zoxide init fish | source
 
-oh-my-posh init fish --config wopian | source
+# oh-my-posh init fish --config wopian | source
 
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /home/th3g3ntl3man/.lmstudio/bin

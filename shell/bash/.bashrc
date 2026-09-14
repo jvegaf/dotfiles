@@ -53,3 +53,6 @@ fi
 export PATH="$PATH:/home/th3g3ntl3man/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# Pi
+export PATH="/home/th3g3ntl3man/.local/share/mise/installs/node/24.21.0/bin:$PATH"

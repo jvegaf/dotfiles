@@ -40,6 +40,7 @@
     ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
     ~/.config/yazi: os/linux/yazi
     ~/.config/uwsm: os/linux/uwsm
+    ~/.config/vicinae: os/linux/vicinae
     ~/.config/waybar: os/linux/waybar
     ~/.config/zed: os/linux/zed
     ~/.config/hyprwhspr/config.json: os/linux/hyprwhspr/config.json

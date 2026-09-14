@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+# echo "Installing common packages"
+log::note "Installing i3 Window Manager"
+
+paru -S --needed --noconfirm - <"$DOTFILES_PATH/scripts/install/utils/i3wm.pkgs.txt"
+
+log::note "i3wm installed"
+
+exit 0

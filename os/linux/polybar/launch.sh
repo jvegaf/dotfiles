@@ -9,4 +9,5 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch all bars :D
-polybar -c ~/.config/polybar/config.ini topbar &
+# polybar -c ~/.config/polybar/config.ini topbar &
+polybar -c ~/.config/polybar/confs/config-laptop-silver &
