@@ -1,0 +1,15 @@
+1password
+aurscan-git
+aur-scanner
+cliamp
+creality-print-bin
+graphscad
+kbdd-git
+kotlin-lsp-bin
+lightdm-settings
+lightdm-webkit-theme-litarvan-git
+opencode-bin
+openscad-git
+orca-slicer-bin
+ttf-font-awesome-4
+vicinae-bin

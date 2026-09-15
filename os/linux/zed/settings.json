@@ -2,10 +2,10 @@
   "prettier": {
     "allowed": true
   },
-  "agent_buffer_font_size": 15.0,
+  "agent_buffer_font_size": 12.0,
   "show_wrap_guides": false,
   "unnecessary_code_fade": 0.4,
-  "markdown_preview_font_size": 15.0,
+  "markdown_preview_font_size": 12.0,
   "markdown_preview_code_font_family": ".ZedMono",
   "language_models": {
     "opencode": {
@@ -23,9 +23,6 @@
         "mode": "gentle-orchestrator"
       },
       "type": "registry"
-    },
-    "github-copilot-cli": {
-      "type": "registry"
     }
   },
   "buffer_font_weight": 500.0,
@@ -39,7 +36,7 @@
     "diagnostics": false,
     "metrics": false,
   },
-  "base_keymap": "JetBrains",
+  "base_keymap": "VSCode",
   "preview_tabs": {
     "enabled": false,
     "enable_preview_from_file_finder": false,
@@ -109,6 +106,7 @@
     "indent_size": 14.0,
   },
   "agent": {
+    "thinking_display": "always_expanded",
     "notify_when_agent_waiting": "all_screens",
     "show_turn_stats": true,
     "sidebar_side": "right",
@@ -131,9 +129,9 @@
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
   },
-  "ui_font_size": 13.0,
-  "buffer_font_size": 13.0,
-  "agent_ui_font_size": 15.0,
+  "ui_font_size": 12.0,
+  "buffer_font_size": 12.0,
+  "agent_ui_font_size": 12.0,
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "theme": {
