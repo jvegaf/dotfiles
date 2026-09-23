@@ -29,7 +29,7 @@
     ~/.config/lazygit: os/linux/lazygit
     ~/.config/mise: os/linux/mise
     ~/.config/niri: os/linux/niri
-    ~/.config/noctalia: os/linux/noctalia
+    ~/.local/state/noctalia/settings.toml: os/linux/noctalia/settings.toml
     ~/.config/opencode: os/linux/opencode
     ~/.config/picom : os/linux/picom
     ~/.config/polybar : os/linux/polybar

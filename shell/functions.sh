@@ -41,13 +41,17 @@ function y() {
   rm -f -- "$tmp"
 }
 
-
-
 # Create a Tmux Dev Layout with editor, ai, and terminal
 # Usage: tdl <c|cx|codex|other_ai> [<second_ai>]
 function tdl() {
-  [[ -z $1 ]] && { echo "Usage: tdl <c|cx|codex|other_ai> [<second_ai>]"; return 1; }
-  [[ -z $TMUX ]] && { echo "You must start tmux to use tdl."; return 1; }
+  [[ -z $1 ]] && {
+    echo "Usage: tdl <c|cx|codex|other_ai> [<second_ai>]"
+    return 1
+  }
+  [[ -z $TMUX ]] && {
+    echo "You must start tmux to use tdl."
+    return 1
+  }
 
   local current_dir="${PWD}"
   local editor_pane ai_pane ai2_pane
@@ -85,8 +89,14 @@ function tdl() {
 # Create a Tmux Dev Square layout with editor, diff watch, terminal, and opencode
 # Usage: tds
 function tds() {
-  [[ -n $1 ]] && { echo "Usage: tds"; return 1; }
-  [[ -z $TMUX ]] && { echo "You must start tmux to use tds."; return 1; }
+  [[ -n $1 ]] && {
+    echo "Usage: tds"
+    return 1
+  }
+  [[ -z $TMUX ]] && {
+    echo "You must start tmux to use tds."
+    return 1
+  }
 
   local current_dir="${PWD}"
   local editor_pane diff_pane terminal_pane opencode_pane
@@ -112,8 +122,14 @@ function tds() {
 # Create multiple tdl windows with one per subdirectory in the current directory
 # Usage: tdlm <c|cx|codex|other_ai> [<second_ai>]
 function tdlm() {
-  [[ -z $1 ]] && { echo "Usage: tdlm <c|cx|codex|other_ai> [<second_ai>]"; return 1; }
-  [[ -z $TMUX ]] && { echo "You must start tmux to use tdlm."; return 1; }
+  [[ -z $1 ]] && {
+    echo "Usage: tdlm <c|cx|codex|other_ai> [<second_ai>]"
+    return 1
+  }
+  [[ -z $TMUX ]] && {
+    echo "You must start tmux to use tdlm."
+    return 1
+  }
 
   local ai="$1"
   local ai2="$2"
@@ -141,8 +157,14 @@ function tdlm() {
 # Create a multi-pane swarm layout with the same command started in each pane (great for AI)
 # Usage: tsl <pane_count> <command>
 function tsl() {
-  [[ -z $1 || -z $2 ]] && { echo "Usage: tsl <pane_count> <command>"; return 1; }
-  [[ -z $TMUX ]] && { echo "You must start tmux to use tsl."; return 1; }
+  [[ -z $1 || -z $2 ]] && {
+    echo "Usage: tsl <pane_count> <command>"
+    return 1
+  }
+  [[ -z $TMUX ]] && {
+    echo "You must start tmux to use tsl."
+    return 1
+  }
 
   local count="$1"
   local cmd="$2"
@@ -153,7 +175,7 @@ function tsl() {
 
   panes+=("$TMUX_PANE")
 
-  while (( ${#panes[@]} < count )); do
+  while ((${#panes[@]} < count)); do
     local new_pane
     local split_target="${panes[-1]}"
     new_pane=$(tmux split-window -h -t "$split_target" -c "$current_dir" -P -F '#{pane_id}')
@@ -166,4 +188,8 @@ function tsl() {
   done
 
   tmux select-pane -t "${panes[0]}"
+}
+
+function gcls() {
+  git clone 'git@github.com:jvegaf/"$@".git'
 }
