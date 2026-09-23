@@ -90,14 +90,20 @@ hl.window_rule({
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
-	match = { class = "^(com.onepassword.OnePassword)$" },
+	match = { class = "^(com\\.onepassword\\.OnePassword)$" },
 	float = true,
 	center = true,
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
+	match = { class = "^(org\\.gnome\\.Nautilus)$" },
+	float = true,
+	center = true,
+	size = { "monitor_w*0.50", "monitor_h*0.50" },
+})
+hl.window_rule({
 	match = {
-		class = "^(org\\.kde\\.dolphin)$",
+		class = "^(org\\.gnome\\.dolphin)$",
 		title = "negative:^(Moving.*|Create New.*|Extract.*|Compress.*|Copying.*|Progress.*|Configure.*|Properties.*|Choose\\sApplication.*)$",
 	},
 	float = true,

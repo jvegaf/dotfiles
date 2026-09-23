@@ -12,23 +12,58 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 
 cd "$HOME/.config/opencode" || exit
 
-curl -fsSL https://plannotator.ai/install.sh | bash
-
-log::note "Plannotator plugin installed successfully!"
-
-npm install @tarquinen/opencode-smart-title
-
-log::note "Opencode Smart Title plugin installed successfully!"
-
 log::note "Installing Pi Agent"
 
-curl -fsSL https://pi.dev/install.sh | sh
+# curl -fsSL https://pi.dev/install.sh | sh
 
-log::note "Gentle Agent installed"
+log::note "Pi Agent installed"
 
-log::note "Installing Gentle AI"
+pi install npm:pi-interview
 
-curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+# pi install npm:gentle-pi
 
-log::note "Gentle AI installed"
+pi install npm:@janvitos/pi-plan-build
+
+pi install npm:pi-open-tui
+
+# pi install npm:gentle-engram
+
+pi install npm:@henryqw/pi-auto-compact
+
+# pi install npm:pi-lmstudio
+
+pi install npm:pi-ask-user
+
+pi install npm:@narumitw/pi-lsp
+
+pi install npm:@narumitw/pi-statusline
+
+# pi install npm:@bacnh85/pi-web
+
+pi install npm:@plannotator/pi-extension
+
+pi install npm:@amaster.ai/pi-memory-mem0
+
+pi install npm:@narumitw/pi-plan-mode
+
+# pi install npm:pi-hermes-memory
+
+# pi install npm:pi-web-ui
+
+pi install npm:@moyai/pi-session-hoarder
+
+pi install npm:pi-prompt-template-model
+
+pi install npm:pi-mcp-adapter
+
+pi install npm:pi-subagents
+
+pi install npm:pi-web-access
+
+pi install npm:pi-background-tasks
+
+pi install npm:@langfuse/pi-observability-plugin
+
+pi install npm:pi-lens
+
 exit 0
