@@ -47,3 +47,4 @@
     ~/.config/hyprwhspr/audio_level: os/linux/hyprwhspr/audio_level
     ~/.face: os/linux/.face
     ~/.screenlayout: os/linux/.screenlayout
+    ~/.backgrounds: os/linux/wallpapers

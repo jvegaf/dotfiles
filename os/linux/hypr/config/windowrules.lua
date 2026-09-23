@@ -90,7 +90,7 @@ hl.window_rule({
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
-	match = { class = "^(1password)$" },
+	match = { class = "^(com.onepassword.OnePassword)$" },
 	float = true,
 	center = true,
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
