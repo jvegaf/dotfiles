@@ -122,6 +122,7 @@ hide_album_art = true
 hide_artist = true
 hide_when_no_media = true
 max_length = 74
+show_progress = true
 title_scroll = "on_hover"
 
 [widget.network]

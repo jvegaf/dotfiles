@@ -29,7 +29,7 @@ function ww() {
 }
 
 function www() {
-  xdg-open "https://"$@""
+  xdg-open "https://$*"
 }
 
 function y() {
@@ -192,4 +192,66 @@ function tsl() {
 
 function gcls() {
   git clone "git@github.com:jvegaf/$1.git"
+}
+
+pretty_clients() {
+  emulate -L zsh
+  setopt localoptions ksharrays
+
+  local R=$'\033[0;31m' G=$'\033[0;32m' Y=$'\033[1;33m'
+  local B=$'\033[0;34m' C=$'\033[0;36m' W=$'\033[1;37m' N=$'\033[0m'
+  local output line key val
+  local count=0 title='' class='' addr='' ws='' size='' pos='' pid='' floating=''
+  local window_re='^Window[[:space:]]+([0-9a-fx]+)[[:space:]]*->[[:space:]]*(.*)$'
+  local field_re='^[[:space:]]+([a-zA-Z_][a-zA-Z0-9_]*):[[:space:]]*(.*)$'
+
+  if ! (( ${+commands[hyprctl]} )); then
+    print -u2 -- "${R}Error: hyprctl no encontrado.${N}"
+    return 1
+  fi
+
+  if ! output=$(command hyprctl clients 2>/dev/null); then
+    print -u2 -- "${R}Error ejecutando hyprctl clients${N}"
+    return 1
+  fi
+
+  if [[ -z $output ]]; then
+    print -- "${Y}No hay ventanas abiertas.${N}"
+    return 0
+  fi
+
+  _pretty_clients_flush() {
+    (( count == 0 )) && return
+    printf '%s╭─ Ventana #%d%s\n' "$W" "$count" "$N"
+    printf '%s│ Título:   %s%s\n' "$C" "${title:-N/A}" "$N"
+    printf '%s│ Clase:    %s%s\n' "$C" "${class:-N/A}" "$N"
+    printf '%s│ Address:  %s%s%s\n' "$C" "$G" "${addr:-N/A}" "$N"
+    printf '%s│ Workspace:%s %s%s\n' "$C" "$Y" "${ws:-N/A}" "$N"
+    printf '%s│ Tamaño:   %s%s\n' "$C" "${size:-N/A}" "$N"
+    printf '%s│ Posición: %s%s\n' "$C" "${pos:-N/A}" "$N"
+    printf '%s│ PID:      %s%s%s\n' "$C" "$B" "${pid:-N/A}" "$N"
+    printf '%s│ Floating: %s%s\n' "$C" "${floating:-N/A}" "$N"
+    printf '%s╰──────────────────────────────%s\n' "$W" "$N"
+  }
+
+  while IFS= read -r line; do
+    if [[ $line =~ $window_re ]]; then
+      _pretty_clients_flush
+      (( count++ ))
+      addr=${match[1]}
+      title=${match[2]}
+      class='' ws='' size='' pos='' pid='' floating=''
+    elif [[ $line =~ $field_re ]]; then
+      key=${match[1]}
+      val=${match[2]}
+      val=${val%%[[:space:]]##}
+      case $key in
+        class) class=$val ;; workspace) ws=$val ;; at) pos=$val
+        ;; size) size=$val ;; pid) pid=$val ;; floating) floating=$val ;;
+      esac
+    fi
+  done <<< "$output"
+  _pretty_clients_flush
+  print -- "\n${G}Total de ventanas: ${W}${count}${N}"
+  unfunction _pretty_clients_flush
 }

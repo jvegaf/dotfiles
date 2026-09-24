@@ -10,60 +10,59 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   install_custom
 
-cd "$HOME/.config/opencode" || exit
-
 log::note "Installing Pi Agent"
 
-# curl -fsSL https://pi.dev/install.sh | sh
+curl -fsSL https://pi.dev/install.sh | sh
 
 log::note "Pi Agent installed"
 
-pi install npm:pi-interview
+# pi install npm:pi-interview
 
-# pi install npm:gentle-pi
+pi install npm:gentle-pi
 
-pi install npm:@janvitos/pi-plan-build
+# pi install npm:@janvitos/pi-plan-build
 
-pi install npm:pi-open-tui
+# pi install npm:pi-open-tui
 
-# pi install npm:gentle-engram
+pi install npm:gentle-engram
 
-pi install npm:@henryqw/pi-auto-compact
+pi install npm:omniroute-pi-ext-integration
+# pi install npm:@henryqw/pi-auto-compact
 
 # pi install npm:pi-lmstudio
 
-pi install npm:pi-ask-user
+# pi install npm:pi-ask-user
 
-pi install npm:@narumitw/pi-lsp
+# pi install npm:@narumitw/pi-lsp
 
-pi install npm:@narumitw/pi-statusline
+# pi install npm:@narumitw/pi-statusline
 
 # pi install npm:@bacnh85/pi-web
 
-pi install npm:@plannotator/pi-extension
+# pi install npm:@plannotator/pi-extension
 
-pi install npm:@amaster.ai/pi-memory-mem0
+# pi install npm:@amaster.ai/pi-memory-mem0
 
-pi install npm:@narumitw/pi-plan-mode
+# pi install npm:@narumitw/pi-plan-mode
 
 # pi install npm:pi-hermes-memory
 
 # pi install npm:pi-web-ui
 
-pi install npm:@moyai/pi-session-hoarder
+# pi install npm:@moyai/pi-session-hoarder
 
-pi install npm:pi-prompt-template-model
+# pi install npm:pi-prompt-template-model
 
-pi install npm:pi-mcp-adapter
-
-pi install npm:pi-subagents
-
-pi install npm:pi-web-access
-
-pi install npm:pi-background-tasks
-
-pi install npm:@langfuse/pi-observability-plugin
-
-pi install npm:pi-lens
+# pi install npm:pi-mcp-adapter
+#
+# pi install npm:pi-subagents
+#
+# pi install npm:pi-web-access
+#
+# pi install npm:pi-background-tasks
+#
+# pi install npm:@langfuse/pi-observability-plugin
+#
+# pi install npm:pi-lens
 
 exit 0
