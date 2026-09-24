@@ -191,5 +191,5 @@ function tsl() {
 }
 
 function gcls() {
-  git clone 'git@github.com:jvegaf/"$@".git'
+  git clone "git@github.com:jvegaf/$1.git"
 }

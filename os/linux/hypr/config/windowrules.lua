@@ -12,29 +12,29 @@ hl.window_rule({
 	pin = true,
 })
 
--- Gaming
-local gamingApps = "^(steam_app.*|gamescope)$"
-local gamingWorkspace = "4"
+-- Workspaces
 
-hl.window_rule({ match = { content = "game" }, workspace = gamingWorkspace })
-hl.window_rule({
-	match = { xdg_tag = "^(.*game.*)$" },
-	workspace = gamingWorkspace,
-	fullscreen_state = 2,
-	content = "game",
-	sync_fullscreen = true,
-})
-hl.window_rule({ match = { class = gamingApps }, workspace = gamingWorkspace })
-hl.window_rule({ match = { class = "^(steam)$", title = "^(Friends List)$" }, float = true })
+local musicApps = "^(harmony|symphony)$"
+local musicWorkspace = "4"
+
+local makerApps = "^(orca-slicer|org.freecad.FreeCAD)$"
+local makerWorkspace = "5"
+
+local chatApps = "^(org.telegram.desktop)$"
+local chatWorkspace = "6"
+
+hl.window_rule({ match = { class = musicApps }, workspace = musicWorkspace })
+hl.window_rule({ match = { class = makerApps }, workspace = makerWorkspace })
+hl.window_rule({ match = { class = chatApps }, workspace = chatWorkspace })
 hl.window_rule({
 	match = { class = "^(steam)$", title = "^(Launching\\.{3})$" },
 	float = true,
 	center = true,
-	workspace = gamingWorkspace,
+	workspace = musicWorkspace,
 })
 hl.window_rule({
 	match = {
-		class = gamingApps,
+		class = musicApps,
 		title = "^(.+)$",
 		initial_title = "negative:^(.*\\\\home\\\\.*)$",
 	},
@@ -53,7 +53,7 @@ hl.window_rule({
 	float = true,
 	fullscreen = false,
 	fullscreen_state = 0,
-	workspace = gamingWorkspace,
+	workspace = musicWorkspace,
 })
 
 -- Apps
