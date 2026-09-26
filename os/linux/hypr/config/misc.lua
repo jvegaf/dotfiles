@@ -7,7 +7,10 @@ hl.config({
             splash = CACHYLGREEN,
         },
         middle_click_paste = false,
-        enable_swallow = true,
+        -- Window swallowing: cualquier GUI hija de una terminal se "traga" la terminal
+        -- (la oculta y, al cerrarse, la reinstala en el workspace de la app).
+        -- Con tu binario `crate-app` + la regla crate-app -> ws4, eso arrastraba la kitty al ws4.
+        enable_swallow = false,
         swallow_regex = "(kitty|ghostty|[Kk]onsole|Alacritty|gnome-terminal|xfce[0-9]?-terminal)",
         vrr = 3,
     },

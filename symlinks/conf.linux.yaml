@@ -6,45 +6,44 @@
       force: true
 
 - link:
-    ~/.dotly: os/linux/.dotly
-    ~/.fonts: fonts
     ~/.agents: os/linux/.agents
+    ~/.backgrounds: os/linux/wallpapers
     ~/.config/FreeCAD: os/linux/FreeCAD
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.config/alacritty: os/linux/alacritty
     ~/.config/btop: os/linux/btop
-    ~/.config/herdr: os/linux/herdr
-    ~/.config/superfile: os/linux/superfile
     ~/.config/dunst : os/linux/dunst
     ~/.config/fastfetch: os/linux/fastfetch
     ~/.config/ghostty: os/linux/ghostty
-    ~/.config/i3: os/linux/i3
     ~/.config/helix: os/linux/helix
+    ~/.config/herdr: os/linux/herdr
     ~/.config/hypr: os/linux/hypr
-    ~/.config/mako: os/linux/mako
-    ~/.config/wlogout: os/linux/wlogout
+    ~/.config/i3: os/linux/i3
     ~/.config/kicad: os/linux/kicad
     ~/.config/kitty: os/linux/kitty
     ~/.config/lazydocker: os/linux/lazydocker
     ~/.config/lazygit: os/linux/lazygit
+    ~/.config/mako: os/linux/mako
+    ~/.config/mcp/mcp.json: os/linux/mcp/mcp.json
     ~/.config/mise: os/linux/mise
     ~/.config/niri: os/linux/niri
-    ~/.local/state/noctalia/settings.toml: os/linux/noctalia/settings.toml
     ~/.config/opencode: os/linux/opencode
     ~/.config/picom : os/linux/picom
     ~/.config/polybar : os/linux/polybar
     ~/.config/ranger: os/linux/ranger
     ~/.config/rofi : os/linux/rofi
     ~/.config/starship: os/linux/starship
+    ~/.config/superfile: os/linux/superfile
     ~/.config/tmux : os/linux/tmux
-    ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
-    ~/.config/yazi: os/linux/yazi
     ~/.config/uwsm: os/linux/uwsm
     ~/.config/vicinae: os/linux/vicinae
     ~/.config/waybar: os/linux/waybar
+    ~/.config/wlogout: os/linux/wlogout
+    ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
+    ~/.config/yazi: os/linux/yazi
     ~/.config/zed: os/linux/zed
-    ~/.config/hyprwhspr/config.json: os/linux/hyprwhspr/config.json
-    ~/.config/hyprwhspr/audio_level: os/linux/hyprwhspr/audio_level
+    ~/.dotly: os/linux/.dotly
     ~/.face: os/linux/.face
+    ~/.fonts: fonts
+    ~/.local/state/noctalia/settings.toml: os/linux/noctalia/settings.toml
     ~/.screenlayout: os/linux/.screenlayout
-    ~/.backgrounds: os/linux/wallpapers

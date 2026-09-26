@@ -24,18 +24,26 @@ pi install npm:gentle-pi
 
 # pi install npm:pi-open-tui
 
+# ternemos que istalar con yay o paru --needed --novonfirm engram-bin
+
+paru -S --needed --noconfirm engram-bin
+
+engram setup pi
+
 pi install npm:gentle-engram
 
-pi install npm:omniroute-pi-ext-integration
+pi install npm:pi-notifications
+
+# pi install npm:pi-mcp-adapter
 # pi install npm:@henryqw/pi-auto-compact
 
 # pi install npm:pi-lmstudio
 
 # pi install npm:pi-ask-user
 
-# pi install npm:@narumitw/pi-lsp
+pi install npm:@narumitw/pi-lsp
 
-# pi install npm:@narumitw/pi-statusline
+pi install npm:@narumitw/pi-statusline
 
 # pi install npm:@bacnh85/pi-web
 
@@ -63,6 +71,6 @@ pi install npm:omniroute-pi-ext-integration
 #
 # pi install npm:@langfuse/pi-observability-plugin
 #
-# pi install npm:pi-lens
+pi install npm:pi-lens
 
 exit 0

@@ -72,6 +72,8 @@ alias nim='npm'
 
 alias ns='npm start'
 alias ys='yarn start'
+alias yd='yarn dev'
+alias ydt='yarn tauri dev'
 
 # Utils
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch

@@ -57,7 +57,7 @@
 		"0"
 	],
 	"default_filament_colour": [
-		""
+		"#77767B"
 	],
 	"dont_slow_down_outer_wall": [
 		"0"
@@ -277,7 +277,7 @@
 		"nil"
 	],
 	"filament_z_hop_types": [
-		"nil"
+		"Slope Lift"
 	],
 	"first_x_layer_fan_speed": [
 		"0"

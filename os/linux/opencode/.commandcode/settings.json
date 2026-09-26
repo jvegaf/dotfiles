@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(command:*)",
+      "Shell(jq:*)",
+      "Shell(printenv:*)",
+      "Shell(echo:*)",
+      "Shell([:*)",
+      "Shell(do:*)",
+      "Shell(curl -sS -m 15 -o /dev/null -w HTTP %{http_code}\\n -X POST -H Authorization: Bearer dummy -H content-type: application/json -d {} https://api.commandcode.ai)",
+      "Shell(done:*)",
+      "Shell(opencode:*)",
+      "Shell(ls:*)",
+      "Shell(for:*)",
+      "Shell(npm:*)",
+      "Shell(curl -sS -m 20 -o oc-schema.json -w HTTP %{http_code} size=%{size_download}\\n https://opencode.ai/config.json)",
+      "Shell(cd /tmp; echo \"=== current command-code models in opencode ===\"; timeout 60 opencode models 2>&1 | grep -i \"command\" | head -20; echo \"(count: $(timeout 60 opencode models 2>/dev/null | grep -ci command))\"; echo \"=== sample of all models ===\"; timeout 60 opencode models 2>/dev/null | head -8)",
+      "Shell(strings:*)",
+      "Shell(grep:*)",
+      "Shell(cd:*)",
+      "Shell(head:*)",
+      "Shell(cmd:*)",
+      "Shell(echo \"=== where is COMMAND_CODE_API_KEY defined? ===\"; grep -rn \"COMMAND_CODE_API_KEY\" ~/.zshrc ~/.bashrc ~/.profile ~/.bash_profile ~/.config/fish/config.fish ~/.zshenv 2>/dev/null; grep -rln \"COMMAND_CODE_API_KEY\" ~/.dotfiles 2>/dev/null | head; echo \"=== is it in commandcode auth? ===\"; jq -r 'has(\"apiKey\")' ~/.commandcode/auth.json 2>/dev/null; echo \"=== cmd whoami / status ===\"; timeout 45 cmd status 2>&1 | head -20)",
+      "Shell(python3 gen_models.py)",
+      "Shell(cp:*)",
+      "Shell(python3 patch_config.py)",
+      "Shell(SP=\"/tmp/commandcode-1000/-home-th3g3ntl3man--dotfiles-os-linux-opencode/ae74ca70-98ec-4a24-94b4-00c48fc245d6/scratchpad\" CFG=/home/th3g3ntl3man/.dotfiles/os/linux/opencode/opencode.jsonc echo \"=== diff hunks (my change vs pre-change backup) ===\"; diff -u \"$SP/opencode.jsonc.bak\" \"$CFG\" | grep -E \"^@@\" echo \"=== structural keys unchanged? ===\"; diff <(jq -S 'del(.provider)' \"$SP/opencode.jsonc.bak\") <(jq -S 'del(.provider)' \"$CFG\") && echo \"rest of config: IDENTICAL\" echo \"=== new provider section head ===\"; jq '.provider | to_entries[] | {id: .key, name: .value.name, npm: .value.npm, models: (.value.models|length)}' \"$CFG\")"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Install the linux packages needed
+#?? 1.0.0
+##?
+##? Usage:
+##?   install_custom
+
+npm i -g command-code@latest
+
+log::note "Command code cli installed successfully!"
+
+exit 0

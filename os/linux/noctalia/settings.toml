@@ -3,9 +3,13 @@ config_version = 14
 [accessibility]
 ui_scale = 1.1000000089406967
 
+[audio]
+enable_sounds = true
+sound_volume = 0.40999999083578587
+
 [bar.default]
-center = [ "status", "workspaces", "caffeine" ]
-end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "battery", "clock", "session" ]
+center = [ "status", "spacer_2", "workspaces", "spacer_3", "caffeine" ]
+end = [ "media", "spacer_1", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "session" ]
 scale = 1.1500000096857548
 start = [ "launcher", "toggle", "spacer_1", "group:g1" ]
 thickness = 24
@@ -20,6 +24,9 @@ thickness = 24
     members = [ "temp", "sysmon_2", "sysmon_3", "cpu" ]
     opacity = 1.0
     padding = 6.0
+
+[location]
+auto_locate = true
 
 [lockscreen_widgets]
 enabled = false
@@ -86,14 +93,23 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_weather = true
 
 [plugins]
-enabled = [ "maddingo/hypr-layout-switcher", "goodroot/noctwhspr" ]
+enabled = [ "maddingo/hypr-layout-switcher", "goodroot/noctwhspr", "gabedunn/voxtype" ]
+
+[shell]
+corner_radius_scale = 1.2500000186264515
 
 [theme]
-community_palette = "One"
+community_palette = "Kemuri Koke"
+mode = "dark"
+pure_black_dark = false
 source = "community"
 
     [theme.templates]
-    builtin_ids = [ "kitty" ]
+    builtin_ids = []
+
+        [theme.templates.user.noctwhspr_mic_osd]
+        input_path = "/home/th3g3ntl3man/.config/noctalia/templates/noctwhspr-mic-osd.css"
+        output_path = "/home/th3g3ntl3man/.config/hyprwhspr/theme/mic-osd.css"
 
 [wallpaper]
 directory = "/home/th3g3ntl3man/.backgrounds"
@@ -127,6 +143,12 @@ title_scroll = "on_hover"
 
 [widget.network]
 show_label = false
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
 
 [widget.status]
 type = "goodroot/noctwhspr:status"

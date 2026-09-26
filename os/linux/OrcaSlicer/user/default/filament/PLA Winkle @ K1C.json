@@ -1,4 +1,7 @@
 {
+	"default_filament_colour": [
+		"#FF7800"
+	],
 	"fan_max_speed": [
 		"70"
 	],

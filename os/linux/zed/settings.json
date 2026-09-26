@@ -1,12 +1,14 @@
 {
+  "markdown_preview": {
+    "font_size": 12.0,
+    "code_font_family": ".ZedMono"
+  },
   "prettier": {
     "allowed": true
   },
   "agent_buffer_font_size": 12.0,
   "show_wrap_guides": false,
   "unnecessary_code_fade": 0.4,
-  "markdown_preview_font_size": 12.0,
-  "markdown_preview_code_font_family": ".ZedMono",
   "language_models": {
     "opencode": {
       "show_zen_models": false
@@ -129,15 +131,15 @@
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
   },
-  "ui_font_size": 12.0,
-  "buffer_font_size": 12.0,
-  "agent_ui_font_size": 12.0,
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "agent_ui_font_size": 14.0,
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
   },
   "diagnostics": {
     "inline": {

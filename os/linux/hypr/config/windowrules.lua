@@ -14,7 +14,7 @@ hl.window_rule({
 
 -- Workspaces
 
-local musicApps = "^(harmony|symphony)$"
+local musicApps = "^(harmony|symphony|crate-app)$"
 local musicWorkspace = "4"
 
 local makerApps = "^(orca-slicer|org.freecad.FreeCAD)$"
@@ -24,6 +24,8 @@ local chatApps = "^(org.telegram.desktop)$"
 local chatWorkspace = "6"
 
 hl.window_rule({ match = { class = musicApps }, workspace = musicWorkspace })
+hl.window_rule({ match = { class = "org\\.gnome\\.Decibels" }, float = true, center = true, workspace = musicWorkspace })
+hl.window_rule({ match = { class = "vlc" }, float = true, center = true, workspace = musicWorkspace })
 hl.window_rule({ match = { class = makerApps }, workspace = makerWorkspace })
 hl.window_rule({ match = { class = chatApps }, workspace = chatWorkspace })
 hl.window_rule({
@@ -100,6 +102,12 @@ hl.window_rule({
 	float = true,
 	center = true,
 	size = { "monitor_w*0.50", "monitor_h*0.50" },
+})
+hl.window_rule({
+	match = { class = "^(org\\.gnome\\.NautilusPreview)$" },
+	float = true,
+	center = true,
+	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
 	match = {
