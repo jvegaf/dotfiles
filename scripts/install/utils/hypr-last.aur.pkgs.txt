@@ -1,0 +1,15 @@
+1password
+bruno-bin
+cliamp
+ctags-lsp
+engram-bin
+gitkraken
+google-chrome
+hyprwhspr
+opencode-bin
+orca-slicer-bin
+python-sounddevice
+telegram-tdlib
+telegramtui
+tor-browser-alpha-bin
+vial-appimage
