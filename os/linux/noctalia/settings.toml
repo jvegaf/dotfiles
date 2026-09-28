@@ -68,7 +68,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 960.00006103515625
+    cx = 960.00018310546875
     cy = 861.60003662109375
     output = "eDP-1"
     placement_height = 1080.0
@@ -92,8 +92,11 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+[plugin_settings."blackbartblues/keymap"]
+compositor = "niri"
+
 [plugins]
-enabled = [ "maddingo/hypr-layout-switcher", "goodroot/noctwhspr", "gabedunn/voxtype" ]
+enabled = [ "goodroot/noctwhspr", "raycursive/niri-displays", "setyvii/niri-rules-studio", "blackbartblues/keymap" ]
 
 [shell]
 corner_radius_scale = 1.2500000186264515

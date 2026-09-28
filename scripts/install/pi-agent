@@ -16,9 +16,14 @@ curl -fsSL https://pi.dev/install.sh | sh
 
 log::note "Pi Agent installed"
 
+log::note "Installing Gentle AI"
+
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+
+gentle-ai install --agent pi --channel nightly
 # pi install npm:pi-interview
 
-pi install npm:gentle-pi
+# pi install npm:gentle-pi
 
 # pi install npm:@janvitos/pi-plan-build
 
@@ -26,11 +31,11 @@ pi install npm:gentle-pi
 
 # ternemos que istalar con yay o paru --needed --novonfirm engram-bin
 
-paru -S --needed --noconfirm engram-bin
+# paru -S --needed --noconfirm engram-bin
 
-engram setup pi
+# engram setup pi
 
-pi install npm:gentle-engram
+# pi install npm:gentle-engram
 
 pi install npm:pi-notifications
 
@@ -45,6 +50,7 @@ pi install npm:@narumitw/pi-lsp
 
 pi install npm:@narumitw/pi-statusline
 
+pi install npm:@commandcode/pi-commandcode-provider
 # pi install npm:@bacnh85/pi-web
 
 # pi install npm:@plannotator/pi-extension
