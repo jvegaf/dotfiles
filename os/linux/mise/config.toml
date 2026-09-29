@@ -2,3 +2,4 @@
 java = "21"
 kotlin = { version = "latest", asset_pattern = "kotlin-compiler-*.zip", bin_path = "kotlinc/bin" }
 node = "26"
+pnpm = "latest"

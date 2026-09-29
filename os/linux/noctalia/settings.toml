@@ -96,7 +96,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
 compositor = "niri"
 
 [plugins]
-enabled = [ "goodroot/noctwhspr", "raycursive/niri-displays", "setyvii/niri-rules-studio", "blackbartblues/keymap" ]
+enabled = [ "raycursive/niri-displays", "setyvii/niri-rules-studio", "blackbartblues/keymap", "goodroot/noctwhspr" ]
 
 [shell]
 corner_radius_scale = 1.2500000186264515
