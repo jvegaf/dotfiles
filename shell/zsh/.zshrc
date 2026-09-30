@@ -47,3 +47,10 @@ fastfetch -c $HOME/.config/fastfetch/config.jsonc
 export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# Engram: the OpenCode engram plugin defaults ENGRAM_BIN to /usr/bin/engram, but
+# engram is installed user-locally. Without this the plugin cannot resolve its
+# local server identity, never registers a session, and every write is refused
+# with "could not confirm Engram session registration" (reads still work, since
+# they go over the MCP stdio server, which needs no session).
+export ENGRAM_BIN="$HOME/.local/bin/engram"
+

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Salir inmediatamente si algún comando falla
+set -e
+
+echo "======================================================"
+echo "  Iniciando instalación de Nix (Multi-usuario) en Arch"
+echo "  con soporte para Flakes habilitado."
+echo "======================================================"
+
+echo -e "\n[1/5] Instalando dependencias necesarias (curl)..."
+# Actualiza e instala curl sin pedir confirmación
+sudo pacman -Sy --noconfirm curl
+
+echo -e "\n[2/5] Descargando y ejecutando el instalador oficial de Nix..."
+# Ejecuta el script de Nix en modo multi-usuario y acepta todo automáticamente (--yes)
+sh <(curl -L https://nixos.org/nix/install) --daemon --yes
+
+echo -e "\n[3/5] Habilitando Nix Flakes..."
+# Nos aseguramos de que la carpeta existe
+sudo mkdir -p /etc/nix
+
+# Añadimos la configuración de Flakes si no está presente
+if ! grep -q "experimental-features = nix-command flakes" /etc/nix/nix.conf 2>/dev/null; then
+  echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf
+  echo "Flakes habilitados en /etc/nix/nix.conf"
+else
+  echo "Los Flakes ya estaban habilitados en la configuración."
+fi
+
+# Reiniciamos el demonio para que pille la nueva configuración
+echo "Reiniciando el demonio de Nix..."
+sudo systemctl restart nix-daemon
+
+echo -e "\n[4/5] Cargando el entorno de Nix..."
+# Sourcedeamos las variables de entorno para que los comandos funcionen en este mismo script
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+else
+  echo "Advertencia: No se encontró el archivo de entorno de Nix."
+fi
+
+echo -e "\n[5/5] Verificando la instalación..."
+nix --version
+echo "Verificando el soporte de flakes..."
+# Probamos un comando moderno de flakes para confirmar que no da error
+nix flake --help >/dev/null && echo "¡Nix y Flakes están funcionando correctamente!"
+
+echo "======================================================"
+echo "  ¡Instalación completada con éxito!                  "
+echo "======================================================"
+echo "IMPORTANTE:"
+echo "Para usar Nix en tu terminal actual, necesitas cargar el entorno ejecutando:"
+echo "  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+echo "O, simplemente, cierra esta terminal y abre una nueva."
+
+# vimft: sh

@@ -406,8 +406,8 @@
       },
       "Generate Drill Files": {
         "__geometry": {
-          "h": 506,
-          "w": 617,
+          "h": 536,
+          "w": 738,
           "x": 0,
           "y": 0
         },
@@ -423,8 +423,8 @@
         "wxChoice_3": 0,
         "wxRadioButton_0": true,
         "wxRadioButton_1": false,
-        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/gerbers/Otto-PTH.drl'\nCreated file '/home/th3g3ntl3man/Code/General-purpose-Otto-PCB/Version 1/gerbers/Otto-NPTH.drl'\nDone.\n",
-        "wxTextCtrl_0": "gerbers/"
+        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Code/splinktegrated/gerber/splinktegrated-PTH.drl'\nCreated file '/home/th3g3ntl3man/Code/splinktegrated/gerber/splinktegrated-NPTH.drl'\nDone.\n",
+        "wxTextCtrl_0": "gerber/"
       },
       "Import Vector Graphics File": {
         "__geometry": {
@@ -445,6 +445,16 @@
         "wxTextCtrl_3": 0,
         "wxTextCtrl_4": 0,
         "wxTextCtrl_5": 0
+      },
+      "Migrate 3D Models": {
+        "__geometry": {
+          "h": 560,
+          "w": 1054,
+          "x": 0,
+          "y": 0
+        },
+        "wxSplitterWindow_0": 300,
+        "wxSplitterWindow_0wxPanel_1wxSplitterWindow_0": 300
       },
       "Non Copper Zone Properties": {
         "__geometry": {
@@ -478,8 +488,8 @@
       },
       "Plot": {
         "__geometry": {
-          "h": 1080,
-          "w": 994,
+          "h": 865,
+          "w": 1111,
           "x": 0,
           "y": 0
         },
@@ -490,7 +500,7 @@
         "wxPanel_2wxStaticBox_0wxCheckBox_2": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_3": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_4": true,
-        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 0,
+        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 6,
         "wxStaticBox_1wxCheckBox_0": false,
         "wxStaticBox_1wxCheckBox_1": false,
         "wxStaticBox_1wxCheckBox_2": true,
@@ -504,7 +514,7 @@
         "wxStaticBox_1wxChoice_1": 1,
         "wxStaticBox_1wxRadioButton_0": false,
         "wxStaticBox_1wxRadioButton_1": true,
-        "wxStaticBox_2wxCheckBox_0": false,
+        "wxStaticBox_2wxCheckBox_0": true,
         "wxStaticBox_2wxCheckBox_1": true,
         "wxStaticBox_2wxCheckBox_2": true,
         "wxStaticBox_2wxCheckBox_3": true,
@@ -520,13 +530,13 @@
         "wxStaticBox_4wxChoice_0": 0,
         "wxStaticBox_5wxCheckBox_0": false,
         "wxStaticBox_5wxChoice_0": 1,
-        "wxStaticBox_5wxSpinCtrl_0": 4,
+        "wxStaticBox_5wxSpinCtrl_0": 6,
         "wxStaticBox_6wxCheckBox_0": true,
         "wxStaticBox_6wxCheckBox_1": true,
         "wxStaticBox_6wxCheckBox_2": true,
         "wxStaticBox_6wxCheckBox_3": false,
         "wxStaticBox_6wxChoice_0": 1,
-        "wxTextCtrl_0": "gerbers/"
+        "wxTextCtrl_0": "gerber/"
       },
       "Plugin And Content Manager": {
         "__geometry": {
@@ -871,6 +881,6 @@
     "pdf_viewer_name": "",
     "text_editor": "",
     "use_system_pdf_viewer": true,
-    "working_dir": "/home/th3g3ntl3man"
+    "working_dir": "/home/th3g3ntl3man/Code/splinktegrated"
   }
 }
