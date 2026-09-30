@@ -12,8 +12,16 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export TMUX_POWERLINE_DIR_HOME="$HOME/.config/tmux/plugins/tmux-powerline"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
+#
+# WARNING: this array REPLACES $PATH in zsh (there `path` is tied to `PATH`).
+# Anything added before this file runs (e.g. by /etc/profile.d/*.sh) is wiped,
+# so every path that must survive has to be listed here explicitly.
 # ------------------------------------------------------------------------------
 export path=(
+  # Nix - multi-user install. The system profile ships the nix CLI itself;
+  # the per-user profile holds packages installed with `nix profile install`.
+  "/nix/var/nix/profiles/default/bin"
+  "$HOME/.nix-profile/bin"
   "$HOME/.bin"
   "$HOME/.opt"
   "$DOTLY_PATH/bin"
