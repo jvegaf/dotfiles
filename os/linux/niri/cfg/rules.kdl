@@ -30,6 +30,7 @@
         match app-id="jetbrains-studio"
         match app-id="kicad"
         match app-id="crate-app"
+        match app-id="DB Browser for SQLite"
 
         //open-on-workspace "browser"
         open-maximized true

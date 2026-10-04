@@ -57,6 +57,7 @@ alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 alias gsw="git switch"
 
 alias grc="gh repo clone"
+alias grs="gh repo view --web"
 
 # Copilot
 alias copl="copilot"

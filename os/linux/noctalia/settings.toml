@@ -12,7 +12,7 @@ sound_volume = 0.48999998904764652
 center = [ "status", "spacer_2", "workspaces", "spacer_3", "caffeine" ]
 end = [ "media", "spacer_1", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "session" ]
 scale = 1.1500000096857548
-start = [ "launcher", "toggle", "spacer_1", "group:g1" ]
+start = [ "launcher", "toggle", "spacer_1", "group:g1", "bar" ]
 thickness = 24
 
     [[bar.default.capsule_group]]
@@ -25,6 +25,18 @@ thickness = 24
     members = [ "temp", "sysmon_2", "sysmon_3", "cpu" ]
     opacity = 1.0
     padding = 6.0
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "power_profile"
 
 [location]
 auto_locate = true
@@ -104,7 +116,6 @@ corner_radius_scale = 1.2500000186264515
 
 [theme]
 community_palette = "Kemuri Koke"
-mode = "dark"
 pure_black_dark = false
 source = "community"
 
@@ -126,6 +137,10 @@ directory = "/home/th3g3ntl3man/.backgrounds"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/th3g3ntl3man/.backgrounds/bg_03.jpg"
+
+[widget.bar]
+show_resolution = false
+type = "raycursive/niri-displays:bar"
 
 [widget.battery]
 scale = 1.6000000000000001
