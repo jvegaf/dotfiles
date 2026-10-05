@@ -11,7 +11,10 @@ export GOPATH="$HOME/.go"
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export TMUX_POWERLINE_DIR_HOME="$HOME/.config/tmux/plugins/tmux-powerline"
 
-export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/$USER/.local/share/flatpak/exports/share"
+# XDG_DATA_DIRS REPLACES the value set by /etc/profile.d/flatpak.sh, so the system
+# data dirs must be listed explicitly. Dropping /usr/share breaks icon/image loading
+# because glycin and gdk-pixbuf read their loader configs from /usr/share/glycin-loaders.
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/usr/local/share:/usr/share"
 
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
