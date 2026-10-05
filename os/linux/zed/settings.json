@@ -18,6 +18,9 @@
     "trust_all_worktrees": true
   },
   "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
     "opencode": {
       "default_config_options": {
         "effort": "medium",
@@ -25,7 +28,12 @@
         "mode": "gentle-orchestrator"
       },
       "type": "registry"
-    }
+    },
+   "Command Code": {
+     "type": "custom",
+     "command": "cmd",
+     "args": ["acp"]
+   }
   },
   "buffer_font_weight": 500.0,
   "on_last_window_closed": "quit_app",
@@ -108,10 +116,12 @@
     "indent_size": 14.0,
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "right"
+    },
     "thinking_display": "always_expanded",
     "notify_when_agent_waiting": "all_screens",
     "show_turn_stats": true,
-    "sidebar_side": "right",
     "tool_permissions": {
       "default": "allow",
     },
