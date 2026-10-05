@@ -10,3 +10,8 @@
 /os/linux/herdr/herdr-server.log
 /os/linux/opencode/.gentle-ai-telemetry-runtime.json
 /os/linux/opencode/.gentle-ai-default-agent.json
+/os/linux/herdr/session-snapshots
+/os/linux/herdr/session.json
+/os/linux/herdr/herdr-client.log
+/os/linux/herdr/plugins/github/local.subscription-usage-42aaf3aaed6d
+/os/linux/herdr/plugins.json
