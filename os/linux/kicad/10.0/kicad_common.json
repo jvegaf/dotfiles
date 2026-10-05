@@ -135,7 +135,7 @@
       "Board Setup": {
         "__geometry": {
           "h": 600,
-          "w": 1027,
+          "w": 1047,
           "x": 0,
           "y": 0
         },
@@ -163,12 +163,13 @@
         "wxPanel_0wxTreebook_0wxPanel_12wxPanel_0wxGrid_0wxWindow_3wxTextCtrl_0": "10",
         "wxPanel_0wxTreebook_0wxPanel_12wxPanel_0wxGrid_1": "0 1",
         "wxPanel_0wxTreebook_0wxPanel_12wxPanel_0wxGrid_2": "0 1 2",
-        "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0": 387,
+        "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0": 388,
         "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0wxPanel_0wxGrid_0": "0 1 2 3 4 5 6 7 8 9 10",
         "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0wxPanel_0wxGrid_0wxWindow_3wxTextCtrl_0": "10",
         "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0wxPanel_0wxGrid_0wxWindow_3wxTextCtrl_1": "10",
         "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0wxPanel_1wxGrid_0": "0 1",
         "wxPanel_0wxTreebook_0wxPanel_16wxPanel_0wxSplitterWindow_0wxPanel_1wxHtmlWindow_0": 0,
+        "wxPanel_0wxTreebook_0wxPanel_18wxPanel_0wxHtmlWindow_0": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0": 0,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_0": true,
         "wxPanel_0wxTreebook_0wxPanel_1wxPanel_0wxScrolledWindow_0wxCheckBox_1": true,
@@ -262,10 +263,10 @@
         "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_4": "0",
         "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_5": "1,37795 mils",
         "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_6": "FR4",
-        "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_7": "59,44882 mils",
+        "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_7": "43,70079 mils",
         "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_8": "4,5",
         "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxPanel_0wxScrolledWindow_0wxTextCtrl_9": "0,02",
-        "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxTextCtrl_0": "62,99213 mils",
+        "wxPanel_0wxTreebook_0wxPanel_2wxPanel_0wxTextCtrl_0": "47,24409 mils",
         "wxPanel_0wxTreebook_0wxPanel_3wxPanel_0wxCheckBox_0": false,
         "wxPanel_0wxTreebook_0wxPanel_3wxPanel_0wxChoice_0": 12,
         "wxPanel_0wxTreebook_0wxPanel_3wxPanel_0wxChoice_1": 0,
@@ -328,6 +329,23 @@
         "wxPanel_0wxTextCtrl_0": "",
         "wxPanel_0wxTextCtrl_1": 0,
         "wxPanel_0wxTextCtrl_2": 9999999999960
+      },
+      "Design Rules Checker": {
+        "__geometry": {
+          "h": 511,
+          "w": 682,
+          "x": 0,
+          "y": 0
+        },
+        "wxBookCtrlBase_0wxPanel_0wxNotebook_0": "Tests Running...",
+        "wxBookCtrlBase_0wxPanel_0wxNotebook_0wxPanel_0wxHtmlWindow_0": 51,
+        "wxBookCtrlBase_0wxPanel_1wxNotebook_0": "Violations (1)",
+        "wxCheckBox_0": true,
+        "wxCheckBox_1": false,
+        "wxCheckBox_2": false,
+        "wxCheckBox_3": true,
+        "wxCheckBox_4": false,
+        "wxCheckBox_5": false
       },
       "Edit Reference Field": {
         "__geometry": {
@@ -500,7 +518,7 @@
         "wxPanel_2wxStaticBox_0wxCheckBox_2": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_3": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_4": true,
-        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 6,
+        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 5,
         "wxStaticBox_1wxCheckBox_0": false,
         "wxStaticBox_1wxCheckBox_1": false,
         "wxStaticBox_1wxCheckBox_2": true,

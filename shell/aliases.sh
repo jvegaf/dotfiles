@@ -31,6 +31,9 @@ alias run="./run"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias open='xdg-open'
 alias zj='zellij'
+alias k1p='sh $HOME/.local/bin/CrealityPrint'
+alias oc='opencode'
+alias occfg='$HOME/.config/opencode'
 
 # Security
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"

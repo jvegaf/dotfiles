@@ -8,3 +8,5 @@
 /os/linux/opencode/opencode-notifier-state.json
 /.atl
 /os/linux/herdr/herdr-server.log
+/os/linux/opencode/.gentle-ai-telemetry-runtime.json
+/os/linux/opencode/.gentle-ai-default-agent.json

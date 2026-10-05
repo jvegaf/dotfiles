@@ -10,6 +10,9 @@ export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export TMUX_POWERLINE_DIR_HOME="$HOME/.config/tmux/plugins/tmux-powerline"
+
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/$USER/.local/share/flatpak/exports/share"
+
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 #
