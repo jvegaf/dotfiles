@@ -16,11 +16,13 @@ curl -fsSL https://pi.dev/install.sh | sh
 
 log::note "Pi Agent installed"
 
-log::note "Installing Gentle AI"
+pi install npm:@commandcode/pi-commandcode-provider
 
-curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+# log::note "Installing Gentle AI"
+#
+# curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
 
-gentle-ai install --agent pi --channel nightly
+# gentle-ai install --agent pi --channel nightly
 # pi install npm:pi-interview
 
 # pi install npm:gentle-pi
@@ -37,7 +39,7 @@ gentle-ai install --agent pi --channel nightly
 
 # pi install npm:gentle-engram
 
-pi install npm:pi-notifications
+# pi install npm:pi-notifications
 
 # pi install npm:pi-mcp-adapter
 # pi install npm:@henryqw/pi-auto-compact
@@ -46,11 +48,10 @@ pi install npm:pi-notifications
 
 # pi install npm:pi-ask-user
 
-pi install npm:@narumitw/pi-lsp
+# pi install npm:@narumitw/pi-lsp
 
-pi install npm:@narumitw/pi-statusline
+# pi install npm:@narumitw/pi-statusline
 
-pi install npm:@commandcode/pi-commandcode-provider
 # pi install npm:@bacnh85/pi-web
 
 # pi install npm:@plannotator/pi-extension
@@ -77,6 +78,6 @@ pi install npm:@commandcode/pi-commandcode-provider
 #
 # pi install npm:@langfuse/pi-observability-plugin
 #
-pi install npm:pi-lens
+# pi install npm:pi-lens
 
 exit 0
