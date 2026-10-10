@@ -1,0 +1,20 @@
+{
+	"bottom_shell_layers": "3",
+	"enable_prime_tower": "0",
+	"from": "User",
+	"inherits": "0.16mm Optimal @Creality K1C",
+	"name": "0.16mm ECO  @K1C",
+	"precise_z_height": "1",
+	"print_extruder_id": [
+		"1"
+	],
+	"print_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"print_settings_id": "0.16mm ECO  @K1C",
+	"small_area_infill_flow_compensation": "1",
+	"sparse_infill_density": "10%",
+	"sparse_infill_speed": "270",
+	"version": "2.3.2.75",
+	"xy_hole_compensation": "0.05"
+}

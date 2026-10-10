@@ -13,21 +13,13 @@
  *   even when no session.created event is replayed.
  */
 
-import { spawn, spawnSync } from "node:child_process"
-import { existsSync } from "node:fs"
 import type { Plugin } from "@opencode-ai/plugin"
 
 // ─── Configuration ───────────────────────────────────────────────────────────
 
-function optionalEnvironmentValue(value: string | undefined): string | undefined {
-  return value?.trim() ? value : undefined
-}
-
-const ENGRAM_PORT = parseInt(optionalEnvironmentValue(process.env.ENGRAM_PORT) ?? "7437")
-const CONFIGURED_ENGRAM_URL = optionalEnvironmentValue(process.env.ENGRAM_URL)
-const ENGRAM_URL = CONFIGURED_ENGRAM_URL ?? `http://127.0.0.1:${ENGRAM_PORT}`
-const ENGRAM_BIN = optionalEnvironmentValue(process.env.ENGRAM_BIN) ?? "/home/th3g3ntl3man/.local/bin/engram"
-let localReady = CONFIGURED_ENGRAM_URL !== undefined
+const ENGRAM_PORT = parseInt(process.env.ENGRAM_PORT ?? "7437")
+const ENGRAM_URL = `http://127.0.0.1:${ENGRAM_PORT}`
+const ENGRAM_BIN = process.env.ENGRAM_BIN ?? Bun.which("engram") ?? "/home/th3g3ntl3man/.go/bin/engram"
 
 // Engram's own MCP tools — don't count these as "tool calls" for session stats
 const ENGRAM_TOOLS = new Set([
@@ -54,12 +46,6 @@ const SESSION_ATTRIBUTED_WRITE_TOOLS = new Set([
   "mem_capture_passive",
 ])
 
-// OpenCode qualifies MCP tool IDs as <server>_<tool>; only normalize Engram's.
-function canonicalEngramToolName(tool: string): string {
-  const canonical = tool.toLowerCase()
-  return canonical.startsWith("engram_") ? canonical.slice("engram_".length) : canonical
-}
-
 // ─── Memory Instructions ─────────────────────────────────────────────────────
 // These get injected into the agent's context so it knows to call mem_save.
 
@@ -80,7 +66,7 @@ Call \`mem_save\` IMMEDIATELY after any of these:
 Format for \`mem_save\`:
 - **title**: Verb + what — short, searchable (e.g. "Fixed N+1 query in UserList", "Chose Zustand over Redux")
 - **type**: bugfix | decision | architecture | discovery | pattern | config | preference
-- **scope**: \`project\` (default) | \`personal\` | \`global\`
+- **scope**: \`project\` (default) | \`personal\`
 - **topic_key** (optional, recommended for evolving decisions): stable key like \`architecture/auth-model\`
 - **content**:
   **What**: One sentence — what was done
@@ -93,10 +79,6 @@ Topic rules:
 - Reuse the same \`topic_key\` to update an evolving topic instead of creating new observations
 - If unsure about the key, call \`mem_suggest_topic_key\` first and then reuse it
 - Use \`mem_update\` when you have an exact observation ID to correct
-
-### DELIVERY GUARANTEE
-
-Memory operations are internal bookkeeping, never the user-facing answer. Complete required memory work before composing the completed-task reply; send the complete answer as the final message of the turn with no later tool calls. If memory work fails or needs follow-up, still send the answer.
 
 ### WHEN TO SEARCH MEMORY
 
@@ -152,7 +134,6 @@ async function engramFetch(
   path: string,
   opts: { method?: string; body?: any } = {}
 ): Promise<any> {
-	if (!await ensureLocalReady()) return null
   try {
     const res = await fetch(`${ENGRAM_URL}${path}`, {
       method: opts.method ?? "GET",
@@ -172,34 +153,15 @@ async function engramFetch(
   }
 }
 
-function localInstanceID(): string {
-  const result = spawnSync(ENGRAM_BIN, ["instance-id"], { encoding: "utf8" })
-  const id = (result.stdout ?? "").toString().trim()
-  if (result.status !== 0 || !/^[a-f0-9]{32}$/.test(id)) throw new Error("gentle-engram could not resolve its local server identity")
-  return id
-}
-
-async function isEngramRunning(expectedID = ""): Promise<boolean> {
+async function isEngramRunning(): Promise<boolean> {
   try {
     const res = await fetch(`${ENGRAM_URL}/health`, {
       signal: AbortSignal.timeout(500),
     })
-    if (!res.ok || (expectedID && (await res.json())?.instance_id !== expectedID)) return false
-    return true
+    return res.ok
   } catch {
     return false
   }
-}
-
-async function ensureLocalReady(): Promise<boolean> {
-  if (!localReady) {
-    try {
-      localReady = await isEngramRunning(CONFIGURED_ENGRAM_URL ? "" : localInstanceID())
-    } catch {
-      localReady = false
-    }
-  }
-  return localReady
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -237,47 +199,14 @@ function stripPrivateTags(str: string): string {
   return str.replace(/<private>[\s\S]*?<\/private>/gi, "[REDACTED]").trim()
 }
 
-// SQLite datetime('now') returns "YYYY-MM-DD HH:MM:SS" in UTC with no zone
-// suffix; new Date() would parse that as local time. Normalize to UTC first so
-// the thresholds are correct in every timezone.
-function toEpochSecs(ts: string): number | null {
-  if (!ts) return null
-  const normalized = ts.replace(" ", "T")
-  const utcTimestamp = /(?:Z|[+-]\d{2}:?\d{2})$/i.test(normalized) ? normalized : `${normalized}Z`
-  const ms = new Date(utcTimestamp).getTime()
-  return Number.isNaN(ms) ? null : Math.floor(ms / 1000)
-}
-
-// A successful empty list is the only response that proves a project has never
-// saved an observation. Every other incomplete observation response fails closed.
-export function shouldNudgeForObservations(
-  observationsResponseOK: boolean,
-  observations: unknown,
-  nowSecs: number,
-  sessionStartEpoch: number | null
-): boolean {
-  if (!observationsResponseOK || !Array.isArray(observations)) return false
-  if (observations.length === 0) {
-    return sessionStartEpoch !== null && sessionStartEpoch > 0 && nowSecs - sessionStartEpoch >= 900
-  }
-
-  const createdAt = observations[0]?.created_at
-  if (typeof createdAt !== "string") return false
-
-  const lastObsEpoch = toEpochSecs(createdAt)
-  return lastObsEpoch !== null && nowSecs - lastObsEpoch >= 900
-}
-
 // ─── Plugin Export ───────────────────────────────────────────────────────────
 
 export const Engram: Plugin = async (ctx) => {
 	let project = "unknown"
 	let projectResolutionError = ""
 	let projectResolutionGeneration = 0
-    let disposed = false
 
 	async function ensureResolvedProject(): Promise<boolean> {
-		if (!await ensureLocalReady()) return false
 		if (project !== "unknown" && !projectResolutionError) return true
 		const generation = ++projectResolutionGeneration
 		const resolved = await resolveProjectName(ctx.directory)
@@ -313,9 +242,6 @@ export const Engram: Plugin = async (ctx) => {
   // Terminal root closures are retained after invalidation so duplicate deletion
   // events can retry a failed endpoint call without treating it as confirmed.
   const deletedRootSessions = new Set<string>()
-  const registrationAttempts = new Set<string>()
-  const registeringSessions = new Map<string, Promise<boolean>>()
-  const closeRequestedSessions = new Set<string>()
   const closedSessions = new Set<string>()
   const closingSessions = new Map<string, Promise<boolean>>()
 
@@ -346,11 +272,12 @@ export const Engram: Plugin = async (ctx) => {
     return knownSessions.has(sessionId) && parentSessions.get(sessionId) === null
   }
 
-  // Best-effort end of one Engram session. One POST per session lifetime:
-  // closedSessions dedups confirmed closures, closingSessions dedups calls
-  // that are still in flight.
-  async function endSessionInEngram(sessionId: string): Promise<boolean> {
+  async function closeDeletedRootSession(sessionId: string): Promise<boolean> {
     if (closedSessions.has(sessionId)) return true
+    if (!deletedRootSessions.has(sessionId)) {
+      if (!isKnownAuthoritativeRootSession(sessionId)) return false
+      deletedRootSessions.add(sessionId)
+    }
 
     const inFlight = closingSessions.get(sessionId)
     if (inFlight) return inFlight
@@ -360,8 +287,6 @@ export const Engram: Plugin = async (ctx) => {
     }).then((acknowledgement) => {
       if (acknowledgement === null) return false
       closedSessions.add(sessionId)
-      for (const sessions of [knownSessions, registrationAttempts, deletedRootSessions, closeRequestedSessions])
-        sessions.delete(sessionId)
       return true
     }).finally(() => {
       closingSessions.delete(sessionId)
@@ -370,34 +295,10 @@ export const Engram: Plugin = async (ctx) => {
     return close
   }
 
-  async function closeDeletedRootSession(sessionId: string): Promise<boolean> {
-    if (closedSessions.has(sessionId)) return true
-    if (!deletedRootSessions.has(sessionId)) {
-      if (!isKnownAuthoritativeRootSession(sessionId)) return false
-      deletedRootSessions.add(sessionId)
-    }
-
-    return endSessionInEngram(sessionId)
-  }
-
-  // End a session the plugin attempted to register. Confirmed roots retain deletion retries;
-  // other attempts, including late reclassifications and ambiguous responses, stay cleanup-eligible.
-  async function closeKnownSession(sessionId: string): Promise<boolean> {
-    if (closedSessions.has(sessionId)) return true
-    if (!registrationAttempts.has(sessionId)) return false
-    closeRequestedSessions.add(sessionId)
-    const registration = registeringSessions.get(sessionId)
-    if (registration) await registration
-    if (isKnownAuthoritativeRootSession(sessionId) || deletedRootSessions.has(sessionId)) {
-      return closeDeletedRootSession(sessionId)
-    }
-    return endSessionInEngram(sessionId)
-  }
-
   function cacheSessionInfo(info: { id?: unknown; parentID?: unknown; projectID?: unknown } | undefined): boolean {
     const rawSessionID = info?.id
     const sessionId = typeof rawSessionID === "string" && rawSessionID ? rawSessionID : ""
-    if (!sessionId || closedSessions.has(sessionId)) return false
+    if (!sessionId) return false
     const rawParentID = info?.parentID
     const parentID = rawParentID === undefined
       ? null
@@ -414,14 +315,6 @@ export const Engram: Plugin = async (ctx) => {
       parentSessions.delete(sessionId)
       subAgentSessions.delete(sessionId)
       return false
-    }
-    // A close-requested child may repeat its authoritative reclassification
-    // to retry a failed end. Parentless events must not revive it as a root.
-    if (closeRequestedSessions.has(sessionId)) {
-      if (!parentID) return false
-      parentSessions.set(sessionId, parentID)
-      subAgentSessions.add(sessionId)
-      return true
     }
     if (invalidSessions.has(sessionId) || (parentID && invalidSessions.has(parentID))) {
       invalidateSessionTree(sessionId)
@@ -451,7 +344,7 @@ export const Engram: Plugin = async (ctx) => {
     let current = sessionId
     while (true) {
       if (visited.has(current)) return ""
-      if (invalidSessions.has(current) || closeRequestedSessions.has(current) || closedSessions.has(current)) {
+      if (invalidSessions.has(current)) {
         invalidateResolvedTree(current)
         return ""
       }
@@ -520,42 +413,39 @@ export const Engram: Plugin = async (ctx) => {
    *
    * Silently skips sub-agent sessions (tracked in `subAgentSessions`).
    */
-  async function ensureSession(sessionId: string, renew = false): Promise<boolean> {
-      if (disposed || !await ensureResolvedProject() || disposed) return false
-    if (!sessionId || invalidSessions.has(sessionId) || closeRequestedSessions.has(sessionId) || closedSessions.has(sessionId)) return false
-    if (!renew && knownSessions.has(sessionId)) return true
+  async function ensureSession(sessionId: string): Promise<boolean> {
+		if (!await ensureResolvedProject()) return false
+    if (!sessionId || invalidSessions.has(sessionId)) return false
+    if (knownSessions.has(sessionId)) return true
     // Do not register sub-agent sessions in Engram (issue #116).
     if (subAgentSessions.has(sessionId)) return false
-    const inFlight = registeringSessions.get(sessionId)
-    if (inFlight) return await inFlight && !closeRequestedSessions.has(sessionId)
-    registrationAttempts.add(sessionId)
-    const registration = engramFetch("/sessions", {
+    const acknowledgement = await engramFetch("/sessions", {
       method: "POST",
-      body: { id: sessionId, project, directory: ctx.directory },
-    }).then((acknowledgement) => {
-      if (acknowledgement === null) return false
-      knownSessions.add(sessionId)
-      return true
-    }).finally(() => registeringSessions.delete(sessionId))
-    registeringSessions.set(sessionId, registration)
-    return await registration && !invalidSessions.has(sessionId) && !closeRequestedSessions.has(sessionId)
+      body: {
+        id: sessionId,
+        project,
+        directory: ctx.directory,
+      },
+    })
+    if (acknowledgement === null || invalidSessions.has(sessionId)) return false
+    knownSessions.add(sessionId)
+    return true
   }
 
   // Try to start engram server if not running
-	try {
-		const expectedID = CONFIGURED_ENGRAM_URL ? "" : localInstanceID()
-		localReady = await isEngramRunning(expectedID)
-		if (!localReady && !CONFIGURED_ENGRAM_URL) {
-      const serverChild = spawn(ENGRAM_BIN, ["serve"], {
-        detached: true,
-        stdio: "ignore",
+  const running = await isEngramRunning()
+  if (!running) {
+    try {
+      Bun.spawn([ENGRAM_BIN, "serve"], {
+        stdout: "ignore",
+        stderr: "ignore",
+        stdin: "ignore",
       })
-      serverChild.on("error", () => {})
-      serverChild.unref()
-			await new Promise((r) => setTimeout(r, 500))
-			localReady = await isEngramRunning(expectedID)
-		}
-	} catch {}
+      await new Promise((r) => setTimeout(r, 500))
+    } catch {
+      // Binary not found or can't start — plugin will silently no-op
+    }
+  }
 
 	if (await ensureResolvedProject()) {
 		// Auto-import: if .engram/manifest.json exists in the project repo,
@@ -564,14 +454,14 @@ export const Engram: Plugin = async (ctx) => {
 		// pulling changes. Each chunk is imported only once (tracked by ID).
 		try {
 			const manifestFile = `${ctx.directory}/.engram/manifest.json`
-			if (existsSync(manifestFile)) {
-        const importChild = spawn(ENGRAM_BIN, ["sync", "--import"], {
-          cwd: ctx.directory,
-          detached: true,
-          stdio: "ignore",
-        })
-        importChild.on("error", () => {})
-        importChild.unref()
+			const file = Bun.file(manifestFile)
+			if (await file.exists()) {
+				Bun.spawn([ENGRAM_BIN, "sync", "--import"], {
+					cwd: ctx.directory,
+					stdout: "ignore",
+					stderr: "ignore",
+					stdin: "ignore",
+				})
 			}
 		} catch {
 			// Manifest doesn't exist or binary not found — silently skip
@@ -579,18 +469,9 @@ export const Engram: Plugin = async (ctx) => {
 	}
 
   return {
-		dispose: async () => {
-      disposed = true
-			if (!localReady) return
-      // Every registration attempt owns an Engram lifecycle (#1131), including
-      // children misregistered before their parentID was known.
-      await Promise.all([...registrationAttempts].map(closeKnownSession))
-    },
-
     // ─── Event Listeners ───────────────────────────────────────────
 
-		event: async ({ event }) => {
-			if (!await ensureLocalReady()) return
+    event: async ({ event }) => {
       // --- Session Created / Updated ---
       if (event.type === "session.created" || event.type === "session.updated") {
         // Bug fix (#116): session data is nested under event.properties.info,
@@ -607,13 +488,6 @@ export const Engram: Plugin = async (ctx) => {
         if (isSubAgent) subAgentSessions.add(sessionId)
         else subAgentSessions.delete(sessionId)
 
-        // Issue #1131: a session registered as a root that now reveals a
-        // parentID was misregistered. Await its closure, including an
-        // in-flight registration, before this lifecycle callback returns.
-        if (isSubAgent && registrationAttempts.has(sessionId)) {
-          await closeKnownSession(sessionId)
-        }
-
         if (event.type === "session.created" && sessionId && !isSubAgent) {
           await ensureSession(sessionId)
         }
@@ -625,10 +499,9 @@ export const Engram: Plugin = async (ctx) => {
         const info = (event.properties as any)?.info
         const sessionId = info?.id
         if (sessionId) {
-          // Any registration attempt owns an Engram lifecycle (#1131):
-          // confirmed roots keep the deletedRootSessions retry discipline.
-          // Await an in-flight registration before invalidating local ownership.
-          await closeKnownSession(sessionId)
+          // Only a registered, event-validated root owns an Engram lifecycle.
+          // Await the best-effort endpoint before invalidating local ownership.
+          await closeDeletedRootSession(sessionId)
           invalidateSessionTree(sessionId)
         }
       }
@@ -662,7 +535,7 @@ export const Engram: Plugin = async (ctx) => {
 
       // Only capture non-trivial prompts (>10 chars)
       if (finalContent.length > 10) {
-        const registered = await ensureSession(sessionId, true)
+        const registered = await ensureSession(sessionId)
         const confirmedSessionID = await resolveAuthoritativeSessionID(input.sessionID)
         if (!registered || confirmedSessionID !== sessionId) return
         await engramFetch("/prompts", {
@@ -683,12 +556,12 @@ export const Engram: Plugin = async (ctx) => {
     // the passive capture endpoint so the server extracts learnings.
 
     "tool.execute.before": async (input, output) => {
-      if (!SESSION_ATTRIBUTED_WRITE_TOOLS.has(canonicalEngramToolName(input.tool))) return
+      if (!SESSION_ATTRIBUTED_WRITE_TOOLS.has(input.tool.toLowerCase())) return
       const authoritativeSessionID = await resolveAuthoritativeSessionID(input.sessionID)
       if (!authoritativeSessionID) {
         throw new Error(`gentle-engram could not resolve an authoritative OpenCode runtime session for ${input.tool}`)
       }
-      const registered = await ensureSession(authoritativeSessionID, true)
+      const registered = await ensureSession(authoritativeSessionID)
       const confirmedSessionID = await resolveAuthoritativeSessionID(input.sessionID)
       if (confirmedSessionID !== authoritativeSessionID) {
         throw new Error(`gentle-engram could not resolve an authoritative OpenCode runtime session for ${input.tool}`)
@@ -701,12 +574,12 @@ export const Engram: Plugin = async (ctx) => {
     },
 
     "tool.execute.after": async (input, output) => {
-      if (ENGRAM_TOOLS.has(canonicalEngramToolName(input.tool))) return
+      if (ENGRAM_TOOLS.has(input.tool.toLowerCase())) return
 
       // input.sessionID comes from OpenCode — always available
       const sessionId = await resolveAuthoritativeSessionID(input.sessionID)
       if (!sessionId) return
-      const registered = await ensureSession(sessionId, true)
+      const registered = await ensureSession(sessionId)
       const confirmedSessionID = await resolveAuthoritativeSessionID(input.sessionID)
       if (!registered || confirmedSessionID !== sessionId) return
       toolCounts.set(sessionId, (toolCounts.get(sessionId) ?? 0) + 1)
@@ -754,6 +627,16 @@ export const Engram: Plugin = async (ctx) => {
         const sessionID: string = input.sessionID ?? ""
         if (!sessionID || invalidSessions.has(sessionID) || subAgentSessions.has(sessionID)) return
 
+        // SQLite datetime('now') returns "YYYY-MM-DD HH:MM:SS" in UTC with no
+        // zone suffix; new Date() would parse that as local time. Normalize to
+        // UTC first so the thresholds are correct in every timezone.
+        const toEpochSecs = (ts: string): number => {
+          if (!ts) return 0
+          const normalized = ts.includes("T") ? ts : ts.replace(" ", "T") + "Z"
+          const ms = new Date(normalized).getTime()
+          return Number.isNaN(ms) ? 0 : Math.floor(ms / 1000)
+        }
+
         const cooldownSecs = parseInt(process.env.ENGRAM_NUDGE_COOLDOWN_SECS ?? "900", 10)
         const nowSecs = Math.floor(Date.now() / 1000)
 
@@ -762,7 +645,7 @@ export const Engram: Plugin = async (ctx) => {
         if (lastNudge !== undefined && nowSecs - lastNudge < cooldownSecs) return
 
         // Skip if the session is too young (< 5 minutes)
-        let sessionStartEpoch: number | null = null
+        let sessionStartEpoch = 0
         try {
           const sessionRes = await fetch(`${ENGRAM_URL}/sessions/${encodeURIComponent(sessionID)}`, {
             signal: AbortSignal.timeout(200),
@@ -778,30 +661,36 @@ export const Engram: Plugin = async (ctx) => {
           // Server unreachable or timed out — skip nudge
           return
         }
-        if (sessionStartEpoch !== null && sessionStartEpoch > 0 && nowSecs - sessionStartEpoch < 300) return
+        if (sessionStartEpoch > 0 && nowSecs - sessionStartEpoch < 300) return
 
         // Check when the last observation was saved for this project
-        let obsData: unknown
-        let observationsResponseOK = false
+        let lastObsEpoch = 0
         try {
           const obsRes = await fetch(
             `${ENGRAM_URL}/observations?project=${encodeURIComponent(project)}&limit=1&sort=created_at:desc`,
             { signal: AbortSignal.timeout(200) }
           )
           if (obsRes.ok) {
-            observationsResponseOK = true
-            obsData = await obsRes.json()
+            const obsData = await obsRes.json()
+            const createdAt: string = obsData?.[0]?.created_at ?? ""
+            if (createdAt) {
+              lastObsEpoch = toEpochSecs(createdAt)
+            }
           }
         } catch {
           // Server unreachable or timed out — skip nudge
           return
         }
 
-        if (!shouldNudgeForObservations(observationsResponseOK, obsData, nowSecs, sessionStartEpoch)) return
+        // No observations yet — nothing to nudge about
+        if (lastObsEpoch === 0) return
+
+        // Only nudge if last save was more than 15 minutes ago
+        if (nowSecs - lastObsEpoch < 900) return
 
         // Append the nudge to the last system message
         const nudge =
-          "\n\nMEMORY REMINDER: It's been at least 15 minutes since your last memory save. " +
+          "\n\nMEMORY REMINDER: It's been over 15 minutes since your last memory save. " +
           "If you've made decisions, discoveries, completed significant work, or found non-obvious things, " +
           "call mem_save now."
         if (output.system.length > 0) {
@@ -836,7 +725,7 @@ export const Engram: Plugin = async (ctx) => {
       // Runtime compaction context must never cross session boundaries. If the
       // authoritative session cannot be resolved or registered, skip this
       // injection rather than falling back to project-wide manual context.
-      if (sessionId && await ensureSession(sessionId, true)) {
+      if (sessionId && await ensureSession(sessionId)) {
         const data = await engramFetch(
           `/context/compaction?session_id=${encodeURIComponent(sessionId)}`
         )
@@ -859,5 +748,3 @@ export const Engram: Plugin = async (ctx) => {
     },
   }
 }
-
-export default { id: "engram", server: Engram }

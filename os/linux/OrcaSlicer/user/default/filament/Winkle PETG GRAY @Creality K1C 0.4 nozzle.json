@@ -1,0 +1,18 @@
+{
+	"filament_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"filament_settings_id": [
+		"Winkle PETG GRAY @Creality K1C 0.4 nozzle"
+	],
+	"from": "User",
+	"inherits": "Winkle PETG Krystal @Creality K1C 0.4 nozzle",
+	"name": "Winkle PETG GRAY @Creality K1C 0.4 nozzle",
+	"nozzle_temperature": [
+		"240"
+	],
+	"nozzle_temperature_initial_layer": [
+		"240"
+	],
+	"version": "1.9.0.14"
+}

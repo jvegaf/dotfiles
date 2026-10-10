@@ -1,6 +1,7 @@
 {
 	"change_filament_gcode": "M600",
 	"from": "User",
+	"host_type": "octoprint",
 	"inherits": "Creality K1C 0.4 nozzle",
 	"layer_change_gcode": "SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num + 1}\n;AFTER_LAYER_CHANGE\n;[layer_z]",
 	"machine_pause_gcode": "M600",
