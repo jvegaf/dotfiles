@@ -1,0 +1,16 @@
+{
+	"from": "User",
+	"host_type": "octoprint",
+	"inherits": "Creality K1C 0.4 nozzle",
+	"machine_start_gcode": "PRINT_PREPARE_CLEAR\nSTART_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single]",
+	"name": "Creality K1C 0.4 nozzle - Copy",
+	"print_host": "192.168.8.177",
+	"printer_extruder_id": [
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"printer_settings_id": "Creality K1C 0.4 nozzle - Copy",
+	"version": "2.3.2.87"
+}

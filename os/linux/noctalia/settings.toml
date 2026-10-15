@@ -44,7 +44,7 @@ auto_locate = true
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -81,15 +81,42 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 960.00018310546875
-    cy = 861.60003662109375
+    cx = 826.0001220703125
+    cy = 741.1356201171875
     output = "eDP-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 929.0
+    placement_width = 1652.0
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 854.0
+    cy = 778.0
+    output = "eDP-2"
+    placement_height = 960.0
+    placement_width = 1707.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-2".settings]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
@@ -114,10 +141,14 @@ enabled = [ "raycursive/niri-displays", "setyvii/niri-rules-studio", "blackbartb
 [shell]
 corner_radius_scale = 1.2500000186264515
 
+    [shell.greeter_sync]
+    auto_sync = true
+
 [theme]
 community_palette = "Kemuri Koke"
 pure_black_dark = false
-source = "community"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
     builtin_ids = []
@@ -130,13 +161,13 @@ source = "community"
 directory = "/home/th3g3ntl3man/.backgrounds"
 
     [wallpaper.default]
-    path = "/home/th3g3ntl3man/.backgrounds/bg_03.jpg"
+    path = "/home/th3g3ntl3man/.backgrounds/cafe-at-night_00_3840x2160.png"
 
     [wallpaper.last]
-    path = "/home/th3g3ntl3man/.backgrounds/bg_03.jpg"
+    path = "/home/th3g3ntl3man/.backgrounds/cafe-at-night_00_3840x2160.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/th3g3ntl3man/.backgrounds/bg_03.jpg"
+    path = "/home/th3g3ntl3man/.backgrounds/cafe-at-night_00_3840x2160.png"
 
 [widget.bar]
 show_resolution = false

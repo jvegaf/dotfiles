@@ -172,7 +172,7 @@
     },
     "engram": {
       "command": [
-        "/home/th3g3ntl3man/.go/bin/engram",
+        "/home/th3g3ntl3man/.local/bin/engram",
         "mcp",
         "--tools=agent"
       ],

@@ -2,7 +2,7 @@ export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 export M2_HOME="$HOME/.local/share/mise/installs/maven/3.9.16/"
 # export WINEPREFIX="$HOME/.fusion360/wineprefixes/default"
-export FILE_BROWSER="dolphin"
+export FILE_BROWSER="nautilus"
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
@@ -26,6 +26,7 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 export path=(
   # Nix - multi-user install. The system profile ships the nix CLI itself;
   # the per-user profile holds packages installed with `nix profile install`.
+  "$HOME/.gentle-shell/bin"
   "/nix/var/nix/profiles/default/bin"
   "$HOME/.nix-profile/bin"
   "$HOME/.bin"

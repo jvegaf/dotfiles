@@ -2,6 +2,9 @@
 	"default_filament_colour": [
 		"#FF7800"
 	],
+	"enable_pressure_advance": [
+		"1"
+	],
 	"fan_max_speed": [
 		"70"
 	],

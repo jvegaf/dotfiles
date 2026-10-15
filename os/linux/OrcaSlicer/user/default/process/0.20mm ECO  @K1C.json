@@ -14,7 +14,7 @@
 	"seam_slope_conditional": "1",
 	"seam_slope_type": "external",
 	"sparse_infill_density": "10%",
-	"sparse_infill_pattern": "gyroid",
+	"sparse_infill_pattern": "rectilinear",
 	"version": "2.3.2.75",
 	"xy_hole_compensation": "0.05"
 }
