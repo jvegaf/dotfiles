@@ -1,4 +1,4 @@
-config_version = 14
+config_version = 15
 
 [accessibility]
 ui_scale = 1.1000000089406967
@@ -81,11 +81,11 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 826.0001220703125
-    cy = 741.1356201171875
+    cx = 960.00018310546875
+    cy = 861.60003662109375
     output = "eDP-1"
-    placement_height = 929.0
-    placement_width = 1652.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 

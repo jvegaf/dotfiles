@@ -431,7 +431,7 @@
         },
         "wxCheckBox_0": false,
         "wxCheckBox_1": false,
-        "wxCheckBox_2": false,
+        "wxCheckBox_2": true,
         "wxCheckBox_3": false,
         "wxCheckBox_4": false,
         "wxCheckBox_5": false,
@@ -441,7 +441,7 @@
         "wxChoice_3": 0,
         "wxRadioButton_0": true,
         "wxRadioButton_1": false,
-        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Code/splinktegrated/gerber/splinktegrated-PTH.drl'\nCreated file '/home/th3g3ntl3man/Code/splinktegrated/gerber/splinktegrated-NPTH.drl'\nDone.\n",
+        "wxStaticBox_0wxTextCtrl_0": "Created file '/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/Controller-2040/gerber/Controller-2040.drl'\nDone.\n",
         "wxTextCtrl_0": "gerber/"
       },
       "Import Vector Graphics File": {
@@ -511,14 +511,14 @@
           "x": 0,
           "y": 0
         },
-        "wxChoice_0": 0,
+        "wxChoice_0": 2,
         "wxChoice_1": 0,
         "wxPanel_2wxStaticBox_0wxCheckBox_0": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_1": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_2": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_3": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_4": true,
-        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 5,
+        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 0,
         "wxStaticBox_1wxCheckBox_0": false,
         "wxStaticBox_1wxCheckBox_1": false,
         "wxStaticBox_1wxCheckBox_2": true,
@@ -528,11 +528,11 @@
         "wxStaticBox_1wxCheckBox_6": true,
         "wxStaticBox_1wxCheckBox_7": false,
         "wxStaticBox_1wxCheckBox_8": false,
-        "wxStaticBox_1wxChoice_0": 0,
+        "wxStaticBox_1wxChoice_0": 2,
         "wxStaticBox_1wxChoice_1": 1,
         "wxStaticBox_1wxRadioButton_0": false,
         "wxStaticBox_1wxRadioButton_1": true,
-        "wxStaticBox_2wxCheckBox_0": true,
+        "wxStaticBox_2wxCheckBox_0": false,
         "wxStaticBox_2wxCheckBox_1": true,
         "wxStaticBox_2wxCheckBox_2": true,
         "wxStaticBox_2wxCheckBox_3": true,
@@ -548,13 +548,13 @@
         "wxStaticBox_4wxChoice_0": 0,
         "wxStaticBox_5wxCheckBox_0": false,
         "wxStaticBox_5wxChoice_0": 1,
-        "wxStaticBox_5wxSpinCtrl_0": 6,
+        "wxStaticBox_5wxSpinCtrl_0": 4,
         "wxStaticBox_6wxCheckBox_0": true,
         "wxStaticBox_6wxCheckBox_1": true,
         "wxStaticBox_6wxCheckBox_2": true,
         "wxStaticBox_6wxCheckBox_3": false,
         "wxStaticBox_6wxChoice_0": 1,
-        "wxTextCtrl_0": "gerber/"
+        "wxTextCtrl_0": "svg/"
       },
       "Plugin And Content Manager": {
         "__geometry": {
@@ -832,13 +832,13 @@
     "sim_model": false
   },
   "environment": {
-    "vars": null
+    "vars": {}
   },
   "git": {
     "authorEmail": "",
     "authorName": "",
     "enableGit": true,
-    "repositories": null,
+    "repositories": [],
     "updatInterval": 5,
     "useDefaultAuthor": true
   },
@@ -899,6 +899,6 @@
     "pdf_viewer_name": "",
     "text_editor": "",
     "use_system_pdf_viewer": true,
-    "working_dir": "/home/th3g3ntl3man/Code/splinktegrated"
+    "working_dir": "/home/th3g3ntl3man/Code/R3M1XXX/KiCAD/0x01/Controller-2040"
   }
 }

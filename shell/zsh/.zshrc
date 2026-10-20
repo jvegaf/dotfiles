@@ -54,3 +54,7 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # they go over the MCP stdio server, which needs no session).
 export ENGRAM_BIN="$HOME/.local/bin/engram"
 
+
+# REA (Reverse Engineer Anything) — analysis engines
+export GHIDRA_INSTALL_DIR=/opt/ghidra
+export HOPPER_LAUNCHER_PATH=/opt/hopper-v4/bin/Hopper

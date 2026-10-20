@@ -177,6 +177,27 @@
         "--tools=agent"
       ],
       "type": "local"
+    },
+    "servers": {
+      "codegraph": {
+        "type": "local",
+        "command": [
+          "codegraph",
+          "serve",
+          "--mcp"
+        ],
+        "disabled": false,
+        "codemode": false
+      },
+      "rea": {
+        "type": "local",
+        "command": [
+          "npx",
+          "-y",
+          "rea-agents@6.7.0",
+          "mcp"
+        ]
+      }
     }
   },
   "permission": {
