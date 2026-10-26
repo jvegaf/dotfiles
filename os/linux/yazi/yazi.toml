@@ -23,14 +23,14 @@ text = [
 ]
 
 document = [
-  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'zathura %s', orphan = true, desc = "zathura", for = "linux" },
+  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'libreoffice %s', orphan = true, desc = "libreoffice", for = "linux" },
 ]
 
 image = [
-  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'qimgv %s', orphan = true, desc = "qimgv", for = "linux" },
+  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'krita %s', orphan = true, desc = "krita", for = "linux" },
   { run = 'satty --filename %s1', orphan = true, desc = "satty", for = "linux" },
 ]
@@ -42,8 +42,8 @@ video = [
 ]
 
 audio = [
-  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'mpv %s', orphan = true, desc = "mpv", for = "linux" },
+  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
   { run = 'vlc %s', orphan = true, desc = "vlc", for = "linux" },
 ]
 

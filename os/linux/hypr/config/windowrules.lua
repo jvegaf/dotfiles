@@ -46,17 +46,6 @@ hl.window_rule({
 	size = { "monitor_w", "monitor_h" },
 	sync_fullscreen = true,
 })
-hl.window_rule({
-	match = {
-		class = "^(steam_app.*)$",
-		initial_title = "^$",
-	},
-	center = true,
-	float = true,
-	fullscreen = false,
-	fullscreen_state = 0,
-	workspace = musicWorkspace,
-})
 
 -- Apps
 hl.window_rule({
@@ -98,10 +87,10 @@ hl.window_rule({
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
-	match = { class = "^(org\\.gnome\\.Nautilus)$" },
+	match = { class = "^(org\\.gnome\\.Nautilus|org\\.kde\\.dolphin)$" },
 	float = true,
 	center = true,
-	size = { "monitor_w*0.50", "monitor_h*0.50" },
+	size = { "monitor_w*0.70", "monitor_h*0.50" },
 })
 hl.window_rule({
 	match = { class = "^(org\\.gnome\\.NautilusPreview)$" },
@@ -111,7 +100,7 @@ hl.window_rule({
 })
 hl.window_rule({
 	match = {
-		class = "^(org\\.gnome\\.dolphin)$",
+		class = "^(org\\.kde\\.dolphin)$",
 		title = "negative:^(Moving.*|Create New.*|Extract.*|Compress.*|Copying.*|Progress.*|Configure.*|Properties.*|Choose\\sApplication.*)$",
 	},
 	float = true,

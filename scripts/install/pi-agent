@@ -16,7 +16,7 @@ curl -fsSL https://pi.dev/install.sh | sh
 
 log::note "Pi Agent installed"
 
-pi install npm:@commandcode/pi-commandcode-provider
+# pi install npm:@commandcode/pi-commandcode-provider
 
 # log::note "Installing Gentle AI"
 #

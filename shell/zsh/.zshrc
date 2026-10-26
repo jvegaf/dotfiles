@@ -38,14 +38,9 @@ eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
 [ -f ~/.keys ] && source ~/.keys
-# OpenCode Go quota plugin
-source <(grep '^OPENCODE_GO' ~/.keys)
 
 fastfetch -c $HOME/.config/fastfetch/config.jsonc
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.lmstudio/bin"
-# End of LM Studio CLI section
 
 # Engram: the OpenCode engram plugin defaults ENGRAM_BIN to /usr/bin/engram, but
 # engram is installed user-locally. Without this the plugin cannot resolve its

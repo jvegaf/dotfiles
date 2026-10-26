@@ -1,7 +1,7 @@
-config_version = 15
+config_version = 16
 
 [accessibility]
-ui_scale = 1.1000000089406967
+ui_scale = 1.0000000074505806
 
 [audio]
 enable_overdrive = true
@@ -38,6 +38,69 @@ type = "caffeine"
 [[control_center.shortcuts]]
 type = "power_profile"
 
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 128.0
+    box_width = 208.0
+    cx = 1784.0
+    cy = 204.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        stat = "cpu_usage"
+        stat2 = "cpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 128.0
+    box_width = 208.0
+    cx = 1784.0
+    cy = 332.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        stat = "gpu_usage"
+        stat2 = "gpu_temp"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 128.0
+    box_width = 208.0
+    cx = 1784.0
+    cy = 460.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "sysmon"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background_color = "surface"
+        background_opacity = 0.42999999999999999
+        display = "graph"
+        stat = "ram_pct"
+        stat2 = "gpu_vram"
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.top_left]
+    action = "window_switcher"
+
 [location]
 auto_locate = true
 
@@ -63,7 +126,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -74,6 +137,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -90,7 +154,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -101,6 +165,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -117,7 +182,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -128,30 +193,31 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
 
 [plugin_settings."blackbartblues/keymap"]
-compositor = "niri"
+compositor = "hyprland"
 
 [plugins]
-enabled = [ "raycursive/niri-displays", "setyvii/niri-rules-studio", "blackbartblues/keymap", "goodroot/noctwhspr" ]
+enabled = [ "blackbartblues/keymap", "goodroot/noctwhspr", "felipeartur/ai-usagebar", "michael-retunzew/hyprland-settings" ]
 
-[shell]
-corner_radius_scale = 1.2500000186264515
+[shell.greeter_sync]
+auto_sync = true
 
-    [shell.greeter_sync]
-    auto_sync = true
+[shell.shadow]
+alpha = 0.39999999105930328
 
 [theme]
 community_palette = "Kemuri Koke"
+mode = "dark"
 pure_black_dark = false
 source = "wallpaper"
-wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    builtin_ids = []
+    builtin_ids = [ "gtk3", "gtk4", "qt" ]
 
         [theme.templates.user.noctwhspr_mic_osd]
         input_path = "/home/th3g3ntl3man/.config/noctalia/templates/noctwhspr-mic-osd.css"
