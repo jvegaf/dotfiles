@@ -12,3 +12,7 @@ require("config.misc")
 require("config.monitors")
 require("config.windowrules")
 require("config.workspaces")
+
+-- Added by Hyprland Settings (Noctalia plugin): loads the file its panel writes.
+-- Move it up if a later block here must win over the panel.
+require("hyprland-settings")

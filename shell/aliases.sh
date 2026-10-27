@@ -31,6 +31,7 @@ alias run="./run"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias open='xdg-open'
 alias zj='zellij'
+alias hr='herdr'
 alias k1p='sh $HOME/.local/bin/CrealityPrint'
 alias oc='opencode'
 alias occfg='$HOME/.config/opencode'
@@ -51,13 +52,15 @@ alias gca="git add --all && git commit --amend --no-edit"
 alias gcm="git commit -m"
 alias gco="git checkout"
 alias gd='$DOTLY_PATH/bin/dot git pretty-diff'
-alias gs="git status -sb"
+alias gst="git status -sb"
 alias gf="git fetch --all -p"
 alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 alias gsw="git switch"
+
+alias gs='gentle-shell'
 
 alias grc="gh repo clone"
 alias grs="gh repo view --web"

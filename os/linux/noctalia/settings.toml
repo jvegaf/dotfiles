@@ -12,7 +12,7 @@ sound_volume = 0.48999998904764652
 center = [ "status", "spacer_2", "workspaces", "spacer_3", "caffeine" ]
 end = [ "media", "spacer_1", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "session" ]
 scale = 1.1500000096857548
-start = [ "launcher", "toggle", "spacer_1", "group:g1", "bar" ]
+start = [ "launcher", "toggle", "spacer_1", "group:g1", "bar", "bar_2", "button" ]
 thickness = 24
 
     [[bar.default.capsule_group]]
@@ -239,9 +239,15 @@ directory = "/home/th3g3ntl3man/.backgrounds"
 show_resolution = false
 type = "raycursive/niri-displays:bar"
 
+[widget.bar_2]
+type = "felipeartur/ai-usagebar:bar"
+
 [widget.battery]
 scale = 1.6000000000000001
 show_label = false
+
+[widget.button]
+type = "michael-retunzew/hyprland-settings:button"
 
 [widget.clock]
 color = "secondary"

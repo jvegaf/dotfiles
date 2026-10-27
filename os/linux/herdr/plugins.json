@@ -1,0 +1,74 @@
+[
+  {
+    "plugin_id": "smart-splits-backend-herdr",
+    "name": "smart-splits-backend-herdr",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Seamless navigation across herdr panes and Neovim splits, for smart-splits.nvim v3",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "actions": [
+      {
+        "id": "down",
+        "title": "Navigate down (Neovim/herdr)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-navigate.sh",
+          "down"
+        ]
+      },
+      {
+        "id": "left",
+        "title": "Navigate left (Neovim/herdr)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-navigate.sh",
+          "left"
+        ]
+      },
+      {
+        "id": "right",
+        "title": "Navigate right (Neovim/herdr)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-navigate.sh",
+          "right"
+        ]
+      },
+      {
+        "id": "up",
+        "title": "Navigate up (Neovim/herdr)",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "bash",
+          "scripts/herdr-navigate.sh",
+          "up"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "adriankarlen",
+      "repo": "smart-splits-backend-herdr",
+      "resolved_commit": "da1e50ae7bec7a7c2781aaf5a531eff350bdab20",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout",
+      "installed_unix_ms": 1793072468267
+    }
+  }
+]

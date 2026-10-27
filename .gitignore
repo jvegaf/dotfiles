@@ -13,8 +13,10 @@
 /os/linux/herdr/session-snapshots
 /os/linux/herdr/session.json
 /os/linux/herdr/herdr-client.log
-/os/linux/herdr/plugins/github/local.subscription-usage-42aaf3aaed6d
-/os/linux/herdr/plugins.json
 **/.uuid
 /os/linux/OrcaSlicer/OrcaSlicer.conf.lock
 /os/linux/tmux/plugins
+*.backup
+/os/linux/herdr/plugins/**
+*.log
+/os/linux/opencode/opencode.json.rea.backup.*.recovery

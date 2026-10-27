@@ -9,6 +9,7 @@
     ~/.agents: os/linux/.agents
     ~/.backgrounds: os/linux/wallpapers
     ~/.config/FreeCAD: os/linux/FreeCAD
+    ~/.config/ai-usagebar: os/linux/ai-usagebar
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
     ~/.config/alacritty: os/linux/alacritty
     ~/.config/btop: os/linux/btop
