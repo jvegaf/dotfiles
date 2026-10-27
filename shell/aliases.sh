@@ -72,6 +72,9 @@ alias copl="copilot"
 alias yau="yay -Syyu"
 alias pau="sudo pacman -Syyu"
 alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+alias pacdel='sudo pacman -Rns'
 
 # WebDev
 alias nom='npm'
@@ -114,10 +117,6 @@ alias bt='btop'
 alias nvdprf='nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=2"'
 alias ip='ip -color'
 alias darkmode='gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
-
-# Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
-alias pacdel='sudo pacman -Rns'
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
