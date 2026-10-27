@@ -194,9 +194,10 @@ function gcls() {
   git clone "git@github.com:jvegaf/$1.git"
 }
 
+
 pretty_clients() {
   emulate -L zsh
-  setopt localoptions ksharrays
+  setopt localoptions ksharrays BASH_REMATCH
 
   local R=$'\033[0;31m' G=$'\033[0;32m' Y=$'\033[1;33m'
   local B=$'\033[0;34m' C=$'\033[0;36m' W=$'\033[1;37m' N=$'\033[0m'
@@ -238,12 +239,12 @@ pretty_clients() {
     if [[ $line =~ $window_re ]]; then
       _pretty_clients_flush
       (( count++ ))
-      addr=${match[1]}
-      title=${match[2]}
+      addr=${BASH_REMATCH[1]}
+      title=${BASH_REMATCH[2]}
       class='' ws='' size='' pos='' pid='' floating=''
     elif [[ $line =~ $field_re ]]; then
-      key=${match[1]}
-      val=${match[2]}
+      key=${BASH_REMATCH[1]}
+      val=${BASH_REMATCH[2]}
       val=${val%%[[:space:]]##}
       case $key in
         class) class=$val ;; workspace) ws=$val ;; at) pos=$val

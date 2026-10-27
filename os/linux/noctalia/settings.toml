@@ -26,41 +26,30 @@ thickness = 24
     opacity = 1.0
     padding = 6.0
 
-[[control_center.shortcuts]]
-type = "wifi"
+[control_center]
+hidden_tabs = [ "screen-time" ]
 
-[[control_center.shortcuts]]
-type = "bluetooth"
+    [[control_center.shortcuts]]
+    type = "wifi"
 
-[[control_center.shortcuts]]
-type = "caffeine"
+    [[control_center.shortcuts]]
+    type = "bluetooth"
 
-[[control_center.shortcuts]]
-type = "power_profile"
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
 
 [desktop_widgets]
+enabled = false
 schema_version = 2
-widget_order = [ "desktop-widget-0000000000000001", "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
+widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
-
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 128.0
-    box_width = 208.0
-    cx = 1784.0
-    cy = 204.0
-    output = "eDP-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
-    rotation = 0.0
-    type = "sysmon"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        stat = "cpu_usage"
-        stat2 = "cpu_temp"
 
     [desktop_widgets.widget.desktop-widget-0000000000000002]
     box_height = 128.0
@@ -204,11 +193,17 @@ compositor = "hyprland"
 [plugins]
 enabled = [ "blackbartblues/keymap", "goodroot/noctwhspr", "felipeartur/ai-usagebar", "michael-retunzew/hyprland-settings" ]
 
-[shell.greeter_sync]
-auto_sync = true
+[shell]
+corner_radius_scale = 1.2000000178813934
 
-[shell.shadow]
-alpha = 0.39999999105930328
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher.panels]
+    ignored = [ "polkit", "setup-wizard", "launcher" ]
+
+    [shell.shadow]
+    alpha = 0.39999999105930328
 
 [theme]
 community_palette = "Kemuri Koke"
