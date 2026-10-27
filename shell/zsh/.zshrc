@@ -54,3 +54,11 @@ export ENGRAM_BIN="$HOME/.local/bin/engram"
 # REA (Reverse Engineer Anything) — analysis engines
 export GHIDRA_INSTALL_DIR=/opt/ghidra
 export HOPPER_LAUNCHER_PATH=/opt/hopper-v4/bin/Hopper
+
+# pnpm
+export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

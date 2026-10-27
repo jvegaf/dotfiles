@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Install Gentle Shell: download the official Linux installer to /tmp, verify it and run it
+#?? 1.0.0
+##?
+##? Usage:
+##?   setup-gentle-shell
+
+# Assets of the official release (gentle-shell README, Linux installer).
+readonly RELEASE_URL="https://github.com/Gentleman-Programming/gentle-shell/releases/latest/download"
+readonly ARCHIVE_NAME="gentle-shell-installer-linux.tar.gz"
+readonly CHECKSUMS_NAME="gentle-shell-installers-SHA256SUMS.txt"
+# Folder inside the archive; its install-gentle-shell.sh opens the browser wizard.
+readonly BUNDLE_DIR="gentle-shell-installer"
+
+# download_asset <url> <output>: HTTPS only; exits the script when the download fails.
+download_asset() {
+	if ! curl --fail --silent --show-error --location --proto '=https' --proto-redir '=https' --tlsv1.2 \
+		--connect-timeout 20 --max-time 600 --output "$2" "$1"; then
+		log::error "Could not download $1"
+		exit 1
+	fi
+}
+
+# check_sha256 <archive> <checksums>: succeeds only when the checksum file lists
+# exactly one entry for the archive and its SHA-256 matches that entry.
+check_sha256() {
+	local archive="$1" checksums="$2" expected actual
+	if ! expected="$(awk -v name="$ARCHIVE_NAME" '{ sub(/^\*/, "", $2) } $2 == name { print $1; found++ } END { exit found == 1 ? 0 : 1 }' "$checksums")"; then
+		log::error "$CHECKSUMS_NAME does not list exactly one entry for $ARCHIVE_NAME"
+		return 1
+	fi
+	actual="$(sha256sum "$archive" | awk '{ print $1 }')"
+	[ "$actual" = "$expected" ]
+}
+
+if ! platform::is_linux; then
+	log::error "This script installs the Linux build. On macOS or Windows, use the installer from the README."
+	exit 1
+fi
+
+for tool in awk curl sha256sum sh tar; do
+	if ! platform::command_exists "$tool"; then
+		log::error "$tool is required to install Gentle Shell."
+		exit 1
+	fi
+done
+
+log::note "Installing Gentle Shell from the official release"
+
+workdir="$(mktemp -d /tmp/gentle-shell-installer.XXXXXX)" || {
+	log::error "Could not create a temporary folder in /tmp."
+	exit 1
+}
+
+download_asset "$RELEASE_URL/$ARCHIVE_NAME" "$workdir/$ARCHIVE_NAME"
+download_asset "$RELEASE_URL/$CHECKSUMS_NAME" "$workdir/$CHECKSUMS_NAME"
+
+if ! check_sha256 "$workdir/$ARCHIVE_NAME" "$workdir/$CHECKSUMS_NAME"; then
+	log::error "SHA-256 check failed for $ARCHIVE_NAME. Nothing was run; the files stay in $workdir"
+	exit 1
+fi
+
+if ! tar -xzf "$workdir/$ARCHIVE_NAME" -C "$workdir"; then
+	log::error "Could not unpack $ARCHIVE_NAME; the files stay in $workdir"
+	exit 1
+fi
+
+installer="$workdir/$BUNDLE_DIR/install-gentle-shell.sh"
+if [ ! -f "$installer" ]; then
+	log::error "$BUNDLE_DIR/install-gentle-shell.sh is missing from $ARCHIVE_NAME; the files stay in $workdir"
+	exit 1
+fi
+
+log::note "Running the Gentle Shell installer; finish it in the browser window it opens"
+if ! sh "$installer"; then
+	log::error "The Gentle Shell installer did not finish; the files stay in $workdir"
+	exit 1
+fi
+
+rm -rf "$workdir"
+log::success "Gentle Shell installer finished. Run 'gentle-shell' to start it."
+exit 0
