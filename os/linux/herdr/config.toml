@@ -99,10 +99,12 @@ next_tab = "prefix+n"
 # close_tab = "prefix+shift+x"
 # rename_pane = "prefix+shift+p"
 # edit_scrollback = "prefix+e"
-# focus_pane_left = "ctrl+h"
-# focus_pane_down = "ctrl+j"
-# focus_pane_up = "ctrl+k"
-# focus_pane_right = "ctrl+l"
+# Disable herdr's default pane navigation so Ctrl+hjkl pass through to tmux/neovim
+# where smart-splits handles seamless navigation across neovim/tmux/herdr boundaries
+focus_pane_left = "Ctrl+h"
+focus_pane_down = "Ctrl+j"
+focus_pane_up = "Ctrl+k"
+focus_pane_right = "Ctrl+l"
 # cycle_pane_next = "prefix+tab"
 # cycle_pane_previous = "prefix+shift+tab"
 # last_pane = ""          # optional, unset by default; bind e.g. "prefix+tab" for global back-and-forth
@@ -111,20 +113,21 @@ split_horizontal = "prefix+minus"
 # close_pane = "prefix+x"
 # zoom = "prefix+z"       # legacy alias: fullscreen
 # resize_mode = "prefix+r"
-# resize_pane_left = ""   # optional, e.g. "ctrl+shift+alt+left" resizes without entering resize mode
-# resize_pane_down = ""   # optional, e.g. "ctrl+shift+alt+down"
-# resize_pane_up = ""     # optional, e.g. "ctrl+shift+alt+up"
-# resize_pane_right = ""  # optional, e.g. "ctrl+shift+alt+right"
+resize_pane_left = "Ctrl+left"   # optional, e.g. "ctrl+shift+alt+left" resizes without entering resize mode
+resize_pane_down = "Ctrl+down"   # optional, e.g. "ctrl+shift+alt+down"
+resize_pane_up = "Ctrl+up"       # optional, e.g. "ctrl+shift+alt+up"
+resize_pane_right = "Ctrl+right" # optional, e.g. "ctrl+shift+alt+right"
 # toggle_sidebar = "prefix+b"
 
 # Navigate-mode movement. These local shortcuts win while navigate mode is open.
 # They are independent from focus_pane_*. Do not include prefix+, esc, enter, tab, or 1..9 here.
 # navigate_workspace_up = "up"
 # navigate_workspace_down = "down"
-# navigate_pane_left = "h"      # left arrow always focuses the pane to the left
-# navigate_pane_down = "j"
-# navigate_pane_up = "k"
-# navigate_pane_right = "l"     # right arrow always focuses the pane to the right
+# Disable navigate-mode pane keys (h/j/k/l) to avoid any conflict
+navigate_pane_left = ""
+navigate_pane_down = ""
+navigate_pane_up = ""
+navigate_pane_right = ""
 
 # Custom commands use the same binding syntax.
 # type = "shell" runs detached in the background.
@@ -363,27 +366,3 @@ pane_history = false
 [advanced]
 # Maximum scrollback buffer size in bytes retained per pane terminal.
 # Matches Ghostty's default scrollback-limit behavior.
-
-[[keys.command]]
-key = "ctrl+h"
-type = "plugin_action"
-command = "smart-splits-backend-herdr.left"
-description = "navigate left (neovim/herdr)"
-
-[[keys.command]]
-key = "ctrl+j"
-type = "plugin_action"
-command = "smart-splits-backend-herdr.down"
-description = "navigate down (neovim/herdr)"
-
-[[keys.command]]
-key = "ctrl+k"
-type = "plugin_action"
-command = "smart-splits-backend-herdr.up"
-description = "navigate up (neovim/herdr)"
-
-[[keys.command]]
-key = "ctrl+l"
-type = "plugin_action"
-command = "smart-splits-backend-herdr.right"
-description = "navigate right (neovim/herdr)"
