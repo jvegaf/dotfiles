@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Converts an mp4 video into a lossless wav audio
+##?
+##? Usage:
+##?   mp4_to_wav <video_path>
+##?
+docs::eval "$@"
+
+video_path="$1"
+output_path="${video_path%.*}.wav"
+
+ffmpeg \
+  -hwaccel auto \
+  -i "$video_path" \
+  -vn \
+  -c:a pcm_s16le \
+  "$output_path"

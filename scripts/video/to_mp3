@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Converts an mp4 video into a high-quality mp3 audio
+##?
+##? Usage:
+##?   mp4_to_mp3 <video_path>
+##?
+docs::eval "$@"
+
+video_path="$1"
+output_path="${video_path%.*}.mp3"
+
+ffmpeg \
+  -hwaccel auto \
+  -i "$video_path" \
+  -vn \
+  -c:a libmp3lame \
+  -q:a 0 \
+  "$output_path"
