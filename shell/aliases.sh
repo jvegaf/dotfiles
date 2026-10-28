@@ -23,6 +23,7 @@ alias vimcfg="vim ~/.vimrc"
 alias r="ranger"
 alias paru="paru --bottomup"
 alias mx="tmux"
+alias hdr="herdr"
 alias edalias='nvim $DOTFILES_PATH/shell/aliases.sh'
 alias myscripts='cd $HOME/.local/bin'
 alias dfscripts='cd $DOTFILES_PATH/scripts/install/'
