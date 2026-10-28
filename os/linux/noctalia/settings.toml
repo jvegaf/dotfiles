@@ -54,11 +54,11 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000002]
     box_height = 128.0
     box_width = 208.0
-    cx = 1784.0
-    cy = 332.0
+    cx = 1902.9334716796875
+    cy = 354.13336181640625
     output = "eDP-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 1152.0
+    placement_width = 2048.0
     rotation = 0.0
     type = "sysmon"
 
@@ -69,11 +69,11 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000003]
     box_height = 128.0
     box_width = 208.0
-    cx = 1784.0
-    cy = 460.0
+    cx = 1902.9334716796875
+    cy = 490.66668701171875
     output = "eDP-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 1152.0
+    placement_width = 2048.0
     rotation = 0.0
     type = "sysmon"
 
@@ -134,11 +134,11 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 960.00018310546875
-    cy = 861.60003662109375
+    cx = 1024.000244140625
+    cy = 919.04010009765625
     output = "eDP-1"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 1152.0
+    placement_width = 2048.0
     rotation = 0.0
     type = "login_box"
 
@@ -200,7 +200,16 @@ corner_radius_scale = 1.2000000178813934
     auto_sync = true
 
     [shell.launcher.panels]
-    ignored = [ "polkit", "setup-wizard", "launcher" ]
+    ignored = [ "polkit", "setup-wizard", "launcher", "test" ]
+
+    [shell.launcher.providers.calculator]
+    global = false
+
+    [shell.launcher.providers.emoji]
+    global = false
+
+    [shell.launcher.providers.panels]
+    global = true
 
     [shell.shadow]
     alpha = 0.39999999105930328
