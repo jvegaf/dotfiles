@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Installing Kali tools"
+
+paru -S --needed --noconfirm - <"$DOTFILES_PATH/scripts/install/utils/black.pkgs.txt"
+
+echo "Kali tools installed"
+
+exit 0

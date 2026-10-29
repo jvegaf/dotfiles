@@ -17,7 +17,7 @@ hl.window_rule({
 local musicApps = "^(harmony|symphony|crate-app)$"
 local musicWorkspace = "4"
 
-local makerApps = "^(orca-slicer|org.freecad.FreeCAD)$"
+local makerApps = "^(orca-slicer|org.freecad.FreeCAD|carfast.manager)$"
 local makerWorkspace = "5"
 
 local chatApps = "^(org.telegram.desktop)$"

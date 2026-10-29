@@ -50,6 +50,12 @@ fastfetch -c $HOME/.config/fastfetch/config.jsonc
 # they go over the MCP stdio server, which needs no session).
 export ENGRAM_BIN="$HOME/.local/bin/engram"
 
+# gentle-pi — the agents view. Pi and gentle-pi defaults use alt+a for it, which
+# collides with the herdr prefix, so it lives here instead.
+# Related defaults: GENTLE_PI_AGENTS_KEY (collapse card, ctrl+shift+a),
+# GENTLE_PI_AGENTS_STOP_KEY (stop a subagent, alt+s).
+export GENTLE_PI_AGENTS_VIEW_KEY="ctrl+shift+j"
+
 
 # REA (Reverse Engineer Anything) — analysis engines
 export GHIDRA_INSTALL_DIR=/opt/ghidra

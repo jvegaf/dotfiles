@@ -58,7 +58,7 @@ adjust-cell-height = 10%
 window-theme = dark
 window-height = 32
 window-width = 110
-background-opacity = 0.75
+background-opacity = 0.8
 #background-blur-radius = 40
 selection-background = #2d3f76
 selection-foreground = #c8d3f5
@@ -68,7 +68,7 @@ mouse-hide-while-typing = true
 # other
 copy-on-select = clipboard
 
-font-size = 12
+font-size = 13
 font-family = JetBrainsMono NF
 font-family-bold = JetBrainsMono NF Bold
 font-family-bold-italic = JetBrainsMono NF Bold Italic
