@@ -84,11 +84,8 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
         stat = "ram_pct"
         stat2 = "gpu_vram"
 
-[hot_corners]
-enabled = true
-
-    [hot_corners.top_left]
-    action = "window_switcher"
+[hot_corners.top_left]
+action = "window_switcher"
 
 [location]
 auto_locate = true

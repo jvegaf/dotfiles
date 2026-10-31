@@ -43,28 +43,3 @@ eval "$(uvx --generate-shell-completion zsh)"
 
 fastfetch -c $HOME/.config/fastfetch/config.jsonc
 
-# Engram: the OpenCode engram plugin defaults ENGRAM_BIN to /usr/bin/engram, but
-# engram is installed user-locally. Without this the plugin cannot resolve its
-# local server identity, never registers a session, and every write is refused
-# with "could not confirm Engram session registration" (reads still work, since
-# they go over the MCP stdio server, which needs no session).
-export ENGRAM_BIN="$HOME/.local/bin/engram"
-
-# gentle-pi — the agents view. Pi and gentle-pi defaults use alt+a for it, which
-# collides with the herdr prefix, so it lives here instead.
-# Related defaults: GENTLE_PI_AGENTS_KEY (collapse card, ctrl+shift+a),
-# GENTLE_PI_AGENTS_STOP_KEY (stop a subagent, alt+s).
-export GENTLE_PI_AGENTS_VIEW_KEY="ctrl+shift+j"
-
-
-# REA (Reverse Engineer Anything) — analysis engines
-export GHIDRA_INSTALL_DIR=/opt/ghidra
-export HOPPER_LAUNCHER_PATH=/opt/hopper-v4/bin/Hopper
-
-# pnpm
-export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end

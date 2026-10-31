@@ -88,3 +88,5 @@ gtk-single-instance = true
 gtk-titlebar = false
 quick-terminal-position = center
 shell-integration-features = cursor,sudo
+
+#vim: ft=ini

@@ -56,7 +56,7 @@ hl.window_rule({
 })
 hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
 hl.window_rule({
-	match = { initial_class = "^(.*\\com\\.github\\.jvegaf\\.SymphonyJavaFXApplication)$" },
+	match = { initial_class = "^(.*campilot)$" },
 	monitor = PRIMARY_MONITOR,
 	workspace = 3,
 })
