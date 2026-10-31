@@ -44,4 +44,4 @@ eval "$(uvx --generate-shell-completion zsh)"
 fastfetch -c $HOME/.config/fastfetch/config.jsonc
 
 
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"

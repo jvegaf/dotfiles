@@ -10,6 +10,8 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   install_custom
 
+curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+
 log::note "Installing Pi Agent"
 
 curl -fsSL https://pi.dev/install.sh | sh
