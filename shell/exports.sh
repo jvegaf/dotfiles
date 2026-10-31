@@ -16,12 +16,16 @@ export TMUX_POWERLINE_DIR_HOME="$HOME/.config/tmux/plugins/tmux-powerline"
 # because glycin and gdk-pixbuf read their loader configs from /usr/share/glycin-loaders.
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/usr/local/share:/usr/share"
 
-# Engram: the OpenCode engram plugin defaults ENGRAM_BIN to /usr/bin/engram, but
-# engram is installed user-locally. Without this the plugin cannot resolve its
-# local server identity, never registers a session, and every write is refused
-# with "could not confirm Engram session registration" (reads still work, since
-# they go over the MCP stdio server, which needs no session).
-export ENGRAM_BIN="$HOME/.local/bin/engram"
+# Engram: ENGRAM_BIN is deliberately NOT exported globally.
+# The OpenCode engram plugin resolves it on its own: plugins/engram.ts defaults to
+# the absolute $HOME/.local/bin/engram, so it needs no shell export to find the
+# user-local binary or to register its session.
+# A global export breaks the other consumer instead: Gentle Shell treats any
+# explicit Engram selection (ENGRAM_BIN, ENGRAM_URL, ENGRAM_DATA_DIR, ...) as
+# "never probe the default endpoint", so it disables memory with
+# "Shell could not verify safe server reuse" even with a healthy store and its own
+# verified bundled core. Without the export Shell probes 127.0.0.1:7437, reuses a
+# verified server, or starts its bundled Engram core itself.
 
 # gentle-pi — the agents view. Pi and gentle-pi defaults use alt+a for it, which
 # collides with the herdr prefix, so it lives here instead.
@@ -33,13 +37,13 @@ export GENTLE_PI_AGENTS_VIEW_KEY="ctrl+shift+j"
 export GHIDRA_INSTALL_DIR=/opt/ghidra
 export HOPPER_LAUNCHER_PATH=/opt/hopper-v4/bin/Hopper
 
-# pnpm
-export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME/bin:"*) ;;
-*) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
+# # pnpm
+# export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
+# case ":$PATH:" in
+# *":$PNPM_HOME/bin:"*) ;;
+# *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+# esac
+# # pnpm end
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 #

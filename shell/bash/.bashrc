@@ -56,3 +56,5 @@ export PATH="$PATH:/home/th3g3ntl3man/.lmstudio/bin"
 
 # Pi
 export PATH="/home/th3g3ntl3man/.local/share/mise/installs/node/24.21.0/bin:$PATH"
+
+. "$HOME/.local/share/../bin/env"
