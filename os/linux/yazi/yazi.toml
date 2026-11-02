@@ -24,8 +24,8 @@ text = [
 
 document = [
   { run = 'zathura %s', orphan = true, desc = "zathura", for = "linux" },
+  { run = 'md-viewer %s', orphan = true, desc = "md viewer", for = "linux" },
   { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
-  { run = 'libreoffice %s', orphan = true, desc = "libreoffice", for = "linux" },
 ]
 
 image = [
@@ -75,6 +75,8 @@ rules = [
   { mime = "application/pdf", use = "document" },
   { mime = "application/epub+zip", use = "document" },
   { mime = "application/x-mobipocket-ebook", use = "document" },
+  { mime = "application/markdown", use = "document" },
+
 
   { mime = "*", use = "text" },
 ]

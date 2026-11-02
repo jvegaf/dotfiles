@@ -68,11 +68,11 @@ mouse-hide-while-typing = true
 # other
 copy-on-select = clipboard
 
-font-size = 13
-font-family = JetBrainsMono NF
-font-family-bold = JetBrainsMono NF Bold
-font-family-bold-italic = JetBrainsMono NF Bold Italic
-font-family-italic = JetBrainsMono NF Italic
+font-size = 14
+font-family = FiraCode Nerd Font
+font-family-bold = FiraCode Nerd Font Bold
+font-family-bold-italic = FiraCode Nerd Font Bold Italic
+font-family-italic = FiraCode Nerd Font Italic
 
 #font-family = BerkeleyMono Nerd Font
 # font-family = Iosevka Nerd Font
@@ -89,4 +89,4 @@ gtk-titlebar = false
 quick-terminal-position = center
 shell-integration-features = cursor,sudo
 
-#vim: ft=ini
+#vim: ft=conf

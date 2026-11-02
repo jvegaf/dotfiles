@@ -17,7 +17,7 @@ hl.window_rule({
 local musicApps = "^(harmony|symphony|crate-app|Waydroid)$"
 local musicWorkspace = "4"
 
-local makerApps = "^(orca-slicer|org.freecad.FreeCAD|carfast.manager|org.pwmt.zathura)$"
+local makerApps = "^(orca-slicer|org.freecad.FreeCAD|io.tangencylabs.solidcraft|carfast.manager|org.pwmt.zathura)$"
 local makerWorkspace = "5"
 
 local chatApps = "^(org.telegram.desktop)$"
@@ -90,7 +90,7 @@ hl.window_rule({
 	match = { class = "^(org\\.gnome\\.Nautilus|org\\.kde\\.dolphin)$" },
 	float = true,
 	center = true,
-	size = { "monitor_w*0.70", "monitor_h*0.50" },
+	size = { "monitor_w*0.50", "monitor_h*0.50" },
 })
 hl.window_rule({
 	match = { class = "^(org\\.gnome\\.NautilusPreview)$" },

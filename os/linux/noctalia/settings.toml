@@ -9,10 +9,10 @@ enable_sounds = true
 sound_volume = 0.48999998904764652
 
 [bar.default]
-center = [ "status", "spacer_2", "workspaces", "spacer_3", "caffeine" ]
+center = [ "status", "spacer_2", "workspaces", "spacer_3", "caffeine", "widget_2" ]
 end = [ "media", "spacer_1", "tray", "notifications", "bluetooth", "network", "volume", "battery", "clock", "session" ]
 scale = 1.1500000096857548
-start = [ "launcher", "toggle", "spacer_1", "group:g1", "bar", "bar_2", "button" ]
+start = [ "launcher", "toggle", "spacer_1", "group:g1", "bar", "bar_2", "button", "widget", "bar_3" ]
 thickness = 24
 
     [[bar.default.capsule_group]]
@@ -55,7 +55,7 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     box_height = 128.0
     box_width = 208.0
     cx = 1902.9334716796875
-    cy = 354.13336181640625
+    cy = 354.13339233398438
     output = "eDP-1"
     placement_height = 1152.0
     placement_width = 2048.0
@@ -70,7 +70,7 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     box_height = 128.0
     box_width = 208.0
     cx = 1902.9334716796875
-    cy = 490.66668701171875
+    cy = 490.666748046875
     output = "eDP-1"
     placement_height = 1152.0
     placement_width = 2048.0
@@ -131,7 +131,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 1024.000244140625
+    cx = 1024.0003662109375
     cy = 919.0400390625
     output = "eDP-1"
     placement_height = 1152.0
@@ -188,7 +188,15 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
 compositor = "hyprland"
 
 [plugins]
-enabled = [ "blackbartblues/keymap", "goodroot/noctwhspr", "felipeartur/ai-usagebar", "michael-retunzew/hyprland-settings" ]
+enabled = [
+    "blackbartblues/keymap",
+    "goodroot/noctwhspr",
+    "felipeartur/ai-usagebar",
+    "michael-retunzew/hyprland-settings",
+    "tordex/processes",
+    "tordex/xwayland",
+    "tordex/nvtop"
+]
 
 [shell]
 corner_radius_scale = 1.2000000178813934
@@ -216,9 +224,12 @@ community_palette = "Kemuri Koke"
 mode = "dark"
 pure_black_dark = false
 source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "qt" ]
+    builtin_ids = []
+    enable_builtin_templates = false
+    enable_community_templates = false
 
         [theme.templates.user.noctwhspr_mic_osd]
         input_path = "/home/th3g3ntl3man/.config/noctalia/templates/noctwhspr-mic-osd.css"
@@ -242,6 +253,9 @@ type = "raycursive/niri-displays:bar"
 
 [widget.bar_2]
 type = "felipeartur/ai-usagebar:bar"
+
+[widget.bar_3]
+type = "tordex/xwayland:bar"
 
 [widget.battery]
 scale = 1.6000000000000001
@@ -286,6 +300,12 @@ type = "maddingo/hypr-layout-switcher:toggle"
 
 [widget.volume]
 show_label = false
+
+[widget.widget]
+type = "tordex/nvtop:widget"
+
+[widget.widget_2]
+type = "tordex/processes:widget"
 
 [widget.workspaces]
 pill_scale = 0.65000000000000002

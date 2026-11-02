@@ -1,5 +1,5 @@
 TERMINAL = "kitty"
-FILE_MANAGER = "dolphin"
+FILE_MANAGER = "nautilus"
 BROWSER = "firefox"
 EDITOR = "nvim"
 CALCULATOR = "gnome-calculator"

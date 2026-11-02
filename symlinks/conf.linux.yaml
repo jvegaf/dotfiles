@@ -36,6 +36,7 @@
     ~/.config/starship: os/linux/starship
     ~/.config/superfile: os/linux/superfile
     ~/.config/tmux : os/linux/tmux
+    ~/.config/tealdeer : os/linux/tealdeer
     ~/.config/uwsm: os/linux/uwsm
     ~/.config/vicinae: os/linux/vicinae
     ~/.config/waybar: os/linux/waybar
@@ -43,7 +44,7 @@
     ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
     ~/.config/yazi: os/linux/yazi
     ~/.config/zed: os/linux/zed
-    ~/.config/autostart/xclip: os/linux/autostart/xclip
+    ~/.local/bin/xclip: os/linux/autostart/xclip
     ~/.dotly: os/linux/.dotly
     ~/.face: os/linux/.face
     ~/.fonts: fonts
