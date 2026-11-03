@@ -63,9 +63,21 @@
   },
   "lib_table_width": 250,
   "lib_tree": {
-    "column_widths": {},
-    "columns": [],
-    "open_libs": []
+    "column_widths": {
+      "Description": 600,
+      "Item": 300
+    },
+    "columns": [
+      "Item",
+      "Description"
+    ],
+    "open_libs": [
+      "Connector",
+      "Connector_Generic",
+      "Connector_Generic_MountingPin",
+      "Connector_Generic_Shielded",
+      "Isolator"
+    ]
   },
   "library": {
     "sort_mode": 0

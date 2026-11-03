@@ -27,7 +27,7 @@
     "sort_mode": 0,
     "width": -1
   },
-  "filter_footprint": 0,
+  "filter_footprint": 1,
   "filter_footprint_text": "",
   "find_replace": {
     "find_history": [],
@@ -216,7 +216,7 @@
       300.0
     ]
   },
-  "footprints_pane_width": 0,
+  "footprints_pane_width": 302,
   "graphics": {
     "highlight_factor": 0.5,
     "select_factor": 0.75
@@ -226,7 +226,7 @@
     "columns": [],
     "open_libs": []
   },
-  "libraries_pane_width": 0,
+  "libraries_pane_width": 256,
   "meta": {
     "version": 0
   },
@@ -404,13 +404,13 @@
       "user_grid_x": "",
       "user_grid_y": ""
     },
-    "maximized": false,
+    "maximized": true,
     "mru_path": "",
-    "perspective": "",
+    "perspective": "layout2|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=749;besth=40;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Libraries;caption=Footprint Libraries;state=2044;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=256;besth=-1;minw=20;minh=-1;maxw=256;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Symbols;caption=Symbol : Footprint Assignments;state=2044;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=450;besth=190;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Footprints;caption=Filtered Footprints;state=2044;dir=2;layer=1;row=0;pos=0;prop=100000;bestw=302;besth=-1;minw=20;minh=-1;maxw=302;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Buttons;caption=;state=139644;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=497;besth=101;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=40|dock_size(4,1,0)=258|dock_size(5,0,0)=304|dock_size(2,1,0)=304|dock_size(3,6,0)=101|",
     "pos_x": 0,
     "pos_y": 0,
-    "size_x": 0,
-    "size_y": 0,
+    "size_x": 1016,
+    "size_y": 556,
     "zoom_factors": [
       0.13,
       0.22,
