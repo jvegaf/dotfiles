@@ -172,6 +172,8 @@
     }
   },
   "default_agent": "gentle-orchestrator",
+  "formatter": true,
+  "lsp": true,
   "mcp": {
     "context7": {
       "enabled": true,
@@ -662,10 +664,8 @@
       "secrets/*": "deny"
     }
   },
-  "share": "disabled",
-  "lsp": true,
   "plugins": [
     "@mohak34/opencode-notifier@latest"
   ],
-  "formatter": true
+  "share": "disabled"
 }

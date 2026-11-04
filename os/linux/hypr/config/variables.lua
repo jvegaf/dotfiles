@@ -1,4 +1,4 @@
-TERMINAL = "ghostty"
+TERMINAL = "footclient"
 FILE_MANAGER = "nautilus"
 BROWSER = "firefox"
 EDITOR = "nvim"
