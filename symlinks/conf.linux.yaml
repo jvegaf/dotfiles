@@ -9,12 +9,13 @@
     ~/.agents: os/linux/.agents
     ~/.backgrounds: os/linux/wallpapers
     ~/.config/FreeCAD: os/linux/FreeCAD
-    ~/.config/ai-usagebar: os/linux/ai-usagebar
     ~/.config/OrcaSlicer : os/linux/OrcaSlicer
+    ~/.config/ai-usagebar: os/linux/ai-usagebar
     ~/.config/alacritty: os/linux/alacritty
     ~/.config/btop: os/linux/btop
     ~/.config/dunst : os/linux/dunst
     ~/.config/fastfetch: os/linux/fastfetch
+    ~/.config/foot: os/linux/foot
     ~/.config/ghostty: os/linux/ghostty
     ~/.config/helix: os/linux/helix
     ~/.config/herdr: os/linux/herdr
@@ -35,18 +36,21 @@
     ~/.config/rofi : os/linux/rofi
     ~/.config/starship: os/linux/starship
     ~/.config/superfile: os/linux/superfile
-    ~/.config/tmux : os/linux/tmux
+    ~/.config/systemd: os/linux/systemd
     ~/.config/tealdeer : os/linux/tealdeer
+    ~/.config/tmux : os/linux/tmux
     ~/.config/uwsm: os/linux/uwsm
     ~/.config/vicinae: os/linux/vicinae
     ~/.config/waybar: os/linux/waybar
     ~/.config/wlogout: os/linux/wlogout
-    ~/.config/xdg-desktop-portals : os/linux/xdg-desktop-portals
+    ~/.config/xdg-desktop-portals: os/linux/xdg-desktop-portals
     ~/.config/yazi: os/linux/yazi
     ~/.config/zed: os/linux/zed
-    ~/.local/bin/xclip: os/linux/autostart/xclip
+    ~/.config/user-dirs.dirs: os/linux/user-dirs.dirs
+    ~/.config/user-dirs.locale: os/linux/user-dirs.locale
     ~/.dotly: os/linux/.dotly
     ~/.face: os/linux/.face
     ~/.fonts: fonts
+    ~/.local/bin/xclip: os/linux/autostart/xclip
     ~/.local/state/noctalia/settings.toml: os/linux/noctalia/settings.toml
     ~/.screenlayout: os/linux/.screenlayout

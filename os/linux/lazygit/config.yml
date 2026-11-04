@@ -446,7 +446,7 @@ disableStartupPopups: false
 # User-configured commands that can be invoked from within Lazygit
 # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
 customCommands:
-  - key: "<c-a>"
+  - key: "<alt-a>"
     description: "AI-powered conventional commit"
     context: global
     command: 'git commit -m "{{.Form.CommitMsg}}"'

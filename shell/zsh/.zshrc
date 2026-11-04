@@ -38,8 +38,6 @@ eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
 [ -f ~/.keys ] && source ~/.keys
-# OpenCode Go quota plugin
-# source <(grep '^OPENCODE_GO' ~/.keys)
 
 fastfetch -c $HOME/.config/fastfetch/config.jsonc
 

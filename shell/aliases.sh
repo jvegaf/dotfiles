@@ -34,7 +34,7 @@ alias open='xdg-open'
 alias zj='zellij'
 alias hr='herdr'
 alias k1p='sh $HOME/.local/bin/CrealityPrint'
-alias oc='opencode'
+alias oc='sh $HOME/.gentle-ai/bin/opencode'
 alias occfg='$HOME/.config/opencode'
 
 # Security

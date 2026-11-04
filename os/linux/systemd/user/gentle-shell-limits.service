@@ -1,0 +1,7 @@
+[Unit]
+Description=Raise the gentle-shell cgroup limits (pids and memory)
+Documentation=file:/home/th3g3ntl3man/.local/bin/gentle-shell-limits.sh
+
+[Service]
+Type=oneshot
+ExecStart=/home/th3g3ntl3man/.local/bin/gentle-shell-limits.sh

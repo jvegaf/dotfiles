@@ -180,7 +180,7 @@
     },
     "engram": {
       "command": [
-        "/usr/bin/engram",
+        "/home/th3g3ntl3man/.local/bin/engram",
         "mcp",
         "--tools=agent"
       ],
@@ -199,7 +199,7 @@
       },
       "engram": {
         "command": [
-          "/usr/bin/engram",
+          "/home/th3g3ntl3man/.local/bin/engram",
           "mcp",
           "--tools=agent"
         ],
@@ -662,5 +662,10 @@
       "secrets/*": "deny"
     }
   },
-  "share": "disabled"
+  "share": "disabled",
+  "lsp": true,
+  "plugins": [
+    "@mohak34/opencode-notifier@latest"
+  ],
+  "formatter": true
 }

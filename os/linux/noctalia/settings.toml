@@ -187,16 +187,11 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
 [plugin_settings."blackbartblues/keymap"]
 compositor = "hyprland"
 
+[plugin_settings."tordex/processes"]
+delay = 3
+
 [plugins]
-enabled = [
-    "blackbartblues/keymap",
-    "goodroot/noctwhspr",
-    "felipeartur/ai-usagebar",
-    "michael-retunzew/hyprland-settings",
-    "tordex/processes",
-    "tordex/xwayland",
-    "tordex/nvtop"
-]
+enabled = [ "goodroot/noctwhspr", "felipeartur/ai-usagebar", "michael-retunzew/hyprland-settings", "tordex/nvtop" ]
 
 [shell]
 corner_radius_scale = 1.2000000178813934

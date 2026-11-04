@@ -31,7 +31,7 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 # collides with the herdr prefix, so it lives here instead.
 # Related defaults: GENTLE_PI_AGENTS_KEY (collapse card, ctrl+shift+a),
 # GENTLE_PI_AGENTS_STOP_KEY (stop a subagent, alt+s).
-export GENTLE_PI_AGENTS_VIEW_KEY="ctrl+shift+j"
+# export GENTLE_PI_AGENTS_VIEW_KEY="ctrl+shift+j"
 
 # REA (Reverse Engineer Anything) — analysis engines
 export GHIDRA_INSTALL_DIR=/opt/ghidra
@@ -55,6 +55,7 @@ export path=(
   # Nix - multi-user install. The system profile ships the nix CLI itself;
   # the per-user profile holds packages installed with `nix profile install`.
   "$HOME/.gentle-shell/bin"
+  "$HOME/.gentle-ai/bin"
   "/nix/var/nix/profiles/default/bin"
   "$HOME/.nix-profile/bin"
   "$HOME/.bin"

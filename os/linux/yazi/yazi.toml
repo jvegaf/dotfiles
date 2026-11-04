@@ -24,6 +24,10 @@ text = [
 
 document = [
   { run = 'zathura %s', orphan = true, desc = "zathura", for = "linux" },
+  { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
+]
+
+markdown = [
   { run = 'md-viewer %s', orphan = true, desc = "md viewer", for = "linux" },
   { run = 'xdg-open %s', orphan = true, desc = "xdg-open", for = "linux" },
 ]
@@ -75,7 +79,7 @@ rules = [
   { mime = "application/pdf", use = "document" },
   { mime = "application/epub+zip", use = "document" },
   { mime = "application/x-mobipocket-ebook", use = "document" },
-  { mime = "application/markdown", use = "document" },
+  { mime = "application/markdown", use = "markdown" },
 
 
   { mime = "*", use = "text" },
