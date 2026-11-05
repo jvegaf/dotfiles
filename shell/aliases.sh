@@ -17,7 +17,6 @@ alias dw="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias du="du -hd 1"
 alias dots='cd $DOTFILES_PATH'
-alias logout="gnome-session-quit --logout"
 alias nvcfg="cd ~/.config/nvim"
 alias vimcfg="vim ~/.vimrc"
 alias r="ranger"
