@@ -15,10 +15,11 @@ mouse-hide-while-typing = true
 copy-on-select = clipboard
 
 font-size = 14
-font-family = FiraCode Nerd Font
-font-family-bold = FiraCode Nerd Font Bold
-font-family-bold-italic = FiraCode Nerd Font Bold Italic
-font-family-italic = FiraCode Nerd Font Italic
+# font-family = FiraCode Nerd Font
+font-family = monospace
+# font-family-bold = FiraCode Nerd Font Bold
+# font-family-bold-italic = FiraCode Nerd Font Bold Italic
+# font-family-italic = FiraCode Nerd Font Italic
 
 title = "GhosTTY"
 
