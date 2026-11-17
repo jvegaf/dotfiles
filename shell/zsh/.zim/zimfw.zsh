@@ -42,9 +42,7 @@ _zimfw_mv() {
       [[ ${${(z)cklines[1]}[1,2]} == ${${(z)cklines[2]}[1,2]} ]]; then
     _zimfw_print -R "${_zokay}${_zbold}${2}:${_znormal} Already up to date"
   else
-    if [[ -e ${2} ]]; then
-      command mv -f ${2}{,.old} || return 1
-    fi
+    [[ ! -e ${2} ]] || command mv -f ${2}{,.old} || return 1
     command mv -f ${1} ${2} && command chmod a+r ${2} && _zimfw_print -R "${_zokay}${_zbold}${2}:${_znormal} Updated"
   fi
 }
@@ -52,14 +50,12 @@ _zimfw_mv() {
 _zimfw_build_init() {
   local -r ztarget=${ZIM_HOME}/init.zsh
   # Force update of init.zsh if it's older than .zimrc
-  if [[ ${ztarget} -ot ${_zconfig} ]]; then
-    command mv -f ${ztarget}{,.old} || return 1
-  fi
+  [[ ! ${ztarget} -ot ${_zconfig} ]] || command mv -f ${ztarget}{,.old} || return 1
   _zimfw_mv =(
     print -R '# FILE AUTOMATICALLY GENERATED FROM '${_zconfig}
     print '# EDIT THE SOURCE FILE AND THEN RUN zimfw build. DO NOT DIRECTLY EDIT THIS FILE!'
     print
-    print -R 'if [[ -e ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]] zimfw() { source '${${(qqq)__ZIMFW_FILE}/${HOME}/\${HOME}}' "${@}" }'
+    print -R 'if [[ -e ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]] zimfw() { source '${${(qqq)__ZIMFW_FILE}/#\"${HOME}\//\"\${HOME}/}' "${@}" }'
     local zroot_target zpre
     local -a zif_functions zif_cmds zroot_functions zroot_cmds
     local -a zfunctions=(${_zfunctions}) zcmds=(${_zcmds})
@@ -99,9 +95,7 @@ _zimfw_build_init() {
 _zimfw_build_login_init() {
   local -r ztarget=${ZIM_HOME}/login_init.zsh
   # Force update of login_init.zsh if it's older than .zimrc
-  if [[ ${ztarget} -ot ${_zconfig} ]]; then
-    command mv -f ${ztarget}{,.old} || return 1
-  fi
+  [[ ! ${ztarget} -ot ${_zconfig} ]] || command mv -f ${ztarget}{,.old} || return 1
   _zimfw_mv =(
     print '# Do nothing. This file is deprecated.'
   ) ${ztarget}
@@ -197,7 +191,7 @@ Per-call initialization options:
     _zfailed=1
     return 2
   fi
-  local zurl=${1} zname=${1:t} zroot zarg
+  local zurl=${1%%/##} zname=${1:t} zroot zarg
   local -a zfpaths zfunctions zcmds
   if [[ ${zurl} =~ ^[^:/]+: ]]; then
     zname=${zname%.git}
@@ -228,19 +222,19 @@ Per-call initialization options:
     shift
   done
   zname=modules/${zname}
-  _znames+=(${zname})
-  if [[ ${zurl} == /* ]]; then
-    _ztargets[${zname}]=${zurl%%/##}
-    zurl=
-  else
-    _ztargets[${zname}]=${ZIM_HOME}/${zname}
-  fi
+  # zname is set at this point and used below to index associative arrays.
   if [[ ${+_zurls[${zname}]} -ne 0 && ${_zurls[${zname}]} != ${zurl} ]]; then
-    print -u2 -lR "${_zerror}${funcfiletrace[1]}:${_zbold}${zname}:${_znormalred} Module already defined with a different URL. Expected ${_zbold}${_zurls[${zname}]}${_znormal}" '' ${zusage}
+    print -u2 -lR "${_zerror}${funcfiletrace[1]}:${_zbold}${zname}:${_znormalred} Module already defined with a different URL" '' ${zusage}
     _zfailed=1
     return 2
   fi
+  _znames+=(${zname})
   _zurls[${zname}]=${zurl}
+  if [[ ${zurl} == /* ]]; then
+    _ztargets[${zname}]=${zurl}
+  else
+    _ztargets[${zname}]=${ZIM_HOME}/${zname}
+  fi
   local -r zroot_target=${_ztargets[${zname}]}${zroot:+/${zroot}}
   _zroot_targets+=(${zroot_target})
   # Set default values
@@ -262,7 +256,7 @@ Per-call initialization options:
     esac
     case ${1} in
       -b|--branch|-t|--tag|-u|--use|--no-submodules)
-        if [[ -z ${zurl} ]] _zimfw_print -u2 -R "${_zwarn}${funcfiletrace[1]}:${_zbold}${zname}:${_znormalyellow} The zmodule option ${_zbold}${1}${_znormalyellow} has no effect for external modules${_znormal}"
+        if [[ ${zurl} == /* ]] _zimfw_print -u2 -R "${_zwarn}${funcfiletrace[1]}:${_zbold}${zname}:${_znormalyellow} The zmodule option ${_zbold}${1}${_znormalyellow} has no effect for external modules${_znormal}"
         ;;
     esac
     case ${1} in
@@ -314,11 +308,11 @@ Per-call initialization options:
         shift
         zarg=${1}
         if [[ ${zarg} != /* ]] zarg=${zroot_target}/${zarg}
-        zcmds+=('source '${(qqq)zarg:a})
+        zcmds+=('source '${(qqq)zarg})
         ;;
       -c|--cmd)
         shift
-        zcmds+=(${1//{}/${(qqq)zroot_target:a}})
+        zcmds+=(${1//{}/${(qqq)zroot_target}})
         ;;
       -d|--disabled) _zdisabled_roots+=(${zroot_target}) ;;
       *)
@@ -329,8 +323,10 @@ Per-call initialization options:
     esac
     shift
   done
-  # Detect tool if auto and not external and not frozen module
-  if [[ ${_ztools[${zname}]} == auto && -n ${_zurls[${zname}]} && _zfrozens[${zname}] -eq 0 ]]; then
+  if [[ ${zurl} == /* ]]; then
+    _ztools[${zname}]=external
+  elif [[ ${_ztools[${zname}]} == auto && _zfrozens[${zname}] -eq 0 ]]; then
+    # Detect tool if auto and not frozen module
     if [[ -e ${_ztargets[${zname}]} ]]; then
       if [[ -r ${_ztargets[${zname}]}/.git ]]; then
         _ztools[${zname}]=git
@@ -348,6 +344,35 @@ Per-call initialization options:
       fi
     fi
   fi
+  # Variables set up to this point:
+  # * zname: The module name, prefixed with 'modules/'. Added to _znames array, which contains all
+  #   module names.
+  # * zurl and _zurls[${zname}]: The normalized repository URL, or the absolute path for external
+  #   modules. Used to detect conflicting module definitions. Not fetched for external/frozen
+  #   modules or with mkdir.
+  # * _ztargets[${zname}]: The full path to the module directory.
+  # * _ztypes[${zname}]: The module rev type. Defaults to 'branch'. Unused for external/frozen
+  #   modules; with mkdir, used only to identify a non-empty rev in a warning.
+  # * _zrevs[${zname}]: The module rev value. Unused for external/frozen modules; with mkdir, a
+  #   non-empty value triggers a warning.
+  # * _ztools[${zname}]: The module tool: 'external', 'degit', 'git' or 'mkdir'. External is set for
+  #   absolute path modules. Frozen modules keep the given value (default 'auto'), unused.
+  # * _zsubmodules[${zname}]: Set to 1 if git submodules are enabled for the module. Defaults to 1.
+  #   External/frozen modules are skipped; with mkdir, a 0 value triggers a warning.
+  # * _zfrozens[${zname}]: Set to 1 if the module is frozen.
+  # * _zonpulls[${zname}]: The --on-pull values (appended with '; '); unused for external/frozen
+  #   modules, otherwise passed to the selected tool.
+  # * zroot: The module root subdirectory. Empty if none.
+  # * zroot_target: The full path to the module root subdirectory. Added to _zroot_targets array,
+  #   which contains all root targets.
+  # * _zifs[${zroot_target}]: The module root condition from --if, --if-command or --if-ostype.
+  # * zfpaths: Array with given -f|--fpath option values. Relative paths are prefixed with the
+  #   module root path.
+  # * zfunctions: Array with given -a|--autoload option values.
+  # * zcmds: Commands from -s|--source and -c|--cmd. For --source, relative paths are prefixed with
+  #   the module root path and converted to 'source' commands. For --cmd, '{}' are expanded to the
+  #   module root subdirectory.
+  # * _zdisabled_roots array contains zroot_target if this module root is disabled.
   if (( ! ${_zdisabled_roots[(I)${zroot_target}]} && _zeager )); then
     if [[ ! -e ${zroot_target} ]]; then
       print -u2 -R "${_zerror}${funcfiletrace[1]}:${_zbold}${zname}: ${zroot_target}${_znormalred} not found${_znormal}"
@@ -355,30 +380,35 @@ Per-call initialization options:
       return 1
     fi
     if (( ! ${#zfpaths} && ! ${#zfunctions} && ! ${#zcmds} )); then
-      zfpaths=(${zroot_target}/functions(NF))
+      zfpaths=(${zroot_target}/functions(N-F))
       # _* functions are autoloaded by compinit
       # prompt_*_setup functions are autoloaded by promptinit
       zfunctions=(${^zfpaths}/^(*~|*.zwc(|.old)|_*|prompt_*_setup)(N-.:t))
       local -ra prezto_scripts=(${zroot_target}/init.zsh(N))
       if (( ${#zfpaths} && ${#prezto_scripts} )); then
         # this follows the prezto module format, no need to check for other scripts
-        zcmds=('source '${(qqq)^prezto_scripts:a})
+        zcmds=('source '${(qqq)^prezto_scripts})
       else
         # get script with largest size (descending `O`rder by `L`ength, and return only `[1]` first)
-        local -ra zscripts=(${zroot_target}/(init.zsh|(${zname:t}|${zroot_target:t}).(zsh|plugin.zsh|zsh-theme|sh))(NOL[1]))
-        zcmds=('source '${(qqq)^zscripts:a})
+        local -ra zscripts=(${zroot_target}/(init.zsh|(${zname:t}|${zroot_target:t}).(zsh|plugin.zsh|zsh-theme|sh))(N-OL[1]))
+        zcmds=('source '${(qqq)^zscripts})
       fi
     fi
     if (( ! ${#zfpaths} && ! ${#zfunctions} && ! ${#zcmds} )); then
       _zimfw_print -u2 -lR "${_zwarn}${funcfiletrace[1]}:${_zbold}${zname}:${_znormalyellow} Nothing found to be initialized. Customize the module name, root or initialization with ${_zbold}zmodule${_znormalyellow} options.${_znormal}" '' ${zusage}
     fi
-    # Prefix is added to all _zfpaths, _zfunctions and _zcmds to distinguish the originating root target
+    # Each entry gets a zroot_target+NUL prefix to distinguish its originating module root.
     local -r zpre=${zroot_target}$'\0'
-    zfpaths=(${${(@qqq)zfpaths:a}/${HOME}/\${HOME}})
+    zfpaths=(${${(@qqq)zfpaths}/#\"${HOME}\//\"\${HOME}/})
     _zfpaths+=(${zpre}${^zfpaths})
     _zfunctions+=(${zpre}${^zfunctions})
-    zcmds=(${zcmds//${HOME}/\${HOME}})
+    zcmds=(${zcmds//\"${HOME}\//\"\${HOME}/})
     _zcmds+=(${zpre}${^zcmds})
+    # Prefixed entries (zroot_target+NUL+value) are added to these arrays; values may be provided
+    # per-call or auto-discovered:
+    # * _zfpaths contains full fpath paths.
+    # * _zfunctions contains autoloaded function names.
+    # * _zcmds contains initialization commands.
   fi
 }
 
@@ -471,37 +501,33 @@ zmodule zsh-users/zsh-autosuggestions
 }
 
 _zimfw_list_unused() {
-  local -i i=1
-  local zinstalled=(${ZIM_HOME}/modules/*(N/))
-  local -r ztargets=(${(v)_ztargets})
-  # Search into subdirectories
-  while (( i <= ${#zinstalled} )); do
-    if (( ztargets[(I)${zinstalled[i]}/*] )); then
-      zinstalled+=(${zinstalled[i]}/*(N/))
-      zinstalled[i]=()
-    else
-      (( i++ ))
+  local zinstalled=(${ZIM_HOME}/modules/*(N/)) zpath
+  # Resolved, so a target given via another path to the same directory is still used
+  local -r ztargets=(${${(v)_ztargets}:A})
+  while (( ${#zinstalled} )); do
+    zpath=${zinstalled[1]}
+    shift zinstalled
+    if (( ztargets[(I)${zpath:A}/*] )); then
+      # Search into subdirectories
+      zinstalled+=(${zpath}/*(N/))
+    elif (( ! ztargets[(Ie)${zpath:A}] )); then
+      _zunused_targets+=(${zpath})
+      _zimfw_print -R "${_zbold}${zpath##${ZIM_HOME}/}${_znormal}${1}"
     fi
   done
-  # Unused = all installed targets not in ztargets
-  _zunused_targets=(${zinstalled:|ztargets})
-  local zunused
-  for zunused (${_zunused_targets}) _zimfw_print -R "${_zbold}${zunused##${ZIM_HOME}/}${_znormal}${1}"
 }
 
 _zimfw_check_version() {
   if (( ${1} )); then
     if (( ${2} )); then
       # background check
-      if [[ -w ${_zversion_target:h} ]]; then
-        print -R ${${${(f)"$(GIT_HTTP_LOW_SPEED_LIMIT=1000 GIT_HTTP_LOW_SPEED_TIME=30 command git ls-remote --tags --refs --sort=-v:refname \
-            https://github.com/zimfw/zimfw.git 'v*' 2>/dev/null)"}##*v}[1]} >! ${_zversion_target} &!
-      fi
+      print -R ${${"$(GIT_HTTP_LOW_SPEED_LIMIT=1000 GIT_HTTP_LOW_SPEED_TIME=30 command git ls-remote --tags --refs --sort=-v:refname \
+          https://github.com/zimfw/zimfw.git 'v*' 2>/dev/null)"%%$'\n'*}##*v} >! ${_zversion_target} &!
     else
       # foreground check
       local tags
       tags=$(command git ls-remote --tags --refs --sort=-v:refname https://github.com/zimfw/zimfw.git 'v*') || return 1
-      >! ${_zversion_target} <<<${${${(f)tags}##*v}[1]} || return 1
+      >! ${_zversion_target} <<<${${tags%%$'\n'*}##*v} || return 1
     fi
   fi
   if [[ -f ${_zversion_target} ]]; then
@@ -514,8 +540,8 @@ _zimfw_check_version() {
 }
 
 _zimfw_clean_compiled() {
-  # Array with unique targets. ${ZIM_HOME} or any external target should only occur once.
-  local -Ur ztargets=(${ZIM_HOME:A} ${${(v)_ztargets##${ZIM_HOME}/*}:A})
+  # Also root targets, as globs don't descend into symlinked directories
+  local -Ur ztargets=(${ZIM_HOME} ${(v)_ztargets} ${_zroot_targets})
   local zopt
   if (( _zprintlevel > 0 )) zopt=-v
   command rm -f ${zopt} ${^ztargets}/**/*.zwc(|.old)(N) && \
@@ -534,12 +560,12 @@ _zimfw_compile() {
   # Compile zimfw scripts
   local zroot_target zfile
   for zroot_target in ${_zroot_targets:|_zdisabled_roots}; do
-    if [[ ! -w ${zroot_target} ]]; then
-      _zimfw_print -R "${_zwarn}${_zbold}${zroot_target}:${_znormalyellow} No write permission, unable to compile.${_znormal}"
-      continue
-    fi
     for zfile in ${zroot_target}/(^*test*/)#*.zsh(|-theme)(N-.); do
       if [[ ! ${zfile}.zwc -nt ${zfile} ]]; then
+        if [[ ! -w ${zfile:h} ]]; then
+          _zimfw_print -u2 -R "${_zwarn}${_zbold}${zroot_target}:${_znormalyellow} No write permission, unable to compile.${_znormal}"
+          continue 2
+        fi
         zcompile -R ${zfile} && _zimfw_print -R "${_zokay}${_zbold}${zfile}.zwc:${_znormal} Compiled"
       fi
     done
@@ -551,7 +577,7 @@ _zimfw_info() {
   _zimfw_info_print_symlink ZIM_HOME ${ZIM_HOME}
   _zimfw_info_print_symlink 'zimfw config' ${_zconfig}
   _zimfw_info_print_symlink 'zimfw script' ${__ZIMFW_FILE}
-  print -R 'zimfw version:        '${_zversion}' (built at 2026-10-30 01:57:14 UTC, previous commit is 983212c)'
+  print -R 'zimfw version:        '${_zversion}${_zvendor:+" (${_zvendor})"}
   local zparam
   for zparam in LANG ${(Mk)parameters:#LC_*} OSTYPE TERM TERM_PROGRAM TERM_PROGRAM_VERSION ZSH_VERSION; do
     print -R ${(r.22....:.)zparam}${(P)zparam}
@@ -615,12 +641,12 @@ _zimfw_run_list() {
   local -r zroot_targets=(${(M)_zroot_targets:#${ztarget}(|/*)})
   print -nR ${_zbold}${zname}${_znormal}
   if [[ ! -e ${ztarget} ]] print -n ' (not installed)'
-  if [[ -z ${_zurls[${zname}]} ]] print -n ' (external)'
+  if [[ ${_ztools[${zname}]} == external ]] print -n ' (external)'
   if (( _zfrozens[${zname}] )) print -n ' (frozen)'
   if [[ ${_zdisabled_roots[(I)${ztarget}]} -ne 0 && ${zroot_targets} == (${ztarget}) ]] print -n ' (disabled)'
   print
   if (( _zprintlevel > 1 )); then
-    if [[ -z ${_zurls[${zname}]} ]]; then
+    if [[ ${_ztools[${zname}]} == external ]]; then
       print -R '  From: '${ztarget}
     elif (( ! _zfrozens[${zname}] )); then
       if [[ ${_ztools[${zname}]} == mkdir ]]; then
@@ -716,7 +742,7 @@ _zimfw_download_tarball() {
     fi
     readonly TARBALL_URL=https://api.github.com/repos/${REPO}/tarball/${REV}
     if [[ ${ACTION} == check ]]; then
-      if [[ -z ${INFO_HEADER} ]] return 0
+      [[ -z ${INFO_HEADER} ]] && return 0
       if [[ ${+commands[curl]} -ne 0 && -x ${commands[curl]} ]]; then
         command curl -IfsL -H ${INFO_HEADER} ${TARBALL_URL} >${HEADERS_TARGET}
       else
@@ -783,7 +809,7 @@ _zimfw_untar_tarball() {
 _zimfw_tool_degit() {
   # This runs in a subshell
   readonly -i SUBMODULES=${6}
-  readonly ACTION=${1} TARGET=${2} URL=${3} REV=${5} ONPULL=${7} TEMP=.zdegit_${sysparams[pid]}_${RANDOM}
+  readonly ACTION=${1} TARGET=${2} URL=${3} REV=${5} ONPULL=${7} TEMP=.zdegit_${$}_${RANDOM}
   readonly TARBALL_TARGET=${TARGET}/${TEMP}_tarball.tar.gz INFO_TARGET=${TARGET}/.zdegit
   case ${ACTION} in
     pre|prereinstall)
@@ -813,7 +839,7 @@ _zimfw_tool_degit() {
       }
       ;;
     check|update)
-      readonly DIR_NEW=${TARGET}${TEMP}
+      readonly DIR_NEW=${TARGET:h}/.${TARGET:t}${TEMP}
       {
         _zimfw_download_tarball || return 1
         if [[ ${ACTION} == check ]]; then
@@ -979,7 +1005,7 @@ _zimfw_tool_mkdir() {
   # This runs in a subshell
   readonly -i SUBMODULES=${6}
   readonly ACTION=${1} TARGET=${2} TYPE=${4} REV=${5} ONPULL=${7}
-  if [[ ${ACTION} == (pre|prereinstall) ]] return 0
+  [[ ${ACTION} == (pre|prereinstall) ]] && return 0
   if [[ ${ACTION} == check ]]; then
     _zimfw_print_okay 'Skipping mkdir module' 1
     return 0
@@ -1001,9 +1027,12 @@ _zimfw_tool_mkdir() {
 }
 
 _zimfw_run_tool() {
+  # zargs before zsh 5.9 does not preserve the caller options. See https://www.zsh.org/users/26406
+  builtin emulate -L zsh -o EXTENDED_GLOB
   local zaction=${1}
   local -r _zname=${2}
-  if [[ -z ${_zurls[${_zname}]} ]]; then
+  local -r ztool=${_ztools[${_zname}]}
+  if [[ ${ztool} == external ]]; then
     _zimfw_print_okay 'Skipping external module' 1
     return 0
   fi
@@ -1011,7 +1040,6 @@ _zimfw_run_tool() {
     _zimfw_print_okay 'Skipping frozen module' 1
     return 0
   fi
-  local -r ztool=${_ztools[${_zname}]}
   if [[ ${ztool} != (degit|git|mkdir) ]]; then
     _zimfw_print_error "Unknown tool ${ztool}"
     return 1
@@ -1027,7 +1055,7 @@ _zimfw_run_tool() {
         return 0
       fi
     fi
-    local -r ztarget_new=.${_ztargets[${_zname}]}_${sysparams[pid]}_${RANDOM}
+    local -r ztarget_new=${_ztargets[${_zname}]:h}/.${_ztargets[${_zname}]:t}_${$}_${RANDOM}
     {
       _zimfw_tool_${ztool} install ${ztarget_new} "${@:2}" || return 1
       if ! ERR=$({ command rm -rf ${_ztargets[${_zname}]} && command mv -f ${ztarget_new} ${_ztargets[${_zname}]} } 2>&1); then
@@ -1067,6 +1095,9 @@ _zimfw_run_tool_action() {
   if [[ ${1} == reinstall ]] zmaxprocs=1
   _zimfw_source_zimrc 0 || return 1
   zargs -n 2 -P ${zmaxprocs} -- "${_znames[@]}" -- _zimfw_run_tool ${1}
+  # Ignore return from zargs with -P. It "may not correctly capture the exit status of the
+  # backgrounded jobs, because of limitations of the "wait" builtin", per zargs before zsh 5.9.
+  # See also https://www.zsh.org/workers/50281
   return 0
 }
 
@@ -1078,7 +1109,7 @@ zimfw() {
     local -r _znormal= _zbold= _zred= _znormalred= _zgreen= _zyellow= _znormalyellow=
   fi
   local -r _zerror="${_zred}x " _zokay="${_zgreen}) ${_znormal}" _zwarn="${_zyellow}! "
-  local -r _zconfig=${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} _zversion='1.20.2'
+  local -r _zconfig=${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} _zversion='1.21.0' _zvendor=''
   local -r zusage="Usage: ${_zbold}${0}${_znormal} <action> [option]
 
 Actions:
@@ -1136,24 +1167,26 @@ Options:
       ;;
   esac
 
+  if [[ -n ${_zvendor} && ${1} == (check-version|upgrade) ]]; then
+    print -u2 -R "${_zred}${0}: ${1} is disabled. Use your package manager to upgrade zimfw.${_znormal}"
+    return 1
+  fi
   if (( ! ${+ZIM_HOME} )); then
     print -u2 -R "${_zred}${0}: ${_zbold}ZIM_HOME${_znormalred} not defined${_znormal}"
     return 1
   fi
-  if [[ ! -e ${ZIM_HOME} ]]; then
-    command mkdir -p ${ZIM_HOME} || return 1
-  fi
+  [[ -e ${ZIM_HOME} ]] || command mkdir -p ${ZIM_HOME} || return 1
 
   local -r _zversion_target=${ZIM_HOME}/.latest_version
   if ! zstyle -t ':zim' disable-version-check && \
-      [[ ${1} != check-version && -w ${ZIM_HOME} && -w ${__ZIMFW_FILE:A:h} ]]
+      [[ -z ${_zvendor} && ${1} != check-version && -w ${ZIM_HOME} && -w ${__ZIMFW_FILE:A:h} ]]
   then
     # If .latest_version does not exist or was not modified in the last 30 days
     [[ -f ${_zversion_target}(#qNm-30) ]]; local -ri zforce_check_version=${?}
     _zimfw_check_version ${zforce_check_version} 1
   fi
 
-  if [[ ! -w ${ZIM_HOME} && ${1} == (build|check|init|install|update|reinstall|check-version) ]]; then
+  if [[ ! -w ${ZIM_HOME} && ${1} == (init|install|update|reinstall|check-version) ]]; then
     print -u2 -R "${_zred}${0}: No write permission to ${_zbold}${ZIM_HOME}${_znormalred}. Will not try to ${1}.${_znormal}"
     return 1
   fi

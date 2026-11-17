@@ -1,4 +1,4 @@
-config_version = 16
+config_version = 20
 
 [accessibility]
 ui_scale = 1.0000000074505806
@@ -123,6 +123,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_media_controls = true
         show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
@@ -132,7 +133,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     box_height = 196.0
     box_width = 810.0
     cx = 1024.0003662109375
-    cy = 919.0400390625
+    cy = 919.03997802734375
     output = "eDP-1"
     placement_height = 1152.0
     placement_width = 2048.0
@@ -151,6 +152,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_media_controls = true
         show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
@@ -179,6 +181,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_media_controls = true
         show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
@@ -186,6 +189,9 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
 
 [plugin_settings."blackbartblues/keymap"]
 compositor = "hyprland"
+
+[plugin_settings."felipeartur/ai-usagebar"]
+show_priorities = true
 
 [plugin_settings."tordex/processes"]
 delay = 3

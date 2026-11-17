@@ -1,5 +1,5 @@
-TERMINAL = "footclient"
-FILE_MANAGER = "nautilus"
+TERMINAL = "kitty"
+FILE_MANAGER = "dolphin"
 BROWSER = "firefox"
 EDITOR = "nvim"
 CALCULATOR = "gnome-calculator"

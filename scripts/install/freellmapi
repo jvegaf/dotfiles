@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eu pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Install the linux packages needed
+#?? 1.0.0
+##?
+##? Usage:
+##?   install_custom
+
+log::note "Installing Free LLM Api"
+
+curl -fsSL https://freellmapi.co/install.sh | bash
+
+log::note "Free LLM Api installed ✅"
+
+exit 0

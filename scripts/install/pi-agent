@@ -10,13 +10,20 @@ source "$DOTLY_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   install_custom
 
-curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
+# curl -fsSL https://raw.githubusercontent.com/Gentleman-Programming/gentle-ai/main/scripts/install.sh | bash
 
 log::note "Installing Pi Agent"
 
 curl -fsSL https://pi.dev/install.sh | sh
 
 log::note "Pi Agent installed"
+
+pi install npm:pi-mcp-adapter
+pi install npm:@narumitw/pi-lsp
+pi install npm:gentle-pi
+pi install npm:gentle-engram
+pi install npm:gentle-emote
+pi install npm:opencode-flema-engram-sidebar@0.4.2
 
 # pi install npm:@commandcode/pi-commandcode-provider
 

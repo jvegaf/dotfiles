@@ -1,12 +1,707 @@
 [
   {
+    "plugin_id": "herdr-lazygit",
+    "name": "herdr-lazygit",
+    "version": "0.4.0",
+    "min_herdr_version": "0.7.0",
+    "description": "lazygit in a herdr split pane, with AI-assisted commit messages via custom commands.",
+    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "/bin/sh",
+          "scripts/install-runtime.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open lazygit",
+        "description": "Open lazygit in a split pane beside the current work (focus/toggle on repeat).",
+        "command": [
+          "bash",
+          "scripts/open-lazygit.sh"
+        ]
+      },
+      {
+        "id": "open-tab",
+        "title": "Open lazygit (tab)",
+        "description": "Open lazygit in its own tab (switch to it if already open, toggle off if focused).",
+        "command": [
+          "bash",
+          "scripts/open-lazygit-tab.sh"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "lazygit",
+        "title": "Git",
+        "placement": "split",
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/scripts/run-lazygit.sh\""
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "crokily",
+      "repo": "herdr-lazygit",
+      "resolved_commit": "ac955e59caae5cbc34b74ccf949e11f085269b4d",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout",
+      "installed_unix_ms": 1794452225163
+    }
+  },
+  {
+    "plugin_id": "herdr-sidebar",
+    "name": "herdr-sidebar",
+    "version": "0.15.1",
+    "min_herdr_version": "0.8.0",
+    "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
+    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout/plugins/herdr-sidebar/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout/plugins/herdr-sidebar",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/fetch-or-build.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-or-build.ps1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-git",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--toggle-git"
+        ]
+      },
+      {
+        "id": "open-git-windows",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--toggle-git"
+        ]
+      },
+      {
+        "id": "open-sidebar",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--toggle"
+        ]
+      },
+      {
+        "id": "open-sidebar-windows",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--toggle"
+        ]
+      },
+      {
+        "id": "quick-open",
+        "title": "Quick Open",
+        "description": "Open or focus the sidebar and show the file picker.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--quick-open"
+        ]
+      },
+      {
+        "id": "quick-open-windows",
+        "title": "Quick Open",
+        "description": "Open or focus the sidebar and show the file picker.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--quick-open"
+        ]
+      },
+      {
+        "id": "redeploy",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/redeploy.sh"
+        ]
+      },
+      {
+        "id": "redeploy-windows",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/redeploy.ps1"
+        ]
+      },
+      {
+        "id": "refresh-sidebars",
+        "title": "Refresh all sidebars",
+        "description": "Refresh running sidebar views without closing preview or editor panes.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--refresh-sidebars"
+        ]
+      },
+      {
+        "id": "refresh-sidebars-windows",
+        "title": "Refresh all sidebars",
+        "description": "Refresh running sidebar views without closing preview or editor panes.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--refresh-sidebars"
+        ]
+      },
+      {
+        "id": "show-explorer",
+        "title": "Show Explorer",
+        "description": "Open or focus the sidebar and switch to Explorer.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-explorer"
+        ]
+      },
+      {
+        "id": "show-explorer-windows",
+        "title": "Show Explorer",
+        "description": "Open or focus the sidebar and switch to Explorer.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-explorer"
+        ]
+      },
+      {
+        "id": "show-git",
+        "title": "Show Source Control",
+        "description": "Open or focus the sidebar and switch to Source Control.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-git"
+        ]
+      },
+      {
+        "id": "show-git-windows",
+        "title": "Show Source Control",
+        "description": "Open or focus the sidebar and switch to Source Control.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-git"
+        ]
+      },
+      {
+        "id": "show-search",
+        "title": "Show Search",
+        "description": "Open or focus the sidebar and switch to project text search.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-search"
+        ]
+      },
+      {
+        "id": "show-search-windows",
+        "title": "Show Search",
+        "description": "Open or focus the sidebar and switch to project text search.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-search"
+        ]
+      },
+      {
+        "id": "update",
+        "title": "Update sidebar",
+        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--update-latest"
+        ]
+      },
+      {
+        "id": "update-windows",
+        "title": "Update sidebar",
+        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--update-latest"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "sidebar",
+        "title": "Sidebar",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-sidebar"
+        ]
+      },
+      {
+        "id": "source-control",
+        "title": "Source Control",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--view",
+          "git"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "alexarthurs",
+      "repo": "herdr-sidebar",
+      "subdir": "plugins/herdr-sidebar",
+      "resolved_commit": "081ed133f3faa377438b51ce435fe8a87c439593",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout",
+      "installed_unix_ms": 1794449739798
+    }
+  },
+  {
+    "plugin_id": "herdr.auto-title",
+    "name": "Auto Title",
+    "version": "0.22.3",
+    "min_herdr_version": "0.8.2",
+    "description": "Automatically generates contextual tab titles",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "sh",
+          "scripts/install.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "cmd",
+          "/d",
+          "/c",
+          "scripts\\install.cmd"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./herdr-auto-title"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "./herdr-auto-title.exe"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "restart",
+        "title": "Auto Title: restart",
+        "description": "Start a fresh Auto Title in place of the running one",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "./herdr-auto-title",
+          "restart"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "kryptamine",
+      "repo": "herdr-auto-title",
+      "resolved_commit": "1af236e95eb67adc77b3161937ff946c616b709c",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout",
+      "installed_unix_ms": 1794882195513
+    }
+  },
+  {
+    "plugin_id": "pradyb.which-key",
+    "name": "Which Key",
+    "version": "0.3.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Neovim-style which-key popup: press a leader, see the next keys, run herdr actions",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/37223-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/37223-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open which-key menu",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "python3",
+          "launch.py"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "menu",
+        "title": "Which Key",
+        "placement": "popup",
+        "width": "70%",
+        "height": 16,
+        "command": [
+          "python3",
+          "whichkey.py"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "pradyb",
+      "repo": "herdr-which-key",
+      "resolved_commit": "cd760c7d03a32dc2f8cfa40eaab3cc9beeac116b",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/37223-0/checkout",
+      "installed_unix_ms": 1794882563136
+    }
+  },
+  {
+    "plugin_id": "ray.plugin-manager",
+    "name": "Plugin Manager",
+    "version": "0.6.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Manage herdr plugins from a popup: list, install, update, enable/disable, uninstall, browse the marketplace, open repo in browser, edit plugins.json",
+    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux",
+      "windows"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open plugin manager",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "bash",
+          "-c",
+          "exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin ray.plugin-manager --entrypoint manager --placement popup --focus"
+        ]
+      },
+      {
+        "id": "open-windows",
+        "title": "Open plugin manager (Windows)",
+        "contexts": [
+          "workspace"
+        ],
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell.exe",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& \"$env:HERDR_PLUGIN_ROOT/bin/windows.ps1\" open"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "manager",
+        "title": "Plugin Manager",
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "placement": "popup",
+        "width": 82,
+        "height": 28,
+        "command": [
+          "bash",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/bin/manager.sh\""
+        ]
+      },
+      {
+        "id": "manager-windows",
+        "title": "Plugin Manager",
+        "platforms": [
+          "windows"
+        ],
+        "placement": "popup",
+        "width": 82,
+        "height": 28,
+        "command": [
+          "powershell.exe",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "& \"$env:HERDR_PLUGIN_ROOT/bin/windows.ps1\" manager"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "speardragon",
+      "repo": "herdr-plugin-manager",
+      "resolved_commit": "8ed222ab7efe735b3ef5e037e7ee81d6d7650e4e",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout",
+      "installed_unix_ms": 1794449194732
+    }
+  },
+  {
     "plugin_id": "smart-splits-backend-herdr",
     "name": "smart-splits-backend-herdr",
     "version": "0.1.0",
     "min_herdr_version": "0.7.0",
     "description": "Seamless navigation across herdr panes and Neovim splits, for smart-splits.nvim v3",
-    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout/herdr-plugin.toml",
-    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/74678-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/74678-0/checkout",
     "enabled": true,
     "platforms": [
       "linux",
@@ -67,8 +762,8 @@
       "owner": "adriankarlen",
       "repo": "smart-splits-backend-herdr",
       "resolved_commit": "da1e50ae7bec7a7c2781aaf5a531eff350bdab20",
-      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/643372-0/checkout",
-      "installed_unix_ms": 1793072468267
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/smart-splits-backend-herdr-b2e304125d2c/74678-0/checkout",
+      "installed_unix_ms": 1794883607011
     }
   }
 ]

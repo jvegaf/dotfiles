@@ -20,3 +20,4 @@
 /os/linux/herdr/plugins/**
 *.log
 /os/linux/opencode/opencode.json.rea.backup.*.recovery
+*pycache*
