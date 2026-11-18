@@ -140,7 +140,7 @@ goto = "ctrl+p"
 # propio espacio en el sidebar. new_worktree ya venia por defecto; open y
 # remove venian sin asignar, asi que se activan aqui.
 # new_worktree = "prefix+shift+g"  # crear rama nueva y abrirla como espacio
-# open_worktree = "prefix+alt+g"   # abrir un worktree que ya existe
+open_worktree = "prefix+alt+g" # abrir un worktree que ya existe
 # remove_worktree = "prefix+alt+d" # quitar el checkout (pide confirmacion)
 
 [[keys.command]]
@@ -175,7 +175,6 @@ command = "ray.plugin-manager.open"
 description = "open plugin manager"
 
 
-
 # nvim en la carpeta del pane enfocado o, si es un pane de Claude, en la del
 # proyecto que esta editando (ver el script). "pane" abre un pane temporal que
 # se cierra al salir de nvim.
@@ -185,17 +184,17 @@ type = "pane"
 description = "nvim en el proyecto"
 command = 'node "$XDG_CONFIG_DIR/herdr/scripts/nvim-here.mjs"'
 
-[[keys.command]]              # lazygit: open in a split
+[[keys.command]] # lazygit: open in a split
 key = "prefix+shift+g"
 type = "plugin_action"
 command = "herdr-lazygit.open"
 
-[[keys.command]]              # lazygit: open in its own tab
+[[keys.command]] # lazygit: open in its own tab
 key = "prefix+shift+l"
 type = "plugin_action"
 command = "herdr-lazygit.open-tab"
 
- # [[keys.command]]
+# [[keys.command]]
 # key = "prefix+space"
 # type = "popup"                 # the only route with a real interactive TTY
 # command = "sh ~/.config/herdr/plugins/config/cowboyvang.which-key/launch.sh"
@@ -203,7 +202,7 @@ command = "herdr-lazygit.open-tab"
 # width = "78%"
 # height = "62%"
 [[keys.command]]
-key = "ctrl+space"            # or "ctrl+space" for a direct, prefix-free leader
+key = "ctrl+space"                # or "ctrl+space" for a direct, prefix-free leader
 type = "plugin_action"
 command = "pradyb.which-key.open"
 description = "which-key"
@@ -236,9 +235,21 @@ enabled = true
 [ui.sidebar.agents]
 row_gap = 0
 rows = [
-  ["state_icon", "machine", "workspace", "tab"],
-  ['$summary'], ['$summary2'],
-  ["agent"],
+  [
+    "state_icon",
+    "machine",
+    "workspace",
+    "tab",
+  ],
+  [
+    '$summary',
+  ],
+  [
+    '$summary2',
+  ],
+  [
+    "agent",
+  ],
 ]
 
 [experimental]

@@ -14,10 +14,11 @@ hl.window_rule({
 
 -- Workspaces
 
-local musicApps = "^(harmony|symphony|crate-app|flatcam-plus|Waydroid)$"
+local musicApps = "^(harmony|symphony|crate-app|Waydroid)$"
 local musicWorkspace = "4"
 
-local makerApps = "^(orca-slicer|org.freecad.FreeCAD|io.tangencylabs.solidcraft|carfast.manager|org.pwmt.zathura)$"
+local makerApps =
+	"^(orca-slicer|org.freecad.FreeCAD|io.tangencylabs.solidcraft|carfast.manager|flatcam-plus|org.pwmt.zathura)$"
 local makerWorkspace = "5"
 
 local chatApps = "^(org.telegram.desktop)$"
@@ -152,6 +153,17 @@ hl.window_rule({
 	name = "suppress-maximize-events",
 	match = { class = ".*" },
 	suppress_event = "maximize",
+})
+
+-- Ignore maximize requests from all apps. You'll probably like this.
+hl.window_rule({
+	name = "flatcam-float",
+	match = {
+		class = "flatcam-plus",
+		float = true,
+	},
+	center = true,
+	size = { "monitor_w*0.30", "monitor_h*0.30" },
 })
 
 -- Fix some dragging issues with XWayland

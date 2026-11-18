@@ -54,7 +54,7 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000002]
     box_height = 128.0
     box_width = 208.0
-    cx = 1902.9334716796875
+    cx = 1902.9332275390625
     cy = 354.13339233398438
     output = "eDP-1"
     placement_height = 1152.0
@@ -69,7 +69,7 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000003]
     box_height = 128.0
     box_width = 208.0
-    cx = 1902.9334716796875
+    cx = 1902.9332275390625
     cy = 490.666748046875
     output = "eDP-1"
     placement_height = 1152.0

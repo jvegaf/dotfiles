@@ -2,6 +2,9 @@
 	"default_filament_colour": [
 		"#C01C28"
 	],
+	"enable_pressure_advance": [
+		"1"
+	],
 	"filament_extruder_variant": [
 		"Direct Drive Standard"
 	],
@@ -13,6 +16,9 @@
 	"name": "CR-TPU @K1C",
 	"nozzle_temperature_initial_layer": [
 		"220"
+	],
+	"pressure_advance": [
+		"0.2"
 	],
 	"version": "2.3.2.75"
 }
