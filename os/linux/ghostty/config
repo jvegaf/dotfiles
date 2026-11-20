@@ -14,7 +14,7 @@ mouse-hide-while-typing = true
 # other
 copy-on-select = clipboard
 
-font-size = 14
+font-size = 13
 # font-family = FiraCode Nerd Font
 font-family = monospace
 # font-family-bold = FiraCode Nerd Font Bold

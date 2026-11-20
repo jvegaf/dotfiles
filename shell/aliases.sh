@@ -32,7 +32,8 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias open='xdg-open'
 alias zj='zellij'
 alias hr='herdr'
-alias k1p='sh $HOME/.local/bin/CrealityPrint'
+alias hrr='herdr server reload-config'
+alias hrcfg='nvim ~/.config/herdr/config.toml'
 alias oc='sh $HOME/.gentle-ai/bin/opencode'
 alias occfg='$HOME/.config/opencode'
 
@@ -64,9 +65,6 @@ alias gs='gentle-shell'
 
 alias grc="gh repo clone"
 alias grs="gh repo view --web"
-
-# Copilot
-alias copl="copilot"
 
 # Arch
 alias yau="yay -Syyu"
@@ -109,7 +107,6 @@ alias hycfg='nvim $HOME/.config/hypr/hyprland.lua'
 alias nicfg='nvim $HOME/.config/niri/config.kdl'
 alias niwin='niri msg windows'
 alias hywin='pretty_clients'
-alias occfg='cd $HOME/.config/opencode'
 alias kicfg='nvim $HOME/.config/kitty/kitty.conf'
 alias ghstcfg='nvim $HOME/.config/ghostty/config'
 alias bt='btop'
@@ -126,8 +123,8 @@ alias savemode='dot system cpumode powersave'
 alias schedmode='dot system cpumode schedutil'
 alias currmode='dot system cpumode current'
 
-alias winreb='sudo grub-reboot 4 && sudo reboot'
 alias sysd='sudo systemd-manager-tui'
+alias wh='whatsapp-tui'
 
 #VPN
 # alias vpnup='sudo wg-quick up wg0'

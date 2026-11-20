@@ -43,3 +43,11 @@ fastfetch -c $HOME/.config/fastfetch/config.jsonc
 
 
 # . "$HOME/.local/share/../bin/env"
+
+# pnpm
+export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

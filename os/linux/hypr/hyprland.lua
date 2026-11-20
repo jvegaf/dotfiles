@@ -18,3 +18,6 @@ require("config.workspaces")
 require("hyprland-settings")
 
 require("config.gentle-dot")
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

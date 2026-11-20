@@ -1,5 +1,123 @@
 [
   {
+    "plugin_id": "herdr-gentle-shell",
+    "name": "Herdr Gentle Shell",
+    "version": "1.8.0",
+    "min_herdr_version": "0.9.4",
+    "description": "Herdr sidebar states for Pi + Gentle Shell agents: oldest running role (explorer, worker, verify, judge) with total count in parentheses only when above one, ask, review, blocked, done, idle, plus exact +N/-N SessionChanges segments.",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-gentle-shell-1ac7b4ec92f6/2643053-0/checkout/herdr-plugin/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-gentle-shell-1ac7b4ec92f6/2643053-0/checkout/herdr-plugin",
+    "enabled": true,
+    "platforms": [
+      "linux"
+    ],
+    "startup": [
+      {
+        "command": [
+          "node",
+          "bin/gentle-status.js"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "configure",
+        "title": "Configure: install the pi-only sidebar override",
+        "description": "Append (or repair) the managed pi-only [ui.sidebar.agents.rows_by_agent] override (gentle_title_* + exact +N/-N SessionChanges segments) without touching the user [ui.sidebar.agents] table, then reload.",
+        "platforms": [
+          "linux"
+        ],
+        "command": [
+          "node",
+          "bin/configure.js",
+          "--apply",
+          "--reload"
+        ]
+      },
+      {
+        "id": "doctor",
+        "title": "Diagnose: read-only daemon/token/sidebar checks",
+        "description": "Read-only supervision diagnostics: daemon pidfile liveness, producer/token freshness from one agent snapshot, managed sidebar marker scan. Never writes state.",
+        "platforms": [
+          "linux"
+        ],
+        "command": [
+          "node",
+          "bin/gentle-doctor.js"
+        ]
+      },
+      {
+        "id": "unconfigure",
+        "title": "Configure: remove the pi-only sidebar override",
+        "description": "Remove the managed pi-only sidebar override and reload; the user [ui.sidebar.agents] table is left intact. Run before uninstalling.",
+        "platforms": [
+          "linux"
+        ],
+        "command": [
+          "node",
+          "bin/configure.js",
+          "--uninstall",
+          "--reload"
+        ]
+      },
+      {
+        "id": "whois",
+        "title": "Diagnose: read-only global pane view",
+        "description": "Read-only global pane view (plugin-owned panes; Interrumpido is diagnostic-only, the sidebar is unchanged). Never writes state.",
+        "platforms": [
+          "linux"
+        ],
+        "command": [
+          "node",
+          "bin/gentle-whois.js"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_detected",
+        "command": [
+          "node",
+          "bin/gentle-status.js",
+          "--refresh"
+        ]
+      },
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "node",
+          "bin/gentle-status.js",
+          "--refresh"
+        ]
+      },
+      {
+        "on": "pane.closed",
+        "command": [
+          "node",
+          "bin/gentle-status.js",
+          "--refresh"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "command": [
+          "node",
+          "bin/gentle-status.js",
+          "--refresh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "jonasotoaguilar",
+      "repo": "herdr-gentle-shell",
+      "subdir": "herdr-plugin",
+      "resolved_commit": "839d2c78fcd52bc1a949e524cebd3ce99821a9d6",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-gentle-shell-1ac7b4ec92f6/2643053-0/checkout",
+      "installed_unix_ms": 1795071409067
+    }
+  },
+  {
     "plugin_id": "herdr-lazygit",
     "name": "herdr-lazygit",
     "version": "0.4.0",

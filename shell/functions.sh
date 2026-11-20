@@ -256,3 +256,13 @@ pretty_clients() {
   print -- "\n${G}Total de ventanas: ${W}${count}${N}"
   unfunction _pretty_clients_flush
 }
+
+
+checkVirus() {
+  local current_dir="${PWD}"
+  clamscan --recursive=yes --infected "${current_dir}"
+}
+
+gentleShellInstall() {
+  PI_CODING_AGENT_DIR="${HOME}/.local/share/gentle-shell/install/agent" pi install "$@"
+}

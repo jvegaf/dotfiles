@@ -4,8 +4,8 @@
 HYPRLAND_SETTINGS_REVISION = "1794964331362-2085296"
 
 hl.monitor({
-    output   = "desc:Sharp Corporation LQ156T1JW03",
-    mode     = "2560x1440@60.00",
-    position = "0x0",
-    scale    = 1.25,
+	output = "desc:Sharp Corporation LQ156T1JW03",
+	mode = "2560x1440@60.00",
+	position = "0x0",
+	scale = 1.33,
 })

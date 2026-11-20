@@ -1,41 +1,15 @@
 {
-  "markdown_preview": {
-    "font_size": 12.0,
-    "code_font_family": ".ZedMono"
-  },
-  "prettier": {
-    "allowed": true
-  },
-  "agent_buffer_font_size": 12.0,
-  "show_wrap_guides": false,
-  "unnecessary_code_fade": 0.4,
-  "language_models": {
-    "opencode": {
-      "show_zen_models": false
-    }
-  },
   "session": {
     "trust_all_worktrees": true
-  },
-  "agent_servers": {
-    "opencode": {
-      "default_config_options": {
-        "effort": "medium",
-        "model": "opencode-go/gpt-5.6-luna",
-        "mode": "gentle-orchestrator"
-      },
-      "type": "registry"
-    }
   },
   "buffer_font_weight": 500.0,
   "on_last_window_closed": "quit_app",
   "when_closing_with_no_tabs": "close_window",
   "edit_predictions": {
-    "allow_data_collection": "default",
     "provider": "copilot",
   },
   "telemetry": {
-    "diagnostics": false,
+    "diagnostics": true,
     "metrics": false,
   },
   "base_keymap": "VSCode",
@@ -74,13 +48,6 @@
   "hard_tabs": false,
   "tab_size": 2,
   "context_servers": {
-    "mcp-server-context7": {
-      "enabled": true,
-      "remote": false,
-      "settings": {
-        "context7_api_key": "CONTEXT7_API_KEY"
-      }
-    },
     "browser-tools-context-server": {
       "enabled": true,
       "settings": {},
@@ -94,7 +61,7 @@
     "blinking": "on",
     "cursor_shape": "block",
     "font_family": "'JetBrains Mono', 'Fira Code', monospace",
-    "font_size": 16.0,
+    "font_size": 14.0,
     "shell": "system",
     "env": {
       "ZED_TERMINAL": "1",
@@ -105,17 +72,13 @@
     "auto_fold_dirs": false,
     "auto_reveal_entries": true,
     "dock": "left",
-    "indent_size": 14.0,
+    "indent_size": 12,
   },
   "agent": {
-    "thinking_display": "always_expanded",
-    "notify_when_agent_waiting": "all_screens",
-    "show_turn_stats": true,
-    "sidebar_side": "right",
     "tool_permissions": {
       "default": "allow",
     },
-    "play_sound_when_agent_done": "always",
+    "play_sound_when_agent_done": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "gpt-5",
@@ -131,15 +94,15 @@
     "toggle_relative_line_numbers": true,
     "use_smartcase_find": true,
   },
-  "ui_font_size": 14.0,
-  "buffer_font_size": 14.0,
-  "agent_ui_font_size": 14.0,
+  "ui_font_size": 16,
+  "buffer_font_size": 20.0,
+  "agent_ui_font_size": 16,
   "ui_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "FantasqueSansM Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark",
+    "light": "One Light",
+    "dark": "One Dark",
   },
   "diagnostics": {
     "inline": {

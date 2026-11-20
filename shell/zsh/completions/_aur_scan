@@ -1,0 +1,470 @@
+#compdef aur-scan
+
+autoload -U is-at-least
+
+_aur-scan() {
+    typeset -A opt_args
+    typeset -a _arguments_options
+    local ret=1
+
+    if is-at-least 5.2; then
+        _arguments_options=(-s -S -C)
+    else
+        _arguments_options=(-s -C)
+    fi
+
+    local context curcontext="$curcontext" state line
+    _arguments "${_arguments_options[@]}" : \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'-V[Print version]' \
+'--version[Print version]' \
+":: :_aur-scan_commands" \
+"*::: :->aur-scan" \
+&& ret=0
+    case $state in
+    (aur-scan)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:aur-scan-command-$line[1]:"
+        case $line[1] in
+            (scan)
+_arguments "${_arguments_options[@]}" : \
+'-f+[Output format]:FORMAT:(text json sarif)' \
+'--format=[Output format]:FORMAT:(text json sarif)' \
+'-o+[Output file (stdout if not specified)]:OUTPUT:_files' \
+'--output=[Output file (stdout if not specified)]:OUTPUT:_files' \
+'--fail-on=[Exit with non-zero code if findings at or above this severity]:FAIL_ON:(critical high medium low info)' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--include-info[Include informational findings]' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+':path -- Path to PKGBUILD or directory containing it:_files' \
+&& ret=0
+;;
+(check)
+_arguments "${_arguments_options[@]}" : \
+'--fail-on=[Exit with non-zero code if findings at or above this severity]:FAIL_ON:(critical high medium low info)' \
+'--sbom=[Write a CycloneDX SBOM of the full dependency tree to this path]:FILE:_files' \
+'*--local=[Scan these already-fetched package dir(s) from disk (race-free, the exact bytes that will be built). Repeatable. Remaining AUR deps are fetched from the AUR unless they are also provided here]:DIR:_files' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--no-confirm[Skip interactive prompt (don'\''t ask to proceed)]' \
+'--no-deps[Do not resolve and scan the AUR dependency tree (named packages only)]' \
+'--include-optional[Also follow optional dependencies when resolving the tree]' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'*::packages -- Package name(s) to check (optional if --local dirs are given):_default' \
+&& ret=0
+;;
+(install)
+_arguments "${_arguments_options[@]}" : \
+'--gate=[Gate threshold\: findings at or above this severity block the build]:GATE:(critical high medium low info)' \
+'--workspace=[Workspace dir for clones/builds (default ~/.cache/aur-scan/build)]:DIR:_files' \
+'--sbom=[Write a CycloneDX SBOM to this path]:FILE:_files' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--include-optional[Also follow optional dependencies]' \
+'--noconfirm[Pass --noconfirm to makepkg and skip the build prompt]' \
+'--force[Build even if the scan gate trips (deliberate override)]' \
+'--keep-build[Keep the build directories after a successful install (default\: clean them up)]' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'*::packages -- Package name(s) to install:_default' \
+&& ret=0
+;;
+(system)
+_arguments "${_arguments_options[@]}" : \
+'--cache-dir=[Custom cache directory for PKGBUILDs]:CACHE_DIR:_files' \
+'--fail-on=[Exit non-zero if any finding is at or above this severity (default\: critical). IOC name matches and packages that could not be scanned always fail the run]:FAIL_ON:(critical high medium low info)' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--rescan[Re-fetch PKGBUILDs from AUR (instead of using cache)]' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(rules)
+_arguments "${_arguments_options[@]}" : \
+'-s+[Show only rules of this severity]:SEVERITY:(critical high medium low info)' \
+'--severity=[Show only rules of this severity]:SEVERITY:(critical high medium low info)' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-d[Show rule details]' \
+'--details[Show rule details]' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(explain)
+_arguments "${_arguments_options[@]}" : \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+':code -- Detection code to explain (e.g., DLE-001, PERSIST-001):_default' \
+&& ret=0
+;;
+(codes)
+_arguments "${_arguments_options[@]}" : \
+'--category=[Filter by category]:CATEGORY:_default' \
+'--format=[Output format]:FORMAT:((text\:""
+markdown\:""
+md\:"Alias of \`markdown\`"
+json\:""))' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+&& ret=0
+;;
+(ioc)
+_arguments "${_arguments_options[@]}" : \
+'--check=[Check whether a name/value matches a known indicator]:NAME:_default' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(version)
+_arguments "${_arguments_options[@]}" : \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(diff)
+_arguments "${_arguments_options[@]}" : \
+'-f+[Output format]:FORMAT:(text json)' \
+'--format=[Output format]:FORMAT:(text json)' \
+'--fail-on=[Exit non-zero if a NEWLY ADDED finding is at or above this severity. Pre-existing findings never trip this gate]:FAIL_ON:(critical high medium low info)' \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':old -- The older package directory (or PKGBUILD):_files' \
+':new -- The newer package directory (or PKGBUILD):_files' \
+&& ret=0
+;;
+(completions)
+_arguments "${_arguments_options[@]}" : \
+'-c+[Configuration file path]:CONFIG:_files' \
+'--config=[Configuration file path]:CONFIG:_files' \
+'-s+[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'--severity=[Minimum severity to report]:SEVERITY:(critical high medium low info)' \
+'-v[Enable verbose output]' \
+'--verbose[Enable verbose output]' \
+'-q[Quiet mode (only show findings)]' \
+'--quiet[Quiet mode (only show findings)]' \
+'--no-color[Disable colored output (also honored\: the NO_COLOR environment variable)]' \
+'-h[Print help (see more with '\''--help'\'')]' \
+'--help[Print help (see more with '\''--help'\'')]' \
+':shell -- Shell to generate completions for:(bash elvish fish powershell zsh)' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_aur-scan__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:aur-scan-help-command-$line[1]:"
+        case $line[1] in
+            (scan)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(check)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(install)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(system)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(rules)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(explain)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(codes)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(ioc)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(version)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(diff)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(completions)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+}
+
+(( $+functions[_aur-scan_commands] )) ||
+_aur-scan_commands() {
+    local commands; commands=(
+'scan:Scan a PKGBUILD file or directory' \
+'check:Check an AUR package BEFORE installation (fetches from AUR)' \
+'install:Race-free install\: scan the exact bytes, then build them in dep order' \
+'system:Scan all installed AUR packages on the system' \
+'rules:List available detection rules' \
+'explain:Explain a detection code in detail' \
+'codes:List all detection codes with brief descriptions' \
+'ioc:Show or query the IOC (indicator of compromise) database' \
+'version:Check scanner version and configuration' \
+'diff:Compare two versions of a package and report what changed' \
+'completions:Generate a shell completion script for aur-scan' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'aur-scan commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__check_commands] )) ||
+_aur-scan__subcmd__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan check commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__codes_commands] )) ||
+_aur-scan__subcmd__codes_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan codes commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__completions_commands] )) ||
+_aur-scan__subcmd__completions_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan completions commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__diff_commands] )) ||
+_aur-scan__subcmd__diff_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan diff commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__explain_commands] )) ||
+_aur-scan__subcmd__explain_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan explain commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help_commands] )) ||
+_aur-scan__subcmd__help_commands() {
+    local commands; commands=(
+'scan:Scan a PKGBUILD file or directory' \
+'check:Check an AUR package BEFORE installation (fetches from AUR)' \
+'install:Race-free install\: scan the exact bytes, then build them in dep order' \
+'system:Scan all installed AUR packages on the system' \
+'rules:List available detection rules' \
+'explain:Explain a detection code in detail' \
+'codes:List all detection codes with brief descriptions' \
+'ioc:Show or query the IOC (indicator of compromise) database' \
+'version:Check scanner version and configuration' \
+'diff:Compare two versions of a package and report what changed' \
+'completions:Generate a shell completion script for aur-scan' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'aur-scan help commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__check_commands] )) ||
+_aur-scan__subcmd__help__subcmd__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help check commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__codes_commands] )) ||
+_aur-scan__subcmd__help__subcmd__codes_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help codes commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__completions_commands] )) ||
+_aur-scan__subcmd__help__subcmd__completions_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help completions commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__diff_commands] )) ||
+_aur-scan__subcmd__help__subcmd__diff_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help diff commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__explain_commands] )) ||
+_aur-scan__subcmd__help__subcmd__explain_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help explain commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__help_commands] )) ||
+_aur-scan__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help help commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__install_commands] )) ||
+_aur-scan__subcmd__help__subcmd__install_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help install commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__ioc_commands] )) ||
+_aur-scan__subcmd__help__subcmd__ioc_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help ioc commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__rules_commands] )) ||
+_aur-scan__subcmd__help__subcmd__rules_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help rules commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__scan_commands] )) ||
+_aur-scan__subcmd__help__subcmd__scan_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help scan commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__system_commands] )) ||
+_aur-scan__subcmd__help__subcmd__system_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help system commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__help__subcmd__version_commands] )) ||
+_aur-scan__subcmd__help__subcmd__version_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan help version commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__install_commands] )) ||
+_aur-scan__subcmd__install_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan install commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__ioc_commands] )) ||
+_aur-scan__subcmd__ioc_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan ioc commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__rules_commands] )) ||
+_aur-scan__subcmd__rules_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan rules commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__scan_commands] )) ||
+_aur-scan__subcmd__scan_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan scan commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__system_commands] )) ||
+_aur-scan__subcmd__system_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan system commands' commands "$@"
+}
+(( $+functions[_aur-scan__subcmd__version_commands] )) ||
+_aur-scan__subcmd__version_commands() {
+    local commands; commands=()
+    _describe -t commands 'aur-scan version commands' commands "$@"
+}
+
+if [ "$funcstack[1]" = "_aur-scan" ]; then
+    _aur-scan "$@"
+else
+    compdef _aur-scan aur-scan
+fi

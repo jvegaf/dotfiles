@@ -54,11 +54,11 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000002]
     box_height = 128.0
     box_width = 208.0
-    cx = 1902.9332275390625
-    cy = 354.13339233398438
+    cx = 1784.0
+    cy = 332.00006103515625
     output = "eDP-1"
-    placement_height = 1152.0
-    placement_width = 2048.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "sysmon"
 
@@ -69,11 +69,11 @@ widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-000000000000
     [desktop_widgets.widget.desktop-widget-0000000000000003]
     box_height = 128.0
     box_width = 208.0
-    cx = 1902.9332275390625
-    cy = 490.666748046875
+    cx = 1784.0
+    cy = 460.00009155273438
     output = "eDP-1"
-    placement_height = 1152.0
-    placement_width = 2048.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "sysmon"
 
@@ -132,11 +132,11 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@HDMI-A-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 1024.0003662109375
-    cy = 919.03997802734375
+    cx = 960.00042724609375
+    cy = 861.60003662109375
     output = "eDP-1"
-    placement_height = 1152.0
-    placement_width = 2048.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -228,8 +228,7 @@ source = "wallpaper"
 wallpaper_scheme = "m3-rainbow"
 
     [theme.templates]
-    builtin_ids = []
-    enable_builtin_templates = false
+    builtin_ids = [ "gtk3", "gtk4", "hyprland", "qt" ]
     enable_community_templates = false
 
         [theme.templates.user.noctwhspr_mic_osd]

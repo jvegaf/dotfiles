@@ -6,7 +6,7 @@
 
 hl.env("GDK_SCALE", "1") -- Scale factor for GDK applications
 hl.env("QT_SCALE_FACTOR", "1") -- Scale factor for Qt applications
--- hl.env("GBM_BACKEND", "nvidia-drm") -- force GBM as a backend
+hl.env("GBM_BACKEND", "nvidia-drm") -- force GBM as a backend
 hl.env("LIBVA_DRIVER_NAME", "nvidia") -- Hardware acceleration on NVIDIA GPUs
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia") -- force GBM as a backend
 hl.env("NVD_BACKEND", "direct") -- Set NVD backend to direct
