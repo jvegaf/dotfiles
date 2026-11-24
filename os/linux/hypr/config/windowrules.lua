@@ -88,9 +88,10 @@ hl.window_rule({
 	size = { "monitor_w*0.70", "monitor_h*0.70" },
 })
 hl.window_rule({
-	match = { class = "^(org\\.gnome\\.Nautilus|org\\.kde\\.dolphin)$" },
+	match = { class = "^(org\\.gnome\\.Nautilus|org\\.kde\\.dolphin|dev\\.noctalia\\.luciole)$" },
 	float = true,
 	center = true,
+	opacity = "1.0 override",
 	size = { "monitor_w*0.50", "monitor_h*0.50" },
 })
 hl.window_rule({

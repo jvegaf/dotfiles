@@ -1,4 +1,4 @@
-TERMINAL = "kitty"
+TERMINAL = "ghostty"
 FILE_MANAGER = "nautilus"
 BROWSER = "firefox"
 EDITOR = "nvim"

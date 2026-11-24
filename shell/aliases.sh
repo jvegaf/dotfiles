@@ -73,6 +73,7 @@ alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias pacdel='sudo pacman -Rns'
+alias yai='yay -Si'
 
 # WebDev
 alias nom='npm'
@@ -108,7 +109,7 @@ alias nicfg='nvim $HOME/.config/niri/config.kdl'
 alias niwin='niri msg windows'
 alias hywin='pretty_clients'
 alias kicfg='nvim $HOME/.config/kitty/kitty.conf'
-alias ghstcfg='nvim $HOME/.config/ghostty/config'
+alias ghscfg='nvim $HOME/.config/ghostty/config'
 alias bt='btop'
 
 alias nvdprf='nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=2"'

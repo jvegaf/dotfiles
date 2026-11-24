@@ -23,9 +23,9 @@ hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
 
 hl.env("GDK_BACKEND", "wayland,x11")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("FREECAD_QT_QPA_PLATFORM", "wayland")
 hl.env("SDL_VIDEODRIVER", "wayland,x11,windows")
 hl.env("CLUTTER_BACKEND", "wayland")
-
 -- # ####### XDG specifications #######
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
