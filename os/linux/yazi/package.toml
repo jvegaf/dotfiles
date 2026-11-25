@@ -38,5 +38,10 @@ use = "ruudjhuu/f3d-preview"
 rev = "33ce345"
 hash = "5368a9f95ebeb613d9a2614d594a185c"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "1ef5fe0"
+hash = "558bbb58e3dd36d488280a8f10e7b904"
+
 [flavor]
 deps = []

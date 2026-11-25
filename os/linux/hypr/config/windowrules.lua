@@ -9,10 +9,13 @@ hl.window_rule({
 	float = true,
 	keep_aspect_ratio = true,
 	size = { "max(monitor_w, monitor_h)*0.25", "min(monitor_w, monitor_h)*0.25" },
+	move = { "1426", "39" },
 	pin = true,
 })
 
 -- Workspaces
+local devApps = "^(camcraft)$"
+local devWorkspace = "3"
 
 local musicApps = "^(harmony|symphony|crate-app|Waydroid)$"
 local musicWorkspace = "4"
@@ -24,6 +27,7 @@ local makerWorkspace = "5"
 local chatApps = "^(org.telegram.desktop)$"
 local chatWorkspace = "6"
 
+hl.window_rule({ match = { class = devApps }, workspace = devWorkspace })
 hl.window_rule({ match = { class = musicApps }, workspace = musicWorkspace })
 hl.window_rule({ match = { class = "org\\.gnome\\.Decibels" }, float = true, center = true, workspace = musicWorkspace })
 hl.window_rule({ match = { class = "vlc" }, float = true, center = true, workspace = musicWorkspace })
@@ -128,6 +132,7 @@ local floatApps = {
 	{ class = "^(kvantummanager|qt[56]ct|nwg-look)$" },
 	{ class = "^(org.pulseaudio.pavucontrol|blueman-manager|nm-applet|nm-connection-editor)$" },
 	{ title = "^(Winetricks.*|Protontricks.*)$" },
+	{ title = "^(Addon Manager version*)$" },
 }
 for _, m in ipairs(floatApps) do
 	hl.window_rule({ match = m, float = true })

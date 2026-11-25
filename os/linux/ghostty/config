@@ -14,9 +14,11 @@ mouse-hide-while-typing = true
 # other
 copy-on-select = clipboard
 
+font-family = FiraCode Nerd Font
 font-size = 13
-# font-family = FiraCode Nerd Font
-font-family = monospace
+# font-family = monospace
+# font-family = IosevkaTerm NF
+# font-size = 16
 # font-family-bold = FiraCode Nerd Font Bold
 # font-family-bold-italic = FiraCode Nerd Font Bold Italic
 # font-family-italic = FiraCode Nerd Font Italic

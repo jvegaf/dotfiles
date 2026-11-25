@@ -1,5 +1,166 @@
 [
   {
+    "plugin_id": "herdr-file-viewer",
+    "name": "herdr-file-viewer",
+    "version": "1.18.0",
+    "min_herdr_version": "0.7.5",
+    "description": "A git-aware, read-only file viewer: a keyboard-driven TUI in a herdr split pane.",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-file-viewer-c993314e2614/39616-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-file-viewer-c993314e2614/39616-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/fetch-or-build.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-or-build.ps1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-file-viewer",
+        "title": "Open file viewer",
+        "description": "Open the git-aware file viewer in a split pane beside the current work.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-file-viewer.sh"
+        ]
+      },
+      {
+        "id": "open-file-viewer-at",
+        "title": "Open file viewer at…",
+        "description": "Ask for a directory in a popup, then open the file viewer there in a split pane.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-file-viewer-at.sh",
+          "split"
+        ]
+      },
+      {
+        "id": "open-file-viewer-at-tab",
+        "title": "Open file viewer at… (tab)",
+        "description": "Ask for a directory in a popup, then open the file viewer there in a new tab.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-file-viewer-at.sh",
+          "tab"
+        ]
+      },
+      {
+        "id": "open-file-viewer-tab",
+        "title": "Open file viewer (tab)",
+        "description": "Open the git-aware file viewer in its own tab (switch to it if already open).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-file-viewer-tab.sh"
+        ]
+      },
+      {
+        "id": "open-file-viewer-tab-windows",
+        "title": "Open file viewer (tab)",
+        "description": "Open the git-aware file viewer in its own tab (switch to it if already open).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "$u=New-Object System.Text.UTF8Encoding($false); [Console]::OutputEncoding=$u; $OutputEncoding=$u; $b=$env:HERDR_BIN_PATH; if(-not $b){$b='herdr'}; $p=((& $b plugin list --json|ConvertFrom-Json).result.plugins|?{$_.plugin_id -eq 'herdr-file-viewer'}).plugin_root; if($p -and $p.StartsWith('\\\\?\\')){$p=$p.Substring(4)}; & (Join-Path (Join-Path $p 'scripts') 'open-file-viewer-tab.ps1')"
+        ]
+      },
+      {
+        "id": "open-file-viewer-windows",
+        "title": "Open file viewer",
+        "description": "Open the git-aware file viewer in a split pane beside the current work.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "$u=New-Object System.Text.UTF8Encoding($false); [Console]::OutputEncoding=$u; $OutputEncoding=$u; $b=$env:HERDR_BIN_PATH; if(-not $b){$b='herdr'}; $p=((& $b plugin list --json|ConvertFrom-Json).result.plugins|?{$_.plugin_id -eq 'herdr-file-viewer'}).plugin_root; if($p -and $p.StartsWith('\\\\?\\')){$p=$p.Substring(4)}; & (Join-Path (Join-Path $p 'scripts') 'open-file-viewer.ps1')"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "file-viewer",
+        "title": "Files",
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-file-viewer"
+        ]
+      },
+      {
+        "id": "root-picker",
+        "title": "Open file viewer at",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "popup",
+        "width": "60%",
+        "height": 16,
+        "command": [
+          "./target/release/herdr-file-viewer",
+          "--pick-root"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "smarzban",
+      "repo": "herdr-file-viewer",
+      "resolved_commit": "d17a068ee753daf5ba205bafd59c130b81b8c6c0",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-file-viewer-c993314e2614/39616-0/checkout",
+      "installed_unix_ms": 1795476825530
+    }
+  },
+  {
     "plugin_id": "herdr-gentle-shell",
     "name": "Herdr Gentle Shell",
     "version": "1.8.0",
@@ -118,75 +279,13 @@
     }
   },
   {
-    "plugin_id": "herdr-lazygit",
-    "name": "herdr-lazygit",
-    "version": "0.4.0",
-    "min_herdr_version": "0.7.0",
-    "description": "lazygit in a herdr split pane, with AI-assisted commit messages via custom commands.",
-    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout/herdr-plugin.toml",
-    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout",
-    "enabled": true,
-    "platforms": [
-      "linux",
-      "macos"
-    ],
-    "build": [
-      {
-        "command": [
-          "/bin/sh",
-          "scripts/install-runtime.sh"
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "open",
-        "title": "Open lazygit",
-        "description": "Open lazygit in a split pane beside the current work (focus/toggle on repeat).",
-        "command": [
-          "bash",
-          "scripts/open-lazygit.sh"
-        ]
-      },
-      {
-        "id": "open-tab",
-        "title": "Open lazygit (tab)",
-        "description": "Open lazygit in its own tab (switch to it if already open, toggle off if focused).",
-        "command": [
-          "bash",
-          "scripts/open-lazygit-tab.sh"
-        ]
-      }
-    ],
-    "panes": [
-      {
-        "id": "lazygit",
-        "title": "Git",
-        "placement": "split",
-        "command": [
-          "bash",
-          "-c",
-          "exec bash \"$HERDR_PLUGIN_ROOT/scripts/run-lazygit.sh\""
-        ]
-      }
-    ],
-    "source": {
-      "kind": "github",
-      "owner": "crokily",
-      "repo": "herdr-lazygit",
-      "resolved_commit": "ac955e59caae5cbc34b74ccf949e11f085269b4d",
-      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazygit-b11d62e75f78/248096-0/checkout",
-      "installed_unix_ms": 1794452225163
-    }
-  },
-  {
-    "plugin_id": "herdr-sidebar",
-    "name": "herdr-sidebar",
-    "version": "0.15.1",
-    "min_herdr_version": "0.8.0",
-    "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
-    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout/plugins/herdr-sidebar/herdr-plugin.toml",
-    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout/plugins/herdr-sidebar",
+    "plugin_id": "herdr-lazy",
+    "name": "herdr-lazy",
+    "version": "0.44.3",
+    "min_herdr_version": "0.9.0",
+    "description": "Be lazy: a curated, batteries-included plugin distro & manager for herdr",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-lazy-7e53bfc3c6d3/26572-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr-lazy-7e53bfc3c6d3/26572-0/checkout",
     "enabled": true,
     "platforms": [
       "linux",
@@ -218,385 +317,137 @@
         ]
       }
     ],
+    "startup": [
+      {
+        "command": [
+          "./target/release/herdr-lazy",
+          "startup"
+        ]
+      }
+    ],
     "actions": [
       {
-        "id": "open-git",
-        "title": "Toggle source control",
-        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
-        "platforms": [
-          "linux",
-          "macos"
+        "id": "init",
+        "title": "Lazy: install curated defaults",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          "./target/release/herdr-sidebar",
-          "--toggle-git"
+          "./target/release/herdr-lazy",
+          "init"
         ]
       },
       {
-        "id": "open-git-windows",
-        "title": "Toggle source control",
-        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
-        "platforms": [
-          "windows"
+        "id": "manage",
+        "title": "Lazy: open manage pane",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--toggle-git"
+          "./target/release/herdr-lazy",
+          "open-pane",
+          "manage"
         ]
       },
       {
-        "id": "open-sidebar",
-        "title": "Toggle sidebar",
-        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
-        "platforms": [
-          "linux",
-          "macos"
+        "id": "probe",
+        "title": "Lazy: probe CLI bridge",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          "./target/release/herdr-sidebar",
-          "--toggle"
+          "./target/release/herdr-lazy",
+          "probe"
         ]
       },
       {
-        "id": "open-sidebar-windows",
-        "title": "Toggle sidebar",
-        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
-        "platforms": [
-          "windows"
+        "id": "starter",
+        "title": "Lazy: start workspace",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--toggle"
+          "./target/release/herdr-lazy",
+          "open-pane",
+          "starter"
         ]
       },
       {
-        "id": "quick-open",
-        "title": "Quick Open",
-        "description": "Open or focus the sidebar and show the file picker.",
-        "platforms": [
-          "linux",
-          "macos"
+        "id": "sync",
+        "title": "Lazy: sync plugins to bundle",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          "./target/release/herdr-sidebar",
-          "--quick-open"
-        ]
-      },
-      {
-        "id": "quick-open-windows",
-        "title": "Quick Open",
-        "description": "Open or focus the sidebar and show the file picker.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--quick-open"
-        ]
-      },
-      {
-        "id": "redeploy",
-        "title": "Redeploy sidebar panes",
-        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "bash",
-          "scripts/redeploy.sh"
-        ]
-      },
-      {
-        "id": "redeploy-windows",
-        "title": "Redeploy sidebar panes",
-        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          "powershell",
-          "-NoProfile",
-          "-ExecutionPolicy",
-          "Bypass",
-          "-File",
-          "scripts/redeploy.ps1"
-        ]
-      },
-      {
-        "id": "refresh-sidebars",
-        "title": "Refresh all sidebars",
-        "description": "Refresh running sidebar views without closing preview or editor panes.",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--refresh-sidebars"
-        ]
-      },
-      {
-        "id": "refresh-sidebars-windows",
-        "title": "Refresh all sidebars",
-        "description": "Refresh running sidebar views without closing preview or editor panes.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--refresh-sidebars"
-        ]
-      },
-      {
-        "id": "show-explorer",
-        "title": "Show Explorer",
-        "description": "Open or focus the sidebar and switch to Explorer.",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--show-explorer"
-        ]
-      },
-      {
-        "id": "show-explorer-windows",
-        "title": "Show Explorer",
-        "description": "Open or focus the sidebar and switch to Explorer.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--show-explorer"
-        ]
-      },
-      {
-        "id": "show-git",
-        "title": "Show Source Control",
-        "description": "Open or focus the sidebar and switch to Source Control.",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--show-git"
-        ]
-      },
-      {
-        "id": "show-git-windows",
-        "title": "Show Source Control",
-        "description": "Open or focus the sidebar and switch to Source Control.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--show-git"
-        ]
-      },
-      {
-        "id": "show-search",
-        "title": "Show Search",
-        "description": "Open or focus the sidebar and switch to project text search.",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--show-search"
-        ]
-      },
-      {
-        "id": "show-search-windows",
-        "title": "Show Search",
-        "description": "Open or focus the sidebar and switch to project text search.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--show-search"
+          "./target/release/herdr-lazy",
+          "sync"
         ]
       },
       {
         "id": "update",
-        "title": "Update sidebar",
-        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
-        "platforms": [
-          "linux",
-          "macos"
+        "title": "Lazy: update unpinned plugins",
+        "contexts": [
+          "workspace"
         ],
         "command": [
-          "./target/release/herdr-sidebar",
-          "--update-latest"
-        ]
-      },
-      {
-        "id": "update-windows",
-        "title": "Update sidebar",
-        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe",
-          "--update-latest"
+          "./target/release/herdr-lazy",
+          "update"
         ]
       }
     ],
     "events": [
       {
-        "on": "pane.focused",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
+        "on": "worktree.created",
         "command": [
-          "./target/release/herdr-sidebar",
-          "--ensure"
+          "./target/release/herdr-lazy",
+          "event"
         ]
       },
       {
-        "on": "pane.focused",
-        "platforms": [
-          "windows"
-        ],
+        "on": "worktree.opened",
         "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe"
-        ]
-      },
-      {
-        "on": "tab.created",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--ensure"
-        ]
-      },
-      {
-        "on": "tab.created",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe"
-        ]
-      },
-      {
-        "on": "tab.focused",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--ensure"
-        ]
-      },
-      {
-        "on": "tab.focused",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe"
-        ]
-      },
-      {
-        "on": "workspace.created",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--ensure"
-        ]
-      },
-      {
-        "on": "workspace.created",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe"
-        ]
-      },
-      {
-        "on": "workspace.focused",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "command": [
-          "./target/release/herdr-sidebar",
-          "--ensure"
-        ]
-      },
-      {
-        "on": "workspace.focused",
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          ".\\target\\release\\herdr-sidebar-ensure.exe"
+          "./target/release/herdr-lazy",
+          "event"
         ]
       }
     ],
     "panes": [
       {
-        "id": "sidebar",
-        "title": "Sidebar",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "placement": "split",
+        "id": "manage",
+        "title": "herdr-lazy",
+        "placement": "overlay",
         "command": [
-          "./target/release/herdr-sidebar"
+          "./target/release/herdr-lazy",
+          "ui"
         ]
       },
       {
-        "id": "source-control",
-        "title": "Source Control",
-        "platforms": [
-          "linux",
-          "macos"
-        ],
-        "placement": "split",
+        "id": "starter",
+        "title": "herdr-lazy workspace starter",
+        "placement": "overlay",
         "command": [
-          "./target/release/herdr-sidebar",
-          "--view",
-          "git"
+          "./target/release/herdr-lazy",
+          "starter"
         ]
       }
     ],
     "source": {
       "kind": "github",
-      "owner": "alexarthurs",
-      "repo": "herdr-sidebar",
-      "subdir": "plugins/herdr-sidebar",
-      "resolved_commit": "081ed133f3faa377438b51ce435fe8a87c439593",
-      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/115355-0/checkout",
-      "installed_unix_ms": 1794449739798
+      "owner": "natori-hrj",
+      "repo": "herdr-lazy",
+      "resolved_commit": "b9c45953df72d2bab031861f44b28aefb0c60ecf",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr-lazy-7e53bfc3c6d3/26572-0/checkout",
+      "installed_unix_ms": 1795474787992
     }
   },
   {
     "plugin_id": "herdr.auto-title",
     "name": "Auto Title",
-    "version": "0.22.3",
+    "version": "0.24.0",
     "min_herdr_version": "0.8.2",
     "description": "Automatically generates contextual tab titles",
-    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout/herdr-plugin.toml",
-    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout",
+    "manifest_path": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/39781-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/th3g3ntl3man/.dotfiles/os/linux/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/39781-0/checkout",
     "enabled": true,
     "platforms": [
       "linux",
@@ -663,9 +514,9 @@
       "kind": "github",
       "owner": "kryptamine",
       "repo": "herdr-auto-title",
-      "resolved_commit": "1af236e95eb67adc77b3161937ff946c616b709c",
-      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/31642-0/checkout",
-      "installed_unix_ms": 1794882195513
+      "resolved_commit": "b046f17b2de3ac7593daaad327e651804fb857ff",
+      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/herdr.auto-title-4b7d61f48ce8/39781-0/checkout",
+      "installed_unix_ms": 1795476844453
     }
   },
   {
@@ -715,101 +566,6 @@
       "resolved_commit": "cd760c7d03a32dc2f8cfa40eaab3cc9beeac116b",
       "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/37223-0/checkout",
       "installed_unix_ms": 1794882563136
-    }
-  },
-  {
-    "plugin_id": "ray.plugin-manager",
-    "name": "Plugin Manager",
-    "version": "0.6.0",
-    "min_herdr_version": "0.7.4",
-    "description": "Manage herdr plugins from a popup: list, install, update, enable/disable, uninstall, browse the marketplace, open repo in browser, edit plugins.json",
-    "manifest_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout/herdr-plugin.toml",
-    "plugin_root": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout",
-    "enabled": true,
-    "platforms": [
-      "macos",
-      "linux",
-      "windows"
-    ],
-    "actions": [
-      {
-        "id": "open",
-        "title": "Open plugin manager",
-        "contexts": [
-          "workspace"
-        ],
-        "platforms": [
-          "macos",
-          "linux"
-        ],
-        "command": [
-          "bash",
-          "-c",
-          "exec \"${HERDR_BIN_PATH:-herdr}\" plugin pane open --plugin ray.plugin-manager --entrypoint manager --placement popup --focus"
-        ]
-      },
-      {
-        "id": "open-windows",
-        "title": "Open plugin manager (Windows)",
-        "contexts": [
-          "workspace"
-        ],
-        "platforms": [
-          "windows"
-        ],
-        "command": [
-          "powershell.exe",
-          "-NoProfile",
-          "-ExecutionPolicy",
-          "Bypass",
-          "-Command",
-          "& \"$env:HERDR_PLUGIN_ROOT/bin/windows.ps1\" open"
-        ]
-      }
-    ],
-    "panes": [
-      {
-        "id": "manager",
-        "title": "Plugin Manager",
-        "platforms": [
-          "macos",
-          "linux"
-        ],
-        "placement": "popup",
-        "width": 82,
-        "height": 28,
-        "command": [
-          "bash",
-          "-c",
-          "exec bash \"$HERDR_PLUGIN_ROOT/bin/manager.sh\""
-        ]
-      },
-      {
-        "id": "manager-windows",
-        "title": "Plugin Manager",
-        "platforms": [
-          "windows"
-        ],
-        "placement": "popup",
-        "width": 82,
-        "height": 28,
-        "command": [
-          "powershell.exe",
-          "-NoProfile",
-          "-ExecutionPolicy",
-          "Bypass",
-          "-Command",
-          "& \"$env:HERDR_PLUGIN_ROOT/bin/windows.ps1\" manager"
-        ]
-      }
-    ],
-    "source": {
-      "kind": "github",
-      "owner": "speardragon",
-      "repo": "herdr-plugin-manager",
-      "resolved_commit": "8ed222ab7efe735b3ef5e037e7ee81d6d7650e4e",
-      "managed_path": "/home/th3g3ntl3man/.config/herdr/plugins/github-installations/ray.plugin-manager-75f462e8e1d0/72108-0/checkout",
-      "installed_unix_ms": 1794449194732
     }
   },
   {

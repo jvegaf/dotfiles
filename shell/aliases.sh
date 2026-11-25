@@ -20,9 +20,7 @@ alias dots='cd $DOTFILES_PATH'
 alias nvcfg="cd ~/.config/nvim"
 alias vimcfg="vim ~/.vimrc"
 alias r="ranger"
-alias paru="paru --bottomup"
 alias mx="tmux"
-alias hdr="herdr"
 alias edalias='nvim $DOTFILES_PATH/shell/aliases.sh'
 alias myscripts='cd $HOME/.local/bin'
 alias dfscripts='cd $DOTFILES_PATH/scripts/install/'
@@ -31,9 +29,6 @@ alias run="./run"
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias open='xdg-open'
 alias zj='zellij'
-alias hr='herdr'
-alias hrr='herdr server reload-config'
-alias hrcfg='nvim ~/.config/herdr/config.toml'
 alias oc='sh $HOME/.gentle-ai/bin/opencode'
 alias occfg='$HOME/.config/opencode'
 
@@ -61,16 +56,23 @@ alias gpl="git pull --rebase --autostash"
 alias gl='$DOTLY_PATH/bin/dot git pretty-log'
 alias gsw="git switch"
 
+#Herdr
+alias hr='herdr'
+alias hrr='herdr server reload-config'
+alias hrcfg='nvim ~/.config/herdr/config.toml'
+
+# Gentle
 alias gs='gentle-shell'
+alias gsupg='gentle-shell upgrade --channel main'
 
 alias grc="gh repo clone"
 alias grs="gh repo view --web"
 
 # Arch
+alias paru="paru --bottomup"
 alias yau="yay -Syyu"
 alias pau="sudo pacman -Syyu"
 alias mirrors-rank="sudo reflector --verbose --latest 5 --country 'Sweden' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
-# Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 alias pacdel='sudo pacman -Rns'
 alias yai='yay -Si'
@@ -85,9 +87,7 @@ alias yd='yarn dev'
 alias ydt='yarn tauri dev'
 
 # Utils
-alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg" # Arch
 alias rmd='rm -rf'
-alias sb="/bin/subl"
 alias v='nvim'
 alias b='bat'
 alias k='kill -9'
@@ -137,18 +137,18 @@ alias vpnstatus='sudo systemctl status wg-quick@wg0'
 # status vpn tunnel sudo wg
 
 ## UV
-alias pyinst='uv python install' # list python versions to install (e.g. uv python install 3.11 3.12)
-alias ppi='uv pip install'
-alias ppir='uv pip install -r requirements.txt'
-alias ppu='uv pip uninstall'
+alias pyini='uv init'
+alias ppi='uv add'
+alias ppir='uv add -r requirements.txt'
+alias ppsync='uv sync'
 alias ppur='uv pip uninstall -r requirements.txt'
 alias ppf='uv pip freeze'
 alias ppfr='uv pip freeze > requirements.txt'
-alias pvc='uv venv' # Create local environment (pass '--python 3.12' for specific python version)
 alias pva='source ./.venv/bin/activate'
 alias pvd='deactivate' # Deactivate python environment
 
 alias dku='docker compose up -d'
+alias dkps='docker ps'
 alias dkd='docker compose down'
 alias lzd='lazydocker'
 
