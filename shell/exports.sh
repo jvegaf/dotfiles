@@ -2,7 +2,7 @@ export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 export M2_HOME="$HOME/.local/share/mise/installs/maven/3.9.16/"
 # export WINEPREFIX="$HOME/.fusion360/wineprefixes/default"
-export FILE_BROWSER="dolphin"
+export FILE_BROWSER="luciole"
 # ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
@@ -36,7 +36,6 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 # REA (Reverse Engineer Anything) — analysis engines
 export GHIDRA_INSTALL_DIR=/opt/ghidra
 export HOPPER_LAUNCHER_PATH=/opt/hopper-v4/bin/Hopper
-export GSH_AGENT_PATH="${HOME}/.local/share/gentle-shell/install/agent"
 
 # # pnpm
 # export PNPM_HOME="/home/th3g3ntl3man/.local/share/pnpm"
