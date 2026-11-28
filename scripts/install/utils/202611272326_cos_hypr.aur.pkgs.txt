@@ -1,0 +1,16 @@
+1password
+ai-usagebar-bin
+aur-scanner
+camcraft
+ergohaven-entropy
+freecad-weekly-appimage
+gentle-dot
+gitcomet-bin
+herdr-bin
+libgnome-keyring
+luciole-git
+moji-plus
+opencode-bin
+orca-slicer-bin
+solidcraft-bin
+whatsapp-tui-git

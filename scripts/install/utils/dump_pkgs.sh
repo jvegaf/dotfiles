@@ -5,6 +5,7 @@
 
 set -euo pipefail
 
+TIMESTAMP=$(date +"%Y%m%d%H%M")
 OUT_DIR=${1:-.}
 mkdir -p "$OUT_DIR"
 
@@ -13,9 +14,9 @@ read -r -p "Introduce un nombre: " NAME
 NAME=${NAME:-paquetes}
 
 # Paquetes instalados explícitamente desde repos oficiales
-PACMAN_FILE="$OUT_DIR/${NAME}.pkgs.txt"
+PACMAN_FILE="$OUT_DIR/${TIMESTAMP}_${NAME}.pkgs.txt"
 # Paquetes instalados que no pertenecen a los repos (AUR/foreign)
-AUR_FILE="$OUT_DIR/${NAME}.aur.pkgs.txt"
+AUR_FILE="$OUT_DIR/${TIMESTAMP}_${NAME}.aur.pkgs.txt"
 # Detectar si pacman está disponible
 if ! command -v pacman >/dev/null 2>&1; then
   echo "Error: pacman no está disponible en este sistema." >&2

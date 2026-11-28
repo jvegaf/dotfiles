@@ -34,6 +34,8 @@
     ~/.config/polybar : os/linux/polybar
     ~/.config/ranger: os/linux/ranger
     ~/.config/rofi : os/linux/rofi
+    ~/.config/dms : os/linux/dms
+    ~/.config/mango: os/linux/mango
     ~/.config/starship: os/linux/starship
     ~/.config/superfile: os/linux/superfile
     ~/.config/systemd: os/linux/systemd

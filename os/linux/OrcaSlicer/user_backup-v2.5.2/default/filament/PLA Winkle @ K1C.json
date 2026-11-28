@@ -1,0 +1,77 @@
+{
+	"default_filament_colour": [
+		"#63452C"
+	],
+	"enable_pressure_advance": [
+		"1",
+		"1",
+		"1",
+		"1",
+		"1",
+		"1"
+	],
+	"fan_max_speed": [
+		"70",
+		"70",
+		"70",
+		"70",
+		"70",
+		"70"
+	],
+	"fan_min_speed": [
+		"50",
+		"50",
+		"50",
+		"50",
+		"50",
+		"50"
+	],
+	"filament_extruder_variant": [
+		"Direct Drive Standard",
+		"Direct Drive High Flow",
+		"Direct Drive Extra High Flow",
+		"Bowden Standard",
+		"Bowden High Flow",
+		"Bowden Extra High Flow"
+	],
+	"filament_flow_ratio": [
+		"0.931",
+		"0.931",
+		"0.931",
+		"0.931",
+		"0.931",
+		"0.931"
+	],
+	"filament_settings_id": [
+		"PLA Winkle @ K1C"
+	],
+	"filament_start_gcode": [
+		"; Filament gcode\nSET_MATERIAL MATERIAL=PLA"
+	],
+	"filament_z_hop_types": [
+		"Slope Lift",
+		"Slope Lift",
+		"Slope Lift",
+		"Slope Lift",
+		"Slope Lift",
+		"Slope Lift"
+	],
+	"from": "User",
+	"hot_plate_temp": [
+		"65"
+	],
+	"hot_plate_temp_initial_layer": [
+		"65"
+	],
+	"inherits": "Generic PLA @System",
+	"name": "PLA Winkle @ K1C",
+	"pressure_advance": [
+		"0.06",
+		"0.032",
+		"0.032",
+		"0.032",
+		"0.032",
+		"0.032"
+	],
+	"version": "2.3.0.3"
+}

@@ -257,6 +257,19 @@ pretty_clients() {
   unfunction _pretty_clients_flush
 }
 
+mngClients() {
+  mmsg get all-clients | jq -r '
+    ["ID", "APP_ID", "TAG", "FLOAT", "FOCUS", "TITULO"],
+    ["--", "------", "---", "-----", "-----", "------"],
+    (.clients[] | [
+      .id,
+      .appid,
+      (.tags | join(",")),
+      .is_floating,
+      .is_focused,
+      .title
+    ]) | @tsv' | column -ts $'\t'
+}
 
 checkVirus() {
   local current_dir="${PWD}"

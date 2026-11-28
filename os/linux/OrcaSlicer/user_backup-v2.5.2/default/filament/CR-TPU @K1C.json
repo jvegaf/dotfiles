@@ -1,0 +1,42 @@
+{
+	"default_filament_colour": [
+		"#C01C28"
+	],
+	"enable_pressure_advance": [
+		"1"
+	],
+	"filament_deretraction_speed": [
+		"20"
+	],
+	"filament_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"filament_retraction_length": [
+		"4"
+	],
+	"filament_retraction_speed": [
+		"20"
+	],
+	"filament_settings_id": [
+		"CR-TPU @K1C"
+	],
+	"filament_wipe": [
+		"0"
+	],
+	"filament_z_hop": [
+		"0"
+	],
+	"filament_z_hop_types": [
+		"nil"
+	],
+	"from": "User",
+	"inherits": "CR-TPU @K1C-all",
+	"name": "CR-TPU @K1C",
+	"nozzle_temperature_initial_layer": [
+		"220"
+	],
+	"pressure_advance": [
+		"0.2"
+	],
+	"version": "2.3.2.75"
+}
